@@ -568,7 +568,7 @@ function create_body($data, $mail_previous, $compare, $series, $action, $as_html
     // Set the link to view entry page
     if (isset($url_base) && ($url_base !== ''))
     {
-      $body .= "$url_base/view_entry.php?id=" . $data['id'];
+      $body .= "$url_base/reservation/view_entry.php?id=" . $data['id'];
     }
     else
     {

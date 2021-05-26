@@ -450,4 +450,4 @@ $mail_settings['disabled'] = FALSE;
 // It is also recommended that you set this if you intend to use email
 // notifications, to ensure that the correct URL is displayed in the
 // notification.
-$url_base = "http://ica.preprod.lamp.cnrs.fr";
+$url_base = "http://ica.cnrs.fr";
