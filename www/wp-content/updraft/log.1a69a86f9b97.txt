@@ -1,0 +1,1314 @@
+0000.000 (0) Opened log file at time: Wed, 12 May 2021 09:51:50 +0000 on http://institut-clement-ader.org
+0000.003 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.16.25 WP: 4.9.17 PHP: 5.4.45 (fpm-fcgi, ) MySQL: 5.7.34 WPLANG: fr_FR Server: Apache safe_mode: 0 max_execution_time: 2000 memory_limit: 256M (used: 97.8M | 103M) multisite: N openssl: OpenSSL 1.0.1e-fips 11 Feb 2013 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.004 (0) Free space on disk containing Updraft's temporary directory: 297694.1 MB
+0000.008 (0) Tasks: Backup files: 1 (schedule: daily) Backup DB:  (schedule: daily)
+0000.009 (0) Processed schedules. Combining jobs from identical schedules. Tasks now: Backup files: 1 Backup DB: 1
+0000.012 (0) Requesting semaphore lock (fd) (apparently via scheduler: last_scheduled_action_called_at=1620726841, seconds_ago=86269)
+0000.017 (0) Set semaphore last lock (fd) time to 2021-05-12 09:51:50
+0000.018 (0) Semaphore lock (fd) complete
+0000.026 (0) Backup run: resumption=0, nonce=1a69a86f9b97, file_nonce=1a69a86f9b97 begun at=1620813110 (0s ago), job type=backup
+0000.028 (0) Scheduling a resumption (1) after 300 seconds (1620813410) in case this run gets aborted
+0000.039 (0) Checking if we have a zip executable available
+0000.041 (0) Creation of backups of directories: beginning
+0000.044 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0004.343 (0) Total entities for the zip file: 1277 directories, 6622 files (0 skipped as non-modified), 114 MB
+0004.360 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0 MB, 1 (1) files added so far); re-opening (prior size: 0 KB)
+0004.435 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 100 files added (on-disk size: 215.8 KB)
+0004.483 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 200 files added (on-disk size: 215.8 KB)
+0004.534 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 300 files added (on-disk size: 215.8 KB)
+0004.585 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 400 files added (on-disk size: 215.8 KB)
+0004.633 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 500 files added (on-disk size: 215.8 KB)
+0004.635 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (12.2 MB, 6622 files batched, 501 (502) added so far); re-opening (prior size: 215.8 KB)
+0005.340 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 600 files added (on-disk size: 5964.5 KB)
+0005.386 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 700 files added (on-disk size: 5964.5 KB)
+0005.430 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 800 files added (on-disk size: 5964.5 KB)
+0005.485 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 900 files added (on-disk size: 5964.5 KB)
+0005.536 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 1000 files added (on-disk size: 5964.5 KB)
+0005.538 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (10.3 MB, 6622 files batched, 501 (1003) added so far); re-opening (prior size: 5964.5 KB)
+0008.375 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 1100 files added (on-disk size: 10583.4 KB)
+0008.421 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 1200 files added (on-disk size: 10583.4 KB)
+0008.482 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 1300 files added (on-disk size: 10583.4 KB)
+0008.525 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 1400 files added (on-disk size: 10583.4 KB)
+0008.570 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 1500 files added (on-disk size: 10583.4 KB)
+0008.573 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (10.5 MB, 6622 files batched, 501 (1504) added so far); re-opening (prior size: 10583.4 KB)
+0009.363 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 1600 files added (on-disk size: 15947.1 KB)
+0009.424 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 1700 files added (on-disk size: 15947.1 KB)
+0009.477 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 1800 files added (on-disk size: 15947.1 KB)
+0009.533 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 1900 files added (on-disk size: 15947.1 KB)
+0009.613 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 2000 files added (on-disk size: 15947.1 KB)
+0009.618 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (7.1 MB, 6622 files batched, 501 (2005) added so far); re-opening (prior size: 15947.1 KB)
+0010.343 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 2100 files added (on-disk size: 18914.9 KB)
+0010.399 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 2200 files added (on-disk size: 18914.9 KB)
+0010.457 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 2300 files added (on-disk size: 18914.9 KB)
+0010.513 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 2400 files added (on-disk size: 18914.9 KB)
+0010.573 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 2500 files added (on-disk size: 18914.9 KB)
+0010.577 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (8 MB, 6622 files batched, 501 (2506) added so far); re-opening (prior size: 18914.9 KB)
+0011.275 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 2600 files added (on-disk size: 20112.7 KB)
+0011.321 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 2700 files added (on-disk size: 20112.7 KB)
+0011.368 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 2800 files added (on-disk size: 20112.7 KB)
+0011.433 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 2900 files added (on-disk size: 20112.7 KB)
+0011.497 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 3000 files added (on-disk size: 20112.7 KB)
+0011.503 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (17.2 MB, 6622 files batched, 501 (3007) added so far); re-opening (prior size: 20112.7 KB)
+0013.018 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 3100 files added (on-disk size: 24787 KB)
+0013.082 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 3200 files added (on-disk size: 24787 KB)
+0013.145 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 3300 files added (on-disk size: 24787 KB)
+0013.201 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 3400 files added (on-disk size: 24787 KB)
+0013.261 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 3500 files added (on-disk size: 24787 KB)
+0013.267 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (2.4 MB, 6622 files batched, 501 (3508) added so far); re-opening (prior size: 24787 KB)
+0013.749 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 3600 files added (on-disk size: 25576.7 KB)
+0013.814 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 3700 files added (on-disk size: 25576.7 KB)
+0013.860 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 3800 files added (on-disk size: 25576.7 KB)
+0013.908 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 3900 files added (on-disk size: 25576.7 KB)
+0013.966 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 4000 files added (on-disk size: 25576.7 KB)
+0013.971 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (6.2 MB, 6622 files batched, 501 (4009) added so far); re-opening (prior size: 25576.7 KB)
+0014.510 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 4100 files added (on-disk size: 27766.8 KB)
+0014.554 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 4200 files added (on-disk size: 27766.8 KB)
+0014.597 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 4300 files added (on-disk size: 27766.8 KB)
+0014.641 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 4400 files added (on-disk size: 27766.8 KB)
+0014.686 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 4500 files added (on-disk size: 27766.8 KB)
+0014.692 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (3.2 MB, 6622 files batched, 501 (4510) added so far); re-opening (prior size: 27766.8 KB)
+0015.004 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 4600 files added (on-disk size: 29191.4 KB)
+0015.054 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 4700 files added (on-disk size: 29191.4 KB)
+0015.104 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 4800 files added (on-disk size: 29191.4 KB)
+0015.151 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 4900 files added (on-disk size: 29191.4 KB)
+0015.202 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 5000 files added (on-disk size: 29191.4 KB)
+0015.209 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (11.7 MB, 6622 files batched, 501 (5011) added so far); re-opening (prior size: 29191.4 KB)
+0015.795 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 5100 files added (on-disk size: 36884.9 KB)
+0015.857 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 5200 files added (on-disk size: 36884.9 KB)
+0015.911 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 5300 files added (on-disk size: 36884.9 KB)
+0015.965 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 5400 files added (on-disk size: 36884.9 KB)
+0016.019 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 5500 files added (on-disk size: 36884.9 KB)
+0016.027 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (6.4 MB, 6622 files batched, 501 (5512) added so far); re-opening (prior size: 36884.9 KB)
+0016.754 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 5600 files added (on-disk size: 38970.4 KB)
+0016.798 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 5700 files added (on-disk size: 38970.4 KB)
+0016.846 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 5800 files added (on-disk size: 38970.4 KB)
+0016.896 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 5900 files added (on-disk size: 38970.4 KB)
+0016.944 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 6000 files added (on-disk size: 38970.4 KB)
+0016.952 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (8 MB, 6622 files batched, 501 (6013) added so far); re-opening (prior size: 38970.4 KB)
+0017.686 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 6100 files added (on-disk size: 42341.7 KB)
+0017.741 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 6200 files added (on-disk size: 42341.7 KB)
+0017.797 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 6300 files added (on-disk size: 42341.7 KB)
+0017.848 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 6400 files added (on-disk size: 42341.7 KB)
+0017.900 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 6500 files added (on-disk size: 42341.7 KB)
+0017.908 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (6.7 MB, 6622 files batched, 501 (6514) added so far); re-opening (prior size: 42341.7 KB)
+0018.303 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip.tmp: 6600 files added (on-disk size: 46927 KB)
+0019.202 (0) Created plugins zip (0) - 50402 KB in 19.2 s (2631.7 KB/s) (sha1: c2b7071212bd5daed8f151699eb6b6a1e7479692, sha256: 4043dcde41767f2ad93ca53d535dfc6585a8785f5527afa3b352d721dcc47cf5)
+0019.207 (0) Beginning creation of dump of themes (split every: 400 MB)
+0019.578 (0) Total entities for the zip file: 117 directories, 559 files (0 skipped as non-modified), 11.6 MB
+0019.628 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0019.674 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-themes.zip.tmp: 200 files added (on-disk size: 0 KB)
+0019.735 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-themes.zip.tmp: 300 files added (on-disk size: 0 KB)
+0019.798 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-themes.zip.tmp: 400 files added (on-disk size: 0 KB)
+0019.852 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-themes.zip.tmp: 500 files added (on-disk size: 0 KB)
+0019.854 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (10.5 MB, 559 files batched, 501 (501) added so far); re-opening (prior size: 0 KB)
+0020.694 (0) Created themes zip (0) - 5999.8 KB in 1.5 s (4051.2 KB/s) (sha1: c20498cec8d043411ad9df6af7ff14f03ea99e24, sha256: 1fbcd62589aba25f429026affb433514f507d4cda464f4ba2476cc9d0abb483e)
+0020.699 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0020.700 (0) Looking for candidates to backup in: /opt/data/webusers/lab0612/lab0612/www.institut-clement-ader.org/www/wp-content/uploads
+0020.701 (0) finding files: 2018: adding to list (1)
+0020.702 (0) finding files: 10_ans: adding to list (2)
+0020.703 (0) finding files: Fiche_equipement: adding to list (3)
+0020.704 (0) finding files: simple-file-list: adding to list (4)
+0020.705 (0) finding files: fiche-_hello.docx: adding to list (5)
+0020.706 (0) finding files: backwpup-acb92f-logs: skipping: excluded by options (glob)
+0020.707 (0) finding files: wpallimport: adding to list (6)
+0020.708 (0) finding files: Documents_ZRR: adding to list (7)
+0020.709 (0) finding files: bws-custom-code: adding to list (8)
+0020.710 (0) finding files: ithemes-security: adding to list (9)
+0020.711 (0) finding files: organigrammes-plaquettes: adding to list (10)
+0020.712 (0) finding files: Photos_personnel: adding to list (11)
+0020.712 (0) finding files: tg-demo-pack: adding to list (12)
+0020.713 (0) finding files: 2020: adding to list (13)
+0020.714 (0) finding files: Fiche_offre: adding to list (14)
+0020.715 (0) finding files: Logos: adding to list (15)
+0020.716 (0) finding files: MaPP: adding to list (16)
+0020.716 (0) finding files: backwpup-acb92f-temp: skipping: excluded by options (glob)
+0020.717 (0) finding files: Restauration_CNRS: adding to list (17)
+0020.718 (0) finding files: 2021: adding to list (18)
+0020.719 (0) finding files: imported_csv: adding to list (19)
+0020.719 (0) finding files: Supports_communication: adding to list (20)
+0020.720 (0) finding files: 2019: adding to list (21)
+0020.721 (0) finding files: siteorigin-widgets: adding to list (22)
+0020.722 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0021.955 (0) Total entities for the zip file: 74 directories, 3031 files (0 skipped as non-modified), 565.9 MB
+0022.006 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+0022.053 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 200 files added (on-disk size: 0 KB)
+0022.102 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 300 files added (on-disk size: 0 KB)
+0022.131 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 25 MB added on this batch (26.5 MB, 3031 files batched, 363 (363) added so far); re-opening (prior size: 0 KB)
+0022.228 (0) A useful amount of data was added after this amount of zip processing: 1.7 s (normalised: 1.6 s, rate: 16148.6 KB/s)
+0022.230 (0) Performance is good - will increase the amount of data we attempt to batch (time=1.6811819076538, normalised_time=1.5852728517446, max_time=22.228119134903, data points known=1, old_max_bytes=26214400, new_max_bytes=209715200)
+0022.252 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 400 files added (on-disk size: 27216.1 KB)
+0022.299 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 500 files added (on-disk size: 27216.1 KB)
+0022.347 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 600 files added (on-disk size: 27216.1 KB)
+0022.395 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 700 files added (on-disk size: 27216.1 KB)
+0022.444 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 800 files added (on-disk size: 27216.1 KB)
+0022.474 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (96.8 MB, 3031 files batched, 501 (864) added so far); re-opening (prior size: 27216.1 KB)
+0024.688 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 900 files added (on-disk size: 124055.3 KB)
+0024.735 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 1000 files added (on-disk size: 124055.3 KB)
+0024.781 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 1100 files added (on-disk size: 124055.3 KB)
+0024.827 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 1200 files added (on-disk size: 124055.3 KB)
+0024.873 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 1300 files added (on-disk size: 124055.3 KB)
+0024.904 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (77.9 MB, 3031 files batched, 501 (1365) added so far); re-opening (prior size: 124055.3 KB)
+0027.343 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 1400 files added (on-disk size: 199527.9 KB)
+0027.387 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 1500 files added (on-disk size: 199527.9 KB)
+0027.430 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 1600 files added (on-disk size: 199527.9 KB)
+0027.477 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 1700 files added (on-disk size: 199527.9 KB)
+0027.523 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 1800 files added (on-disk size: 199527.9 KB)
+0027.554 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (75.5 MB, 3031 files batched, 501 (1866) added so far); re-opening (prior size: 199527.9 KB)
+0028.919 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 1900 files added (on-disk size: 275563.2 KB)
+0028.964 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 2000 files added (on-disk size: 275563.2 KB)
+0029.011 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 2100 files added (on-disk size: 275563.2 KB)
+0029.059 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 2200 files added (on-disk size: 275563.2 KB)
+0029.115 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip.tmp: 2300 files added (on-disk size: 275563.2 KB)
+0029.155 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): possibly approaching split limit (121.1 MB, 497 (2363) files added so far); last ratio: 0.9832; re-opening (prior size: 275563.2 KB)
+0032.403 (0) Zip size is at/near split limit (388.7 MB / 400 MB) - bumping index (from: 0)
+0036.864 (0) Created uploads zip (0) - 397989.4 KB in 11.7 s (34085.7 KB/s) (checksums: sha1: 8f2e414e6104bcdb0658482f7168832aba54377f, sha256: 013d8b1920a464fe91bee891575399b0d2f3eebd3558939301d37a9f50005ecd)
+0036.868 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0 MB, 1 (2364) files added so far); re-opening (prior size: 0 KB)
+0036.888 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads2.zip.tmp: 2400 files added (on-disk size: 25.1 KB)
+0036.935 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads2.zip.tmp: 2500 files added (on-disk size: 25.1 KB)
+0036.986 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads2.zip.tmp: 2600 files added (on-disk size: 25.1 KB)
+0037.037 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads2.zip.tmp: 2700 files added (on-disk size: 25.1 KB)
+0037.088 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads2.zip.tmp: 2800 files added (on-disk size: 25.1 KB)
+0037.121 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (71.2 MB, 3031 files batched, 501 (2865) added so far); re-opening (prior size: 25.1 KB)
+0037.546 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads2.zip.tmp: 2900 files added (on-disk size: 72677.3 KB)
+0037.597 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads2.zip.tmp: 3000 files added (on-disk size: 72677.3 KB)
+0042.330 (0) Created uploads zip (1) - 171643.3 KB in 5.5 s (31405.7 KB/s) (sha1: 1b383535f7c7d5cd78db94f272c40e2bf2c7711f, sha256: a1712e605c9e37a31ada541caa60cd2eff3eb3ebea35eecef6b7164138deeaeb)
+0042.337 (0) Beginning backup of other directories found in the content directory (index: 0)
+0042.338 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0042.338 (0) Looking for candidates to backup in: /opt/data/webusers/lab0612/lab0612/www.institut-clement-ader.org/www/wp-content
+0042.339 (0) finding files: languages: adding to list (1)
+0042.340 (0) finding files: registreHygiene: adding to list (2)
+0042.341 (0) finding files: index.php: adding to list (3)
+0042.342 (0) finding files: favicon.ico: adding to list (4)
+0042.343 (0) finding files: advanced-cache.php: adding to list (5)
+0042.344 (0) finding files: plugins: skipping: this is the plugins directory
+0042.344 (0) finding files: upgrade: skipping: excluded by options
+0042.345 (0) finding files: wp-cache-config.php: adding to list (6)
+0042.346 (0) finding files: themes: skipping: this is the themes directory
+0042.347 (0) finding files: updraft: skipping: this is the updraft directory
+0042.347 (0) finding files: uploads: skipping: this is the uploads directory
+0042.348 (0) finding files: ai1wm-backups: skipping: excluded by options (glob)
+0042.349 (0) finding files: zrr: adding to list (7)
+0042.350 (0) finding files: cache: skipping: excluded by options
+0042.350 (0) finding files: wflogs: adding to list (8)
+0042.426 (0) Total entities for the zip file: 7 directories, 184 files (0 skipped as non-modified), 144.8 MB
+0042.468 (0) Zip: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-others.zip.tmp: 100 files added (on-disk size: 0 KB)
+0047.460 (0) Created others zip (0) - 142314.6 KB in 5.1 s (27887.7 KB/s) (sha1: c05f206eb98fed999b3a7dc9e359486eb5e08b9c, sha256: c6cb468c7db6e119db3baec95e26f560a455fb21c0a21687b2f301e04795f93b)
+0047.467 (0) Saving backup status to database (elements: 9)
+0047.472 (0) Beginning creation of database dump (WordPress DB)
+0047.483 (0) Table wp_options: Total expected rows (approximate): 628
+0047.868 (0) Table wp_options: Total rows added: 717 in 0.38 seconds
+0047.870 (0) Table wp_options: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_options.table.gz - 811.2 KB)
+0047.875 (0) Table wp_users: Total expected rows (approximate): 302
+0047.889 (0) Table wp_users: Total rows added: 297 in 0.01 seconds
+0047.890 (0) Table wp_users: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_users.table.gz - 16.6 KB)
+0047.894 (0) Table wp_usermeta: Total expected rows (approximate): 16229
+0048.274 (0) Table wp_usermeta: Total rows added: 15169 in 0.38 seconds
+0048.275 (0) Table wp_usermeta: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_usermeta.table.gz - 358.4 KB)
+0048.279 (0) Table wp_commentmeta: Total expected rows (approximate): 0
+0048.287 (0) Table wp_commentmeta: Total rows added: 0 in 0.01 seconds
+0048.288 (0) Table wp_commentmeta: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_commentmeta.table.gz - 0.4 KB)
+0048.294 (0) Table wp_comments: Total expected rows (approximate): 0
+0048.296 (0) Table wp_comments: Total rows added: 0 in 0.00 seconds
+0048.297 (0) Table wp_comments: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_comments.table.gz - 0.5 KB)
+0048.304 (0) Table wp_links: Total expected rows (approximate): 0
+0048.308 (0) Table wp_links: Total rows added: 0 in 0.00 seconds
+0048.309 (0) Table wp_links: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_links.table.gz - 0.4 KB)
+0048.314 (0) Table wp_postmeta: Total expected rows (approximate): 33264
+0049.512 (0) Table wp_postmeta: Total rows added: 24078 in 1.20 seconds
+0049.514 (0) Table wp_postmeta: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_postmeta.table.gz - 942.8 KB)
+0049.518 (0) Table wp_posts: Total expected rows (approximate): 5097
+0050.539 (0) Table wp_posts: Total rows added: 4197 in 1.02 seconds
+0050.540 (0) Table wp_posts: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_posts.table.gz - 1356.6 KB)
+0050.545 (0) Table wp_term_relationships: Total expected rows (approximate): 1078
+0050.557 (0) Table wp_term_relationships: Total rows added: 1124 in 0.01 seconds
+0050.558 (0) Table wp_term_relationships: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_term_relationships.table.gz - 3.4 KB)
+0050.563 (0) Table wp_term_taxonomy: Total expected rows (approximate): 81
+0050.567 (0) Table wp_term_taxonomy: Total rows added: 81 in 0.00 seconds
+0050.568 (0) Table wp_term_taxonomy: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_term_taxonomy.table.gz - 1.4 KB)
+0050.572 (0) Table wp_termmeta: Total expected rows (approximate): 4
+0050.574 (0) Table wp_termmeta: Total rows added: 4 in 0.00 seconds
+0050.575 (0) Table wp_termmeta: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_termmeta.table.gz - 0.4 KB)
+0050.579 (0) Table wp_terms: Total expected rows (approximate): 81
+0050.582 (0) Table wp_terms: Total rows added: 81 in 0.00 seconds
+0050.583 (0) Table wp_terms: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_terms.table.gz - 1.4 KB)
+0050.587 (0) Table wp_aft_cc: Total expected rows (approximate): 1
+0050.590 (0) Table wp_aft_cc: Total rows added: 1 in 0.00 seconds
+0050.591 (0) Table wp_aft_cc: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_aft_cc.table.gz - 3.5 KB)
+0050.595 (0) Table wp_eum_logs: Total expected rows (approximate): 62
+0050.602 (0) Table wp_eum_logs: Total rows added: 65 in 0.01 seconds
+0050.603 (0) Table wp_eum_logs: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_eum_logs.table.gz - 1.9 KB)
+0050.606 (0) Table wp_gglcptch_whitelist: Total expected rows (approximate): 3
+0050.609 (0) Table wp_gglcptch_whitelist: Total rows added: 3 in 0.00 seconds
+0050.610 (0) Table wp_gglcptch_whitelist: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_gglcptch_whitelist.table.gz - 0.5 KB)
+0050.615 (0) Table wp_mgmlp_folders: Total expected rows (approximate): 524
+0050.621 (0) Table wp_mgmlp_folders: Total rows added: 524 in 0.01 seconds
+0050.622 (0) Table wp_mgmlp_folders: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_mgmlp_folders.table.gz - 1.7 KB)
+0050.628 (0) Table wp_pmxi_files: Total expected rows (approximate): 0
+0050.632 (0) Table wp_pmxi_files: Total rows added: 0 in 0.00 seconds
+0050.633 (0) Table wp_pmxi_files: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pmxi_files.table.gz - 0.3 KB)
+0050.637 (0) Table wp_pmxi_history: Total expected rows (approximate): 0
+0050.640 (0) Table wp_pmxi_history: Total rows added: 0 in 0.00 seconds
+0050.641 (0) Table wp_pmxi_history: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pmxi_history.table.gz - 0.4 KB)
+0050.645 (0) Table wp_pmxi_imports: Total expected rows (approximate): 0
+0050.649 (0) Table wp_pmxi_imports: Total rows added: 0 in 0.00 seconds
+0050.650 (0) Table wp_pmxi_imports: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pmxi_imports.table.gz - 0.6 KB)
+0050.655 (0) Table wp_pmxi_posts: Total expected rows (approximate): 0
+0050.660 (0) Table wp_pmxi_posts: Total rows added: 0 in 0.00 seconds
+0050.660 (0) Table wp_pmxi_posts: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pmxi_posts.table.gz - 0.3 KB)
+0050.664 (0) Table wp_pmxi_templates: Total expected rows (approximate): 0
+0050.669 (0) Table wp_pmxi_templates: Total rows added: 0 in 0.00 seconds
+0050.670 (0) Table wp_pmxi_templates: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pmxi_templates.table.gz - 0.4 KB)
+0050.675 (0) Table wp_pods_moyen: Total expected rows (approximate): 127
+0050.679 (0) Table wp_pods_moyen: Total rows added: 127 in 0.00 seconds
+0050.680 (0) Table wp_pods_moyen: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pods_moyen.table.gz - 2.8 KB)
+0050.685 (0) Table wp_pods_moyen-save: Total expected rows (approximate): 0
+0050.688 (0) Table wp_pods_moyen-save: Total rows added: 0 in 0.00 seconds
+0050.689 (0) Table wp_pods_moyen-save: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pods_moyen-save.table.gz - 0.3 KB)
+0050.693 (0) Table wp_pods_new-these: Total expected rows (approximate): 404
+0050.714 (0) Table wp_pods_new-these: Total rows added: 404 in 0.02 seconds
+0050.717 (0) Table wp_pods_new-these: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pods_new-these.table.gz - 24 KB)
+0050.722 (0) Table wp_pods_observation_rsst: Total expected rows (approximate): 0
+0050.724 (0) Table wp_pods_observation_rsst: Total rows added: 0 in 0.00 seconds
+0050.725 (0) Table wp_pods_observation_rsst: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pods_observation_rsst.table.gz - 0.5 KB)
+0050.729 (0) Table wp_pods_offre_emploi: Total expected rows (approximate): 63
+0050.732 (0) Table wp_pods_offre_emploi: Total rows added: 66 in 0.00 seconds
+0050.733 (0) Table wp_pods_offre_emploi: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pods_offre_emploi.table.gz - 4 KB)
+0050.738 (0) Table wp_pods_old_these: Total expected rows (approximate): 401
+0050.763 (0) Table wp_pods_old_these: Total rows added: 401 in 0.02 seconds
+0050.764 (0) Table wp_pods_old_these: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pods_old_these.table.gz - 24 KB)
+0050.768 (0) Table wp_pods_projet: Total expected rows (approximate): 12
+0050.772 (0) Table wp_pods_projet: Total rows added: 12 in 0.00 seconds
+0050.773 (0) Table wp_pods_projet: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pods_projet.table.gz - 1.5 KB)
+0050.776 (0) Table wp_pods_these: Total expected rows (approximate): 440
+0050.800 (0) Table wp_pods_these: Total rows added: 440 in 0.02 seconds
+0050.801 (0) Table wp_pods_these: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pods_these.table.gz - 26.6 KB)
+0050.805 (0) Table wp_podsrel: Total expected rows (approximate): 1346
+0050.829 (0) Table wp_podsrel: Total rows added: 1427 in 0.02 seconds
+0050.830 (0) Table wp_podsrel: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_podsrel.table.gz - 10.4 KB)
+0050.835 (0) Table wp_pp_group_members: Total expected rows (approximate): 320
+0050.846 (0) Table wp_pp_group_members: Total rows added: 320 in 0.01 seconds
+0050.848 (0) Table wp_pp_group_members: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pp_group_members.table.gz - 1.5 KB)
+0050.852 (0) Table wp_pp_groups: Total expected rows (approximate): 11
+0050.855 (0) Table wp_pp_groups: Total rows added: 11 in 0.00 seconds
+0050.856 (0) Table wp_pp_groups: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pp_groups.table.gz - 0.7 KB)
+0050.860 (0) Table wp_ppc_exception_items: Total expected rows (approximate): 0
+0050.866 (0) Table wp_ppc_exception_items: Total rows added: 0 in 0.00 seconds
+0050.868 (0) Table wp_ppc_exception_items: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_ppc_exception_items.table.gz - 0.4 KB)
+0050.873 (0) Table wp_ppc_exceptions: Total expected rows (approximate): 0
+0050.878 (0) Table wp_ppc_exceptions: Total rows added: 0 in 0.00 seconds
+0050.879 (0) Table wp_ppc_exceptions: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_ppc_exceptions.table.gz - 0.4 KB)
+0050.886 (0) Table wp_ppc_roles: Total expected rows (approximate): 0
+0050.893 (0) Table wp_ppc_roles: Total rows added: 0 in 0.01 seconds
+0050.895 (0) Table wp_ppc_roles: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_ppc_roles.table.gz - 0.3 KB)
+0050.901 (0) Table wp_temp_zrr: Total expected rows (approximate): 89
+0050.912 (0) Table wp_temp_zrr: Total rows added: 89 in 0.01 seconds
+0050.913 (0) Table wp_temp_zrr: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_temp_zrr.table.gz - 3.8 KB)
+0050.921 (0) Table wp_wfBlockedIPLog: Total expected rows (approximate): 48
+0050.930 (0) Table wp_wfBlockedIPLog: Total rows added: 58 in 0.01 seconds
+0050.931 (0) Table wp_wfBlockedIPLog: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfBlockedIPLog.table.gz - 0.9 KB)
+0050.936 (0) Table wp_wfBlocks7: Total expected rows (approximate): 0
+0050.942 (0) Table wp_wfBlocks7: Total rows added: 0 in 0.00 seconds
+0050.943 (0) Table wp_wfBlocks7: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfBlocks7.table.gz - 0.4 KB)
+0050.950 (0) Table wp_wfConfig: Total expected rows (approximate): 270
+0051.011 (0) Table wp_wfConfig: Total rows added: 273 in 0.06 seconds
+0051.013 (0) Table wp_wfConfig: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfConfig.table.gz - 434.9 KB)
+0051.022 (0) Table wp_wfCrawlers: Total expected rows (approximate): 13
+0051.027 (0) Table wp_wfCrawlers: Total rows added: 17 in 0.00 seconds
+0051.028 (0) Table wp_wfCrawlers: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfCrawlers.table.gz - 0.6 KB)
+0051.035 (0) Table wp_wfFileChanges: Total expected rows (approximate): 0
+0051.042 (0) Table wp_wfFileChanges: Total rows added: 0 in 0.01 seconds
+0051.043 (0) Table wp_wfFileChanges: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfFileChanges.table.gz - 0.3 KB)
+0051.049 (0) Table wp_wfFileMods: Total expected rows (approximate): 8142
+0051.418 (0) Table wp_wfFileMods: Total rows added: 8507 in 0.37 seconds
+0051.421 (0) Table wp_wfFileMods: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfFileMods.table.gz - 827.9 KB)
+0051.430 (0) Table wp_wfHits: Total expected rows (approximate): 1625
+0051.518 (0) Table wp_wfHits: Total rows added: 2231 in 0.09 seconds
+0051.520 (0) Table wp_wfHits: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfHits.table.gz - 50.8 KB)
+0051.524 (0) Table wp_wfHoover: Total expected rows (approximate): 0
+0051.533 (0) Table wp_wfHoover: Total rows added: 0 in 0.01 seconds
+0051.534 (0) Table wp_wfHoover: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfHoover.table.gz - 0.3 KB)
+0051.538 (0) Table wp_wfIssues: Total expected rows (approximate): 36
+0051.550 (0) Table wp_wfIssues: Total rows added: 36 in 0.01 seconds
+0051.551 (0) Table wp_wfIssues: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfIssues.table.gz - 8.9 KB)
+0051.556 (0) Table wp_wfKnownFileList: Total expected rows (approximate): 8247
+0051.686 (0) Table wp_wfKnownFileList: Total rows added: 8507 in 0.13 seconds
+0051.687 (0) Table wp_wfKnownFileList: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfKnownFileList.table.gz - 84.9 KB)
+0051.691 (0) Table wp_wfLiveTrafficHuman: Total expected rows (approximate): 83
+0051.694 (0) Table wp_wfLiveTrafficHuman: Total rows added: 85 in 0.00 seconds
+0051.694 (0) Table wp_wfLiveTrafficHuman: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfLiveTrafficHuman.table.gz - 2.5 KB)
+0051.698 (0) Table wp_wfLocs: Total expected rows (approximate): 0
+0051.701 (0) Table wp_wfLocs: Total rows added: 0 in 0.00 seconds
+0051.701 (0) Table wp_wfLocs: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfLocs.table.gz - 0.4 KB)
+0051.705 (0) Table wp_wfLogins: Total expected rows (approximate): 2038
+0051.765 (0) Table wp_wfLogins: Total rows added: 2031 in 0.06 seconds
+0051.767 (0) Table wp_wfLogins: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfLogins.table.gz - 51.8 KB)
+0051.771 (0) Table wp_wfNotifications: Total expected rows (approximate): 30
+0051.773 (0) Table wp_wfNotifications: Total rows added: 30 in 0.00 seconds
+0051.774 (0) Table wp_wfNotifications: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfNotifications.table.gz - 0.9 KB)
+0051.778 (0) Table wp_wfPendingIssues: Total expected rows (approximate): 0
+0051.784 (0) Table wp_wfPendingIssues: Total rows added: 0 in 0.00 seconds
+0051.785 (0) Table wp_wfPendingIssues: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfPendingIssues.table.gz - 0.4 KB)
+0051.788 (0) Table wp_wfReverseCache: Total expected rows (approximate): 5
+0051.791 (0) Table wp_wfReverseCache: Total rows added: 8 in 0.00 seconds
+0051.791 (0) Table wp_wfReverseCache: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfReverseCache.table.gz - 0.5 KB)
+0051.795 (0) Table wp_wfSNIPCache: Total expected rows (approximate): 0
+0051.798 (0) Table wp_wfSNIPCache: Total rows added: 0 in 0.00 seconds
+0051.799 (0) Table wp_wfSNIPCache: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfSNIPCache.table.gz - 0.4 KB)
+0051.803 (0) Table wp_wfStatus: Total expected rows (approximate): 943
+0051.830 (0) Table wp_wfStatus: Total rows added: 953 in 0.03 seconds
+0051.831 (0) Table wp_wfStatus: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfStatus.table.gz - 14.7 KB)
+0051.835 (0) Table wp_wfTrafficRates: Total expected rows (approximate): 0
+0051.838 (0) Table wp_wfTrafficRates: Total rows added: 0 in 0.00 seconds
+0051.842 (0) Table wp_wfTrafficRates: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfTrafficRates.table.gz - 0.3 KB)
+0051.847 (0) Table wp_wfls_2fa_secrets: Total expected rows (approximate): 0
+0051.851 (0) Table wp_wfls_2fa_secrets: Total rows added: 0 in 0.00 seconds
+0051.852 (0) Table wp_wfls_2fa_secrets: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfls_2fa_secrets.table.gz - 0.4 KB)
+0051.856 (0) Table wp_wfls_settings: Total expected rows (approximate): 19
+0051.859 (0) Table wp_wfls_settings: Total rows added: 19 in 0.00 seconds
+0051.860 (0) Table wp_wfls_settings: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfls_settings.table.gz - 0.8 KB)
+0051.864 (0) Table wp_wpfront_ure_options: Total expected rows (approximate): 3
+0051.869 (0) Table wp_wpfront_ure_options: Total rows added: 3 in 0.00 seconds
+0051.870 (0) Table wp_wpfront_ure_options: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wpfront_ure_options.table.gz - 0.4 KB)
+0051.874 (0) Table wp_wpmm_subscribers: Total expected rows (approximate): 0
+0051.878 (0) Table wp_wpmm_subscribers: Total rows added: 0 in 0.00 seconds
+0051.879 (0) Table wp_wpmm_subscribers: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wpmm_subscribers.table.gz - 0.3 KB)
+0051.882 (0) Table wp_xyz_ips_short_code: Total expected rows (approximate): 39
+0051.886 (0) Table wp_xyz_ips_short_code: Total rows added: 39 in 0.00 seconds
+0051.886 (0) Table wp_xyz_ips_short_code: finishing file (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_xyz_ips_short_code.table.gz - 3.8 KB)
+0051.889 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_options.table.gz (1/60): adding to final database dump
+0052.140 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_users.table.gz (2/60): adding to final database dump
+0052.146 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_usermeta.table.gz (3/60): adding to final database dump
+0052.263 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_commentmeta.table.gz (4/60): adding to final database dump
+0052.265 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_comments.table.gz (5/60): adding to final database dump
+0052.266 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_links.table.gz (6/60): adding to final database dump
+0052.266 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_postmeta.table.gz (7/60): adding to final database dump
+0052.689 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_posts.table.gz (8/60): adding to final database dump
+0053.076 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_term_relationships.table.gz (9/60): adding to final database dump
+0053.081 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_term_taxonomy.table.gz (10/60): adding to final database dump
+0053.083 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_termmeta.table.gz (11/60): adding to final database dump
+0053.084 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_terms.table.gz (12/60): adding to final database dump
+0053.085 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_aft_cc.table.gz (13/60): adding to final database dump
+0053.087 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_eum_logs.table.gz (14/60): adding to final database dump
+0053.088 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_gglcptch_whitelist.table.gz (15/60): adding to final database dump
+0053.089 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_mgmlp_folders.table.gz (16/60): adding to final database dump
+0053.092 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pmxi_files.table.gz (17/60): adding to final database dump
+0053.093 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pmxi_history.table.gz (18/60): adding to final database dump
+0053.094 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pmxi_imports.table.gz (19/60): adding to final database dump
+0053.095 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pmxi_posts.table.gz (20/60): adding to final database dump
+0053.096 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pmxi_templates.table.gz (21/60): adding to final database dump
+0053.097 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pods_moyen.table.gz (22/60): adding to final database dump
+0053.099 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pods_moyen-save.table.gz (23/60): adding to final database dump
+0053.099 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pods_new-these.table.gz (24/60): adding to final database dump
+0053.107 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pods_observation_rsst.table.gz (25/60): adding to final database dump
+0053.108 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pods_offre_emploi.table.gz (26/60): adding to final database dump
+0053.110 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pods_old_these.table.gz (27/60): adding to final database dump
+0053.118 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pods_projet.table.gz (28/60): adding to final database dump
+0053.119 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pods_these.table.gz (29/60): adding to final database dump
+0053.128 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_podsrel.table.gz (30/60): adding to final database dump
+0053.137 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pp_group_members.table.gz (31/60): adding to final database dump
+0053.140 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_pp_groups.table.gz (32/60): adding to final database dump
+0053.141 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_ppc_exception_items.table.gz (33/60): adding to final database dump
+0053.142 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_ppc_exceptions.table.gz (34/60): adding to final database dump
+0053.143 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_ppc_roles.table.gz (35/60): adding to final database dump
+0053.144 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_temp_zrr.table.gz (36/60): adding to final database dump
+0053.146 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfBlockedIPLog.table.gz (37/60): adding to final database dump
+0053.147 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfBlocks7.table.gz (38/60): adding to final database dump
+0053.148 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfConfig.table.gz (39/60): adding to final database dump
+0053.203 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfCrawlers.table.gz (40/60): adding to final database dump
+0053.204 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfFileChanges.table.gz (41/60): adding to final database dump
+0053.205 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfFileMods.table.gz (42/60): adding to final database dump
+0053.357 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfHits.table.gz (43/60): adding to final database dump
+0053.379 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfHoover.table.gz (44/60): adding to final database dump
+0053.380 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfIssues.table.gz (45/60): adding to final database dump
+0053.383 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfKnownFileList.table.gz (46/60): adding to final database dump
+0053.436 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfLiveTrafficHuman.table.gz (47/60): adding to final database dump
+0053.438 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfLocs.table.gz (48/60): adding to final database dump
+0053.439 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfLogins.table.gz (49/60): adding to final database dump
+0053.462 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfNotifications.table.gz (50/60): adding to final database dump
+0053.464 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfPendingIssues.table.gz (51/60): adding to final database dump
+0053.465 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfReverseCache.table.gz (52/60): adding to final database dump
+0053.466 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfSNIPCache.table.gz (53/60): adding to final database dump
+0053.467 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfStatus.table.gz (54/60): adding to final database dump
+0053.474 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfTrafficRates.table.gz (55/60): adding to final database dump
+0053.476 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfls_2fa_secrets.table.gz (56/60): adding to final database dump
+0053.477 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wfls_settings.table.gz (57/60): adding to final database dump
+0053.478 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wpfront_ure_options.table.gz (58/60): adding to final database dump
+0053.479 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_wpmm_subscribers.table.gz (59/60): adding to final database dump
+0053.480 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db-table-wp_xyz_ips_short_code.table.gz (60/60): adding to final database dump
+0053.485 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db.gz: finished writing out complete database file (5056 KB)
+0053.552 (0) Total database tables backed up: 60 (backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db.gz, size: 5206544, sha1: b6a783d5f7b56d2ac5c3f2368a42893dc287248d, sha256: 4ace56beb15022a01ed683708a657cd7429f16015c88e2b7644556c7a075f11d)
+0053.570 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0053.571 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0053.572 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0053.573 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads2.zip: uploads: This file has not yet been successfully uploaded: will queue
+0053.573 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-others.zip: others: This file has not yet been successfully uploaded: will queue
+0053.576 (0) backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db.gz: db: This file has not yet been successfully uploaded: will queue
+0053.577 (0) Saving backup history. Total backup size: 755.3 MB
+0053.588 (0) Requesting upload of the files that have not yet been successfully uploaded (6)
+0053.596 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0053.598 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-3985f4be9e3b14ca8f4ffd65cfce726f)
+0055.752 (0) Google Drive: quota usage: used=9697.1 MB, total=15360 MB, available=5662.9 MB
+0055.755 (0) Google Drive: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip: Attempting to upload to Google Drive (into folder id: 1e_2DhejvOl5jd8otEggSHTekas-5XMg9)
+0056.208 (0) Googledrive chunked upload: 2 % uploaded (1048576)
+0056.324 (0) Googledrive chunked upload: 4.1 % uploaded (2097152)
+0056.443 (0) Googledrive chunked upload: 6.1 % uploaded (3145728)
+0056.533 (0) Googledrive chunked upload: 8.1 % uploaded (4194304)
+0056.669 (0) Googledrive chunked upload: 10.2 % uploaded (5242880)
+0056.770 (0) Googledrive chunked upload: 12.2 % uploaded (6291456)
+0056.859 (0) Googledrive chunked upload: 14.2 % uploaded (7340032)
+0056.966 (0) Googledrive chunked upload: 16.3 % uploaded (8388608)
+0057.059 (0) Googledrive chunked upload: 18.3 % uploaded (9437184)
+0057.182 (0) Googledrive chunked upload: 20.3 % uploaded (10485760)
+0057.340 (0) Googledrive chunked upload: 22.3 % uploaded (11534336)
+0057.465 (0) Googledrive chunked upload: 24.4 % uploaded (12582912)
+0057.570 (0) Googledrive chunked upload: 26.4 % uploaded (13631488)
+0057.691 (0) Googledrive chunked upload: 28.4 % uploaded (14680064)
+0057.793 (0) Googledrive chunked upload: 30.5 % uploaded (15728640)
+0057.897 (0) Googledrive chunked upload: 32.5 % uploaded (16777216)
+0058.020 (0) Googledrive chunked upload: 34.5 % uploaded (17825792)
+0058.128 (0) Googledrive chunked upload: 36.6 % uploaded (18874368)
+0058.251 (0) Googledrive chunked upload: 38.6 % uploaded (19922944)
+0058.337 (0) Googledrive chunked upload: 40.6 % uploaded (20971520)
+0058.521 (0) Googledrive chunked upload: 42.7 % uploaded (22020096)
+0058.644 (0) Googledrive chunked upload: 44.7 % uploaded (23068672)
+0058.746 (0) Googledrive chunked upload: 46.7 % uploaded (24117248)
+0058.882 (0) Googledrive chunked upload: 48.8 % uploaded (25165824)
+0059.039 (0) Googledrive chunked upload: 50.8 % uploaded (26214400)
+0059.123 (0) Googledrive chunked upload: 52.8 % uploaded (27262976)
+0059.256 (0) Googledrive chunked upload: 54.9 % uploaded (28311552)
+0059.364 (0) Googledrive chunked upload: 56.9 % uploaded (29360128)
+0059.459 (0) Googledrive chunked upload: 58.9 % uploaded (30408704)
+0059.575 (0) Googledrive chunked upload: 60.9 % uploaded (31457280)
+0059.733 (0) Googledrive chunked upload: 63 % uploaded (32505856)
+0059.839 (0) Googledrive chunked upload: 65 % uploaded (33554432)
+0059.932 (0) Googledrive chunked upload: 67 % uploaded (34603008)
+0060.032 (0) Googledrive chunked upload: 69.1 % uploaded (35651584)
+0060.112 (0) Googledrive chunked upload: 71.1 % uploaded (36700160)
+0060.196 (0) Googledrive chunked upload: 73.1 % uploaded (37748736)
+0060.291 (0) Googledrive chunked upload: 75.2 % uploaded (38797312)
+0060.435 (0) Googledrive chunked upload: 77.2 % uploaded (39845888)
+0060.535 (0) Googledrive chunked upload: 79.2 % uploaded (40894464)
+0060.613 (0) Googledrive chunked upload: 81.3 % uploaded (41943040)
+0060.798 (0) Googledrive chunked upload: 83.3 % uploaded (42991616)
+0060.879 (0) Googledrive chunked upload: 85.3 % uploaded (44040192)
+0061.004 (0) Googledrive chunked upload: 87.4 % uploaded (45088768)
+0061.107 (0) Googledrive chunked upload: 89.4 % uploaded (46137344)
+0061.215 (0) Googledrive chunked upload: 91.4 % uploaded (47185920)
+0061.301 (0) Googledrive chunked upload: 93.5 % uploaded (48234496)
+0061.385 (0) Googledrive chunked upload: 95.5 % uploaded (49283072)
+0061.483 (0) Googledrive chunked upload: 97.5 % uploaded (50331648)
+0061.590 (0) Googledrive chunked upload: 99.6 % uploaded (51380224)
+0062.994 (0) Googledrive chunked upload: 100 % uploaded (51380224)
+0062.998 (0) Google Drive: OK: Archive backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip uploaded in 7.24 seconds
+0063.000 (0) Recording as successfully uploaded: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip
+0063.012 (0) Deleting local file: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-plugins.zip: OK
+0063.209 (0) Google Drive: quota usage: used=9746.3 MB, total=15360 MB, available=5613.7 MB
+0063.210 (0) Google Drive: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-themes.zip: Attempting to upload to Google Drive (into folder id: 1e_2DhejvOl5jd8otEggSHTekas-5XMg9)
+0063.564 (0) Googledrive chunked upload: 17.1 % uploaded (1048576)
+0063.642 (0) Googledrive chunked upload: 34.1 % uploaded (2097152)
+0063.739 (0) Googledrive chunked upload: 51.2 % uploaded (3145728)
+0063.826 (0) Googledrive chunked upload: 68.3 % uploaded (4194304)
+0063.982 (0) Googledrive chunked upload: 85.3 % uploaded (5242880)
+0064.916 (0) Googledrive chunked upload: 100 % uploaded (5242880)
+0064.919 (0) Google Drive: OK: Archive backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-themes.zip uploaded in 1.71 seconds
+0064.920 (0) Recording as successfully uploaded: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-themes.zip
+0064.924 (0) Deleting local file: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-themes.zip: OK
+0065.170 (0) Google Drive: quota usage: used=9752.1 MB, total=15360 MB, available=5607.9 MB
+0065.171 (0) Google Drive: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip: Attempting to upload to Google Drive (into folder id: 1e_2DhejvOl5jd8otEggSHTekas-5XMg9)
+0065.519 (0) Googledrive chunked upload: 0.3 % uploaded (1048576)
+0065.604 (0) Googledrive chunked upload: 0.5 % uploaded (2097152)
+0065.690 (0) Googledrive chunked upload: 0.8 % uploaded (3145728)
+0065.817 (0) Googledrive chunked upload: 1 % uploaded (4194304)
+0065.922 (0) Googledrive chunked upload: 1.3 % uploaded (5242880)
+0066.007 (0) Googledrive chunked upload: 1.5 % uploaded (6291456)
+0066.118 (0) Googledrive chunked upload: 1.8 % uploaded (7340032)
+0066.216 (0) Googledrive chunked upload: 2.1 % uploaded (8388608)
+0066.316 (0) Googledrive chunked upload: 2.3 % uploaded (9437184)
+0066.394 (0) Googledrive chunked upload: 2.6 % uploaded (10485760)
+0066.583 (0) Googledrive chunked upload: 2.8 % uploaded (11534336)
+0066.749 (0) Googledrive chunked upload: 3.1 % uploaded (12582912)
+0066.840 (0) Googledrive chunked upload: 3.3 % uploaded (13631488)
+0066.955 (0) Googledrive chunked upload: 3.6 % uploaded (14680064)
+0067.042 (0) Googledrive chunked upload: 3.9 % uploaded (15728640)
+0067.176 (0) Googledrive chunked upload: 4.1 % uploaded (16777216)
+0067.275 (0) Googledrive chunked upload: 4.4 % uploaded (17825792)
+0067.376 (0) Googledrive chunked upload: 4.6 % uploaded (18874368)
+0067.468 (0) Googledrive chunked upload: 4.9 % uploaded (19922944)
+0067.592 (0) Googledrive chunked upload: 5.1 % uploaded (20971520)
+0067.769 (0) Googledrive chunked upload: 5.4 % uploaded (22020096)
+0067.871 (0) Googledrive chunked upload: 5.7 % uploaded (23068672)
+0067.994 (0) Googledrive chunked upload: 5.9 % uploaded (24117248)
+0068.073 (0) Googledrive chunked upload: 6.2 % uploaded (25165824)
+0068.184 (0) Googledrive chunked upload: 6.4 % uploaded (26214400)
+0068.270 (0) Googledrive chunked upload: 6.7 % uploaded (27262976)
+0068.361 (0) Googledrive chunked upload: 6.9 % uploaded (28311552)
+0068.444 (0) Googledrive chunked upload: 7.2 % uploaded (29360128)
+0068.590 (0) Googledrive chunked upload: 7.5 % uploaded (30408704)
+0068.678 (0) Googledrive chunked upload: 7.7 % uploaded (31457280)
+0068.842 (0) Googledrive chunked upload: 8 % uploaded (32505856)
+0068.993 (0) Googledrive chunked upload: 8.2 % uploaded (33554432)
+0069.108 (0) Googledrive chunked upload: 8.5 % uploaded (34603008)
+0069.240 (0) Googledrive chunked upload: 8.7 % uploaded (35651584)
+0069.322 (0) Googledrive chunked upload: 9 % uploaded (36700160)
+0069.412 (0) Googledrive chunked upload: 9.3 % uploaded (37748736)
+0069.503 (0) Googledrive chunked upload: 9.5 % uploaded (38797312)
+0069.650 (0) Googledrive chunked upload: 9.8 % uploaded (39845888)
+0069.731 (0) Googledrive chunked upload: 10 % uploaded (40894464)
+0069.843 (0) Googledrive chunked upload: 10.3 % uploaded (41943040)
+0070.016 (0) Googledrive chunked upload: 10.5 % uploaded (42991616)
+0070.094 (0) Googledrive chunked upload: 10.8 % uploaded (44040192)
+0070.229 (0) Googledrive chunked upload: 11.1 % uploaded (45088768)
+0070.325 (0) Googledrive chunked upload: 11.3 % uploaded (46137344)
+0070.455 (0) Googledrive chunked upload: 11.6 % uploaded (47185920)
+0070.565 (0) Googledrive chunked upload: 11.8 % uploaded (48234496)
+0070.676 (0) Googledrive chunked upload: 12.1 % uploaded (49283072)
+0070.764 (0) Googledrive chunked upload: 12.4 % uploaded (50331648)
+0070.868 (0) Googledrive chunked upload: 12.6 % uploaded (51380224)
+0070.987 (0) Googledrive chunked upload: 12.9 % uploaded (52428800)
+0071.145 (0) Googledrive chunked upload: 13.1 % uploaded (53477376)
+0071.289 (0) Googledrive chunked upload: 13.4 % uploaded (54525952)
+0071.376 (0) Googledrive chunked upload: 13.6 % uploaded (55574528)
+0071.460 (0) Googledrive chunked upload: 13.9 % uploaded (56623104)
+0071.575 (0) Googledrive chunked upload: 14.2 % uploaded (57671680)
+0071.659 (0) Googledrive chunked upload: 14.4 % uploaded (58720256)
+0071.755 (0) Googledrive chunked upload: 14.7 % uploaded (59768832)
+0071.880 (0) Googledrive chunked upload: 14.9 % uploaded (60817408)
+0072.000 (0) Googledrive chunked upload: 15.2 % uploaded (61865984)
+0072.139 (0) Googledrive chunked upload: 15.4 % uploaded (62914560)
+0072.323 (0) Googledrive chunked upload: 15.7 % uploaded (63963136)
+0072.433 (0) Googledrive chunked upload: 16 % uploaded (65011712)
+0072.550 (0) Googledrive chunked upload: 16.2 % uploaded (66060288)
+0072.659 (0) Googledrive chunked upload: 16.5 % uploaded (67108864)
+0072.777 (0) Googledrive chunked upload: 16.7 % uploaded (68157440)
+0072.901 (0) Googledrive chunked upload: 17 % uploaded (69206016)
+0073.012 (0) Googledrive chunked upload: 17.2 % uploaded (70254592)
+0073.085 (0) Googledrive chunked upload: 17.5 % uploaded (71303168)
+0073.179 (0) Googledrive chunked upload: 17.8 % uploaded (72351744)
+0073.273 (0) Googledrive chunked upload: 18 % uploaded (73400320)
+0073.447 (0) Googledrive chunked upload: 18.3 % uploaded (74448896)
+0073.647 (0) Googledrive chunked upload: 18.5 % uploaded (75497472)
+0073.786 (0) Googledrive chunked upload: 18.8 % uploaded (76546048)
+0073.892 (0) Googledrive chunked upload: 19 % uploaded (77594624)
+0074.024 (0) Googledrive chunked upload: 19.3 % uploaded (78643200)
+0074.180 (0) Googledrive chunked upload: 19.6 % uploaded (79691776)
+0074.292 (0) Googledrive chunked upload: 19.8 % uploaded (80740352)
+0074.415 (0) Googledrive chunked upload: 20.1 % uploaded (81788928)
+0074.546 (0) Googledrive chunked upload: 20.3 % uploaded (82837504)
+0074.633 (0) Googledrive chunked upload: 20.6 % uploaded (83886080)
+0074.813 (0) Googledrive chunked upload: 20.8 % uploaded (84934656)
+0074.920 (0) Googledrive chunked upload: 21.1 % uploaded (85983232)
+0075.039 (0) Googledrive chunked upload: 21.4 % uploaded (87031808)
+0075.133 (0) Googledrive chunked upload: 21.6 % uploaded (88080384)
+0075.215 (0) Googledrive chunked upload: 21.9 % uploaded (89128960)
+0075.311 (0) Googledrive chunked upload: 22.1 % uploaded (90177536)
+0075.419 (0) Googledrive chunked upload: 22.4 % uploaded (91226112)
+0075.536 (0) Googledrive chunked upload: 22.6 % uploaded (92274688)
+0075.644 (0) Googledrive chunked upload: 22.9 % uploaded (93323264)
+0075.801 (0) Googledrive chunked upload: 23.2 % uploaded (94371840)
+0075.984 (0) Googledrive chunked upload: 23.4 % uploaded (95420416)
+0076.087 (0) Googledrive chunked upload: 23.7 % uploaded (96468992)
+0076.193 (0) Googledrive chunked upload: 23.9 % uploaded (97517568)
+0076.334 (0) Googledrive chunked upload: 24.2 % uploaded (98566144)
+0076.445 (0) Googledrive chunked upload: 24.4 % uploaded (99614720)
+0076.582 (0) Googledrive chunked upload: 24.7 % uploaded (100663296)
+0076.752 (0) Googledrive chunked upload: 25 % uploaded (101711872)
+0076.852 (0) Googledrive chunked upload: 25.2 % uploaded (102760448)
+0076.948 (0) Googledrive chunked upload: 25.5 % uploaded (103809024)
+0077.074 (0) Googledrive chunked upload: 25.7 % uploaded (104857600)
+0077.252 (0) Googledrive chunked upload: 26 % uploaded (105906176)
+0077.352 (0) Googledrive chunked upload: 26.2 % uploaded (106954752)
+0077.453 (0) Googledrive chunked upload: 26.5 % uploaded (108003328)
+0077.581 (0) Googledrive chunked upload: 26.8 % uploaded (109051904)
+0077.699 (0) Googledrive chunked upload: 27 % uploaded (110100480)
+0077.782 (0) Googledrive chunked upload: 27.3 % uploaded (111149056)
+0077.906 (0) Googledrive chunked upload: 27.5 % uploaded (112197632)
+0077.988 (0) Googledrive chunked upload: 27.8 % uploaded (113246208)
+0078.076 (0) Googledrive chunked upload: 28 % uploaded (114294784)
+0078.191 (0) Googledrive chunked upload: 28.3 % uploaded (115343360)
+0078.364 (0) Googledrive chunked upload: 28.6 % uploaded (116391936)
+0078.454 (0) Googledrive chunked upload: 28.8 % uploaded (117440512)
+0078.582 (0) Googledrive chunked upload: 29.1 % uploaded (118489088)
+0078.688 (0) Googledrive chunked upload: 29.3 % uploaded (119537664)
+0078.815 (0) Googledrive chunked upload: 29.6 % uploaded (120586240)
+0078.912 (0) Googledrive chunked upload: 29.8 % uploaded (121634816)
+0079.010 (0) Googledrive chunked upload: 30.1 % uploaded (122683392)
+0079.095 (0) Googledrive chunked upload: 30.4 % uploaded (123731968)
+0079.189 (0) Googledrive chunked upload: 30.6 % uploaded (124780544)
+0079.278 (0) Googledrive chunked upload: 30.9 % uploaded (125829120)
+0079.453 (0) Googledrive chunked upload: 31.1 % uploaded (126877696)
+0079.554 (0) Googledrive chunked upload: 31.4 % uploaded (127926272)
+0079.650 (0) Googledrive chunked upload: 31.6 % uploaded (128974848)
+0079.796 (0) Googledrive chunked upload: 31.9 % uploaded (130023424)
+0079.927 (0) Googledrive chunked upload: 32.2 % uploaded (131072000)
+0080.024 (0) Googledrive chunked upload: 32.4 % uploaded (132120576)
+0080.150 (0) Googledrive chunked upload: 32.7 % uploaded (133169152)
+0080.275 (0) Googledrive chunked upload: 32.9 % uploaded (134217728)
+0080.419 (0) Googledrive chunked upload: 33.2 % uploaded (135266304)
+0080.529 (0) Googledrive chunked upload: 33.4 % uploaded (136314880)
+0080.693 (0) Googledrive chunked upload: 33.7 % uploaded (137363456)
+0080.801 (0) Googledrive chunked upload: 34 % uploaded (138412032)
+0080.922 (0) Googledrive chunked upload: 34.2 % uploaded (139460608)
+0081.004 (0) Googledrive chunked upload: 34.5 % uploaded (140509184)
+0081.104 (0) Googledrive chunked upload: 34.7 % uploaded (141557760)
+0081.210 (0) Googledrive chunked upload: 35 % uploaded (142606336)
+0081.331 (0) Googledrive chunked upload: 35.2 % uploaded (143654912)
+0081.413 (0) Googledrive chunked upload: 35.5 % uploaded (144703488)
+0081.516 (0) Googledrive chunked upload: 35.8 % uploaded (145752064)
+0081.631 (0) Googledrive chunked upload: 36 % uploaded (146800640)
+0081.830 (0) Googledrive chunked upload: 36.3 % uploaded (147849216)
+0081.925 (0) Googledrive chunked upload: 36.5 % uploaded (148897792)
+0082.011 (0) Googledrive chunked upload: 36.8 % uploaded (149946368)
+0082.104 (0) Googledrive chunked upload: 37.1 % uploaded (150994944)
+0082.186 (0) Googledrive chunked upload: 37.3 % uploaded (152043520)
+0082.288 (0) Googledrive chunked upload: 37.6 % uploaded (153092096)
+0082.392 (0) Googledrive chunked upload: 37.8 % uploaded (154140672)
+0082.480 (0) Googledrive chunked upload: 38.1 % uploaded (155189248)
+0082.577 (0) Googledrive chunked upload: 38.3 % uploaded (156237824)
+0082.659 (0) Googledrive chunked upload: 38.6 % uploaded (157286400)
+0082.838 (0) Googledrive chunked upload: 38.9 % uploaded (158334976)
+0082.934 (0) Googledrive chunked upload: 39.1 % uploaded (159383552)
+0083.017 (0) Googledrive chunked upload: 39.4 % uploaded (160432128)
+0083.104 (0) Googledrive chunked upload: 39.6 % uploaded (161480704)
+0083.188 (0) Googledrive chunked upload: 39.9 % uploaded (162529280)
+0083.298 (0) Googledrive chunked upload: 40.1 % uploaded (163577856)
+0083.403 (0) Googledrive chunked upload: 40.4 % uploaded (164626432)
+0083.541 (0) Googledrive chunked upload: 40.7 % uploaded (165675008)
+0083.664 (0) Googledrive chunked upload: 40.9 % uploaded (166723584)
+0083.808 (0) Googledrive chunked upload: 41.2 % uploaded (167772160)
+0083.994 (0) Googledrive chunked upload: 41.4 % uploaded (168820736)
+0084.102 (0) Googledrive chunked upload: 41.7 % uploaded (169869312)
+0084.183 (0) Googledrive chunked upload: 41.9 % uploaded (170917888)
+0084.268 (0) Googledrive chunked upload: 42.2 % uploaded (171966464)
+0084.396 (0) Googledrive chunked upload: 42.5 % uploaded (173015040)
+0084.498 (0) Googledrive chunked upload: 42.7 % uploaded (174063616)
+0084.629 (0) Googledrive chunked upload: 43 % uploaded (175112192)
+0084.763 (0) Googledrive chunked upload: 43.2 % uploaded (176160768)
+0084.847 (0) Googledrive chunked upload: 43.5 % uploaded (177209344)
+0084.939 (0) Googledrive chunked upload: 43.7 % uploaded (178257920)
+0085.117 (0) Googledrive chunked upload: 44 % uploaded (179306496)
+0085.197 (0) Googledrive chunked upload: 44.3 % uploaded (180355072)
+0085.295 (0) Googledrive chunked upload: 44.5 % uploaded (181403648)
+0085.394 (0) Googledrive chunked upload: 44.8 % uploaded (182452224)
+0085.537 (0) Googledrive chunked upload: 45 % uploaded (183500800)
+0085.631 (0) Googledrive chunked upload: 45.3 % uploaded (184549376)
+0085.712 (0) Googledrive chunked upload: 45.5 % uploaded (185597952)
+0085.846 (0) Googledrive chunked upload: 45.8 % uploaded (186646528)
+0085.935 (0) Googledrive chunked upload: 46.1 % uploaded (187695104)
+0086.017 (0) Googledrive chunked upload: 46.3 % uploaded (188743680)
+0086.180 (0) Googledrive chunked upload: 46.6 % uploaded (189792256)
+0086.270 (0) Googledrive chunked upload: 46.8 % uploaded (190840832)
+0086.377 (0) Googledrive chunked upload: 47.1 % uploaded (191889408)
+0086.481 (0) Googledrive chunked upload: 47.3 % uploaded (192937984)
+0086.635 (0) Googledrive chunked upload: 47.6 % uploaded (193986560)
+0086.725 (0) Googledrive chunked upload: 47.9 % uploaded (195035136)
+0086.832 (0) Googledrive chunked upload: 48.1 % uploaded (196083712)
+0086.963 (0) Googledrive chunked upload: 48.4 % uploaded (197132288)
+0087.083 (0) Googledrive chunked upload: 48.6 % uploaded (198180864)
+0087.196 (0) Googledrive chunked upload: 48.9 % uploaded (199229440)
+0087.365 (0) Googledrive chunked upload: 49.1 % uploaded (200278016)
+0087.464 (0) Googledrive chunked upload: 49.4 % uploaded (201326592)
+0087.570 (0) Googledrive chunked upload: 49.7 % uploaded (202375168)
+0087.692 (0) Googledrive chunked upload: 49.9 % uploaded (203423744)
+0087.795 (0) Googledrive chunked upload: 50.2 % uploaded (204472320)
+0087.881 (0) Googledrive chunked upload: 50.4 % uploaded (205520896)
+0087.993 (0) Googledrive chunked upload: 50.7 % uploaded (206569472)
+0088.091 (0) Googledrive chunked upload: 50.9 % uploaded (207618048)
+0088.201 (0) Googledrive chunked upload: 51.2 % uploaded (208666624)
+0088.322 (0) Googledrive chunked upload: 51.5 % uploaded (209715200)
+0088.490 (0) Googledrive chunked upload: 51.7 % uploaded (210763776)
+0088.593 (0) Googledrive chunked upload: 52 % uploaded (211812352)
+0088.695 (0) Googledrive chunked upload: 52.2 % uploaded (212860928)
+0088.795 (0) Googledrive chunked upload: 52.5 % uploaded (213909504)
+0088.923 (0) Googledrive chunked upload: 52.7 % uploaded (214958080)
+0089.006 (0) Googledrive chunked upload: 53 % uploaded (216006656)
+0089.088 (0) Googledrive chunked upload: 53.3 % uploaded (217055232)
+0089.173 (0) Googledrive chunked upload: 53.5 % uploaded (218103808)
+0089.279 (0) Googledrive chunked upload: 53.8 % uploaded (219152384)
+0089.373 (0) Googledrive chunked upload: 54 % uploaded (220200960)
+0089.579 (0) Googledrive chunked upload: 54.3 % uploaded (221249536)
+0089.699 (0) Googledrive chunked upload: 54.5 % uploaded (222298112)
+0089.781 (0) Googledrive chunked upload: 54.8 % uploaded (223346688)
+0089.885 (0) Googledrive chunked upload: 55.1 % uploaded (224395264)
+0089.994 (0) Googledrive chunked upload: 55.3 % uploaded (225443840)
+0090.091 (0) Googledrive chunked upload: 55.6 % uploaded (226492416)
+0090.201 (0) Googledrive chunked upload: 55.8 % uploaded (227540992)
+0090.302 (0) Googledrive chunked upload: 56.1 % uploaded (228589568)
+0090.389 (0) Googledrive chunked upload: 56.3 % uploaded (229638144)
+0090.477 (0) Googledrive chunked upload: 56.6 % uploaded (230686720)
+0090.644 (0) Googledrive chunked upload: 56.9 % uploaded (231735296)
+0090.746 (0) Googledrive chunked upload: 57.1 % uploaded (232783872)
+0090.839 (0) Googledrive chunked upload: 57.4 % uploaded (233832448)
+0090.921 (0) Googledrive chunked upload: 57.6 % uploaded (234881024)
+0091.034 (0) Googledrive chunked upload: 57.9 % uploaded (235929600)
+0091.121 (0) Googledrive chunked upload: 58.1 % uploaded (236978176)
+0091.217 (0) Googledrive chunked upload: 58.4 % uploaded (238026752)
+0091.302 (0) Googledrive chunked upload: 58.7 % uploaded (239075328)
+0091.412 (0) Googledrive chunked upload: 58.9 % uploaded (240123904)
+0091.517 (0) Googledrive chunked upload: 59.2 % uploaded (241172480)
+0091.697 (0) Googledrive chunked upload: 59.4 % uploaded (242221056)
+0091.807 (0) Googledrive chunked upload: 59.7 % uploaded (243269632)
+0091.899 (0) Googledrive chunked upload: 59.9 % uploaded (244318208)
+0091.995 (0) Googledrive chunked upload: 60.2 % uploaded (245366784)
+0092.151 (0) Googledrive chunked upload: 60.5 % uploaded (246415360)
+0092.255 (0) Googledrive chunked upload: 60.7 % uploaded (247463936)
+0092.366 (0) Googledrive chunked upload: 61 % uploaded (248512512)
+0092.459 (0) Googledrive chunked upload: 61.2 % uploaded (249561088)
+0092.542 (0) Googledrive chunked upload: 61.5 % uploaded (250609664)
+0092.630 (0) Googledrive chunked upload: 61.8 % uploaded (251658240)
+0092.807 (0) Googledrive chunked upload: 62 % uploaded (252706816)
+0092.897 (0) Googledrive chunked upload: 62.3 % uploaded (253755392)
+0093.008 (0) Googledrive chunked upload: 62.5 % uploaded (254803968)
+0093.127 (0) Googledrive chunked upload: 62.8 % uploaded (255852544)
+0093.204 (0) Googledrive chunked upload: 63 % uploaded (256901120)
+0093.296 (0) Googledrive chunked upload: 63.3 % uploaded (257949696)
+0093.384 (0) Googledrive chunked upload: 63.6 % uploaded (258998272)
+0093.504 (0) Googledrive chunked upload: 63.8 % uploaded (260046848)
+0093.625 (0) Googledrive chunked upload: 64.1 % uploaded (261095424)
+0093.729 (0) Googledrive chunked upload: 64.3 % uploaded (262144000)
+0093.888 (0) Googledrive chunked upload: 64.6 % uploaded (263192576)
+0094.020 (0) Googledrive chunked upload: 64.8 % uploaded (264241152)
+0094.118 (0) Googledrive chunked upload: 65.1 % uploaded (265289728)
+0094.232 (0) Googledrive chunked upload: 65.4 % uploaded (266338304)
+0094.344 (0) Googledrive chunked upload: 65.6 % uploaded (267386880)
+0094.429 (0) Googledrive chunked upload: 65.9 % uploaded (268435456)
+0094.516 (0) Googledrive chunked upload: 66.1 % uploaded (269484032)
+0094.618 (0) Googledrive chunked upload: 66.4 % uploaded (270532608)
+0094.731 (0) Googledrive chunked upload: 66.6 % uploaded (271581184)
+0094.830 (0) Googledrive chunked upload: 66.9 % uploaded (272629760)
+0095.003 (0) Googledrive chunked upload: 67.2 % uploaded (273678336)
+0095.127 (0) Googledrive chunked upload: 67.4 % uploaded (274726912)
+0095.206 (0) Googledrive chunked upload: 67.7 % uploaded (275775488)
+0095.319 (0) Googledrive chunked upload: 67.9 % uploaded (276824064)
+0095.401 (0) Googledrive chunked upload: 68.2 % uploaded (277872640)
+0095.482 (0) Googledrive chunked upload: 68.4 % uploaded (278921216)
+0095.599 (0) Googledrive chunked upload: 68.7 % uploaded (279969792)
+0095.720 (0) Googledrive chunked upload: 69 % uploaded (281018368)
+0095.833 (0) Googledrive chunked upload: 69.2 % uploaded (282066944)
+0095.925 (0) Googledrive chunked upload: 69.5 % uploaded (283115520)
+0096.083 (0) Googledrive chunked upload: 69.7 % uploaded (284164096)
+0096.165 (0) Googledrive chunked upload: 70 % uploaded (285212672)
+0096.249 (0) Googledrive chunked upload: 70.2 % uploaded (286261248)
+0096.363 (0) Googledrive chunked upload: 70.5 % uploaded (287309824)
+0096.459 (0) Googledrive chunked upload: 70.8 % uploaded (288358400)
+0096.549 (0) Googledrive chunked upload: 71 % uploaded (289406976)
+0096.634 (0) Googledrive chunked upload: 71.3 % uploaded (290455552)
+0096.732 (0) Googledrive chunked upload: 71.5 % uploaded (291504128)
+0096.815 (0) Googledrive chunked upload: 71.8 % uploaded (292552704)
+0096.897 (0) Googledrive chunked upload: 72 % uploaded (293601280)
+0097.058 (0) Googledrive chunked upload: 72.3 % uploaded (294649856)
+0097.148 (0) Googledrive chunked upload: 72.6 % uploaded (295698432)
+0097.230 (0) Googledrive chunked upload: 72.8 % uploaded (296747008)
+0097.320 (0) Googledrive chunked upload: 73.1 % uploaded (297795584)
+0097.403 (0) Googledrive chunked upload: 73.3 % uploaded (298844160)
+0097.509 (0) Googledrive chunked upload: 73.6 % uploaded (299892736)
+0097.619 (0) Googledrive chunked upload: 73.8 % uploaded (300941312)
+0097.715 (0) Googledrive chunked upload: 74.1 % uploaded (301989888)
+0097.801 (0) Googledrive chunked upload: 74.4 % uploaded (303038464)
+0097.928 (0) Googledrive chunked upload: 74.6 % uploaded (304087040)
+0098.153 (0) Googledrive chunked upload: 74.9 % uploaded (305135616)
+0098.253 (0) Googledrive chunked upload: 75.1 % uploaded (306184192)
+0098.378 (0) Googledrive chunked upload: 75.4 % uploaded (307232768)
+0098.485 (0) Googledrive chunked upload: 75.6 % uploaded (308281344)
+0098.575 (0) Googledrive chunked upload: 75.9 % uploaded (309329920)
+0098.677 (0) Googledrive chunked upload: 76.2 % uploaded (310378496)
+0098.769 (0) Googledrive chunked upload: 76.4 % uploaded (311427072)
+0098.861 (0) Googledrive chunked upload: 76.7 % uploaded (312475648)
+0098.978 (0) Googledrive chunked upload: 76.9 % uploaded (313524224)
+0099.055 (0) Googledrive chunked upload: 77.2 % uploaded (314572800)
+0099.229 (0) Googledrive chunked upload: 77.4 % uploaded (315621376)
+0099.330 (0) Googledrive chunked upload: 77.7 % uploaded (316669952)
+0099.431 (0) Googledrive chunked upload: 78 % uploaded (317718528)
+0099.527 (0) Googledrive chunked upload: 78.2 % uploaded (318767104)
+0099.631 (0) Googledrive chunked upload: 78.5 % uploaded (319815680)
+0099.742 (0) Googledrive chunked upload: 78.7 % uploaded (320864256)
+0099.829 (0) Googledrive chunked upload: 79 % uploaded (321912832)
+0099.923 (0) Googledrive chunked upload: 79.2 % uploaded (322961408)
+0100.043 (0) Googledrive chunked upload: 79.5 % uploaded (324009984)
+0100.132 (0) Googledrive chunked upload: 79.8 % uploaded (325058560)
+0100.310 (0) Googledrive chunked upload: 80 % uploaded (326107136)
+0100.406 (0) Googledrive chunked upload: 80.3 % uploaded (327155712)
+0100.508 (0) Googledrive chunked upload: 80.5 % uploaded (328204288)
+0100.592 (0) Googledrive chunked upload: 80.8 % uploaded (329252864)
+0100.684 (0) Googledrive chunked upload: 81 % uploaded (330301440)
+0100.788 (0) Googledrive chunked upload: 81.3 % uploaded (331350016)
+0100.902 (0) Googledrive chunked upload: 81.6 % uploaded (332398592)
+0100.986 (0) Googledrive chunked upload: 81.8 % uploaded (333447168)
+0101.075 (0) Googledrive chunked upload: 82.1 % uploaded (334495744)
+0101.192 (0) Googledrive chunked upload: 82.3 % uploaded (335544320)
+0101.341 (0) Googledrive chunked upload: 82.6 % uploaded (336592896)
+0101.446 (0) Googledrive chunked upload: 82.8 % uploaded (337641472)
+0101.531 (0) Googledrive chunked upload: 83.1 % uploaded (338690048)
+0101.633 (0) Googledrive chunked upload: 83.4 % uploaded (339738624)
+0101.719 (0) Googledrive chunked upload: 83.6 % uploaded (340787200)
+0101.804 (0) Googledrive chunked upload: 83.9 % uploaded (341835776)
+0101.899 (0) Googledrive chunked upload: 84.1 % uploaded (342884352)
+0102.013 (0) Googledrive chunked upload: 84.4 % uploaded (343932928)
+0102.096 (0) Googledrive chunked upload: 84.6 % uploaded (344981504)
+0102.213 (0) Googledrive chunked upload: 84.9 % uploaded (346030080)
+0102.420 (0) Googledrive chunked upload: 85.2 % uploaded (347078656)
+0102.513 (0) Googledrive chunked upload: 85.4 % uploaded (348127232)
+0102.599 (0) Googledrive chunked upload: 85.7 % uploaded (349175808)
+0102.685 (0) Googledrive chunked upload: 85.9 % uploaded (350224384)
+0102.788 (0) Googledrive chunked upload: 86.2 % uploaded (351272960)
+0102.913 (0) Googledrive chunked upload: 86.5 % uploaded (352321536)
+0102.990 (0) Googledrive chunked upload: 86.7 % uploaded (353370112)
+0103.091 (0) Googledrive chunked upload: 87 % uploaded (354418688)
+0103.171 (0) Googledrive chunked upload: 87.2 % uploaded (355467264)
+0103.257 (0) Googledrive chunked upload: 87.5 % uploaded (356515840)
+0103.434 (0) Googledrive chunked upload: 87.7 % uploaded (357564416)
+0103.528 (0) Googledrive chunked upload: 88 % uploaded (358612992)
+0103.637 (0) Googledrive chunked upload: 88.3 % uploaded (359661568)
+0103.720 (0) Googledrive chunked upload: 88.5 % uploaded (360710144)
+0103.813 (0) Googledrive chunked upload: 88.8 % uploaded (361758720)
+0103.914 (0) Googledrive chunked upload: 89 % uploaded (362807296)
+0104.010 (0) Googledrive chunked upload: 89.3 % uploaded (363855872)
+0104.115 (0) Googledrive chunked upload: 89.5 % uploaded (364904448)
+0104.213 (0) Googledrive chunked upload: 89.8 % uploaded (365953024)
+0104.293 (0) Googledrive chunked upload: 90.1 % uploaded (367001600)
+0104.477 (0) Googledrive chunked upload: 90.3 % uploaded (368050176)
+0104.586 (0) Googledrive chunked upload: 90.6 % uploaded (369098752)
+0104.708 (0) Googledrive chunked upload: 90.8 % uploaded (370147328)
+0104.845 (0) Googledrive chunked upload: 91.1 % uploaded (371195904)
+0104.923 (0) Googledrive chunked upload: 91.3 % uploaded (372244480)
+0105.031 (0) Googledrive chunked upload: 91.6 % uploaded (373293056)
+0105.137 (0) Googledrive chunked upload: 91.9 % uploaded (374341632)
+0105.247 (0) Googledrive chunked upload: 92.1 % uploaded (375390208)
+0105.349 (0) Googledrive chunked upload: 92.4 % uploaded (376438784)
+0105.436 (0) Googledrive chunked upload: 92.6 % uploaded (377487360)
+0105.610 (0) Googledrive chunked upload: 92.9 % uploaded (378535936)
+0105.705 (0) Googledrive chunked upload: 93.1 % uploaded (379584512)
+0105.792 (0) Googledrive chunked upload: 93.4 % uploaded (380633088)
+0105.872 (0) Googledrive chunked upload: 93.7 % uploaded (381681664)
+0105.970 (0) Googledrive chunked upload: 93.9 % uploaded (382730240)
+0106.155 (0) Googledrive chunked upload: 94.2 % uploaded (383778816)
+0106.271 (0) Googledrive chunked upload: 94.4 % uploaded (384827392)
+0106.386 (0) Googledrive chunked upload: 94.7 % uploaded (385875968)
+0106.479 (0) Googledrive chunked upload: 94.9 % uploaded (386924544)
+0106.622 (0) Googledrive chunked upload: 95.2 % uploaded (387973120)
+0106.778 (0) Googledrive chunked upload: 95.5 % uploaded (389021696)
+0106.877 (0) Googledrive chunked upload: 95.7 % uploaded (390070272)
+0106.960 (0) Googledrive chunked upload: 96 % uploaded (391118848)
+0107.041 (0) Googledrive chunked upload: 96.2 % uploaded (392167424)
+0107.156 (0) Googledrive chunked upload: 96.5 % uploaded (393216000)
+0107.235 (0) Googledrive chunked upload: 96.7 % uploaded (394264576)
+0107.327 (0) Googledrive chunked upload: 97 % uploaded (395313152)
+0107.433 (0) Googledrive chunked upload: 97.3 % uploaded (396361728)
+0107.541 (0) Googledrive chunked upload: 97.5 % uploaded (397410304)
+0107.617 (0) Googledrive chunked upload: 97.8 % uploaded (398458880)
+0107.767 (0) Googledrive chunked upload: 98 % uploaded (399507456)
+0107.877 (0) Googledrive chunked upload: 98.3 % uploaded (400556032)
+0107.956 (0) Googledrive chunked upload: 98.5 % uploaded (401604608)
+0108.064 (0) Googledrive chunked upload: 98.8 % uploaded (402653184)
+0108.152 (0) Googledrive chunked upload: 99.1 % uploaded (403701760)
+0108.247 (0) Googledrive chunked upload: 99.3 % uploaded (404750336)
+0108.328 (0) Googledrive chunked upload: 99.6 % uploaded (405798912)
+0108.448 (0) Googledrive chunked upload: 99.8 % uploaded (406847488)
+0109.550 (0) Googledrive chunked upload: 100 % uploaded (406847488)
+0109.553 (0) Google Drive: OK: Archive backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip uploaded in 44.38 seconds
+0109.554 (0) Recording as successfully uploaded: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip
+0109.633 (0) Deleting local file: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads.zip: OK
+0109.875 (0) Google Drive: quota usage: used=9752.1 MB, total=15360 MB, available=5607.9 MB
+0109.878 (0) Google Drive: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads2.zip: Attempting to upload to Google Drive (into folder id: 1e_2DhejvOl5jd8otEggSHTekas-5XMg9)
+0110.223 (0) Googledrive chunked upload: 0.6 % uploaded (1048576)
+0110.335 (0) Googledrive chunked upload: 1.2 % uploaded (2097152)
+0110.420 (0) Googledrive chunked upload: 1.8 % uploaded (3145728)
+0110.506 (0) Googledrive chunked upload: 2.4 % uploaded (4194304)
+0110.602 (0) Googledrive chunked upload: 3 % uploaded (5242880)
+0110.699 (0) Googledrive chunked upload: 3.6 % uploaded (6291456)
+0110.786 (0) Googledrive chunked upload: 4.2 % uploaded (7340032)
+0110.899 (0) Googledrive chunked upload: 4.8 % uploaded (8388608)
+0111.056 (0) Googledrive chunked upload: 5.4 % uploaded (9437184)
+0111.164 (0) Googledrive chunked upload: 6 % uploaded (10485760)
+0111.349 (0) Googledrive chunked upload: 6.6 % uploaded (11534336)
+0111.460 (0) Googledrive chunked upload: 7.2 % uploaded (12582912)
+0111.545 (0) Googledrive chunked upload: 7.8 % uploaded (13631488)
+0111.640 (0) Googledrive chunked upload: 8.4 % uploaded (14680064)
+0111.721 (0) Googledrive chunked upload: 8.9 % uploaded (15728640)
+0111.827 (0) Googledrive chunked upload: 9.5 % uploaded (16777216)
+0111.911 (0) Googledrive chunked upload: 10.1 % uploaded (17825792)
+0111.996 (0) Googledrive chunked upload: 10.7 % uploaded (18874368)
+0112.075 (0) Googledrive chunked upload: 11.3 % uploaded (19922944)
+0112.156 (0) Googledrive chunked upload: 11.9 % uploaded (20971520)
+0112.349 (0) Googledrive chunked upload: 12.5 % uploaded (22020096)
+0112.444 (0) Googledrive chunked upload: 13.1 % uploaded (23068672)
+0112.560 (0) Googledrive chunked upload: 13.7 % uploaded (24117248)
+0112.642 (0) Googledrive chunked upload: 14.3 % uploaded (25165824)
+0112.757 (0) Googledrive chunked upload: 14.9 % uploaded (26214400)
+0112.892 (0) Googledrive chunked upload: 15.5 % uploaded (27262976)
+0112.980 (0) Googledrive chunked upload: 16.1 % uploaded (28311552)
+0113.069 (0) Googledrive chunked upload: 16.7 % uploaded (29360128)
+0113.243 (0) Googledrive chunked upload: 17.3 % uploaded (30408704)
+0113.375 (0) Googledrive chunked upload: 17.9 % uploaded (31457280)
+0113.531 (0) Googledrive chunked upload: 18.5 % uploaded (32505856)
+0113.638 (0) Googledrive chunked upload: 19.1 % uploaded (33554432)
+0113.730 (0) Googledrive chunked upload: 19.7 % uploaded (34603008)
+0113.820 (0) Googledrive chunked upload: 20.3 % uploaded (35651584)
+0113.912 (0) Googledrive chunked upload: 20.9 % uploaded (36700160)
+0113.994 (0) Googledrive chunked upload: 21.5 % uploaded (37748736)
+0114.104 (0) Googledrive chunked upload: 22.1 % uploaded (38797312)
+0114.197 (0) Googledrive chunked upload: 22.7 % uploaded (39845888)
+0114.313 (0) Googledrive chunked upload: 23.3 % uploaded (40894464)
+0114.432 (0) Googledrive chunked upload: 23.9 % uploaded (41943040)
+0114.656 (0) Googledrive chunked upload: 24.5 % uploaded (42991616)
+0114.740 (0) Googledrive chunked upload: 25.1 % uploaded (44040192)
+0114.864 (0) Googledrive chunked upload: 25.7 % uploaded (45088768)
+0114.962 (0) Googledrive chunked upload: 26.2 % uploaded (46137344)
+0115.073 (0) Googledrive chunked upload: 26.8 % uploaded (47185920)
+0115.168 (0) Googledrive chunked upload: 27.4 % uploaded (48234496)
+0115.280 (0) Googledrive chunked upload: 28 % uploaded (49283072)
+0115.377 (0) Googledrive chunked upload: 28.6 % uploaded (50331648)
+0115.475 (0) Googledrive chunked upload: 29.2 % uploaded (51380224)
+0115.562 (0) Googledrive chunked upload: 29.8 % uploaded (52428800)
+0115.737 (0) Googledrive chunked upload: 30.4 % uploaded (53477376)
+0115.823 (0) Googledrive chunked upload: 31 % uploaded (54525952)
+0115.909 (0) Googledrive chunked upload: 31.6 % uploaded (55574528)
+0116.083 (0) Googledrive chunked upload: 32.2 % uploaded (56623104)
+0116.176 (0) Googledrive chunked upload: 32.8 % uploaded (57671680)
+0116.296 (0) Googledrive chunked upload: 33.4 % uploaded (58720256)
+0116.629 (0) Googledrive chunked upload: 34 % uploaded (59768832)
+0116.781 (0) Googledrive chunked upload: 34.6 % uploaded (60817408)
+0116.861 (0) Googledrive chunked upload: 35.2 % uploaded (61865984)
+0116.959 (0) Googledrive chunked upload: 35.8 % uploaded (62914560)
+0117.152 (0) Googledrive chunked upload: 36.4 % uploaded (63963136)
+0117.249 (0) Googledrive chunked upload: 37 % uploaded (65011712)
+0117.332 (0) Googledrive chunked upload: 37.6 % uploaded (66060288)
+0117.430 (0) Googledrive chunked upload: 38.2 % uploaded (67108864)
+0117.549 (0) Googledrive chunked upload: 38.8 % uploaded (68157440)
+0117.666 (0) Googledrive chunked upload: 39.4 % uploaded (69206016)
+0117.766 (0) Googledrive chunked upload: 40 % uploaded (70254592)
+0117.846 (0) Googledrive chunked upload: 40.6 % uploaded (71303168)
+0117.938 (0) Googledrive chunked upload: 41.2 % uploaded (72351744)
+0118.027 (0) Googledrive chunked upload: 41.8 % uploaded (73400320)
+0118.191 (0) Googledrive chunked upload: 42.4 % uploaded (74448896)
+0118.297 (0) Googledrive chunked upload: 43 % uploaded (75497472)
+0118.426 (0) Googledrive chunked upload: 43.6 % uploaded (76546048)
+0118.532 (0) Googledrive chunked upload: 44.1 % uploaded (77594624)
+0118.648 (0) Googledrive chunked upload: 44.7 % uploaded (78643200)
+0118.735 (0) Googledrive chunked upload: 45.3 % uploaded (79691776)
+0118.853 (0) Googledrive chunked upload: 45.9 % uploaded (80740352)
+0118.941 (0) Googledrive chunked upload: 46.5 % uploaded (81788928)
+0119.024 (0) Googledrive chunked upload: 47.1 % uploaded (82837504)
+0119.147 (0) Googledrive chunked upload: 47.7 % uploaded (83886080)
+0119.318 (0) Googledrive chunked upload: 48.3 % uploaded (84934656)
+0119.476 (0) Googledrive chunked upload: 48.9 % uploaded (85983232)
+0119.560 (0) Googledrive chunked upload: 49.5 % uploaded (87031808)
+0119.684 (0) Googledrive chunked upload: 50.1 % uploaded (88080384)
+0119.840 (0) Googledrive chunked upload: 50.7 % uploaded (89128960)
+0119.993 (0) Googledrive chunked upload: 51.3 % uploaded (90177536)
+0120.118 (0) Googledrive chunked upload: 51.9 % uploaded (91226112)
+0120.218 (0) Googledrive chunked upload: 52.5 % uploaded (92274688)
+0120.303 (0) Googledrive chunked upload: 53.1 % uploaded (93323264)
+0120.420 (0) Googledrive chunked upload: 53.7 % uploaded (94371840)
+0120.647 (0) Googledrive chunked upload: 54.3 % uploaded (95420416)
+0120.800 (0) Googledrive chunked upload: 54.9 % uploaded (96468992)
+0120.876 (0) Googledrive chunked upload: 55.5 % uploaded (97517568)
+0120.974 (0) Googledrive chunked upload: 56.1 % uploaded (98566144)
+0121.117 (0) Googledrive chunked upload: 56.7 % uploaded (99614720)
+0121.206 (0) Googledrive chunked upload: 57.3 % uploaded (100663296)
+0121.707 (0) Googledrive chunked upload: 57.9 % uploaded (101711872)
+0121.793 (0) Googledrive chunked upload: 58.5 % uploaded (102760448)
+0121.881 (0) Googledrive chunked upload: 59.1 % uploaded (103809024)
+0121.988 (0) Googledrive chunked upload: 59.7 % uploaded (104857600)
+0122.177 (0) Googledrive chunked upload: 60.3 % uploaded (105906176)
+0122.263 (0) Googledrive chunked upload: 60.9 % uploaded (106954752)
+0122.395 (0) Googledrive chunked upload: 61.4 % uploaded (108003328)
+0122.478 (0) Googledrive chunked upload: 62 % uploaded (109051904)
+0122.554 (0) Googledrive chunked upload: 62.6 % uploaded (110100480)
+0122.655 (0) Googledrive chunked upload: 63.2 % uploaded (111149056)
+0122.781 (0) Googledrive chunked upload: 63.8 % uploaded (112197632)
+0122.854 (0) Googledrive chunked upload: 64.4 % uploaded (113246208)
+0122.941 (0) Googledrive chunked upload: 65 % uploaded (114294784)
+0123.049 (0) Googledrive chunked upload: 65.6 % uploaded (115343360)
+0123.227 (0) Googledrive chunked upload: 66.2 % uploaded (116391936)
+0123.369 (0) Googledrive chunked upload: 66.8 % uploaded (117440512)
+0123.481 (0) Googledrive chunked upload: 67.4 % uploaded (118489088)
+0123.569 (0) Googledrive chunked upload: 68 % uploaded (119537664)
+0123.673 (0) Googledrive chunked upload: 68.6 % uploaded (120586240)
+0123.798 (0) Googledrive chunked upload: 69.2 % uploaded (121634816)
+0123.901 (0) Googledrive chunked upload: 69.8 % uploaded (122683392)
+0124.001 (0) Googledrive chunked upload: 70.4 % uploaded (123731968)
+0124.090 (0) Googledrive chunked upload: 71 % uploaded (124780544)
+0124.180 (0) Googledrive chunked upload: 71.6 % uploaded (125829120)
+0124.361 (0) Googledrive chunked upload: 72.2 % uploaded (126877696)
+0124.462 (0) Googledrive chunked upload: 72.8 % uploaded (127926272)
+0124.546 (0) Googledrive chunked upload: 73.4 % uploaded (128974848)
+0124.636 (0) Googledrive chunked upload: 74 % uploaded (130023424)
+0124.831 (0) Googledrive chunked upload: 74.6 % uploaded (131072000)
+0124.930 (0) Googledrive chunked upload: 75.2 % uploaded (132120576)
+0125.054 (0) Googledrive chunked upload: 75.8 % uploaded (133169152)
+0125.171 (0) Googledrive chunked upload: 76.4 % uploaded (134217728)
+0125.303 (0) Googledrive chunked upload: 77 % uploaded (135266304)
+0125.423 (0) Googledrive chunked upload: 77.6 % uploaded (136314880)
+0125.619 (0) Googledrive chunked upload: 78.2 % uploaded (137363456)
+0125.744 (0) Googledrive chunked upload: 78.7 % uploaded (138412032)
+0125.974 (0) Googledrive chunked upload: 79.3 % uploaded (139460608)
+0126.075 (0) Googledrive chunked upload: 79.9 % uploaded (140509184)
+0126.180 (0) Googledrive chunked upload: 80.5 % uploaded (141557760)
+0126.309 (0) Googledrive chunked upload: 81.1 % uploaded (142606336)
+0126.411 (0) Googledrive chunked upload: 81.7 % uploaded (143654912)
+0126.527 (0) Googledrive chunked upload: 82.3 % uploaded (144703488)
+0126.633 (0) Googledrive chunked upload: 82.9 % uploaded (145752064)
+0126.738 (0) Googledrive chunked upload: 83.5 % uploaded (146800640)
+0126.899 (0) Googledrive chunked upload: 84.1 % uploaded (147849216)
+0127.015 (0) Googledrive chunked upload: 84.7 % uploaded (148897792)
+0127.095 (0) Googledrive chunked upload: 85.3 % uploaded (149946368)
+0127.208 (0) Googledrive chunked upload: 85.9 % uploaded (150994944)
+0127.348 (0) Googledrive chunked upload: 86.5 % uploaded (152043520)
+0127.445 (0) Googledrive chunked upload: 87.1 % uploaded (153092096)
+0127.527 (0) Googledrive chunked upload: 87.7 % uploaded (154140672)
+0127.611 (0) Googledrive chunked upload: 88.3 % uploaded (155189248)
+0127.774 (0) Googledrive chunked upload: 88.9 % uploaded (156237824)
+0127.877 (0) Googledrive chunked upload: 89.5 % uploaded (157286400)
+0128.096 (0) Googledrive chunked upload: 90.1 % uploaded (158334976)
+0128.182 (0) Googledrive chunked upload: 90.7 % uploaded (159383552)
+0128.296 (0) Googledrive chunked upload: 91.3 % uploaded (160432128)
+0128.384 (0) Googledrive chunked upload: 91.9 % uploaded (161480704)
+0128.511 (0) Googledrive chunked upload: 92.5 % uploaded (162529280)
+0128.677 (0) Googledrive chunked upload: 93.1 % uploaded (163577856)
+0128.761 (0) Googledrive chunked upload: 93.7 % uploaded (164626432)
+0128.871 (0) Googledrive chunked upload: 94.3 % uploaded (165675008)
+0129.000 (0) Googledrive chunked upload: 94.9 % uploaded (166723584)
+0129.104 (0) Googledrive chunked upload: 95.5 % uploaded (167772160)
+0129.293 (0) Googledrive chunked upload: 96.1 % uploaded (168820736)
+0129.391 (0) Googledrive chunked upload: 96.6 % uploaded (169869312)
+0129.483 (0) Googledrive chunked upload: 97.2 % uploaded (170917888)
+0129.613 (0) Googledrive chunked upload: 97.8 % uploaded (171966464)
+0129.749 (0) Googledrive chunked upload: 98.4 % uploaded (173015040)
+0129.848 (0) Googledrive chunked upload: 99 % uploaded (174063616)
+0129.931 (0) Googledrive chunked upload: 99.6 % uploaded (175112192)
+0130.860 (0) Googledrive chunked upload: 100 % uploaded (175112192)
+0130.864 (0) Google Drive: OK: Archive backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads2.zip uploaded in 20.98 seconds
+0130.864 (0) Recording as successfully uploaded: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads2.zip
+0130.901 (0) Deleting local file: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-uploads2.zip: OK
+0131.118 (0) Google Drive: quota usage: used=10308.4 MB, total=15360 MB, available=5051.6 MB
+0131.119 (0) Google Drive: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-others.zip: Attempting to upload to Google Drive (into folder id: 1e_2DhejvOl5jd8otEggSHTekas-5XMg9)
+0131.571 (0) Googledrive chunked upload: 0.7 % uploaded (1048576)
+0131.663 (0) Googledrive chunked upload: 1.4 % uploaded (2097152)
+0131.765 (0) Googledrive chunked upload: 2.2 % uploaded (3145728)
+0131.911 (0) Googledrive chunked upload: 2.9 % uploaded (4194304)
+0132.015 (0) Googledrive chunked upload: 3.6 % uploaded (5242880)
+0132.116 (0) Googledrive chunked upload: 4.3 % uploaded (6291456)
+0132.219 (0) Googledrive chunked upload: 5 % uploaded (7340032)
+0132.314 (0) Googledrive chunked upload: 5.8 % uploaded (8388608)
+0132.410 (0) Googledrive chunked upload: 6.5 % uploaded (9437184)
+0132.509 (0) Googledrive chunked upload: 7.2 % uploaded (10485760)
+0132.678 (0) Googledrive chunked upload: 7.9 % uploaded (11534336)
+0132.781 (0) Googledrive chunked upload: 8.6 % uploaded (12582912)
+0132.886 (0) Googledrive chunked upload: 9.4 % uploaded (13631488)
+0132.999 (0) Googledrive chunked upload: 10.1 % uploaded (14680064)
+0133.096 (0) Googledrive chunked upload: 10.8 % uploaded (15728640)
+0133.191 (0) Googledrive chunked upload: 11.5 % uploaded (16777216)
+0133.285 (0) Googledrive chunked upload: 12.2 % uploaded (17825792)
+0133.380 (0) Googledrive chunked upload: 13 % uploaded (18874368)
+0133.513 (0) Googledrive chunked upload: 13.7 % uploaded (19922944)
+0133.620 (0) Googledrive chunked upload: 14.4 % uploaded (20971520)
+0133.803 (0) Googledrive chunked upload: 15.1 % uploaded (22020096)
+0133.906 (0) Googledrive chunked upload: 15.8 % uploaded (23068672)
+0134.005 (0) Googledrive chunked upload: 16.5 % uploaded (24117248)
+0134.098 (0) Googledrive chunked upload: 17.3 % uploaded (25165824)
+0134.190 (0) Googledrive chunked upload: 18 % uploaded (26214400)
+0134.290 (0) Googledrive chunked upload: 18.7 % uploaded (27262976)
+0134.378 (0) Googledrive chunked upload: 19.4 % uploaded (28311552)
+0134.481 (0) Googledrive chunked upload: 20.1 % uploaded (29360128)
+0134.582 (0) Googledrive chunked upload: 20.9 % uploaded (30408704)
+0134.677 (0) Googledrive chunked upload: 21.6 % uploaded (31457280)
+0134.858 (0) Googledrive chunked upload: 22.3 % uploaded (32505856)
+0134.975 (0) Googledrive chunked upload: 23 % uploaded (33554432)
+0135.100 (0) Googledrive chunked upload: 23.7 % uploaded (34603008)
+0135.253 (0) Googledrive chunked upload: 24.5 % uploaded (35651584)
+0135.353 (0) Googledrive chunked upload: 25.2 % uploaded (36700160)
+0135.460 (0) Googledrive chunked upload: 25.9 % uploaded (37748736)
+0135.581 (0) Googledrive chunked upload: 26.6 % uploaded (38797312)
+0135.674 (0) Googledrive chunked upload: 27.3 % uploaded (39845888)
+0135.764 (0) Googledrive chunked upload: 28.1 % uploaded (40894464)
+0135.851 (0) Googledrive chunked upload: 28.8 % uploaded (41943040)
+0136.068 (0) Googledrive chunked upload: 29.5 % uploaded (42991616)
+0136.194 (0) Googledrive chunked upload: 30.2 % uploaded (44040192)
+0136.303 (0) Googledrive chunked upload: 30.9 % uploaded (45088768)
+0136.433 (0) Googledrive chunked upload: 31.7 % uploaded (46137344)
+0136.534 (0) Googledrive chunked upload: 32.4 % uploaded (47185920)
+0136.621 (0) Googledrive chunked upload: 33.1 % uploaded (48234496)
+0136.721 (0) Googledrive chunked upload: 33.8 % uploaded (49283072)
+0136.829 (0) Googledrive chunked upload: 34.5 % uploaded (50331648)
+0136.926 (0) Googledrive chunked upload: 35.3 % uploaded (51380224)
+0137.033 (0) Googledrive chunked upload: 36 % uploaded (52428800)
+0137.209 (0) Googledrive chunked upload: 36.7 % uploaded (53477376)
+0137.306 (0) Googledrive chunked upload: 37.4 % uploaded (54525952)
+0137.418 (0) Googledrive chunked upload: 38.1 % uploaded (55574528)
+0137.521 (0) Googledrive chunked upload: 38.9 % uploaded (56623104)
+0137.630 (0) Googledrive chunked upload: 39.6 % uploaded (57671680)
+0137.724 (0) Googledrive chunked upload: 40.3 % uploaded (58720256)
+0137.816 (0) Googledrive chunked upload: 41 % uploaded (59768832)
+0137.910 (0) Googledrive chunked upload: 41.7 % uploaded (60817408)
+0138.010 (0) Googledrive chunked upload: 42.5 % uploaded (61865984)
+0138.113 (0) Googledrive chunked upload: 43.2 % uploaded (62914560)
+0138.299 (0) Googledrive chunked upload: 43.9 % uploaded (63963136)
+0138.400 (0) Googledrive chunked upload: 44.6 % uploaded (65011712)
+0138.499 (0) Googledrive chunked upload: 45.3 % uploaded (66060288)
+0138.596 (0) Googledrive chunked upload: 46.1 % uploaded (67108864)
+0138.705 (0) Googledrive chunked upload: 46.8 % uploaded (68157440)
+0138.809 (0) Googledrive chunked upload: 47.5 % uploaded (69206016)
+0138.919 (0) Googledrive chunked upload: 48.2 % uploaded (70254592)
+0139.023 (0) Googledrive chunked upload: 48.9 % uploaded (71303168)
+0139.138 (0) Googledrive chunked upload: 49.6 % uploaded (72351744)
+0139.243 (0) Googledrive chunked upload: 50.4 % uploaded (73400320)
+0139.434 (0) Googledrive chunked upload: 51.1 % uploaded (74448896)
+0139.549 (0) Googledrive chunked upload: 51.8 % uploaded (75497472)
+0139.656 (0) Googledrive chunked upload: 52.5 % uploaded (76546048)
+0139.767 (0) Googledrive chunked upload: 53.2 % uploaded (77594624)
+0139.860 (0) Googledrive chunked upload: 54 % uploaded (78643200)
+0139.967 (0) Googledrive chunked upload: 54.7 % uploaded (79691776)
+0140.064 (0) Googledrive chunked upload: 55.4 % uploaded (80740352)
+0140.165 (0) Googledrive chunked upload: 56.1 % uploaded (81788928)
+0140.276 (0) Googledrive chunked upload: 56.8 % uploaded (82837504)
+0140.380 (0) Googledrive chunked upload: 57.6 % uploaded (83886080)
+0140.547 (0) Googledrive chunked upload: 58.3 % uploaded (84934656)
+0140.643 (0) Googledrive chunked upload: 59 % uploaded (85983232)
+0140.737 (0) Googledrive chunked upload: 59.7 % uploaded (87031808)
+0140.830 (0) Googledrive chunked upload: 60.4 % uploaded (88080384)
+0140.935 (0) Googledrive chunked upload: 61.2 % uploaded (89128960)
+0141.029 (0) Googledrive chunked upload: 61.9 % uploaded (90177536)
+0141.121 (0) Googledrive chunked upload: 62.6 % uploaded (91226112)
+0141.215 (0) Googledrive chunked upload: 63.3 % uploaded (92274688)
+0141.325 (0) Googledrive chunked upload: 64 % uploaded (93323264)
+0141.431 (0) Googledrive chunked upload: 64.8 % uploaded (94371840)
+0141.607 (0) Googledrive chunked upload: 65.5 % uploaded (95420416)
+0141.699 (0) Googledrive chunked upload: 66.2 % uploaded (96468992)
+0141.807 (0) Googledrive chunked upload: 66.9 % uploaded (97517568)
+0141.913 (0) Googledrive chunked upload: 67.6 % uploaded (98566144)
+0142.013 (0) Googledrive chunked upload: 68.4 % uploaded (99614720)
+0142.119 (0) Googledrive chunked upload: 69.1 % uploaded (100663296)
+0142.243 (0) Googledrive chunked upload: 69.8 % uploaded (101711872)
+0142.342 (0) Googledrive chunked upload: 70.5 % uploaded (102760448)
+0142.430 (0) Googledrive chunked upload: 71.2 % uploaded (103809024)
+0142.557 (0) Googledrive chunked upload: 72 % uploaded (104857600)
+0142.721 (0) Googledrive chunked upload: 72.7 % uploaded (105906176)
+0142.826 (0) Googledrive chunked upload: 73.4 % uploaded (106954752)
+0142.925 (0) Googledrive chunked upload: 74.1 % uploaded (108003328)
+0143.037 (0) Googledrive chunked upload: 74.8 % uploaded (109051904)
+0143.142 (0) Googledrive chunked upload: 75.6 % uploaded (110100480)
+0143.247 (0) Googledrive chunked upload: 76.3 % uploaded (111149056)
+0143.358 (0) Googledrive chunked upload: 77 % uploaded (112197632)
+0143.462 (0) Googledrive chunked upload: 77.7 % uploaded (113246208)
+0143.574 (0) Googledrive chunked upload: 78.4 % uploaded (114294784)
+0143.673 (0) Googledrive chunked upload: 79.1 % uploaded (115343360)
+0143.848 (0) Googledrive chunked upload: 79.9 % uploaded (116391936)
+0143.949 (0) Googledrive chunked upload: 80.6 % uploaded (117440512)
+0144.064 (0) Googledrive chunked upload: 81.3 % uploaded (118489088)
+0144.162 (0) Googledrive chunked upload: 82 % uploaded (119537664)
+0144.255 (0) Googledrive chunked upload: 82.7 % uploaded (120586240)
+0144.352 (0) Googledrive chunked upload: 83.5 % uploaded (121634816)
+0144.454 (0) Googledrive chunked upload: 84.2 % uploaded (122683392)
+0144.556 (0) Googledrive chunked upload: 84.9 % uploaded (123731968)
+0144.742 (0) Googledrive chunked upload: 85.6 % uploaded (124780544)
+0144.854 (0) Googledrive chunked upload: 86.3 % uploaded (125829120)
+0145.026 (0) Googledrive chunked upload: 87.1 % uploaded (126877696)
+0145.124 (0) Googledrive chunked upload: 87.8 % uploaded (127926272)
+0145.222 (0) Googledrive chunked upload: 88.5 % uploaded (128974848)
+0145.323 (0) Googledrive chunked upload: 89.2 % uploaded (130023424)
+0145.424 (0) Googledrive chunked upload: 89.9 % uploaded (131072000)
+0145.524 (0) Googledrive chunked upload: 90.7 % uploaded (132120576)
+0145.613 (0) Googledrive chunked upload: 91.4 % uploaded (133169152)
+0145.711 (0) Googledrive chunked upload: 92.1 % uploaded (134217728)
+0145.805 (0) Googledrive chunked upload: 92.8 % uploaded (135266304)
+0145.901 (0) Googledrive chunked upload: 93.5 % uploaded (136314880)
+0146.074 (0) Googledrive chunked upload: 94.3 % uploaded (137363456)
+0146.183 (0) Googledrive chunked upload: 95 % uploaded (138412032)
+0146.290 (0) Googledrive chunked upload: 95.7 % uploaded (139460608)
+0146.397 (0) Googledrive chunked upload: 96.4 % uploaded (140509184)
+0146.492 (0) Googledrive chunked upload: 97.1 % uploaded (141557760)
+0146.586 (0) Googledrive chunked upload: 97.9 % uploaded (142606336)
+0146.682 (0) Googledrive chunked upload: 98.6 % uploaded (143654912)
+0146.785 (0) Googledrive chunked upload: 99.3 % uploaded (144703488)
+0147.631 (0) Googledrive chunked upload: 100 % uploaded (144703488)
+0147.654 (0) Google Drive: OK: Archive backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-others.zip uploaded in 16.53 seconds
+0147.675 (0) Recording as successfully uploaded: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-others.zip
+0147.708 (0) Deleting local file: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-others.zip: OK
+0147.892 (0) Google Drive: quota usage: used=10447.4 MB, total=15360 MB, available=4912.6 MB
+0147.894 (0) Google Drive: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db.gz: Attempting to upload to Google Drive (into folder id: 1e_2DhejvOl5jd8otEggSHTekas-5XMg9)
+0148.245 (0) Googledrive chunked upload: 20.1 % uploaded (1048576)
+0148.339 (0) Googledrive chunked upload: 40.3 % uploaded (2097152)
+0148.440 (0) Googledrive chunked upload: 60.4 % uploaded (3145728)
+0148.555 (0) Googledrive chunked upload: 80.6 % uploaded (4194304)
+0149.510 (0) Googledrive chunked upload: 100 % uploaded (4194304)
+0149.515 (0) Google Drive: OK: Archive backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db.gz uploaded in 1.62 seconds
+0149.517 (0) Recording as successfully uploaded: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db.gz
+0149.521 (0) Deleting local file: backup_2021-05-12-1151_Institut_Clment_Ader_1a69a86f9b97-db.gz: OK
+0149.527 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=10, retain_db=10
+0149.531 (0) Number of backup sets in history: 11; groups (db): 1
+0149.532 (0) Examining (for databases) backup set with group_id=0, nonce=1a69a86f9b97, datestamp=1620813110 (May 12 2021 09:51:50)
+0149.533 (0) This backup set is the backup set just made, so will not be deleted.
+0149.534 (0) Examining (for databases) backup set with group_id=0, nonce=94366d8dae94, datestamp=1620726841 (May 11 2021 09:54:01)
+0149.534 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0149.534 (0) Examining (for databases) backup set with group_id=0, nonce=e70a6b0c432f, datestamp=1620640320 (May 10 2021 09:52:00)
+0149.535 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0149.535 (0) Examining (for databases) backup set with group_id=0, nonce=b9bf000a2918, datestamp=1620553987 (May 09 2021 09:53:07)
+0149.535 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0149.535 (0) Examining (for databases) backup set with group_id=0, nonce=6774710d8ccb, datestamp=1620467612 (May 08 2021 09:53:32)
+0149.535 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0149.535 (0) Examining (for databases) backup set with group_id=0, nonce=3382b02cfca9, datestamp=1620381095 (May 07 2021 09:51:35)
+0149.535 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0149.535 (0) Examining (for databases) backup set with group_id=0, nonce=5395607c5238, datestamp=1620294707 (May 06 2021 09:51:47)
+0149.535 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0149.536 (0) Examining (for databases) backup set with group_id=0, nonce=5fbcbc742d51, datestamp=1620208294 (May 05 2021 09:51:34)
+0149.536 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0149.536 (0) Examining (for databases) backup set with group_id=0, nonce=cd8a717e2f99, datestamp=1620121895 (May 04 2021 09:51:35)
+0149.536 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0149.536 (0) Examining (for databases) backup set with group_id=0, nonce=38b8af5a8e9b, datestamp=1620035604 (May 03 2021 09:53:24)
+0149.536 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0149.536 (0) Examining (for databases) backup set with group_id=0, nonce=8931bc5359d7, datestamp=1619949224 (May 02 2021 09:53:44)
+0149.536 (0) 1619949224: db: this set includes a database (backup_2021-05-02-1153_Institut_Clment_Ader_8931bc5359d7-db.gz); db count is now 10
+0149.536 (0) 1619949224: db: over retain limit (10); will delete this database
+0149.537 (0) Delete file: backup_2021-05-02-1153_Institut_Clment_Ader_8931bc5359d7-db.gz, service=googledrive
+0150.960 (0) Google Drive: backup_2021-05-02-1153_Institut_Clment_Ader_8931bc5359d7-db.gz: Deletion successful
+0150.968 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0150.970 (0) Number of backup sets in history: 11; groups (files): 1
+0150.972 (0) Examining (for files) backup set with nonce=1a69a86f9b97, datestamp=1620813110 (May 12 2021 09:51:50)
+0150.972 (0) This backup set is the backup set just made, so will not be deleted.
+0150.974 (0) This backup set is the backup set just made, so will not be deleted.
+0150.974 (0) This backup set is the backup set just made, so will not be deleted.
+0150.974 (0) This backup set is the backup set just made, so will not be deleted.
+0150.974 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0150.976 (0) Examining (for files) backup set with nonce=94366d8dae94, datestamp=1620726841 (May 11 2021 09:54:01)
+0150.976 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0150.976 (0) Examining (for files) backup set with nonce=e70a6b0c432f, datestamp=1620640320 (May 10 2021 09:52:00)
+0150.976 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0150.976 (0) Examining (for files) backup set with nonce=b9bf000a2918, datestamp=1620553987 (May 09 2021 09:53:07)
+0150.976 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0150.976 (0) Examining (for files) backup set with nonce=6774710d8ccb, datestamp=1620467612 (May 08 2021 09:53:32)
+0150.976 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0150.976 (0) Examining (for files) backup set with nonce=3382b02cfca9, datestamp=1620381095 (May 07 2021 09:51:35)
+0150.978 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0150.978 (0) Examining (for files) backup set with nonce=5395607c5238, datestamp=1620294707 (May 06 2021 09:51:47)
+0150.978 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0150.978 (0) Examining (for files) backup set with nonce=5fbcbc742d51, datestamp=1620208294 (May 05 2021 09:51:34)
+0150.978 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0150.978 (0) Examining (for files) backup set with nonce=cd8a717e2f99, datestamp=1620121895 (May 04 2021 09:51:35)
+0150.979 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0150.979 (0) Examining (for files) backup set with nonce=38b8af5a8e9b, datestamp=1620035604 (May 03 2021 09:53:24)
+0150.979 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0150.979 (0) Examining (for files) backup set with nonce=8931bc5359d7, datestamp=1619949224 (May 02 2021 09:53:44)
+0150.979 (0) plugins: over retain limit (10); will delete this file entity
+0150.979 (0) themes: over retain limit (10); will delete this file entity
+0150.979 (0) uploads: over retain limit (10); will delete this file entity
+0150.979 (0) others: over retain limit (10); will delete this file entity
+0150.980 (0) Delete file: backup_2021-05-02-1153_Institut_Clment_Ader_8931bc5359d7-plugins.zip, service=googledrive
+0150.987 (0) Delete file: backup_2021-05-02-1153_Institut_Clment_Ader_8931bc5359d7-themes.zip, service=googledrive
+0150.998 (0) Delete file: backup_2021-05-02-1153_Institut_Clment_Ader_8931bc5359d7-uploads.zip, service=googledrive
+0151.002 (0) Delete file: backup_2021-05-02-1153_Institut_Clment_Ader_8931bc5359d7-uploads2.zip, service=googledrive
+0151.006 (0) Delete file: backup_2021-05-02-1153_Institut_Clment_Ader_8931bc5359d7-others.zip, service=googledrive
+0151.890 (0) Google Drive: backup_2021-05-02-1153_Institut_Clment_Ader_8931bc5359d7-others.zip: Deletion successful
+0152.316 (0) Google Drive: backup_2021-05-02-1153_Institut_Clment_Ader_8931bc5359d7-uploads2.zip: Deletion successful
+0152.786 (0) Google Drive: backup_2021-05-02-1153_Institut_Clment_Ader_8931bc5359d7-uploads.zip: Deletion successful
+0153.330 (0) Google Drive: backup_2021-05-02-1153_Institut_Clment_Ader_8931bc5359d7-themes.zip: Deletion successful
+0153.738 (0) Google Drive: backup_2021-05-02-1153_Institut_Clment_Ader_8931bc5359d7-plugins.zip: Deletion successful
+0153.743 (0) This backup set is now empty; will remove from history
+0153.744 (0) Deleting log file (log.8931bc5359d7.txt)
+0153.745 (0) Retain: saving new backup history (sets now: 10) and finishing retain operation
+0153.753 (0) Resume backup (1a69a86f9b97, 0): finish run
+0153.757 (0) Decremented the semaphore (fd) by 1
+0153.759 (0) Semaphore (fd) unlocked
+0153.760 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0153.764 (0) The backup apparently succeeded and is now complete
+0153.765 (0) No email will/can be sent - the user has not configured an email address.
+0153.767 (0) La sauvegarde a réussie. Elle est maintenant terminée.
