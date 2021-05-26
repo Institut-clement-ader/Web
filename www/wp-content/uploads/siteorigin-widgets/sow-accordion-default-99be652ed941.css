@@ -1,0 +1,69 @@
+.so-widget-sow-accordion-default-99be652ed941 .sow-accordion .sow-accordion-panel {
+  margin-bottom: 10px;
+}
+.so-widget-sow-accordion-default-99be652ed941 .sow-accordion .sow-accordion-panel .sow-accordion-panel-header {
+  position: relative;
+  cursor: pointer;
+  padding: 15px 30px 15px 30px;
+  background-color: #828282;
+  color: #ffffff;
+  
+  
+  
+  
+  display: flex;
+  flex-direction: row;
+}
+.so-widget-sow-accordion-default-99be652ed941 .sow-accordion .sow-accordion-panel .sow-accordion-panel-header:hover {
+  background-color: #8c8c8c;
+  
+  
+}
+.so-widget-sow-accordion-default-99be652ed941 .sow-accordion .sow-accordion-panel .sow-accordion-panel-header:focus {
+  outline: 1px dotted #666;
+  outline: auto 5px -webkit-focus-ring-color;
+}
+.so-widget-sow-accordion-default-99be652ed941 .sow-accordion .sow-accordion-panel .sow-accordion-panel-header .sow-accordion-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.so-widget-sow-accordion-default-99be652ed941 .sow-accordion .sow-accordion-panel .sow-accordion-panel-header .sow-accordion-icon-image {
+  width: auto;
+  
+  max-height: 1em;
+}
+.so-widget-sow-accordion-default-99be652ed941 .sow-accordion .sow-accordion-panel .sow-accordion-panel-header .sow-accordion-title-icon-left > .sow-accordion-icon-image,
+.so-widget-sow-accordion-default-99be652ed941 .sow-accordion .sow-accordion-panel .sow-accordion-panel-header .sow-accordion-title-icon-left > span[data-sow-icon] {
+  margin-right: 5px;
+}
+.so-widget-sow-accordion-default-99be652ed941 .sow-accordion .sow-accordion-panel .sow-accordion-panel-header .sow-accordion-title-icon-right > .sow-accordion-icon-image,
+.so-widget-sow-accordion-default-99be652ed941 .sow-accordion .sow-accordion-panel .sow-accordion-panel-header .sow-accordion-title-icon-right > span[data-sow-icon] {
+  margin-left: 5px;
+}
+.so-widget-sow-accordion-default-99be652ed941 .sow-accordion .sow-accordion-panel:not(.sow-accordion-panel-open) > .sow-accordion-panel-header-container > .sow-accordion-panel-header .sow-accordion-close-button {
+  display: none;
+}
+.so-widget-sow-accordion-default-99be652ed941 .sow-accordion .sow-accordion-panel.sow-accordion-panel-open > .sow-accordion-panel-header-container > .sow-accordion-panel-header .sow-accordion-open-button {
+  display: none;
+}
+.so-widget-sow-accordion-default-99be652ed941 .sow-accordion .sow-accordion-panel .sow-accordion-panel-content .sow-accordion-panel-border {
+  background-color: #f9f9f9;
+  padding: 15px 30px 15px 30px;
+  
+  
+  
+  overflow: auto;
+}
+.so-widget-sow-accordion-default-99be652ed941 .sow-accordion .sow-accordion-panel .sow-accordion-panel-content .sow-accordion-panel-border:focus {
+  outline: 1px dotted #666;
+  outline: auto 5px -webkit-focus-ring-color;
+}
+@media print {
+  .so-widget-sow-accordion-default-99be652ed941 .sow-accordion .sow-accordion-panel .sow-accordion-open-close-button {
+    display: none;
+  }
+  .so-widget-sow-accordion-default-99be652ed941 .sow-accordion .sow-accordion-panel .sow-accordion-panel-content {
+    display: block !important;
+  }
+}

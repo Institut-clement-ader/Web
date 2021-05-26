@@ -1,0 +1,17 @@
+.so-widget-sow-image-grid-default-108d7491c658 .sow-image-grid-wrapper {
+  padding-top: 10;
+  line-height: 0;
+  text-align: center;
+}
+.so-widget-sow-image-grid-default-108d7491c658 .sow-image-grid-wrapper .sow-image-grid-image {
+  padding: 0 10 10 10;
+  display: inline-block;
+}
+.so-widget-sow-image-grid-default-108d7491c658 .sow-image-grid-wrapper .sow-image-grid-image > a {
+  display: inline-block;
+}
+.so-widget-sow-image-grid-default-108d7491c658 .sow-image-grid-wrapper .sow-image-grid-image img {
+  opacity: 0;
+  max-width: 100%;
+  height: auto;
+}
