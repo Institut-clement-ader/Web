@@ -4,12 +4,8 @@
     echo("loggin to access this page");
 	  exit();
   }
-    //CONNEXION A LA BDD
-// 	$serveur="localhost";
-// 	$utilisateur="lab0611sql3";
-// 	$password="1pm6STt9TE0n";
-// 	$db="lab0611sql3db";
-
+ 
+// CONNEXION A LA BD
   require("codes snippet/GestionBdd.php");
   $bdd = new GestionBdd();
 // ON RECUPERE L ID DE L OBSERVATION A AFFICHER
@@ -59,7 +55,7 @@
 
 <?php echo '<hr><br/><br/><br/><h6>';?><?php echo 'Compléter et valider :';?><?php echo '</h6>';?>
 
-<?php echo'<form id="observation_du_ap" name="observation_du_ap" method="post" action="http://institut-clement-ader.org/traitement-de-lobservation-du-responsable-de-la-structure/">
+<?php echo'<form id="observation_du_ap" name="observation_du_ap" method="post" action="http://ica.cnrs.fr/traitement-de-lobservation-du-responsable-de-la-structure/">
     <label for="date_consultation_chef_structure">Date de consultation : </label><input type="date" value="';?><?php echo date('Y-m-d'); ?><?php echo '" name="date_consultation_chef_structure"/> <br/><br/>
     
     <b>Nom et prénom (responsable de la structure)</b> : <input type="text" name="nom_prenom" required/><br/><br/>

@@ -12,7 +12,7 @@ if (isset($_POST['valider'])){
     $db = new GestionBdd();
     if($db->completerObservation($date_consultation_chef_structure, $nom_chef_structure, $observations_du_responsable, $visa, $id) == true){
       echo 'Enregistrement ok';
-      header('Location: http://institut-clement-ader.org/consulter-les-nouvelles-observations/');
+      header('Location: http://ica.cnrs.fr/consulter-les-nouvelles-observations/');
     }
 
     

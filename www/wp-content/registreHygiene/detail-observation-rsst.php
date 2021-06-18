@@ -6,19 +6,10 @@
   }
 
   if(isset($_GET['id'])){
-    
-  
-
-    //CONNEXION A LA BDD
-//     $serveur="localhost";
-//     $utilisateur="lab0611sql3";
-//     $password="1pm6STt9TE0n";
-//     $db="lab0611sql3db";
-
 
     $current_user = wp_get_current_user();
     $email = $current_user->user_email;
-
+// CONNEXION A LA BD
     require("codes snippet/GestionBdd.php");
     $bdd = new GestionBdd();
     $id = $_GET['id'];

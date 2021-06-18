@@ -8,12 +8,6 @@
   $current_user = wp_get_current_user();
   $email = $current_user->user_email;
 
-  //CONNEXION A LA BDD
-//   $serveur="localhost";
-// 	$utilisateur="lab0611sql3";
-// 	$password="1pm6STt9TE0n";
-// 	$db="lab0611sql3db";
-
   require("codes snippet/GestionBdd.php");
   $bdd = new GestionBdd();
   $req = $bdd->getObservations();
@@ -22,7 +16,7 @@
     
   ?> 
 
-    <form class='form-stats' action='http://institut-clement-ader.org/consulter-le-registre/registre/' method='POST'>
+    <form class='form-stats' action='https://ica.cnrs.fr/consulter-le-registre/registre/' method='POST'>
 		  <button type='submit' class='spanExcel'><i class='fa fa-table'></i>&nbsp;&nbsp;&nbsp;Télécharger le registre au format Excel</button>
 	  </form>&nbsp;
 
@@ -61,7 +55,7 @@
                 <?php echo '<td>';?><?php echo date('d/m/y', strtotime($dateSaisie));?><?php echo '</td>';?>
                 <?php if($row['visa']==1){echo '<td>';?><?php echo date('d/m/y', strtotime($dateConsultationChefStructure)); ?><?php echo '</td>';}?>
                 <?php if($row['visa']==0){echo '<td>';?><?php echo "Pas encore consulté"; ?><?php echo '</td>';}?> 
-                <?php echo '<td>';?><a href="http://institut-clement-ader.org/affichage-de-lobservation/?id=<?php echo ($row['id']);?>">consulter</a><?php echo '</td>';?>
+                <?php echo '<td>';?><a href="http://ica.cnrs.fr/affichage-de-lobservation/?id=<?php echo ($row['id']);?>">consulter</a><?php echo '</td>';?>
                
 							 </tr>
               </tbody>
