@@ -5,10 +5,17 @@
 	  exit();
   }
     //CONNEXION A LA BDD
-// 	$serveur="mysql2.lamp.ods";
-// 	$utilisateur="lab0612sql3";
-// 	$password="XY02b21aBLaq";
-// 	$db="lab0612sql3db";
+	$serveur="mysql2.lamp.ods";
+	$utilisateur="lab0612sql3";
+	$password="XY02b21aBLaq";
+	$db="lab0612sql3db";
+
+try {
+		$bd = new PDO('mysql:host='.$serveur.';dbname='.$db, $utilisateur, $password);
+	} catch(PDOException $e) {
+		print "Erreur : ".$e->getMessage();
+		die();
+	}
   
 ?>
 
@@ -24,6 +31,7 @@
     $tuteur = $_POST['nom_prenom_tuteur'];
     $date_arrivee = $_POST['date_arrivee'];
     $statut_arrivant = $_POST['statut_arrivant'];
+    $etablissement_accueil = $_POST['etablissement_accueil'];
     $name = $current_user->first_name." ".$current_user->last_name;
     $mail = $current_user->user_email;
     $user_id = get_current_user_id();
@@ -32,15 +40,18 @@
     $file = 0;
     if(filesize($_FILES['fichier']['tmp_name']) < 10000000){
       if(!file_exists($url)){
-        $req = $bdd->ajouterDemande(strtolower ($_POST['nom']),strtolower ($_POST['prenom']),$mailArrivant,$mail,$url,$date_fin, $tuteur, $date_arrivee, $statut_arrivant);
+        $req = $bdd->ajouterDemande(strtolower ($_POST['nom']),strtolower ($_POST['prenom']),$mailArrivant,$mail,$url,$date_fin, $tuteur, $date_arrivee, $statut_arrivant, $etablissement_accueil);
         $file = 1;
 
       } 
       move_uploaded_file ( $_FILES['fichier']['tmp_name'] , $url);
       if($file == 0){
         wp_mail('acces_zrr_ica@insa-toulouse.fr', 'Mise à jour de fichier ZRR', $name. ' a mis le fichier ZRR de '.$_POST['prenom'].' '.$_POST['nom'].' à jour','Bonjour,', array($url));
+        $requete="UPDATE wp_temp_zrr SET necessite_zrr = 0, num_dossier = 0 WHERE path = ?";
+        $reqU = $bd->prepare($requete);
+        $reqU->execute(array($url));
       }if($file == 1){
-        wp_mail('acces_zrr_ica@insa-toulouse.fr', 'Nouvelle demande ZRR', $name. ' a fait une demande ZRR pour '.$_POST['prenom'].' '.$_POST['nom'].' : http://institut-clement-ader.org/demandes-zrr/. La fin de mission est estimée à '.$_POST['date_fin'],'Bonjour,', array($url));
+        wp_mail('acces_zrr_ica@insa-toulouse.fr', 'Nouvelle demande ZRR', $name. ' a fait une demande ZRR pour '.$_POST['prenom'].' '.$_POST['nom'].' : http://ica.cnrs.fr/demandes-zrr/. La fin de mission est estimée à '.$_POST['date_fin'],'Bonjour,', array($url));
       }
       $saveok = 2;
     }
@@ -54,7 +65,7 @@
 ?>
 <?php
   echo '<h2>Site de Toulouse - Dépôt du dossier ZRR  :</h2>';
-  echo "<p>Pour plus de détails sur les documents nécessaires pour la demande ZRR, reportez vous à la page <a href='http://institut-clement-ader.org/documents/zrr-site-de-toulouse/'>http://institut-clement-ader.org/documents/zrr-site-de-toulouse/</a></p>";
+  echo "<p>Pour plus de détails sur les documents nécessaires pour la demande ZRR, reportez vous à la page <a href='http://ica.cnrs.fr/documents/zrr-site-de-toulouse/'>http://institut-clement-ader.org/documents/zrr-site-de-toulouse/</a></p>";
 ?>
 <?php 
   if($saveok==1){
@@ -72,7 +83,7 @@
 
 <?php
   echo'
-  <form id="inscription4" name="zrr" method="post" action="https://ica.preprod.lamp.cnrs.fr/documents/zrr-site-de-toulouse/depot-dossier-zrr/" enctype="multipart/form-data">
+  <form id="inscription4" name="zrr" method="post" action="http://ica.cnrs.fr/documents/zrr-site-de-toulouse/depot-dossier-zrr/" enctype="multipart/form-data">
     Prénom de l\'arrivant (nécéssaire) : <input type="text" name="prenom" required/>
     Nom de l\'arrivant (nécéssaire) : <input type="text" name="nom" required/><br/><br/>
     <label for="statut">Statut de l\'arrivant : </label><select id="statut" name="statut_arrivant" required/> 
@@ -100,6 +111,13 @@
           <option  value="Professeur invité"> Professeur invité</option>
           <option  value="Stagiaire"> Stagiaire</option>
           <option  value="Technicien"> Technicien</option>
+         </select><br/><br/>
+    <label for="etablissement">Etablissement d\'accueil : </label><select id="statut" name="etablissement_accueil" required/> 
+          <option  value="INSA Toulouse"> INSA Toulouse</option>
+          <option  value="ISAE Supaero"> ISAE Supaero</option>
+          <option  value="Université Toulouse Paul Sabatier"> Université Toulouse Paul Sabatier</option>
+          <option  value="IMT Mines Albi"> IMT Mines ALbi</option>
+          <option  value="CNRS"> CNRS</option>
          </select><br/><br/>
     Nom et prénom du tuteur (nécéssaire) : <input type="text" name="nom_prenom_tuteur" required/><br/>
     Adresse E-mail de l\'arrivant (nécéssaire) : <input type="email" name="mail" required/><br/><br/>

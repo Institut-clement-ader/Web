@@ -5,12 +5,6 @@
 	  exit();
   }
 
-  //CONNEXION A LA BDD
-//   $serveur="mysql2.lamp.ods";
-// 	$utilisateur="lab0612sql3";
-// 	$password="XY02b21aBLaq";
-// 	$db="lab0612sql3db";
-
 
   
   $current_user = wp_get_current_user();
@@ -28,6 +22,7 @@
 					<th>Nom</th>
 					<th>Prénom</th>
 					<th>status</th>
+          <th>Numéro de dossier</th>
 					<th>Accepter</th>
           <th>Refuser</th>
 				</tr>
@@ -45,13 +40,15 @@
 								<?php if($row['necessite_zrr']==1){echo '<td>';?><?php echo strtoupper($row['nom']); ?><?php echo '</td>';?>
 								<?php echo '<td>';?><?php echo ucfirst($row['prenom']); ?><?php echo '</td>';?>
                 <?php echo '<td>';?>acceptée<?php echo '</td>';?>
-								<?php echo '<td id="accepterDemande"><form action="http://institut-clement-ader.org/mes-demandes-zrr/" method="POST"><button style="background-color:green" type="hidden" name="accepter" value="';?><?php echo $row['id']; ?>">inscrire<?php echo '</button></form></td>';?>
-                <?php echo '<td id="refuserDemande"><form action="http://institut-clement-ader.org/mes-demandes-zrr/" method="POST"><button style="background-color:red" type="hidden" name="refuser" value="';?><?php echo $row['id']; ?>">refuser<?php echo '</button></form></td>';}?>
+                <?php echo '<td>';?><?php echo $row['num_dossier']; ?><?php echo '</td>';?>
+								<?php echo '<td id="accepterDemande"><form action="http://ica.cnrs.fr/mes-demandes-zrr/" method="POST"><button style="background-color:green" type="hidden" name="accepter" value="';?><?php echo $row['id']; ?>">inscrire<?php echo '</button></form></td>';?>
+                <?php echo '<td id="refuserDemande"><form action="http://ica.cnrs.fr/mes-demandes-zrr/" method="POST"><button style="background-color:red" type="hidden" name="refuser" value="';?><?php echo $row['id']; ?>">refuser<?php echo '</button></form></td>';}?>
                 <?php if($row['necessite_zrr']==0){echo '<td>';?><?php echo strtoupper($row['nom']); ?><?php echo '</td>';?>
 								<?php echo '<td>';?><?php echo ucfirst($row['prenom']); ?><?php echo '</td>';?>
                 <?php echo '<td>';?>en attente<?php echo '</td>';?>
-								<?php echo '<td id="accepterDemande"><form action="http://institut-clement-ader.org/mes-demandes-zrr/" method="POST"><button disabled style="background-color:grey" type="hidden" name="accepter" value="';?><?php echo $row['id']; ?>">inscrire<?php echo '</button></form></td>';?>'
-                <?php echo '<td id="refuserDemande"><form action="http://institut-clement-ader.org/mes-demandes-zrr/" method="POST"><button disabled style="background-color:grey" type="hidden" name="refuser" value="';?><?php echo $row['id']; ?>">refuser<?php echo '</button></form></td>';}?>
+                 <?php echo '<td>';?><?php echo $row['num_dossier']; ?><?php echo '</td>';?>
+								<?php echo '<td id="accepterDemande"><form action="http://ica.cnrs.fr/mes-demandes-zrr/" method="POST"><button disabled style="background-color:grey" type="hidden" name="accepter" value="';?><?php echo $row['id']; ?>">inscrire<?php echo '</button></form></td>';?>'
+                <?php echo '<td id="refuserDemande"><form action="http://ica.cnrs.fr/mes-demandes-zrr/" method="POST"><button disabled style="background-color:grey" type="hidden" name="refuser" value="';?><?php echo $row['id']; ?>">refuser<?php echo '</button></form></td>';}?>
 							</tr>
               </tbody>
 					<?php
@@ -62,14 +59,14 @@
         $bdd->accepterDemande($_POST['accepter']); 
         $url = $bdd->getUrl($_POST['accepter']);
         unlink($url);
-        header('Location: http://institut-clement-ader.org/formulaire-Inscription/');
+        header('Location: http://ica.cnrs.fr/formulaire-inscription/');
         
       }
       if(isset($_POST['refuser'])){
         $url = $bdd->getUrl($_POST['refuser']);
         $bdd->refuserDemande($_POST['refuser']); 
         unlink($url);
-        header('Location: http://institut-clement-ader.org/mes-demandes-zrr/');
+        header('Location: http://ica.cnrs.fr/mes-demandes-zrr/');
         
       }
     
