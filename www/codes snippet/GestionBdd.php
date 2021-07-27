@@ -24,9 +24,9 @@ require_once("codes snippet/database.php");
 // 		}
 		}
     
-    public function ajouterDemande($nom,$prenom,$mailArrivant,$mail,$path,$date_fin,$tuteur,$date_arrivee,$statut_arrivant){
-      $req = $this->bdd->prepare('INSERT INTO wp_temp_zrr(nom,prenom,mail_arrivant,mail,path,date_fin,nom_prenom_tuteur,date_arrivee,statut_arrivant,necessite_zrr) VALUES(?,?,?,?,?,?,?,?,?,?)');
-			$req->execute(array($nom,$prenom,$mailArrivant,$mail,$path,$date_fin,$tuteur,$date_arrivee,$statut_arrivant,0));
+    public function ajouterDemande($nom,$prenom,$mailArrivant,$mail,$path,$date_fin,$tuteur,$date_arrivee,$statut_arrivant,$etablissement_accueil){
+      $req = $this->bdd->prepare('INSERT INTO wp_temp_zrr(nom,prenom,mail_arrivant,mail,path,date_fin,nom_prenom_tuteur,date_arrivee,statut_arrivant,etablissement_accueil,necessite_zrr) VALUES(?,?,?,?,?,?,?,?,?,?,?)');
+			$req->execute(array($nom,$prenom,$mailArrivant,$mail,$path,$date_fin,$tuteur,$date_arrivee,$statut_arrivant,$etablissement_accueil,0));
 			return true;
     }
     

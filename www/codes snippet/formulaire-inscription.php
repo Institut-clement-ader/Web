@@ -94,7 +94,7 @@ if (!current_user_can('administrator')) {
     <br>bonjour est ce que le html fonctionne
     <?php
     echo'
-    <form id="inscription" name="inscription" method="post" action="http://institut-clement-ader.org/formulaire-inscription/">
+    <form id="inscription" name="inscription" method="post" action="https://ica.cnrs.fr/formulaire-inscription/">
       Adresse de messagerie(nécéssaire) : <input type="email" name="mail"/><br/><br/>
       <label for="statut">Statut : </label><select id="statut" name="statut"/> 
           <option  value=""> </option>

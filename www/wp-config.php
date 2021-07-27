@@ -19,7 +19,7 @@
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 /** Nom de la base de données de WordPress. */
 define('WP_CACHE', true);
-define( 'WPCACHEHOME', '/opt/data/webusers/lab0612/lab0612/www.institut-clement-ader.org/www/wp-content/plugins/wp-super-cache/' );
+define( 'WPCACHEHOME', '/opt/data/webusers/lab0612/lab0612/ica.cnrs.fr/www/wp-content/plugins/wp-super-cache/' );
 define('DB_NAME', 'lab0612sql3db');
 /** Utilisateur de la base de données MySQL. */
 define('DB_USER', 'lab0612sql3');

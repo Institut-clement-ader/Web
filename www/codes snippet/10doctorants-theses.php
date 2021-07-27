@@ -29,13 +29,23 @@
 		$reqR->execute(array('id'=>$id));
 	}
 
+  //METTRE A JOUR LA DATE DE SOUTENANCE
+	if(isset($_POST['id_these'])){
+		$idThese = $_POST['id_these'];
+    $dateSoutenance = $_POST['date_soutenance'];
+		// s'il y a un id, on mets à jour la date de soutenance
+		$requeteDateSoutenance="UPDATE wp_pods_these SET date_soutenance = :dateSoutenance WHERE ID = :idThese;";
+		$reqU = $bdd->prepare($requeteDateSoutenance);
+		$reqU->execute(array('dateSoutenance'=>$dateSoutenance,'idThese'=>$idThese));
+	}
+
 	//AFFICHAGE DES DOCTORANTS
 	echo "<table class='tablesorter {sortlist: [[3,1], [0,0]]} tab_annuaire' border='0' width='100%'>
-			<col width='24%'>
+			<col width='17%'>
 			<col width='11%'>
-			<col width='16%'>
 			<col width='18%'>
-			<col width='12%'>
+			<col width='18%'>
+			<col width='18%'>
 			<col width='18%'>
 			<thead>
 				<tr>
@@ -43,7 +53,7 @@
 					<th>Groupe</th>
 					<th>Établissement d'origine</th>
 					<th>Statut de la thèse</th>
-					<th class='sortless'></th>
+					<th>Date de soutenance</th>
 					<th class='sortless'></th>
 				</tr>
 			</thead>
@@ -83,11 +93,17 @@
 				echo "<a target='_blank' href='#form'>Nouvelle thèse</a>";
 			}
 			echo '</td>';
-			//Afficher un lien d'édition (si une thèse existe)
-			if (isset($these['date_debut'])) {
-				echo '<td><a target="_blank" href="http://institut-clement-ader.org/wp-admin/admin.php?page=pods-manage-these&action=edit&id='.$these['id'].'">Éditer la thèse</a></td>';
-			} else {
-				echo "<td></td>";
+			//Afficher un input si la date de soutenance n'a pas été renseignée
+			if (isset($these['date_soutenance']) && $these['date_soutenance'] != '0000-00-00' && $these['date_soutenance'] <= date('Y-m-d')) {
+			    echo "<td>Date déjà renseignée</td>";
+      } else {
+        echo '<td>
+              <form id="updateDateSoutenance" method="POST">
+                <input type="hidden" name="id_these" value="'.$these['id'].'">
+                <input type="date" width="5px" name="date_soutenance">
+                <input type="submit" value="Mettre à jour">
+              </form>
+              </td>';	
 			}
 			echo '<td>
 					<form id="submitdeldoctorant" method="POST">
