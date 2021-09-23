@@ -114,8 +114,13 @@
         $user = get_user_by( 'email', $row['mail'] );
         $username = $user->first_name." ".$user->last_name;
         echo $row['mail'].$username;
+        $multiple_recipients = array(
+            'Marie-Odile.Monsu@isae-supaero.fr',
+            'monnerie@insa-toulouse.fr',
+            'myriam.boyer@univ-tlse3.fr'
+        );
         wp_mail($row['mail'], 'Demande ZRR acceptée', 'Votre demande ZRR pour '.$row['prenom'].' '.$row['nom'].' a été acceptée','Bonjour,');
-        wp_mail('Marie-Odile.Monsu@isae-supaero.fr', 'Demande ZRR acceptée','Bonjour,
+        wp_mail($multiple_recipients, 'Demande ZRR acceptée','Bonjour,
         
         La demande ZRR faite par '. $username. ' pour '.$row['prenom'].' '.$row['nom'].' ('.$row['statut_arrivant'].') a été acceptée.
         Le début de mission est prévu pour le '.$row['date_arrivee'].' et la fin est estimée au '.$row['date_fin'].'.
