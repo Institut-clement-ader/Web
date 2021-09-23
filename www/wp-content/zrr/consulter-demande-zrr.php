@@ -117,7 +117,8 @@
         $multiple_recipients = array(
             'Marie-Odile.Monsu@isae-supaero.fr',
             'monnerie@insa-toulouse.fr',
-            'myriam.boyer@univ-tlse3.fr'
+            'myriam.boyer@univ-tlse3.fr',
+            'tmangear@insa-toulouse.fr'
         );
         wp_mail($row['mail'], 'Demande ZRR acceptée', 'Votre demande ZRR pour '.$row['prenom'].' '.$row['nom'].' a été acceptée','Bonjour,');
         wp_mail($multiple_recipients, 'Demande ZRR acceptée','Bonjour,
