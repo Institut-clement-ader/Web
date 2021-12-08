@@ -30,7 +30,7 @@ require_once("codes snippet/database.php");
 			return true;
     }
     
-    public function getDemandes(){
+    public function getDemandesZrr(){
       $req = $this->bdd->prepare('SELECT * FROM wp_temp_zrr');
       $req->execute();
       return $req;
