@@ -12,28 +12,19 @@
 	  exit();
   }
   
-  //LIAISON A LA BDD
-	$serveur="mysql2.lamp.ods";
-	$utilisateur="lab0612sql3";
-	$password="XY02b21aBLaq";
-	$db="lab0612sql3db";
-	
-	try {
-		$db = new PDO('mysql:host='.$serveur.';dbname='.$db, $utilisateur, $password);
-	} catch(PDOException $e) {
-		print "Erreur : ".$e->getMessage();
-		die();
-	}
-
   require("codes snippet/GestionBdd.php");
   $bdd = new GestionBdd();
-  $req = $bdd->getDemandes();
+    $req = $bdd->getDemandesZrr();
 
-  
-  
-    
+try {
+		$db = new PDO('mysql:host='.DB_SERVER.';dbname='.DB_NAME.';charset=utf8', DB_USERNAME, DB_PASSWORD, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+			}
+			catch(Exception $e){
+				die('Erreur : '.$e->getMessage());
+			}
+ 
   ?>
-  
+
   <table>
     <thead>
 				<tr>
@@ -71,6 +62,8 @@
                 <?php echo '<td>
               <form id="updateNumDossier" method="POST">
                 <input type="hidden" name="id_zrr" value="'.$row['id'].'">
+                <input type="hidden" name="last_name" value="'.$row['prenom'].'">
+                <input type="hidden" name="first_name" value="'.$row['nom'].'">
                 <input type="text" width="3px" name="num_dossier" id="num_dossier">
                 <input type="submit" value="Mettre à jour">
               </form>
@@ -91,15 +84,18 @@
       if(isset($_POST['id_zrr'])){
         $idZrr = $_POST['id_zrr'];
         $numDossier = $_POST['num_dossier'];
+        $last_name = $_POST['last_name'];
+        $first_name = $_POST['first_name'];
+
         // s'il y a un id, on mets à jour le numero de dossier
         $requeteNumeroDossier="UPDATE wp_temp_zrr SET num_dossier = :numDossier WHERE ID = :idZrr;";
         $reqU = $db->prepare($requeteNumeroDossier);
         $reqU->execute(array('numDossier'=>$numDossier,'idZrr'=>$idZrr));
         $requete = $bdd->getDemandesByid($idZrr);
         $zrr = $requete->fetch();
-        wp_mail($zrr['mail'], 'Numéro de dossier', 'Bonjour,
+        wp_mail($zrr['mail'], 'ZRR : Numéro de dossier', 'Bonjour,
         
-        Votre demande d\'accès ZRR porte le numéro '.$numDossier.'. La réponse arrivera dans un délais de deux mois.
+        Votre demande d\'accès ZRR pour '.ucfirst($last_name).' '.ucfirst($first_name).' porte le numéro '.$numDossier.' . La réponse arrivera dans un délais de deux mois.
         
         Cordialement.','Bonjour,');
         
