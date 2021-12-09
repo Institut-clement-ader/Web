@@ -140,7 +140,7 @@ $mrbs_company = "Institut Clément Ader";   // This line must always be uncommen
 //$mrbs_company_more_info = "You can put additional information here";  // e.g. "XYZ Department"
 
 // Uncomment this next line to have a link to your organisation in the header
-$mrbs_company_url = "http://institut-clement-ader.org";
+$mrbs_company_url = "https://ica.cnrs.fr";
 
 /******************
  * Display settings

@@ -179,7 +179,7 @@ else
    }
    else
    {
-   $str_respo1 = " <a href=\"http://www.institut-clement-ader.org/". htmlspecialchars("$this_room_admin1") ."\">";
+   $str_respo1 = " <a href=\"https://ica.cnrs.fr/". htmlspecialchars("$this_room_admin1") ."\">";
    }
    $str_respo1 = $str_respo1 . "$this_room_admin1_info[2] $this_room_admin1_info[1] </a>";
 }
@@ -199,7 +199,7 @@ else
    }
    else
    {
-   $str_respo2 = " - <a href=\"http://www.institut-clement-ader.org/". htmlspecialchars("$this_room_admin2") ."\">";
+   $str_respo2 = " - <a href=\"https://ica.cnrs.fr/". htmlspecialchars("$this_room_admin2") ."\">";
    }
    $str_respo2 = $str_respo2 . "$this_room_admin2_info[2] $this_room_admin2_info[1] </a>";
 }
@@ -219,7 +219,7 @@ else
    }
    else
    {
-   $str_respo3 = " - <a href=\"http://www.institut-clement-ader.org/". htmlspecialchars("$this_room_admin3") ."\">";
+   $str_respo3 = " - <a href=\"https://ica.cnrs.fr/". htmlspecialchars("$this_room_admin3") ."\">";
    }
    $str_respo3 = $str_respo3 . "$this_room_admin3_info[2] $this_room_admin3_info[1] </a>";
 }
@@ -259,7 +259,7 @@ echo "<div id=\"dwm\">\n";
 echo "<h2>" . utf8_strftime($strftime_format['monthyear'], $month_start)
   . " - " . htmlspecialchars("$this_area_name - $this_room_name") . "</h2>\n";
 echo $str_respo;
-//echo "<h3> Responsable(s) : <a href=\"http://www.institut-clement-ader.org/". htmlspecialchars("$this_room_admin1") ."\">".htmlspecialchars("$this_room_admin1")."</a> </h3>\n";
+//echo "<h3> Responsable(s) : <a href=\"https://ica.cnrs.fr/". htmlspecialchars("$this_room_admin1") ."\">".htmlspecialchars("$this_room_admin1")."</a> </h3>\n";
 echo "</div>\n";
 
 // Show Go to month before and after links
