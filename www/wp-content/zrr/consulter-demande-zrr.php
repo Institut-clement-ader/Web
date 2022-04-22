@@ -15,15 +15,7 @@
   require("codes snippet/GestionBdd.php");
   $bdd = new GestionBdd();
     $req = $bdd->getDemandesZrr();
-
-try {
-		$db = new PDO('mysql:host='.DB_SERVER.';dbname='.DB_NAME.';charset=utf8', DB_USERNAME, DB_PASSWORD, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-			}
-			catch(Exception $e){
-				die('Erreur : '.$e->getMessage());
-			}
- 
-  ?>
+?>
 
   <table>
     <thead>
@@ -48,32 +40,32 @@ try {
 							?>
               <tbody>
 							<tr>
-								<?php if($row['necessite_zrr']==1){echo '<td>';?><?php echo strtoupper($row['nom']); ?><?php echo '</td>';?>
-								<?php echo '<td>';?><?php echo ucfirst($row['prenom']); ?><?php echo '</td>';?>
-                <?php echo '<td>';?><?php echo $username;?><?php echo '</td>';?>
-								<?php echo '<td>acceptée</td>';?>
-                <?php echo '<td> </td>';?>
-                <?php echo '<td>Demande déjà acceptée </td>';}?>
-                 <?php if($row['necessite_zrr']==0 && $row['num_dossier']==0){echo '<td>';?><?php echo strtoupper($row['nom']); ?><?php echo '</td>';?>
-								<?php echo '<td>';?><?php echo ucfirst($row['prenom']); ?><?php echo '</td>';?>
-                <?php echo '<td>';?><?php echo $username;?><?php echo '</td>';?>
-								<?php echo '<td id="accepterDemande"><form action="http://ica.cnrs.fr/demandes-zrr/" method="POST"><button style="background-color:green" type="hidden" name="accepter" value="';?><?php echo $row['id']; ?>">accepter<?php echo '</button></form></td>';?>'
-                <?php echo '<td id="refuserDemande"><form action="http://ica.cnrs.fr/demandes-zrr/" method="POST"><button style="background-color:red" type="hidden" name="refuser" value="';?><?php echo $row['id']; ?>">refuser<?php echo '</button></form></td>';?>
-                <?php echo '<td>
-              <form id="updateNumDossier" method="POST">
-                <input type="hidden" name="id_zrr" value="'.$row['id'].'">
-                <input type="hidden" name="last_name" value="'.$row['prenom'].'">
-                <input type="hidden" name="first_name" value="'.$row['nom'].'">
-                <input type="text" width="3px" name="num_dossier" id="num_dossier">
-                <input type="submit" value="Mettre à jour">
-              </form>
-              	 </td>';?>
-                <?php } else if($row['necessite_zrr']==0 && $row['num_dossier']!=0){echo '<td>';?><?php echo strtoupper($row['nom']); ?><?php echo '</td>';?>
-								<?php echo '<td>';?><?php echo ucfirst($row['prenom']); ?><?php echo '</td>';?>
-                <?php echo '<td>';?><?php echo $username;?><?php echo '</td>';?>
-								<?php echo '<td id="accepterDemande"><form action="http://ica.cnrs.fr/demandes-zrr/" method="POST"><button style="background-color:green" type="hidden" name="accepter" value="';?><?php echo $row['id']; ?>">accepter<?php echo '</button></form></td>';?>'
-                <?php echo '<td id="refuserDemande"><form action="http://ica.cnrs.fr/demandes-zrr/" method="POST"><button style="background-color:red" type="hidden" name="refuser" value="';?><?php echo $row['id']; ?>">refuser<?php echo '</button></form></td>';?>
-                <?php echo '<td>';?><?php echo 'Dossier n° '.$row['num_dossier'].'.';?><?php echo '</td>';}?>
+								<?php if($row['necessite_zrr']==1){?> <td><?php echo strtoupper($row['nom']); ?></td>
+                <td><?php echo ucfirst($row['prenom']); ?></td>
+                <td><?php echo $username;?></td>
+                <td>acceptée</td>
+                <td> </td>
+                <td>Demande déjà acceptée </td><?php } ?>
+                <?php if($row['necessite_zrr']==0 && $row['num_dossier']==0){?><td><?php echo strtoupper($row['nom']); ?></td>
+                <td><?php echo ucfirst($row['prenom']); ?></td>
+                <td><?php echo $username;?></td>
+								<td id="accepterDemande"><form action="http://ica.cnrs.fr/demandes-zrr/" method="POST"><button style="background-color:green" type="hidden" name="accepter" value="<?php echo $row['id']; ?>">accepter</button></form></td>
+                <td id="refuserDemande"><form action="http://ica.cnrs.fr/demandes-zrr/" method="POST"><button style="background-color:red" type="hidden" name="refuser" value="<?php echo $row['id']; ?>">refuser</button></form></td>
+                <td>
+                  <form id="updateNumDossier" method="POST">
+                    <input type="hidden" name="id_zrr" value="'.$row['id'].'">
+                    <input type="hidden" name="last_name" value="'.$row['prenom'].'">
+                    <input type="hidden" name="first_name" value="'.$row['nom'].'">
+                    <input type="text" width="3px" name="num_dossier" id="num_dossier">
+                    <input type="submit" value="Mettre à jour">
+                  </form>
+              	</td>
+                <?php } else if($row['necessite_zrr']==0 && $row['num_dossier']!=0){?><td><?php echo strtoupper($row['nom']); ?></td>
+                  <td><?php echo ucfirst($row['prenom']); ?></td>
+                  <td><?php echo $username;?></td>
+								<td id="accepterDemande"><form action="http://ica.cnrs.fr/demandes-zrr/" method="POST"><button style="background-color:green" type="hidden" name="accepter" value="<?php echo $row['id']; ?>">accepter</button></form></td>
+                <td id="refuserDemande"><form action="http://ica.cnrs.fr/demandes-zrr/" method="POST"><button style="background-color:red" type="hidden" name="refuser" value="<?php echo $row['id']; ?>">refuser</button></form></td>
+                  <td><?php echo 'Dossier n° '.$row['num_dossier'].'.';?></td><?php } ?>
                </tr>
               </tbody>
 					<?php
@@ -88,9 +80,7 @@ try {
         $first_name = $_POST['first_name'];
 
         // s'il y a un id, on mets à jour le numero de dossier
-        $requeteNumeroDossier="UPDATE wp_temp_zrr SET num_dossier = :numDossier WHERE ID = :idZrr;";
-        $reqU = $db->prepare($requeteNumeroDossier);
-        $reqU->execute(array('numDossier'=>$numDossier,'idZrr'=>$idZrr));
+        $req = $bdd->updateIdZRR($numDossier, $idZrr);
         $requete = $bdd->getDemandesByid($idZrr);
         $zrr = $requete->fetch();
         wp_mail($zrr['mail'], 'ZRR : Numéro de dossier', 'Bonjour,

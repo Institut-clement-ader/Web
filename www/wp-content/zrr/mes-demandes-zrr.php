@@ -37,18 +37,18 @@
 							?>
               <tbody>
 							<tr>
-								<?php if($row['necessite_zrr']==1){echo '<td>';?><?php echo strtoupper($row['nom']); ?><?php echo '</td>';?>
-								<?php echo '<td>';?><?php echo ucfirst($row['prenom']); ?><?php echo '</td>';?>
-                <?php echo '<td>';?>acceptée<?php echo '</td>';?>
-                <?php echo '<td>';?><?php echo $row['num_dossier']; ?><?php echo '</td>';?>
-								<?php echo '<td id="accepterDemande"><form action="http://ica.cnrs.fr/mes-demandes-zrr/" method="POST"><button style="background-color:green" type="hidden" name="accepter" value="';?><?php echo $row['id']; ?>">inscrire<?php echo '</button></form></td>';?>
-                <?php echo '<td id="refuserDemande"><form action="http://ica.cnrs.fr/mes-demandes-zrr/" method="POST"><button style="background-color:red" type="hidden" name="refuser" value="';?><?php echo $row['id']; ?>">refuser<?php echo '</button></form></td>';}?>
-                <?php if($row['necessite_zrr']==0){echo '<td>';?><?php echo strtoupper($row['nom']); ?><?php echo '</td>';?>
-								<?php echo '<td>';?><?php echo ucfirst($row['prenom']); ?><?php echo '</td>';?>
-                <?php echo '<td>';?>en attente<?php echo '</td>';?>
-                 <?php echo '<td>';?><?php echo $row['num_dossier']; ?><?php echo '</td>';?>
-								<?php echo '<td id="accepterDemande"><form action="http://ica.cnrs.fr/mes-demandes-zrr/" method="POST"><button disabled style="background-color:grey" type="hidden" name="accepter" value="';?><?php echo $row['id']; ?>">inscrire<?php echo '</button></form></td>';?>'
-                <?php echo '<td id="refuserDemande"><form action="http://ica.cnrs.fr/mes-demandes-zrr/" method="POST"><button disabled style="background-color:grey" type="hidden" name="refuser" value="';?><?php echo $row['id']; ?>">refuser<?php echo '</button></form></td>';}?>
+								<?php if($row['necessite_zrr']==1){echo '<td>';?><?php echo strtoupper($row['nom']); ?></td>
+								<td><?php echo ucfirst($row['prenom']); ?></td>
+                <td>acceptée</td>
+                <td><?php echo $row['num_dossier']; ?></td>
+								<td id="accepterDemande"><form action="http://ica.cnrs.fr/mes-demandes-zrr/" method="POST"><button style="background-color:green" type="hidden" name="accepter" value="';?><?php echo $row['id']; ?>">inscrire</button></form></td>
+                <td id="refuserDemande"><form action="http://ica.cnrs.fr/mes-demandes-zrr/" method="POST"><button style="background-color:red" type="hidden" name="refuser" value="';?><?php echo $row['id']; ?>">refuser</button></form></td> <?php } ?>
+                <?php if($row['necessite_zrr']==0){?><td><?php echo strtoupper($row['nom']); ?></td>
+                <td><?php echo ucfirst($row['prenom']); ?></td>
+                <td>en attente</td>
+                <td><?php echo $row['num_dossier']; ?></td>
+                <td id="accepterDemande"><form action="http://ica.cnrs.fr/mes-demandes-zrr/" method="POST"><button disabled style="background-color:grey" type="hidden" name="accepter" value="';?><?php echo $row['id']; ?>">inscrire</button></form></td>
+                <td id="refuserDemande"><form action="http://ica.cnrs.fr/mes-demandes-zrr/" method="POST"><button disabled style="background-color:grey" type="hidden" name="refuser" value="';?><?php echo $row['id']; ?>">refuser</button></form></td> <?php } ?>
 							</tr>
               </tbody>
 					<?php

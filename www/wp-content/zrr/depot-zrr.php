@@ -4,22 +4,7 @@
     echo("loggin to access this page");
 	  exit();
   }
-    //CONNEXION A LA BDD
-	$serveur="mysql2.lamp.ods";
-	$utilisateur="lab0612sql3";
-	$password="XY02b21aBLaq";
-	$db="lab0612sql3db";
 
-try {
-		$bd = new PDO('mysql:host='.$serveur.';dbname='.$db, $utilisateur, $password);
-	} catch(PDOException $e) {
-		print "Erreur : ".$e->getMessage();
-		die();
-	}
-  
-?>
-
-<?php
   $saveok=0;
   if(isset($_POST['valider'])){
     //on importe GestionBdd.php
@@ -47,9 +32,7 @@ try {
       move_uploaded_file ( $_FILES['fichier']['tmp_name'] , $url);
       if($file == 0){
         wp_mail('acces_zrr_ica@insa-toulouse.fr', 'Mise à jour de fichier ZRR', $name. ' a mis le fichier ZRR de '.$_POST['prenom'].' '.$_POST['nom'].' à jour','Bonjour,', array($url));
-        $requete="UPDATE wp_temp_zrr SET necessite_zrr = 0, num_dossier = 0 WHERE path = ?";
-        $reqU = $bd->prepare($requete);
-        $reqU->execute(array($url));
+        $req = $bdd->resetDossier($url);
       }if($file == 1){
         wp_mail('acces_zrr_ica@insa-toulouse.fr', 'Nouvelle demande ZRR', $name. ' a fait une demande ZRR pour '.$_POST['prenom'].' '.$_POST['nom'].' : http://ica.cnrs.fr/demandes-zrr/. La fin de mission est estimée à '.$_POST['date_fin'],'Bonjour,', array($url));
       }
@@ -57,32 +40,35 @@ try {
     }
     else{
       $saveok = 1;
-      echo'<div id="echec">';
-      echo '<p style="color:white"> &nbsp; Échec de la soumission de votre dossier. Le document déposé dépasse les 7 Mo.</p><br>';
-      echo'</div>';
+      ?>
+      <div id="echec">
+      <p style="color:white"> &nbsp; Échec de la soumission de votre dossier. Le document déposé dépasse les 7 Mo.</p><br>
+      </div>
+      <?php
     }
   }
 ?>
-<?php
-  echo '<h2>Site de Toulouse - Dépôt du dossier ZRR  :</h2>';
-  echo "<p>Pour plus de détails sur les documents nécessaires pour la demande ZRR, reportez vous à la page <a href='http://ica.cnrs.fr/documents/zrr-site-de-toulouse/'>http://institut-clement-ader.org/documents/zrr-site-de-toulouse/</a></p>";
-?>
+
+  <h2>Site de Toulouse - Dépôt du dossier ZRR  :</h2>
+  <p>Pour plus de détails sur les documents nécessaires pour la demande ZRR, reportez vous à la page <a href='http://ica.cnrs.fr/documents/zrr-site-de-toulouse/'>http://institut-clement-ader.org/documents/zrr-site-de-toulouse/</a></p>
+
 <?php 
   if($saveok==1){
-
-    echo'<div id="echec">';
-    echo '<p style="color:white"> &nbsp; Échec de la soumission de votre dossier</p><br>';
-    echo'</div>';
+    ?>
+      <div id="echec">
+      <p style="color:white"> &nbsp; Échec de la soumission de votre dossier</p><br>
+      </div>
+    <?php
   }
   elseif($saveok==2){
-    echo'<div id="confirmation">';
-    echo '<p style="color:white"> &nbsp; Dossier soummis avec succès!</p><br>';
-    echo'</div>';
+    ?>
+    <div id="confirmation">
+    <p style="color:white"> &nbsp; Dossier soummis avec succès!</p><br>
+    </div>
+    <?php
   }
 ?>
-
-<?php
-  echo'
+  
   <form id="inscription4" name="zrr" method="post" action="http://ica.cnrs.fr/documents/zrr-site-de-toulouse/depot-dossier-zrr/" enctype="multipart/form-data">
     Prénom de l\'arrivant (nécéssaire) : <input type="text" name="prenom" required/>
     Nom de l\'arrivant (nécéssaire) : <input type="text" name="nom" required/><br/><br/>
@@ -131,5 +117,4 @@ try {
     -Sujet<br><br>
     <input type="file" name="fichier" accept=".zip" required/><br/><br/>
     <input type="submit" name="valider" value="Valider"/>
-  </form>';
-?>
+  </form>

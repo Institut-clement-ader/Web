@@ -89,6 +89,20 @@ require_once("codes snippet/database.php");
       $req->execute(array($id));
       return true;
     }
+
+    //REQUETE DEPOT ZRR
+    public function resetDossier($url){
+      $req=$this->bdd->prepare('UPDATE wp_temp_zrr SET necessite_zrr = 0, num_dossier = 0 WHERE path = ?');
+      $req->execute(array($url));
+      return true;
+    }
+    
+
+    //REQUETE Consulter demande mettre à jour id
+    public function updateIdZRR($numDossier, $idZrr){
+      $req = $this->bdd->prepare('UPDATE wp_temp_zrr SET num_dossier = ? WHERE id = ?');
+      $req->execute(array($numDossier,$idZrr));
+    }
     
      public function accepterDemandeProjet($id){
       $req = $this->bdd->prepare('UPDATE wp_pods_projet SET necessite_projet = 1 WHERE id = ? ');
