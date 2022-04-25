@@ -1,5 +1,12 @@
 <?php
 
+/**
+  * Améliorations à apporter :
+  * Enlever les echo innutiles qui apportent surement des erreurs dans le code
+  * Ajouter des commentaires sur le code
+  */ 
+
+
 //détection de langue courante de la page
 $currentlang = get_bloginfo('language');
 

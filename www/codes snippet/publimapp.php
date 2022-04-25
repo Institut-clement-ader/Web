@@ -1,4 +1,11 @@
 <?php
+
+/**
+  * Améliorations à apporter :
+  * Enlever les echo innutiles
+  */
+
+  
 //Fonctions PHP 
       function docTypeConvert ($doctype) {
         

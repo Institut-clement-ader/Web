@@ -1,5 +1,12 @@
 <?php
 
+	/**
+    * Améliorations à apporter :
+    * Changer la liaison BDD en utilisant la classe Gestion BDD (prendre exemple sur les autres codes)
+    */
+
+
+
   //détection de langue courante de la page
   $currentlang = get_bloginfo('language');
 

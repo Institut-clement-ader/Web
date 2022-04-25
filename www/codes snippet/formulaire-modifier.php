@@ -1,5 +1,15 @@
 <?php
 
+  /**
+   * Améliorations à apporter :
+   * Code en commentaire innutile et à supprimer
+   * Changer la liaison BDD en utilisant la classe Gestion BDD (prendre exemple sur les autres codes)
+   * Enlever les echo en utilisant les balises php.
+   * Corriger l'erreur dans le code
+   * 
+   */
+
+
 // Restreint l'accès aux administrateurs
 if (!current_user_can('administrator')) {
       echo("You are not allowed to be here !");
@@ -139,10 +149,11 @@ $bdd = new GestionBdd();
           <option selected="selected" value=""> </option>
           <option  value="(MSC) Structures Impact Modélisation Usina<?php
 
-// Restreint l'accès aux administrateurs
-if (!current_user_can('administrator')) {
+// Restreint l accès aux administrateurs
+
+    if (!current_user_can('administrator')) {
       echo("You are not allowed to be here !");
-	    exit();
+      exit();
     }
 
     //CONNEXION A LA BDD

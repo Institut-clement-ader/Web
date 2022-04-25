@@ -1,5 +1,17 @@
 <?php
 
+  /**
+  * Améliorations à apporter :
+  * La fonction statusToCode est innutile il y a un moyen plus simple de retrouver le status grace au wp_current_user
+  * Il suffit de faire :
+          *$current_user = wp_get_current_user();
+          *$nom_uti= $current_user->display_name;
+          *$status= $current_user->status;
+  * Enlever les echo innutiles en fermant les balises php
+  * Supprimer les élements innutiles ( fonction status)
+  */
+
+
 function statusToCode($status) {
         
         switch ($status) {
@@ -181,7 +193,9 @@ $cmp = 0;
             // tout le personnel
             if ($equipe == 'tous' && $statut == 'tous' && $tutelle == 'tous') {
               if (strpos(esc_html($user->status), 'invité') !== false) {
-                echo '<i>'.esc_html($user->display_nam<?php
+                echo '<i>'.esc_html($user->display_name)
+                ?>
+                <?php
 function statusToCode($status) {
         
         switch ($status) {

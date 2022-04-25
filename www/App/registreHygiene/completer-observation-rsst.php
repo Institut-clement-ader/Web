@@ -1,4 +1,12 @@
 <?php
+
+  /**
+  * Améliorations à apporter :
+  * Supprimer la partie de code en commentaire ( ancienne connexion BDD)
+  * Enlever les echo innutiles
+  */
+
+
   // Restreint l'accès aux utilisateurs connectés
   if (!is_user_logged_in()) {
     echo("loggin to access this page");

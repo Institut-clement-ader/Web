@@ -1,4 +1,10 @@
 <?php
+
+  /**
+   * Améliorations à apporter :
+   * Enlever les echo en utilisant les balises php.
+   */
+
   
   //Pour ce qui ne concerne que l'affichage des ACL
   function affichagePublication($docs){

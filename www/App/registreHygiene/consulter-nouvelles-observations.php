@@ -1,4 +1,12 @@
 <?php
+
+  /**
+  * Améliorations à apporter :
+  * Enlever les echo innutiles
+  * Ajouter quelques commentaires sur la dernière partie
+  */
+
+
   // Restreint l'accès aux utilisateurs connectés
   if (!is_user_logged_in()) {
     echo("loggin to access this page");

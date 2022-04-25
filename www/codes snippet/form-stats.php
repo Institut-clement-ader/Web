@@ -1,4 +1,10 @@
 <?php
+
+	/**
+   * Améliorations à apporter :
+   * Enlever les echo en utilisant les balises php.
+   */
+
 echo "
 	<h6>Calcul des clés de répartition de chaque groupe selon les établissements :</h6>
 	<form class='form-stats' action='http://institut-clement-ader.org/stats-membres/budgets/' method='POST'>

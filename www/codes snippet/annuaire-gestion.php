@@ -1,4 +1,17 @@
 <?php
+
+	/**
+     * Améliorations à apporter :
+     * Changer la liaison BDD en utilisant la classe Gestion BDD (prendre exemple sur les autres codes)
+     * Enlever les echo de la table  en utilisant les balises php.
+     * Ajouter quelques commentaires pour mieux comprendre le code
+     * Il est possible de retirer la fonction statusToString car elle est inutile 
+     * nous avons deja le status grâce à la fonction get_user
+     * 
+     * Modification minime : retirer les majuscule des balises du tableau html 
+     * et les mettre en minuscule pour plus de lisibilité
+     */
+
 	//Connexion à la bdd
 // 	$serveur="mysql2.lamp.ods";
 // 	$utilisateur="lab0612sql3";

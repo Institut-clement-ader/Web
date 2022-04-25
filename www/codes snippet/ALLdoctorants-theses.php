@@ -1,4 +1,11 @@
 <?php
+
+	/**
+     * Améliorations à apporter :
+     * Changer la liaison BDD en utilisant la classe Gestion BDD (prendre exemple sur les autres codes)
+     * Enlever les echo de la table d'affichage des Doctorants en utilisant les balises php.
+     */
+
 	//LIAISON A LA BDD
 	$serveur="mysql2.lamp.ods";
 	$utilisateur="lab0612sql3";

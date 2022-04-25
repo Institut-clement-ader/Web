@@ -1,5 +1,11 @@
 <?php
 
+  /**
+  * Améliorations à apporter :
+  * Commenter toutes les function pour comprendre leur utilité très facilement
+  */
+
+
 // On cherche le fichier avec les identifiants de la BD
 require_once("codes snippet/database.php");
 

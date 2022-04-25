@@ -1,4 +1,11 @@
 <?php
+
+  /**
+  * Améliorations à apporter :
+  * Enlever les echo innutiles qui apportent surement des erreurs dans le code
+  */ 
+
+
 //création des tableaux pour garder les valeurs des abscisses de chaque année
 $tabyear = array();
 $tabval = array();

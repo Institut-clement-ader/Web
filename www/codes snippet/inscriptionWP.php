@@ -1,5 +1,12 @@
 <?php
 
+	/**
+    * Améliorations à apporter :
+    * Ajouter des commentaires
+    * Fermer la balise <php> si elle n'est pas utile pour que la partie html soit facilement détectée
+    * Corriger l'erreur (probleme de balise)
+    */
+
 <p>Créer un nouvel utilisateur et l’ajouter à ce site.</p>
 <form method="post" name="createuser" id="createuser" class="validate" novalidate="novalidate">
 <input name="action" type="hidden" value="createuser" />

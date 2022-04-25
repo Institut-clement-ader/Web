@@ -1,4 +1,13 @@
 <?php
+
+    /**
+    * Améliorations à apporter :
+    * Changer la liaison BDD en utilisant la classe Gestion BDD (prendre exemple sur les autres codes)
+    * Enlever les echo en utilisant les balises php.
+    * 
+     */
+
+
 //CONNEXION A LA BDD
 $serveur     = "mysql2.lamp.ods";
 $utilisateur = "lab0612sql3";

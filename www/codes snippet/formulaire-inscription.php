@@ -1,4 +1,15 @@
 <?php
+
+  /**
+   * Améliorations à apporter :
+   * Code en commentaire innutile et à supprimer
+   * Changer la liaison BDD en utilisant la classe Gestion BDD (prendre exemple sur les autres codes)
+   * Enlever les echo en utilisant les balises php.
+   * 
+   * Revoir l'utilité de ce fichier car comme ecrit ci-dessous celui-ci n'est pas utilisé dans le formulaire d'inscription
+   */
+
+
 // Ce n'est pas ce fichier là qui est utilisé pour le formulaire d'inscription
 // voir wp_admin/formulaire-inscription.php
 

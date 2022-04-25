@@ -1,4 +1,11 @@
 <?php
+
+  /**
+  * Améliorations à apporter :
+  * Ajouter quelques commentaires
+  */
+
+
   // Restreint l'accès aux administrateurs
   if (!is_user_logged_in()) {
     echo("loggin to access this page");

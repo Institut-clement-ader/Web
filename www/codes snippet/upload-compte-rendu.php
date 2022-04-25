@@ -1,4 +1,13 @@
 <?php
+
+  /**
+  * Améliorations à apporter :
+  * Enlever les echo innutiles
+  * Balise php fermée et réouverte à la suite innutilement
+  * Commenter la partie totalement echo après avoir retiré les echo
+  */
+
+
 // Vérifier si le formulaire a été soumis
 if(isset($_POST['groupe_cr'])){
     // Vérifie si le fichier a été uploadé sans erreur.
