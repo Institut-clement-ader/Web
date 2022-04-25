@@ -55,7 +55,7 @@ require_once("codes snippet/database.php");
     }
     
     public function getDemandesByEmail($mail){
-      $req = $this->bdd->prepare('SELECT * FROM wp_temp_zrr WHERE mail = ?' );
+      $req = $this->bdd->prepare('SELECT * FROM wp_temp_zrr WHERE mail = ? ORDER BY date_arrivee DESC ');
       $req->execute(array($mail));
       return $req;
     }
