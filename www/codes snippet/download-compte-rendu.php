@@ -4,7 +4,6 @@
    * Il faut la terminer !
    */
 
-
 			//Liste les fichiers d'un répertoire
   ?>    
   <form action="https://ica.cnrs.fr/comptes-rendus/" method="post" enctype="multipart/form-data">
@@ -74,7 +73,6 @@
           }
           else{echo "Le répertoire $folderpath n'existe pas ou ce n'est pas un répertoire.";}
   }
-// }
 ?>
 </table>
 
