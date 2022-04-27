@@ -19,15 +19,6 @@ require_once("codes snippet/database.php");
 			catch(Exception $e){
 				die('Erreur : '.$e->getMessage());
 			}
-    
-//     public function __construct($host, $dbname, $login, $passwd){
-// 			try{
-// 				$this->bdd = new PDO('mysql:host='.$host.';dbname='.$dbname.';charset=utf8', $login, $passwd, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-// 			}
-// 			catch(Exception $e){
-// 				die('Erreur : '.$e->getMessage());
-// 			}
-// 		}
 		}
     
     public function ajouterDemande($nom,$prenom,$mailArrivant,$mail,$path,$date_fin,$tuteur,$date_arrivee,$statut_arrivant,$etablissement_accueil){
@@ -35,10 +26,64 @@ require_once("codes snippet/database.php");
 			$req->execute(array($nom,$prenom,$mailArrivant,$mail,$path,$date_fin,$tuteur,$date_arrivee,$statut_arrivant,$etablissement_accueil,0));
 			return true;
     }
-    
+
+    // s'il y a un id, on supprime le doctorant dans la tables wp_users
+    public function supprimerDoctorantTableUser($id){
+      $req=$this->bdd->prepare('DELETE FROM wp_users WHERE ID = ?');
+      $req->execute(array($id));
+      return $req;
+    }
+
+    // s'il y a un id, on supprime le doctorant dans la   tables wp_usermeta
+    public function supprimerDoctorantTableUserMeta($id){
+      $req=$this->bdd->prepare('DELETE FROM wp_usermeta WHERE user_id = ?');
+      $req->execute(array($id));
+      return $req;
+    }
+
+    // s'il y a un id, on supprime le doctorant dans la wp_podsrel
+    public function supprimerDoctorantTablePodsrel($id){
+      $req=$this->bdd->prepare('DELETE FROM wp_podsrel WHERE (pod_id = 862 AND (field_id = 1240 OR field_id = 1241 OR field_id = 1242 OR field_id = 1380) AND related_item_id = ?) OR (pod_id = 274 AND (field_id = 280 OR field_id = 282) AND related_item_id = ?)');
+      $req->execute(array($id,$id));
+      return $req;
+    }
+
     public function getDemandesZrr(){
       $req = $this->bdd->prepare('SELECT * FROM wp_temp_zrr');
       $req->execute();
+      return $req;
+    }
+    
+    //on mets à jour la date de soutenance
+    public function updateDateSoutenance($dateSoutenance,$idThese){
+      $req = $this->bdd->prepare('UPDATE wp_pods_these SET date_soutenance = ? WHERE ID = ?');
+      $req->execute(array($dateSoutenance,$idThese));
+      return $req;
+    }
+
+    public function getTheses($id){
+      $req = $this->bdd->prepare('SELECT th.id, th.date_debut, th.date_soutenance FROM wp_pods_these th, wp_podsrel rel WHERE rel.pod_id = 862 AND rel.field_id = 1380 AND rel.item_id = th.id AND rel.related_item_id = ?');
+      $req->execute(array($id));
+      return $req;
+    }
+
+    //remet le display à 1 dans la base wp_usermeta
+    public function retablirMembre1($id){
+      $req = $this->bdd->prepare('UPDATE wp_usermeta SET meta_value = 1 WHERE user_id = ? AND meta_key = display_user ');
+      $req->execute(array($id));
+      return $req;
+    }
+//remet le display à 1 dans la base wp_usermeta
+    public function retablirMembre2($id){
+      $req = $this->bdd->prepare('INSERT INTO wp_usermeta (user_id, meta_key, meta_value) VALUES (?, display_user , 1)');
+      $req->execute(array($id));
+      return $req;
+    }
+
+    //on remet le display à 0 dans la base wp_usermeta
+    public function cacherMembre($id){
+      $req = $this->bdd->prepare('UPDATE wp_usermeta SET meta_value = 0 WHERE user_id = ? AND meta_key = display_user');
+      $req->execute(array($id));
       return $req;
     }
     
