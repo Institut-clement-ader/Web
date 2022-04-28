@@ -2,10 +2,9 @@
 
 	/**
    * Améliorations à apporter :
-   * Enlever les echo en utilisant les balises php.
+   * Page bloquée par une identification
    */
-
-echo "
+?>
 	<h6>Calcul des clés de répartition de chaque groupe selon les établissements :</h6>
 	<form class='form-stats' action='http://institut-clement-ader.org/stats-membres/budgets/' method='POST'>
 		<button type='submit' class='spanExcel'><i class='fa fa-table'></i>&nbsp;&nbsp;&nbsp;Télécharger au format Excel</button>
@@ -21,17 +20,16 @@ echo "
 		  <option value='3'>Doctorants, ATER, Post-Doctorants</option>
 		  <option value='4'>Membres associés</option>
 		</select><br/><br/>
-		<label for='debut1'>De </label><input id='debut1' min='1980' max='".date('Y')."' value='".(idate('Y')-4)."' name='debut1' required='' type='number'/>
-		<label for='fin1'> à </label><input id='fin1' min='1980' max='".date('Y')."' value='".date('Y')."' name='fin1' required='' type='number'/><br/><br/>
+		<label for='debut1'>De </label><input id='debut1' min='1980' max='<?=date('Y')?>' value='<?=(idate('Y')-4)?>' name='debut1' required='' type='number'/>
+		<label for='fin1'> à </label><input id='fin1' min='1980' max='<?=date('Y')?>' value='<?=date('Y')?>' name='fin1' required='' type='number'/><br/><br/>
 		<button type='submit' class='spanExcel'><i class='fa fa-table'></i>&nbsp;&nbsp;&nbsp;Télécharger au format Excel</button>
 	</form>&nbsp;
 		
 	<h6>Répartition des membres permanents de l'Institut Clément Ader :</h6>
 	<form class='form-stats' action='http://institut-clement-ader.org/stats-membres/repartition/' method='POST'>
-		<label for='debut3'>En </label><input id='debut3' min='1980' max='".date('Y')."' value='".date('Y')."' name='debut3' required='' type='number'/><br/><br/>
+		<label for='debut3'>En </label><input id='debut3' min='1980' max='<?=date('Y')?>' value='<?=date('Y')?>' name='debut3' required='' type='number'/><br/><br/>
 		<button type='submit' class='spanExcel'><i class='fa fa-table'></i>&nbsp;&nbsp;&nbsp;Télécharger au format Excel</button>
-	</form>";
-?>
+	</form>
 
 <!-- Les scripts d'export dans le fichier excel se trouvent dans les modèles d'attribut des pages vers
 lesquelles sont liés les formulaires. Ils se trouvent dans wp-content/themes/spacious-child/page-templates/Excel

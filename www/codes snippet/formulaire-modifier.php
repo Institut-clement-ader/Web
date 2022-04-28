@@ -16,19 +16,6 @@ if (!current_user_can('administrator')) {
 	    exit();
     }
 
-    //CONNEXION A LA BDD
-// 	$serveur="mysql2.lamp.ods";
-// 	$utilisateur="lab0612sql3";
-// 	$password="XY02b21aBLaq";
-// 	$db="lab0612sql3db";
-	
-// 	try {
-// 		$bdd = new PDO('mysql:host='.$serveur.';dbname='.$db, $utilisateur, $password);
-// 	} catch(PDOException $e) {
-// 		print "Erreur : ".$e->getMessage();
-// 		die();
-   
-// 	} 
 
 require("codes snippet/GestionBdd.php");
 $bdd = new GestionBdd();
@@ -83,24 +70,23 @@ $bdd = new GestionBdd();
 //             }
         }
     ?>
-  <?php
-      echo '
-        <h2>Entrez l\'adresse mail de l\'utilisateur à modifier :</h2>';
-    ?>
+        <h2>Entrez l'adresse mail de l'utilisateur à modifier :</h2>
     <?php 
       if($saveok==1){
-        echo'<div id="echec">';
-        echo '<p style="color:white"> &nbsp; Email non reconnu ou incorrect</p><br>';
-        echo'</div>';
+        ?>
+        <div id="echec">
+        <p style="color:white"> &nbsp; Email non reconnu ou incorrect</p><br>
+        </div>
+        <?php
       }
       elseif($saveok==2){
-        echo'<div id="confirmation">';
-        echo '<p style="color:white"> &nbsp; Enregistrement OK.</p><br>';
-        echo'</div>';
+        ?>
+        <div id="confirmation">
+        <p style="color:white"> &nbsp; Enregistrement OK.</p><br>
+        </div>
+        <?php
       }
     ?>
-    <?php
-    echo'
     <form id="inscription4" name="inscription" method="post" action="http://institut-clement-ader.org/formulaire-modifier-utilisateur/">
       Adresse de messagerie(nécéssaire) : <input type="email" name="mail"/><br/><br/>
       <label for="statut">Statut : </label><select id="statut" name="statut"/> 
@@ -147,7 +133,9 @@ $bdd = new GestionBdd();
          </select><br/><br/>
     <label for="axe_2"> Axe secondaire : </label><select id="axe_2" name="axe_2">
           <option selected="selected" value=""> </option>
-          <option  value="(MSC) Structures Impact Modélisation Usina<?php
+          <option  value="(MSC) Structures Impact Modélisation Usinage">(MSC) Structures Impact Modélisation Usinage</option>
+          </select><br/><br/>
+      <?php
 
 // Restreint l accès aux administrateurs
 
@@ -156,28 +144,22 @@ $bdd = new GestionBdd();
       exit();
     }
 
-    //CONNEXION A LA BDD
-	$serveur="mysql2.lamp.ods";
-	$utilisateur="lab0612sql3";
-	$password="6kU737oCZcfR";
-	$db="lab0612sql3db";
+  //   //CONNEXION A LA BDD
+	// $serveur="mysql2.lamp.ods";
+	// $utilisateur="lab0612sql3";
+	// $password="6kU737oCZcfR";
+	// $db="lab0612sql3db";
 	
-	try {
-		$bdd = new PDO('mysql:host='.$serveur.';dbname='.$db, $utilisateur, $password);
-	} catch(PDOException $e) {
-		print "Erreur : ".$e->getMessage();
-		die();
+	// try {
+	// 	$bdd = new PDO('mysql:host='.$serveur.';dbname='.$db, $utilisateur, $password);
+	// } catch(PDOException $e) {
+	// 	print "Erreur : ".$e->getMessage();
+	// 	die();
    
-	} 
+	// } 
   
-?>
-
-    <?php
     $saveok=0;
-    //Pour récupérer le groupe dans le nom de l'axe
-    function parenthese($str) {
-            return substr($str, ($p = strpos($str, '(')+1), strrpos($str, ')')-$p);
-    }
+
         if(isset($_POST['valider'])){
           $saveok=1;
           //résupère l'utilisateur a modifier avec son mail
@@ -220,24 +202,26 @@ $bdd = new GestionBdd();
 //             }
         }
     ?>
-  <?php
-      echo '
-        <h2>Entrez l\'adresse mail de l\'utilisateur à modifier :</h2>';
-    ?>
+
+      <h2>Entrez l'adresse mail de l'utilisateur à modifier :</h2>
+    
     <?php 
       if($saveok==1){
-        echo'<div id="echec">';
-        echo '<p style="color:white"> &nbsp; Email non reconnu ou incorrect</p><br>';
-        echo'</div>';
+        ?>
+        <div id="echec">
+        <p style="color:white"> &nbsp; Email non reconnu ou incorrect</p><br>';
+        </div>
+        <?php
       }
       elseif($saveok==2){
-        echo'<div id="confirmation">';
-        echo '<p style="color:white"> &nbsp; Enregistrement OK.</p><br>';
-        echo'</div>';
+        ?>
+        <div id="confirmation">
+        <p style="color:white"> &nbsp; Enregistrement OK.</p><br>
+        </div>
+        <?php
       }
     ?>
-    <?php
-    echo'
+ 
     <form id="inscription4" name="inscription" method="post" action="http://institut-clement-ader.org/formulaire-modifier-utilisateur/">
       Adresse de messagerie(nécéssaire) : <input type="email" name="mail"/><br/><br/>
       <label for="statut">Statut : </label><select id="statut" name="statut"/> 
@@ -333,8 +317,6 @@ $bdd = new GestionBdd();
            <option  value="IUT de Tarbes"> IUT de Tarbes</option>
            <option  value="Autre">Autre </option>
         </select><br/><br/>
-  <label for="dateA">Date d\'arrivée : </label><input type="date" value="';?><?php echo date('Y-m-d'); ?><?php echo '" name="dateA"/> <br/><br/>
+  <label for="dateA">Date d'arrivée : </label><input type="date" value="" <?php echo date('Y-m-d'); ?>name=<?='dateA'?>/> <br/><br/>
           <input type="submit" name="valider" value="Valider"/>
-     </form>';
-?>
-  
+     </form>
