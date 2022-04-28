@@ -93,6 +93,22 @@ require_once("codes snippet/database.php");
       return $req;
     }
     
+    //ANALYSE DES EQUIPEMENTS
+    public function analyseListeEquipement($categorie){
+      $req = $this-> bdd->prepare('SELECT count(*) FROM `wp_pods_moyen` WHERE `categorie` = ?');
+      $req->execute(array($catégorie));
+      $req = $req->fetchAll();
+      return $req;
+    }
+
+    //CALCULE LE NOMBRE D'EQUIPEMENTS
+    public function nombreEquipement($categorie){
+    $req = $this-> bdd->prepare('SELECT COUNT(*) FROM `wp_pods_moyen`');
+    $req->execute();
+    $req = $req->fetchColumn();
+    }
+
+
     public function getObservationsNonValide(){
       $req = $this->bdd->prepare('SELECT * FROM wp_pods_observation_rsst WHERE visa = 0');
       $req->execute();
