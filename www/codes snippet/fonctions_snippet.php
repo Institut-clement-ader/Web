@@ -2,7 +2,6 @@
 
   /**
    * Améliorations à apporter :
-   * Enlever les echo en utilisant les balises php.
    */
 
   
@@ -10,10 +9,11 @@
   function affichagePublication($docs){
     
           //affichage de l'annee
-          echo '<td>'.$docs['producedDateY_i'].'</td>';
+          ?>
+          <td><?=$docs['producedDateY_i']?></td>
           
-          echo "<td>";
-    
+          <td>
+          <?php    
           //récupération des auteurs
           $auteurs = '';
           foreach ($docs['authFullName_s'] as $auth) {
@@ -32,8 +32,9 @@
           //on enlève le dernier point et l'espace
           $titres = substr($titres,0,-2);
           //affichage du titre
-          echo ' <b>'.$titres.'</b>.';
-          
+          ?>
+          <b><?=$titres?></b>
+          <?php
           //récupération des sous-titres
           $stitres = '';
           if (!empty($docs['subTitle_s'])) {
@@ -44,7 +45,9 @@
             $stitres = substr($stitres,0,-2);
             //affichage du sous-titre
             if (strlen($stitres) > 0) {
-              echo' <b>'.$stitres.'</b>.';
+              ?>
+              <b><?=$stitres?></b>
+              <?php
             }
           }
     
@@ -93,31 +96,39 @@
           }
 
           $misc = substr($misc, 0, -1);
-          echo '<i>'.$misc.'</i>';
+          ?>
+          <i><?=$misc?><i>
+          <?php
     
           //affichage de l'ID (HAL) et du DOI s'il existe
-          echo '<td><a href ='.$docs['uri_s'].' target="_blank">[HAL]</a>';
+          ?>
+          <td><a href =<?=$docs['uri_s']?> target="_blank" > <?php [HAL] ?> </a>
+          <?php
           echo ' / <a href ='.$docs['uri_s'].'/bibtex target="_blank">[BIB]</a>';
           if (!empty($docs['doiId_s']) ) {
-            echo ' / <a href=http://dx.doi.org/'.$docs['doiId_s'].' target="_blank"> [DOI] </a>';
+            ?>
+            / <a href=http://dx.doi.org/<?=$docs['doiId_s']?> target="_blank"> <?php[DOI]?> </a>
+            <?php
           }
     
 }
 
 //Pour les recherches avancées et les profils d'autheur
 function affichagePublicationAvancee($docs){
-                      echo "<tr>";
+                      ?>
+                      <tr>
 
-                      //affichage de l'annee
-                      echo '<td>'.($docs['producedDateY_i']).'</td>';
+                      <!-- affichage de l'annee -->
+                      <td><?=($docs['producedDateY_i'])?></td>
 
-                      //affichage du type de publi
-                      echo '<td>'.docTypeConvert($docs['docType_s'],$docs['invitedCommunication_s'],$docs['peerReviewing_s'],$docs['popularLevel_s']).'</td>';
+                      <!-- affichage du type de publi -->
+                      <td><?=docTypeConvert($docs['docType_s'],$docs['invitedCommunication_s'],$docs['peerReviewing_s'],$docs['popularLevel_s'])?></td>
 
-                      //afficahge des auteurs
-                      echo "<td>";
+                      <!-- afficahge des auteurs -->
+                     <td>
 
-                      //récupération des auteurs
+                      <!-- récupération des auteurs -->
+                      <?php
                       $auteurs = '';
                       foreach ($docs['authFullName_s'] as $auth) {
                         $auteurs .= $auth.', ';
@@ -135,9 +146,11 @@ function affichagePublicationAvancee($docs){
                       //on enlève le dernier point et l'espace
                       $titres = substr($titres,0,-2);
                       //affichage du titre
-                      echo ' <b>'.$titres.'</b>.';
+                      ?>
+                      <b><?=$titres?></b>
 
-                      //récupération des sous-titres
+                      <!-- récupération des sous-titres -->
+                      <?php
                       $stitres = '';
                       foreach ($docs['subTitle_s'] as $stit) {
                           $stitres .= $stit.'. ';
@@ -146,7 +159,9 @@ function affichagePublicationAvancee($docs){
                       $stitres = substr($stitres,0,-2);
                       //affichage du sous-titre
                       if (strlen($stitres) > 0) {
-                        echo ' <b>'.$stitres.'</b>.';
+                        ?>
+                        <b><?=$stitres?></b>
+                        <?php
                       }
 
                       $misc = " ";
@@ -194,15 +209,21 @@ function affichagePublicationAvancee($docs){
                       }
 
                       $misc = substr($misc, 0, -1);
-                      echo '<i>'.$misc.'</i>';
+                      ?>
+                      <i><?=$misc?></i>
 
-                      //affichage de l'ID (HAL) et du DOI s'il existe
-                      echo '<td><a href ='.$docs['uri_s'].' target="_blank">[HAL]</a>';
+                      <!-- affichage de l'ID (HAL) et du DOI s'il existe -->
+                      <td><a href =<?=$docs['uri_s']?> target="_blank" > <?=[HAL]?></a>
+                      <?php
                       echo ' / <a href ='.$docs['uri_s'].'/bibtex target="_blank">[BIB]</a>';
                       if (!empty($docs['doiId_s']) ) {
-                        echo ' / <a href=http://dx.doi.org/'.$docs['doiId_s'].' target="_blank"> [DOI] </a>';
+                        ?>
+                        / <a href=http://dx.doi.org/<?=$docs['doiId_s']?> target="_blank"> <?=[DOI]?> </a>
+                        <?php
                       }
-                     echo '</td></tr>';
+                      ?>
+                      </td></tr>
+                      <?php
   
 }
 

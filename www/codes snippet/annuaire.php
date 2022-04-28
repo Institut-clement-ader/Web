@@ -2,10 +2,7 @@
 
   /**
    * Améliorations à apporter :
-   * Enlever les echo de la table d'affichage des Doctorants en utilisant les balises php.
-   * 
-   * Modification minime : retirer les majuscule des balises du tableau html 
-   * et les mettre en minuscule pour plus de lisibilité
+
    */
 
 //détection de langue courante de la page
