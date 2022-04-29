@@ -144,6 +144,7 @@ require_once("codes snippet/database.php");
     public function nbTheses(){
       $req = $this->bdd->prepare('SELECT COUNT(*) FROM wp_pods_these WHERE (id IN (SELECT item_id FROM wp_podsrel WHERE pod_id = 862 AND field_id=1380)) AND (date_soutenance IS NULL OR date_soutenance >= CURDATE()) AND (date_debut <= CURDATE())');
       $req->execute();
+      $req = $req->fetchColumn();
       return $req;
     }
 
