@@ -148,6 +148,14 @@ require_once("codes snippet/database.php");
       return $req;
     }
 
+    //On selectionne le nombre de theses dont la soutenance est definie et inferieure a la date courante
+    public function nbThesesSoutenues(){
+      $req = $this->bdd->prepare('SELECT COUNT(*) FROM wp_pods_these WHERE NOT(date_soutenance <=> NULL) AND date_soutenance <= CURDATE()');
+      $req->execute();
+      $req = $req->fetchColumn();
+      return $req;
+    }
+
 
     public function getObservationsNonValide(){
       $req = $this->bdd->prepare('SELECT * FROM wp_pods_observation_rsst WHERE visa = 0');
