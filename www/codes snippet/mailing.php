@@ -11,7 +11,6 @@
   * Supprimer les élements innutiles ( fonction status)
   */
 
-
 function statusToCode($status) {
         
         switch ($status) {
