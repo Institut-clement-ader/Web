@@ -4,8 +4,7 @@
     * Améliorations à apporter :
     */
 
-
-  //détection de langue courante de la page
+	//détection de langue courante de la page
   $currentlang = get_bloginfo('language');
 
   if(strpos($currentlang,'fr')!==false){
@@ -36,48 +35,65 @@
 	//ANALYSE PHYSICO-CHIMIQUE
 	$categorie ="Analyse physico-chimique";
 	$res = $bdd->analyseListeEquipement($categorie);
-	
+	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
-		echo "<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>".TXT_PHYSICO_EQUIPEMENT."</strong></p>";
-	echo do_shortcode('[pods name="moyen" where="categorie=\'Analyse physico-chimique\'" template="Tableau des moyens" limit="1000"]');
+  		?>
+		<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>Equipement Analyse physico-chimique</strong></p>
+		<?php
+		echo do_shortcode('[pods name="moyen" where="categorie=\'Analyse physico-chimique\'" template="Tableau des moyens" limit="1000"]');
 
 
 	//CARACTERISATION MECANIQUE
-	$categorie ="Caracterisation mecanique";
+	$categorie ="Caractérisation mécanique";
 	$res = $bdd->analyseListeEquipement($categorie);
+	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
-		echo "<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>".TXT_CMECANIQUE_EQUIPEMENT."</strong></p>";
-	echo do_shortcode('[pods name="moyen" where="categorie=\'Caractérisation mécanique\'" template="Tableau des moyens" limit="1000"]');
+		?>
+		<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>Equipement Caractérisation mécanique</strong></p>
+		<?php
+		echo do_shortcode('[pods name="moyen" where="categorie=\'Caractérisation mécanique\'" template="Tableau des moyens" limit="1000"]');
 
 
 	//CONTROLE ET MESURE DES PIECES FABRIQUEES
-	$categorie ="Controle et mesure des pieces fabriquees";
+	$categorie ="Contrôle et mesure des pièces fabriquées";
 	$res = $bdd->analyseListeEquipement($categorie);
+	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
-		echo "<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>".TXT_CONTROLE_EQUIPEMENT."</strong></p>";
-	echo do_shortcode('[pods name="moyen" where="categorie=\'Contrôle et mesure des pièces fabriquées\'" template="Tableau des moyens" limit="1000"]');
+		?>
+		<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>Equipement Contrôle et mesure des pièces fabriquées</strong></p>
+		<?php
+		echo do_shortcode('[pods name="moyen" where="categorie=\'Contrôle et mesure des pièces fabriquées\'" template="Tableau des moyens" limit="1000"]');
 
 
 	//FABRICATION
 	$categorie ="Fabrication";
 	$res = $bdd->analyseListeEquipement($categorie);
+	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
-		echo "<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>".TXT_FABRICATION_EQUIPEMENT."</strong></p>";
-	echo do_shortcode('[pods name="moyen" where="categorie=\'Fabrication\'" template="Tableau des moyens" limit="1000"]');
+		?>
+		<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>Equipement Fabrication</strong></p>
+		<?php
+		echo do_shortcode('[pods name="moyen" where="categorie=\'Fabrication\'" template="Tableau des moyens" limit="1000"]');
 
 
 	//SIMULATION NUMERIQUE
-	$categorie ="Simulation numerique";
+	$categorie ="Simulation numérique";
 	$res = $bdd->analyseListeEquipement($categorie);
+	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
-		echo "<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>".TXT_SIMUNUMERIQUE_EQUIPEMENT."</strong></p>";
-	echo do_shortcode('[pods name="moyen" where="categorie=\'Simulation numérique\'" template="Tableau des moyens" limit="1000"]');
+		?>
+		<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>Equipement Simulation numérique</strong></p>
+		<?php
+		echo do_shortcode('[pods name="moyen" where="categorie=\'Simulation numérique\'" template="Tableau des moyens" limit="1000"]');
 
 
 	//TRAITEMENTS THERMIQUES
 	$categorie ="Traitements thermiques";
 	$res = $bdd->analyseListeEquipement($categorie);
+	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
-		echo "<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>".TXT_THERMIQUES_EQUIPEMENT."</strong></p>";
-	echo do_shortcode('[pods name="moyen" where="categorie=\'Traitements thermiques\'" template="Tableau des moyens" limit="1000"]');
+		?>
+		<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>Equipement Traitements thermiques</strong></p>
+		<?php
+		echo do_shortcode('[pods name="moyen" where="categorie=\'Traitements thermiques\'" template="Tableau des moyens" limit="1000"]');
 ?>
