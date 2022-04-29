@@ -2,8 +2,6 @@
 
   /**
   * Améliorations à apporter :
-  * Enlever les echo innutiles en fermant les balises php
-  * Supprimer le code en commentaire
   */
 
 
@@ -72,8 +70,6 @@
         header('Location: http://institut-clement-ader.org/mes-projets/');
         
       }
-    
-    
     
 			?>
 		</table>

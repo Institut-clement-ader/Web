@@ -139,6 +139,15 @@ require_once("codes snippet/database.php");
       $req = $req->fetchColumn();
       }    
 
+
+    //On selectionne le nombre de theses dont le doctorant est toujours present, dont la date de soutenance est non definie ou superieure a la date courante et dont la date de debut est inferieure a la date courante
+    public function nbTheses(){
+      $req = $this->bdd->prepare('SELECT COUNT(*) FROM wp_pods_these WHERE (id IN (SELECT item_id FROM wp_podsrel WHERE pod_id = 862 AND field_id=1380)) AND (date_soutenance IS NULL OR date_soutenance >= CURDATE()) AND (date_debut <= CURDATE())');
+      $req->execute();
+      return $req;
+    }
+
+
     public function getObservationsNonValide(){
       $req = $this->bdd->prepare('SELECT * FROM wp_pods_observation_rsst WHERE visa = 0');
       $req->execute();
