@@ -2,7 +2,6 @@
 
 /**
     * Améliorations à apporter :
-    * Enlever les echo innutiles
     */ 
 
 
