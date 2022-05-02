@@ -177,6 +177,43 @@ require_once("codes snippet/database.php");
     }
 
 
+    // si l'id d'un moyen est defini, on le supprime
+    public function supprimerMoyen($id){
+			$req = $this->bdd->prepare('DELETE FROM wp_pods_moyen WHERE id = ? LIMIT 1');
+			$req = $bdd->prepare($requete);
+			$req->execute(array($id));
+    }
+
+     // si l'id d'une offre est defini, on la supprime
+     public function supprimerOffre($id){
+			$req = $this->bdd->prepare('DELETE FROM wp_pods_offre_emploi WHERE id = ? LIMIT 1');
+			$req = $bdd->prepare($requete);
+			$req->execute(array($id));
+    }
+
+    
+    // si l'id d'un projet est defini, on le supprime
+    public function supprimerProjet($id){
+      $req = $this->bdd->prepare('DELETE FROM wp_pods_projet WHERE id = ? LIMIT 1');
+      $req = $bdd->prepare($requete);
+      $req->execute(array($id));
+    }
+
+    // si l'id d'une these est defini, on la supprime
+    public function supprimerThese($id){
+      $req = $this->bdd->prepare('DELETE FROM wp_pods_these WHERE id = ? LIMIT 1');
+      $req = $bdd->prepare($requete);
+      $req->execute(array($id));
+    }
+
+    // si l'id d'une these est defini, on la supprime
+    public function supprimerTheseRelations($id){
+      $req = $this->bdd->prepare('DELETE FROM `wp_podsrel` WHERE pod_id = 862 AND item_id = :?');
+      $req = $bdd->prepare($requete);
+      $req->execute(array($id));
+    }
+
+
     public function getObservationsNonValide(){
       $req = $this->bdd->prepare('SELECT * FROM wp_pods_observation_rsst WHERE visa = 0');
       $req->execute();
