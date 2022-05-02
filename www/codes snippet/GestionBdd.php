@@ -156,6 +156,26 @@ require_once("codes snippet/database.php");
       return $req;
     }
 
+    //on selectionne les theses et le groupe de chacun de ses encadrants
+    public function selectTheses($year){
+      $req = $this->bdd->prepare('SELECT DISTINCT these.id AS these_id, meta.meta_value AS groupe
+      FROM wp_pods_these AS these, wp_podsrel AS rel, wp_usermeta AS meta
+      WHERE rel.pod_id = 862
+        AND (rel.field_id = 1240
+        OR rel.field_id = 1241
+        OR rel.field_id = 1242)
+        AND rel.item_id = these.id
+        AND rel.related_item_id = meta.user_id
+        AND (meta.meta_key = "groupe_primaire"
+        OR meta.meta_key = "groupe_secondaire"
+        OR meta.meta_key = "groupe_tertiaire")
+        AND meta_value IN ("MSC", "MICS", "SUMO", "MS2M")
+        AND YEAR(these.date_soutenance) = ?
+      ORDER BY these_id');
+      $req->execute(array($year));
+      return $req;
+    }
+
 
     public function getObservationsNonValide(){
       $req = $this->bdd->prepare('SELECT * FROM wp_pods_observation_rsst WHERE visa = 0');

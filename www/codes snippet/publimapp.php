@@ -57,60 +57,71 @@ curl_close($ch);
 //on transforme le json en array php
 $json = json_decode($data, true);
 
-
- echo "<table width=\"100%\" class=\" tab_publications tablesorter {sortlist: [[0,1]]}\"><col width ='6%'><col width ='5%'><col width ='80%'><col width ='9%'>"."<THEAD>"."<tr>"."<th>Année</th><th>Type</th><th>Auteurs et titre du document</th><th>Liens</th></tr></THEAD><TBODY>";
+?>
+<table width=\"100%\" class=\" tab_publications tablesorter {sortlist: [[0,1]]}\"><col width ='6%'><col width ='5%'><col width ='80%'><col width ='9%'><thead><tr><th>Année</th><th>Type</th><th>Auteurs et titre du document</th><th>Liens</th></tr></thead><tbody>
+        <?php
         foreach ($json['response']['docs'] as $docs) {
-          echo "<tr>";
+          ?>
+          <tr>
 
-          //affichage de l'annee
-          echo '<td>'.$docs['producedDateY_i'].'</td>';
+          <!-- affichage de l'annee -->
+          <td><?=$docs['producedDateY_i']?></td>
           
-          //affichage du type de publi
-          echo '<td>'.docTypeConvert($docs['docType_s']).'</td>';
+          <!-- affichage du type de publi -->
+          <td><?=docTypeConvert($docs['docType_s'])?></td>
           
-          echo "<td>";
-          //récupération des auteurs
+          <td>
+          <!-- récupération des auteurs -->
+          <?php
           $auteurs = '';
           foreach ($docs['authFullName_s'] as $auth) {
               $auteurs .= $auth.', ';
           }
+
           //on enlève la dernière virgule et l'espace
           $auteurs = substr($auteurs,0,-2);
-          //affichage des auteurs
+          ?>
+          <!-- affichage des auteurs -->
+          <?php
           echo $auteurs.'.';
           
-          //récupération des titres
+          // récupération des titres
           $titres = '';
           foreach ($docs['title_s'] as $tit) {
               $titres .= $tit.'. ';
           }
           //on enlève le dernier point et l'espace
           $titres = substr($titres,0,-2);
-          //affichage du titre
-          echo ' <b>'.$titres.'</b>.';
-          
+          // affichage du titre
+          ?>
+          <b><?=$titres?></b>
+          <?php
           $misc = " ";
-          //affichage du titre de la revue
+          // affichage du titre de la revue
           if (!empty($docs['journalTitle_s'])) {
             $misc .= $docs['journalTitle_s'].',';
           }
-          //affichage des pages
+          // affichage des pages
           if (!empty($docs['page_s'])) {
             $misc .= ' '.$docs['page_s'].',';
           }
-          //affichage du volume
+          // affichage du volume
           if (!empty($docs['volume_s'])) {
             $misc .= ' '.$docs['volume_s'].',';
           }
           $misc = substr($misc, 0, -1);
           echo $misc;
 
-          //affichage de l'ID (HAL) et du DOI s'il existe
-          echo '<td><a href ='.$docs['uri_s'].' target="_blank">[HAL]</a>';
+          // affichage de l'ID (HAL) et du DOI s'il existe
+          ?>
+          <td><a href =<?=$docs['uri_s']?> target="_blank"><?=[HAL]?></a>
+          <?php
           if (!empty($docs['doiId_s']) ) {
-            echo ' / <a href=http://dx.doi.org/'.$docs['doiId_s'].' target="_blank"> [DOI] </a>';
+            ?>
+            <a href=http://dx.doi.org/<?=$docs['doiId_s']?> target="_blank"> <?=[DOI]?> </a>
+            <?php
           }
         }
-          echo '</td></tr>';
-        echo "</TBODY></table><br>";
-?>
+        ?>
+          </td></tr>
+      </tbody></table><br>
