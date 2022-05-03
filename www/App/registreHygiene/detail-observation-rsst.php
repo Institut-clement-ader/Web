@@ -2,9 +2,6 @@
 
   /**
   * Améliorations à apporter :
-  * Supprimer le code en commentaire
-  * Enlever les echo innutiles
-  * Ajouter quelques commentaires
   */
 
 
