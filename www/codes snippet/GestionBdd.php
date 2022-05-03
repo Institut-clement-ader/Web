@@ -193,7 +193,7 @@ require_once("codes snippet/database.php");
 
     
     // si l'id d'un projet est defini, on le supprime
-    public function supprimerProjet($id){
+    public function supprimerProjet1($id){
       $req = $this->bdd->prepare('DELETE FROM wp_pods_projet WHERE id = ? LIMIT 1');
       $req = $bdd->prepare($requete);
       $req->execute(array($id));

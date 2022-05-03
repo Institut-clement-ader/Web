@@ -16,7 +16,7 @@
 		$id = $_POST["id_projet"];
 		if (!empty($id)) {
 			//on supprime le projet dont l'id a ete transmis
-			$req= $bdd->supprimerProjet($id);
+			$req= $bdd->supprimerProjet1($id);
 		}
 	}
 ?>
