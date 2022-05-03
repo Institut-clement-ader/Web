@@ -58,12 +58,12 @@
 				?>
               <tbody>
 							<tr>
-								<?php echo '<td>';?><?php echo ($username); ?><?php echo '</td>';?>
-								<?php echo '<td>';?><?php echo ucfirst($row['observations']); ?><?php echo '</td>';?>
-                <?php echo '<td>';?><?php echo date('d/m/y', strtotime($dateSaisie));?><?php echo '</td>';?>
-                <?php if($row['visa']==1){echo '<td>';?><?php echo date('d/m/y', strtotime($dateConsultationChefStructure)); ?><?php echo '</td>';}?>
-                <?php if($row['visa']==0){echo '<td>';?><?php echo "Pas encore consulté"; ?><?php echo '</td>';}?> 
-                <?php echo '<td>';?><a href="http://ica.cnrs.fr/affichage-de-lobservation/?id=<?php echo ($row['id']);?>">consulter</a><?php echo '</td>';?>
+								<td><?php echo ($username); ?></td>
+								<td><?php echo ucfirst($row['observations']); ?></td>
+                <td><?php echo date('d/m/y', strtotime($dateSaisie));?></td>
+                <?php if($row['visa']==1){ ?><td><?php echo date('d/m/y', strtotime($dateConsultationChefStructure)); ?></td> <?php } ?>
+                <?php if($row['visa']==0){ ?><td><?php echo "Pas encore consulté"; ?></td> <?php } ?>
+                <td><a href="http://ica.cnrs.fr/affichage-de-lobservation/?id=<?php echo ($row['id']);?>">consulter</a></td>
                
 							 </tr>
               </tbody>
