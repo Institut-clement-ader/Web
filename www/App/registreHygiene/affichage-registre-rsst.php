@@ -2,8 +2,6 @@
 
   /**
   * Améliorations à apporter :
-  * Enlever les echo innutiles
-  * Supprimer la partie de code en commentaire ( ancienne connexion BDD)
   */
 
 
