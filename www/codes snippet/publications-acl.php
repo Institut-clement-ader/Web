@@ -29,7 +29,7 @@
       //$strNbResultats = $nbResultats;
 
        if ($nbResultats > 0) {
-        ?><table width=\"100%\" class=\" tab_publications tablesorter {sortlist:[[0,1]]}\"><col width ='6%'><col width ='80%'><col width ='9%'><thead><tr><th><?TXT_ANNEE_PUBLIACL?></th><th><?TXT_AUTEURDOC_PUBLIACL?></th><th><?TXT_LIENS_PUBLIACL?></th></tr></THEAD><TBODY><?php        
+        ?><table width=\"100%\" class=\" tab_publications tablesorter {sortlist:[[0,1]]}\"><col width ='6%'><col width ='80%'><col width ='9%'><thead><tr><th><?=TXT_ANNEE_PUBLIACL?></th><th><?=TXT_AUTEURDOC_PUBLIACL?></th><th><?=TXT_LIENS_PUBLIACL?></th></tr></THEAD><TBODY><?php        
          foreach ($json['response']['docs'] as $docs) {
            
           ?><tr><?php
