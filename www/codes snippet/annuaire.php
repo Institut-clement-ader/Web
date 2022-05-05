@@ -106,12 +106,12 @@ function statusToString($stat) {
 
       //////// POUR L'AFFICHAGE DU TITRE
       ?>
-	    <input type="text" id="searchAnnu" class="search_tab" placeholder="Chercher un annuaire" title="Rentrer un nom">
+	    <input type="text" id="searchAnnu" class="search_tab" placeholder="<?=TXT_CHERCHER_ANNUAIRE?>" title="Rentrer un nom">
       <table class="tablesorter {sortlist: [[0,0]]} tab_annuaire" border="0"  cellpadding="1" width="100%" id="table"><thead>
-      <tr><th><b>Nom</b></th>
-        <th><b>Statut</b></th>
-        <th><b>Groupe</b></th>
-        <th><b>Etablissement</b></th>
+      <tr><th><b><?=TXT_NOM_ANNUAIRE?></b></th>
+        <th><b><?=TXT_STATUT_ANNUAIRE?></b></th>
+        <th><b><?=TXT_GROUPE_ANNUAIRE?></b></th>
+        <th><b><?=TXT_ETABLISSEMENT_ANNUAIRE?></b></th>
       </tr></thead><tbody>
 
       <?php

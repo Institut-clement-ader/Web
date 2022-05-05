@@ -45,7 +45,7 @@
 
        if ($nbResultats > 0) {
         ?>
-          <table width=\"100%\" class=\" tab_publications tablesorter {sortlist:[[0,1]]}\"><col width ='6%'><col width ='80%'><col width ='9%'><thead><tr><th>Année Publication ACL</th><th>Auteur Document Publication ACL</th><th>Liens publication ACL</th></tr></thead><tbody>        
+          <table width=\"100%\" class=\" tab_publications tablesorter {sortlist:[[0,1]]}\"><col width ='6%'><col width ='80%'><col width ='9%'><thead><tr><th><?=TXT_ANNEE_PUBLITACL?></th><th><?=TXT_AUTEURDOC_PUBLITACL?></th><th><?=TXT_LIENS_PUBLITACL?></th></tr></thead><tbody>        
           <?php
           foreach ($json['response']['docs'] as $docs) {
           ?>

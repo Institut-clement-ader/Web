@@ -1,10 +1,4 @@
 <?php
-
-  /**
-  * Améliorations à apporter :
-  */ 
-
-
       include ('codes snippet/fonctions_snippet.php');
 
       //détection de langue courante de la page
@@ -35,32 +29,23 @@
       //$strNbResultats = $nbResultats;
 
        if ($nbResultats > 0) {
-
-        ?>
-          <table width=\"100%\" class=\" tab_publications tablesorter {sortlist:[[0,1]]}\"><col width ='6%'><col width ='80%'><col width ='9%'><thead><tr><th>Année Publication ACL</th><th>Auteur Document Publication ACL</th><th>Liens publication ACL</th></tr></thead><tbody>     
-        <?php 
-          foreach ($json['response']['docs'] as $docs) {
-          ?>
-          <tr>
-          <?php
+        ?><table width=\"100%\" class=\" tab_publications tablesorter {sortlist:[[0,1]]}\"><col width ='6%'><col width ='80%'><col width ='9%'><thead><tr><th><?TXT_ANNEE_PUBLIACL?></th><th><?TXT_AUTEURDOC_PUBLIACL?></th><th><?TXT_LIENS_PUBLIACL?></th></tr></THEAD><TBODY><?php        
+         foreach ($json['response']['docs'] as $docs) {
+           
+          ?><tr><?php
+          
           //affichage de toutes les données relatives à une publication 
           affichagePublication($docs);          
 
         }
-        ?>
-        </td></tr>
-        </tbody></table><br>
-        <?php
+        ?></td></tr>
+        </tbody></table><br><?php
       }
         
 		//différents affichages en fonction du nombre de résultat 
     $urlACL = esc_url(get_permalink(2356)); 
-    ?>
-    <i><a href =<?=$urlACL?>><?=TXT_VOIRTOUT_PUBLIACL?></a></i><br /><br /><br />
-    <?php
-    $urlRecherche = esc_url(get_permalink(1720));
-    ?> 
-    <form action="<?=$urlRecherche?>" method="POST">
-      <input type="submit" value="<?=RAVANCEE_PUBLIACL?>" />
-    </form><br />
-
+    ?><i><a href =<?=$urlACL?>><?=TXT_VOIRTOUT_PUBLIACL?></a></i><br /><br /><br /><?php
+    $urlRecherche = esc_url(get_permalink(1720)); 
+    ?><form action="<?=$urlRecherche?>" method="POST">
+        <input type="submit" value="<?=TXT_RAVANCEE_PUBLIACL?>" />
+      </form><br />

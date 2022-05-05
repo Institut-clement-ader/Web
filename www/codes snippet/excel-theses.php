@@ -21,7 +21,7 @@
 		//Affichage d'un bouton "Télécharger au format Excel" pour la liste des thèses/doctorants
     ?>
 		  <form action='http://institut-clement-ader.org/gestion-theses/en-cours/excel/' method='POST'>
-				<button type='submit' class='spanExcel'><i class='fa fa-table'></i>&nbsp;&nbsp;&nbsp;Télécharger au format Excel</button>
+				<button type='submit' class='spanExcel'><i class='fa fa-table'></i>&nbsp;&nbsp;&nbsp;<?=TXT_TELECHARGER_EXCEL?></button>
 			</form>
     <?php
 	}

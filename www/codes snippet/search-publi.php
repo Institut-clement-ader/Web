@@ -28,9 +28,9 @@ if ($id > 0) {
 ?>
 	<FORM METHOD='POST' ACTION='../publications/' CLASS='form-publi'>
 
-				<label for='grp'>Groupe</label>
+				<label for='grp'><?=TXT_GROUPE_RAVANCEE?></label>
 				<select id='grp' name='groupe'>
-					<option value='labo'>Tous les groupes</option>
+					<option value='labo'><?=TXT_TOUSGROUPE_RAVANCEE?></option>
 					<option value='MICS'> MICS </option>
 					<option value='MS2M'> MS2M </option>
 					<option value='SUMO'> SUMO </option>
@@ -38,51 +38,51 @@ if ($id > 0) {
 				</select><br><br>
   
 				<fieldset class='doc-search'>
-					<legend>Type de document</legend>
+					<legend><?=TXT_TYPEDOC_RAVANCEE?></legend>
 					<div>
 						<div class='type' id='publications'>
-							<label for='publi' class='labtype'>Publications</label>
+							<label for='publi' class='labtype'><?=TXT_PUBLICATIONS_RAVANCEE?></label>
 							<div class ='subtype'>
-								<input type='checkbox' name='ART' id='art' checked><label for='art'>Article dans une revue</label>
-								<input type='checkbox' name='COMM' id='comm'><label for='comm'>Communication dans un congrès</label>
-                				<input type='checkbox' name='INV' id='inv'><label for='inv'>Communication invité</label>
-								<input type='checkbox' name='COUV' id='couv'><label for='couv'>Chapitre d'ouvrage</label>
+								<input type='checkbox' name='ART' id='art' checked><label for='art'><?=TXT_ART_RAVANCEE?></label>
+								<input type='checkbox' name='COMM' id='comm'><label for='comm'><?=TXT_COMM_RAVANCEE?></label>
+                				<input type='checkbox' name='INV' id='inv'><label for='inv'><?=TXT_INV_RAVANCEE?></label>
+								<input type='checkbox' name='COUV' id='couv'><label for='couv'><?=TXT_CHAPITRE_RAVANCEE?></label>
 							</div>
 							<div class='subtype'>
-								<input type='checkbox' name='OTHER' id='other'><label for='other'>Autre publication</label>
-								<input type='checkbox' name='OUV' id='ouv'><label for='ouv'>Ouvrage (y compris édition critique et traduction)</label>
+								<input type='checkbox' name='OTHER' id='other'><label for='other'><?=TXT_AUTRE_RAVANCEE?></label>
+								<input type='checkbox' name='OUV' id='ouv'><label for='ouv'><?=TXT_OUVRAGE_RAVANCEE?></label>
 							</div>
 							<div class=subtype>
-								<input type='checkbox' name='DOUV' id='douv'><label for='douv'>Direction d'ouvrage, proceedings, dossier</label>
-								<input type='checkbox' name='POSTER' id='poster'><label for='poster'>Poster</label>
-								<input type='checkbox' name='PATENT' id='patent'><label for='patent'>Brevet</label>
+								<input type='checkbox' name='DOUV' id='douv'><label for='douv'><?=TXT_DIRECTION_RAVANCEE?></label>
+								<input type='checkbox' name='POSTER' id='poster'><label for='poster'><?=TXT_POSTER_RAVANCEE?></label>
+								<input type='checkbox' name='PATENT' id='patent'><label for='patent'><?=TXT_BREVET_RAVANCEE?></label>
 							</div>
 						</div>
 
 						<div class='type' id='nonpublies'>
-							<label for='npubli' class='labtype'>Documents non publiés</label>
+							<label for='npubli' class='labtype'><?=TXT_NONPUBLI_RAVANCEE?></label>
 							<div class='subtype'>
-								<input type='checkbox' name='UNDEFINED' id='undef'><label for='undef'>Pré-publication, document de travail</label>
-								<input type='checkbox' name='REPORT' id='report'><label for='report'>Rapport</label>
+								<input type='checkbox' name='UNDEFINED' id='undef'><label for='undef'><?=TXT_PREPUBLI_RAVANCEE?></label>
+								<input type='checkbox' name='REPORT' id='report'><label for='report'><?=TXT_RAPPORT_RAVANCEE?></label>
 							</div>
 						</div>
 
 						<div class='type' id='universitaires'>
-							<label for='univ' class='labtype'>Travaux universitaires</label>
+							<label for='univ' class='labtype'><?=TXT_TRAVAUXUNIV_RAVANCEE?></label>
 							<div class='subtype'>
-								<input type='checkbox' name='THESE' id='these'><label for='these'>Thèse</label>
-								<input type='checkbox' name='HDR' id='hdr'><label for='hdr'>HDR</label>
-								<input type='checkbox' name='LECTURE' id='lecture'><label for='lecture'>Cours</label>
+								<input type='checkbox' name='THESE' id='these'><label for='these'><?=TXT_THESE_RAVANCEE?></label>
+								<input type='checkbox' name='HDR' id='hdr'><label for='hdr'><?=TXT_HDR_RAVANCEE?></label>
+								<input type='checkbox' name='LECTURE' id='lecture'><label for='lecture'><?=TXT_COURS_RAVANCEE?></label>
 							</div>
 						</div>
 
 						<div class='type' id='donnees'>
-							<label for='data' class='labtype'>Données de recherche</label>
+							<label for='data' class='labtype'><?=TXT_DONNEES_RAVANCEE?></label>
 							<div class='subtype'>
-								<input type='checkbox' name='IMG' id='img'><label for='img'>Image</label>
-								<input type='checkbox' name='VIDEO' id='vid'><label for='vid'>Vidéo</label>
-								<input type='checkbox' name='MAP' id='map'><label for='map'>Carte</label>
-								<input type='checkbox' name='SON' id='son'><label for='son'>Son</label>
+								<input type='checkbox' name='IMG' id='img'><label for='img'><?=TXT_IMAGE_RAVANCEE?></label>
+								<input type='checkbox' name='VIDEO' id='vid'><label for='vid'><?=TXT_VIDEO_RAVANCEE?></label>
+								<input type='checkbox' name='MAP' id='map'><label for='map'><?=TXT_CARTE_RAVANCEE?></label>
+								<input type='checkbox' name='SON' id='son'><label for='son'><?=TXT_SON_RAVANCEE?></label>
 							</div>
 						</div>
 					</div>
@@ -116,9 +116,9 @@ if ($id > 0) {
 	<form METHOD='POST' ACTION='../publications/' CLASS='form-publi'>
 
 
-				<label for='grp'>Groupe</label>
+	<label for='grp'><?=TXT_GROUPE_RAVANCEE?></label>
 				<select id='grp' name='groupe'>
-					<option value='labo'>Tous les groupe</option>
+					<option value='labo'><?=TXT_TOUSGROUPE_RAVANCEE?></option>
 					<option value='MICS'> MICS </option>
 					<option value='MS2M'> MS2M </option>
 					<option value='SUMO'> SUMO </option>
@@ -126,51 +126,51 @@ if ($id > 0) {
 				</select><br><br>
   
 				<fieldset class='doc-search'>
-					<legend>Type de document</legend>
+					<legend><?=TXT_TYPEDOC_RAVANCEE?></legend>
 					<div>
 						<div class='type' id='publications'>
-							<label for='publi' class='labtype'>Publications</label>
+							<label for='publi' class='labtype'><?=TXT_PUBLICATIONS_RAVANCEE?></label>
 							<div class ='subtype'>
-								<input type='checkbox' name='ART' id='art' checked><label for='art'>Article dans une revue</label>
-								<input type='checkbox' name='COMM' id='comm'><label for='comm'>Communication dans un congrès</label>
-                				<input type='checkbox' name='INV' id='inv'><label for='inv'>Communication invité</label>
-								<input type='checkbox' name='COUV' id='couv'><label for='couv'>Chapitre d'ouvrage</label>
+								<input type='checkbox' name='ART' id='art' checked><label for='art'><?=TXT_ART_RAVANCEE?></label>
+								<input type='checkbox' name='COMM' id='comm'><label for='comm'><?=TXT_COMM_RAVANCEE?></label>
+                				<input type='checkbox' name='INV' id='inv'><label for='inv'><?=TXT_INV_RAVANCEE?></label>
+								<input type='checkbox' name='COUV' id='couv'><label for='couv'><?=TXT_CHAPITRE_RAVANCEE?></label>
 							</div>
 							<div class='subtype'>
-								<input type='checkbox' name='OTHER' id='other'><label for='other'>Autre publication</label>
-								<input type='checkbox' name='OUV' id='ouv'><label for='ouv'>Ouvrage (y compris édition critique et traduction)</label>
+								<input type='checkbox' name='OTHER' id='other'><label for='other'><?=TXT_AUTRE_RAVANCEE?></label>
+								<input type='checkbox' name='OUV' id='ouv'><label for='ouv'><?=TXT_OUVRAGE_RAVANCEE?></label>
 							</div>
 							<div class=subtype>
-								<input type='checkbox' name='DOUV' id='douv'><label for='douv'>Direction d'ouvrage, proceedings, dossier</label>
-								<input type='checkbox' name='POSTER' id='poster'><label for='poster'>Poster</label>
-								<input type='checkbox' name='PATENT' id='patent'><label for='patent'>Brevet</label>
+								<input type='checkbox' name='DOUV' id='douv'><label for='douv'><?=TXT_DIRECTION_RAVANCEE?></label>
+								<input type='checkbox' name='POSTER' id='poster'><label for='poster'><?=TXT_POSTER_RAVANCEE?></label>
+								<input type='checkbox' name='PATENT' id='patent'><label for='patent'><?=TXT_BREVET_RAVANCEE?></label>
 							</div>
 						</div>
 
 						<div class='type' id='nonpublies'>
-							<label for='npubli' class='labtype'>Documents non publiés</label>
+							<label for='npubli' class='labtype'><?=TXT_NONPUBLI_RAVANCEE?></label>
 							<div class='subtype'>
-								<input type='checkbox' name='UNDEFINED' id='undef'><label for='undef'>Pré-publication, document de travail</label>
-								<input type='checkbox' name='REPORT' id='report'><label for='report'>Rapport</label>
+								<input type='checkbox' name='UNDEFINED' id='undef'><label for='undef'><?=TXT_PREPUBLI_RAVANCEE?></label>
+								<input type='checkbox' name='REPORT' id='report'><label for='report'><?=TXT_RAPPORT_RAVANCEE?></label>
 							</div>
 						</div>
 
 						<div class='type' id='universitaires'>
-							<label for='univ' class='labtype'>Travaux universitaires</label>
+							<label for='univ' class='labtype'><?=TXT_TRAVAUXUNIV_RAVANCEE?></label>
 							<div class='subtype'>
-								<input type='checkbox' name='THESE' id='these'><label for='these'>Thèse</label>
-								<input type='checkbox' name='HDR' id='hdr'><label for='hdr'>HDR</label>
-								<input type='checkbox' name='LECTURE' id='lecture'><label for='lecture'>Cours</label>
+								<input type='checkbox' name='THESE' id='these'><label for='these'><?=TXT_THESE_RAVANCEE?></label>
+								<input type='checkbox' name='HDR' id='hdr'><label for='hdr'><?=TXT_HDR_RAVANCEE?></label>
+								<input type='checkbox' name='LECTURE' id='lecture'><label for='lecture'><?=TXT_COURS_RAVANCEE?></label>
 							</div>
 						</div>
 
 						<div class='type' id='donnees'>
-							<label for='data' class='labtype'>Données de recherche</label>
+							<label for='data' class='labtype'><?=TXT_DONNEES_RAVANCEE?></label>
 							<div class='subtype'>
-								<input type='checkbox' name='IMG' id='img'><label for='img'>Image</label>
-								<input type='checkbox' name='VIDEO' id='vid'><label for='vid'>Vidéo</label>
-								<input type='checkbox' name='MAP' id='map'><label for='map'>Carte</label>
-								<input type='checkbox' name='SON' id='son'><label for='son'>Son</label>
+								<input type='checkbox' name='IMG' id='img'><label for='img'><?=TXT_IMAGE_RAVANCEE?></label>
+								<input type='checkbox' name='VIDEO' id='vid'><label for='vid'><?=TXT_VIDEO_RAVANCEE?></label>
+								<input type='checkbox' name='MAP' id='map'><label for='map'><?=TXT_CARTE_RAVANCEE?></label>
+								<input type='checkbox' name='SON' id='son'><label for='son'><?=TXT_SON_RAVANCEE?></label>
 							</div>
 						</div>
 					</div>

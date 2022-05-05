@@ -35,7 +35,7 @@
 	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
 		?>
-		<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>Emploi CDD</strong></p>
+		<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong><?=TXT_CDD_EMPLOI?></strong></p>
 		<?php
 		echo do_shortcode('[pods name="offre_emploi" where="type_offre=\'Contrat CDD\' AND date_fin >= \''.date('Y-m-d').'\'" template="Liste des offres" limit="1000"]');
 
@@ -46,7 +46,7 @@
 	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
   		?>
-		<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>Emploi Doctorat</strong></p>
+		<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong><?TXT_DOCTORAT_EMPLOI?></strong></p>
 		<?php
 		echo do_shortcode('[pods name="offre_emploi" where="type_offre=\'Doctorat\' AND date_fin >= \''.date('Y-m-d').'\'" template="Liste des offres" limit="1000"]');
 
@@ -57,7 +57,7 @@
 	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
 	?>
-	<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>Emploi Post-Doctorat</strong></p>
+	<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong><?TXT_PDOCTORAT_EMPLOI?></strong></p>
 	<?php
 		echo do_shortcode('[pods name="offre_emploi" where="type_offre=\'Post-doctorat\' AND date_fin >= \''.date('Y-m-d').'\'" template="Liste des offres" limit="1000"]');
 
@@ -67,7 +67,7 @@
 	$res = $bdd->analyseListeOffresDispo($type_offre);
 	if ($res[0][0] > 0)
 		?>
-		<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>Postes permanents</strong></p>
+		<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong><?=TXT_PERMANENTS_EMPLOI?></strong></p>
 		<?php
 		echo do_shortcode('[pods name="offre_emploi" where="type_offre=\'Poste permanent\' AND date_fin >= \''.date('Y-m-d').'\'" template="Tableau des offres (Gestion)" limit="1000"]');
 
@@ -77,7 +77,7 @@
 	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
 		?>
-		<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>Stages</strong></p>
+		<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong><?=TXT_STAGES_EMPLOI?></strong></p>
 		<?php
 		echo do_shortcode('[pods name="offre_emploi" where="type_offre=\'Stage\' AND date_fin >= \''.date('Y-m-d').'\'" template="Liste des offres" limit="1000"]');
 

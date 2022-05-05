@@ -100,15 +100,10 @@
           <i><?=$misc?><i>
           <?php
     
-          //affichage de l'ID (HAL) et du DOI s'il existe
-          ?>
-          <td><a href =<?=$docs['uri_s']?> target="_blank" > <?php [HAL] ?> </a>
-          <?php
-          echo ' / <a href ='.$docs['uri_s'].'/bibtex target="_blank">[BIB]</a>';
-          if (!empty($docs['doiId_s']) ) {
-            ?>
-            / <a href=http://dx.doi.org/<?=$docs['doiId_s']?> target="_blank"> <?php[DOI]?> </a>
-            <?php
+            echo '<td><a href ='.$docs['uri_s'].' target="_blank">[HAL]</a>';
+            echo ' / <a href ='.$docs['uri_s'].'/bibtex target="_blank">[BIB]</a>';
+            if (!empty($docs['doiId_s']) ) {
+              echo ' / <a href=http://dx.doi.org/'.$docs['doiId_s'].' target="_blank"> [DOI] </a>';
           }
     
 }
