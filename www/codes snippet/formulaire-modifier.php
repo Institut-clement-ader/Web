@@ -50,24 +50,8 @@ $bdd = new GestionBdd();
               update_user_meta($idTest,'arrivee',$_POST['dateA']);
               update_user_meta($idTest,'display_user',$cocher);
 
-              //fenetre de confirmation d'enregistrement de la modification
-              //echo'<script>var myWindow = window.open("", "", "width=200, height=100");myWindow.document.write("<p>Utilisateur modifié !</p>");setTimeout(function(){ myWindow.close() }, 3000);</script>';
-
           }
-          //else{
-              //fenetre d'information si le mail n'existe pas dans la bdd
-              //echo'<script>var myWindow = window.open("", "", "width=200, height=100");myWindow.document.write("<p>Adresse mail introuvable !</p>");setTimeout(function(){ myWindow.close() }, 5000);</script>';
-          //}
-         
-          
-//             if ($_POST['statut']=="Doctorant") {
 
-//                 echo '<script type="text/javascript">';
-
-//                  echo   "document.location.href = 'http://institut-clement-ader.org/gestion-theses/';";
-
-//                 echo "</script>";
-//             }
         }
     ?>
         <h2>Entrez l'adresse mail de l'utilisateur à modifier :</h2>
@@ -144,19 +128,6 @@ $bdd = new GestionBdd();
       exit();
     }
 
-  //   //CONNEXION A LA BDD
-	// $serveur="mysql2.lamp.ods";
-	// $utilisateur="lab0612sql3";
-	// $password="6kU737oCZcfR";
-	// $db="lab0612sql3db";
-	
-	// try {
-	// 	$bdd = new PDO('mysql:host='.$serveur.';dbname='.$db, $utilisateur, $password);
-	// } catch(PDOException $e) {
-	// 	print "Erreur : ".$e->getMessage();
-	// 	die();
-   
-	// } 
   
     $saveok=0;
 
@@ -182,24 +153,8 @@ $bdd = new GestionBdd();
               update_user_meta($idTest,'arrivee',$_POST['dateA']);
               update_user_meta($idTest,'display_user',$cocher);
 
-              //fenetre de confirmation d'enregistrement de la modification
-              //echo'<script>var myWindow = window.open("", "", "width=200, height=100");myWindow.document.write("<p>Utilisateur modifié !</p>");setTimeout(function(){ myWindow.close() }, 3000);</script>';
-
           }
-          //else{
-              //fenetre d'information si le mail n'existe pas dans la bdd
-              //echo'<script>var myWindow = window.open("", "", "width=200, height=100");myWindow.document.write("<p>Adresse mail introuvable !</p>");setTimeout(function(){ myWindow.close() }, 5000);</script>';
-          //}
-         
-          
-//             if ($_POST['statut']=="Doctorant") {
 
-//                 echo '<script type="text/javascript">';
-
-//                  echo   "document.location.href = 'http://institut-clement-ader.org/gestion-theses/';";
-
-//                 echo "</script>";
-//             }
         }
     ?>
 
