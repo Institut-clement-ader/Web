@@ -1,4 +1,15 @@
 <?php
+
+  /**
+   * Améliorations à apporter :
+   * Code en commentaire innutile et à supprimer
+   * Changer la liaison BDD en utilisant la classe Gestion BDD (prendre exemple sur les autres codes)
+   * Enlever les echo en utilisant les balises php.
+   * 
+   * Revoir l'utilité de ce fichier car comme ecrit ci-dessous celui-ci n'est pas utilisé dans le formulaire d'inscription
+   */
+
+
 // Ce n'est pas ce fichier là qui est utilisé pour le formulaire d'inscription
 // voir wp_admin/formulaire-inscription.php
 
@@ -8,25 +19,6 @@ if (!current_user_can('administrator')) {
 	    exit();
     }
 
-    //CONNEXION A LA BDD
-	$serveur="mysql2.lamp.ods";
-	$utilisateur="lab0612sql3";
-	$password="XY02b21aBLaq";
-	$db="lab0612sql3db";
-	
-	try {
-		$bdd = new PDO('mysql:host='.$serveur.';dbname='.$db, $utilisateur, $password);
-	} catch(PDOException $e) {
-		print "Erreur : ".$e->getMessage();
-		die();
-  require("codes snippet/GestionBdd.php");
-    $db = new GestionBdd($serveur,$db,$utilisateur,$password);
-   
-	} 
-  
-?>
-
-    <?php
     $saveok=0;
     //Pour récupérer le groupe dans le nom de l'axe
     function parenthese($str) {
@@ -55,45 +47,20 @@ if (!current_user_can('administrator')) {
               update_user_meta($idTest,'arrivee',$_POST['dateA']);
               update_user_meta($idTest,'display_user',$cocher);
 
-              //fenetre de confirmation d'enregistrement de la modification
-              //echo'<script>var myWindow = window.open("", "", "width=200, height=100");myWindow.document.write("<p>Utilisateur modifié !</p>");setTimeout(function(){ myWindow.close() }, 3000);</script>';
-
           }
-          //else{
-              //fenetre d'information si le mail n'existe pas dans la bdd
-              //echo'<script>var myWindow = window.open("", "", "width=200, height=100");myWindow.document.write("<p>Adresse mail introuvable !</p>");setTimeout(function(){ myWindow.close() }, 5000);</script>';
-          //}
-         
-          
-//             if ($_POST['statut']=="Doctorant") {
-
-//                 echo '<script type="text/javascript">';
-
-//                  echo   "document.location.href = 'http://institut-clement-ader.org/gestion-theses/';";
-
-//                 echo "</script>";
-//             }
         }
-    ?>
-  <?php
-      echo '
-        <h2>Entrez l\'adresse mail de l\'utilisateur à modifier :</h2>';
-    ?>
-    <?php 
+    ?><h2>Entrez l'adresse mail de l'utilisateur à modifier :</h2><?php 
       if($saveok==1){
-        echo'<div id="echec">';
-        echo '<p style="color:white"> &nbsp; Email non reconnu ou incorrect</p><br>';
-        echo'</div>';
+        ?><div id="echec">
+        <p style="color:white"> &nbsp; Email non reconnu ou incorrect</p><br>
+        </div><?php
       }
       elseif($saveok==2){
-        echo'<div id="confirmation">';
-        echo '<p style="color:white"> &nbsp; Enregistrement OK.</p><br>';
-        echo'</div>';
+        ?><div id="confirmation">
+        <p style="color:white"> &nbsp; Enregistrement OK.</p><br>';
+        </div><?php
       }
-    ?>
-    <br>bonjour est ce que le html fonctionne
-    <?php
-    echo'
+      ?>
     <form id="inscription" name="inscription" method="post" action="https://ica.cnrs.fr/formulaire-inscription/">
       Adresse de messagerie(nécéssaire) : <input type="email" name="mail"/><br/><br/>
       <label for="statut">Statut : </label><select id="statut" name="statut"/> 
@@ -189,8 +156,7 @@ if (!current_user_can('administrator')) {
            <option  value="IUT de Tarbes"> IUT de Tarbes</option>
            <option  value="Autre">Autre </option>
         </select><br/><br/>
-  <label for="dateA">Date d\'arrivée : </label><input type="date" value="';?><?php echo date('Y-m-d'); ?><?php echo '" name="dateA"/> <br/><br/>
-          <input type="submit" name="valider" value="Valider"/>
-     </form>';
-?>
+  <label for="dateA">Date d'arrivée : </label><input type="date" value="<?=date('Y-m-d');?>" name="dateA"/> <br/><br/>
+    <input type="submit" name="valider" value="Valider"/>
+</form>
   

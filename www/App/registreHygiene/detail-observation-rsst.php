@@ -1,4 +1,10 @@
 <?php
+
+  /**
+  * Améliorations à apporter :
+  */
+
+
   // Restreint l'accès aux utilisateurs connectés
   if (!is_user_logged_in()) {
     echo("loggin to access this page");
@@ -21,7 +27,7 @@
          $dateSaisie = ($row['date_saisie']);
          $dateConsultationChefStructure = ($row['date_consultation_chef_structure']);
 ?>
-          <?php echo '<h6>';?><?php echo 'Observation saisie le '.date('d/m/y', strtotime($dateSaisie)).' par '.$username.' : ';?><?php echo '</h6>';?>
+          <h6><?php echo 'Observation saisie le '.date('d/m/y', strtotime($dateSaisie)).' par '.$username.' : ';?></h6>
 
           <table>
               <col width="30%">
@@ -30,11 +36,11 @@
           <tbody>
               <tr>
                 <th>Statut au sein de l'entreprise</th>
-                  <?php echo '<td>';?><?php echo ($row['position']); ?><?php echo '</td>';?>
+                <td><?php echo ($row['position']); ?></td>
               </tr>
               <tr>
                   <th>Heure de saisie</th>
-                  <?php echo '<td>';?><?php echo ($row['heure_saisie']); ?><?php echo '</td>';?>
+                  <td><?php echo ($row['heure_saisie']); ?></td>
               </tr>
            </table>
 
@@ -43,15 +49,15 @@
               <col width="70%">
               <tr>
                   <th>Type d'observation</th>
-                  <?php echo '<td>';?><?php echo ($row['sujet']); ?><?php echo '</td>';?>
+                  <td><?php echo ($row['sujet']); ?></td>
               </tr>
               <tr>
                   <th>Observations relatives à la prévention des risques professionels et à l'amélioration des conditions de travail</th>
-                  <?php echo '<td>';?><?php echo ($row['observations']); ?><?php echo '</td>';?>
+                  <td><?php echo ($row['observations']); ?></td>
               </tr>
               <tr>
                   <th>Propositions pour améliorer la situation</th>
-                  <?php echo '<td>';?><?php echo ($row['propositions']); ?><?php echo '</td>';?>
+                  <td><?php echo ($row['propositions']); ?></td>
               </tr>
            </table>
               
@@ -61,16 +67,16 @@
               <col width="70%">
               <tr>
                   <th>Date de validation</th>
-                  <?php if($row['visa']==1){echo '<td>';?><?php echo date('d/m/y', strtotime($dateConsultationChefStructure)); ?><?php echo '</td>';}?>
-                  <?php if($row['visa']==0){echo '<td>';?><?php echo "Le responsable de la structure n'a pas encore consulté cette observation"; ?><?php echo '</td>';}?>            
+                  <?php if($row['visa']==1){ ?><td><?php echo date('d/m/y', strtotime($dateConsultationChefStructure)); ?> </td> <?php }?>
+                  <?php if($row['visa']==0){ ?><td><?php echo "Le responsable de la structure n'a pas encore consulté cette observation"; ?> </td> <?php }?>          
               </tr>
               <tr>
                   <th>Nom et prénom</th>
-                  <?php echo '<td>';?><?php echo ($row['nom_chef_structure']); ?><?php echo '</td>';?>
+                  <td><?php echo ($row['nom_chef_structure']); ?></td>
               </tr>
               <tr>
                   <th>Observation</th>
-                  <?php echo '<td>';?><?php echo ($row['observations_du_responsable']); ?><?php echo '</td>';?>
+                  <td><?php echo ($row['observations_du_responsable']); ?></td>
               </tr>
         </tbody>
 <?php

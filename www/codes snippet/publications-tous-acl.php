@@ -1,5 +1,10 @@
 <?php
 
+/**
+    * Améliorations à apporter :
+    */ 
+
+
       include ('codes snippet/fonctions_snippet.php');
 
       //détection de langue courante de la page
@@ -29,32 +34,37 @@
       $nbResultats = $json['response']['numFound'];
 
           if ( is_user_logged_in() ) {
-            echo "<FORM METHOD='POST' ACTION='http://institut-clement-ader.org/excel-des-publications/' CLASS='form-publi'>";
-            echo '<input type="hidden" name="url" value='.$url.'>';
-            echo "<br /><button type=submit class='spanExcel'><i class='fa fa-table'></i>&nbsp &nbsp &nbsp".TXT_TELECHARGER_PUBLITACL."</button><br /></FORM>";
+            ?>
+            <form METHOD='POST' ACTION='http://institut-clement-ader.org/excel-des-publications/' CLASS='form-publi'>
+            <input type="hidden" name="url" value=<?=$url?>>
+            <br /><button type=submit class='spanExcel'><i class='fa fa-table'></i>&nbsp &nbsp &nbsp<?=TXT_TELECHARGER_PUBLITACL?></button><br /></form>
+            <?php
           }
-
+          
       //$strNbResultats = $nbResultats;
 
        if ($nbResultats > 0) {
-
-          echo "<table width=\"100%\" class=\" tab_publications tablesorter {sortlist:[[0,1]]}\"><col width ='6%'><col width ='80%'><col width ='9%'>"."<THEAD>"."<tr>"."<th>".TXT_ANNEE_PUBLITACL."</th><th>".TXT_AUTEURDOC_PUBLITACL."</th><th>".TXT_LIENS_PUBLITACL."</th></tr></THEAD><TBODY>";        
-         foreach ($json['response']['docs'] as $docs) {
-          echo "<tr>";
+        ?>
+          <table width=\"100%\" class=\" tab_publications tablesorter {sortlist:[[0,1]]}\"><col width ='6%'><col width ='80%'><col width ='9%'><thead><tr><th><?=TXT_ANNEE_PUBLITACL?></th><th><?=TXT_AUTEURDOC_PUBLITACL?></th><th><?=TXT_LIENS_PUBLITACL?></th></tr></thead><tbody>        
+          <?php
+          foreach ($json['response']['docs'] as $docs) {
+          ?>
+          <tr>
+            <?php
            
           //affichage de toutes les données relatives à une publication 
           affichagePublication($docs); 
           
         }
-          echo '</td></tr>';
-        echo "</TBODY></table><br>";
+        ?>
+        </td></tr>
+        </tbody></table><br>
+        <?php
       }
         
 		//différents affichages en fonction du nombre de résultat 
     $urlRecherche = esc_url(get_permalink(1720)); 
-    echo '<form action="'.$urlRecherche.'" method="POST">
-                    <input type="submit" value="'.TXT_RAVANCEE_PUBLITACL.'" />
-          </form><br />';
-
-
     ?>
+    <form action="<?=$urlRecherche?>" method="POST">
+      <input type="submit" value="<?=TXT_RAVANCEE_PUBLITACL?>" />
+    </form>

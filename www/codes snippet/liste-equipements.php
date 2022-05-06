@@ -1,6 +1,10 @@
 <?php
 
-  //détection de langue courante de la page
+	/**
+    * Améliorations à apporter :
+    */
+
+	//détection de langue courante de la page
   $currentlang = get_bloginfo('language');
 
   if(strpos($currentlang,'fr')!==false){
@@ -12,25 +16,14 @@
   }
 
 
-	//LIAISON A LA BDD
-	$serveur="mysql2.lamp.ods";
-	$utilisateur="lab0612sql3";
-	$password="XY02b21aBLaq";
-	$db="lab0612sql3db";
-	
-	try{
-		$bdd = new PDO('mysql:host='.$serveur.';dbname='.$db, $utilisateur, $password);
-	} catch(PDOException $e) {
-		print "Erreur : ".$e->getMessage();
-		die();
-	}
+  require("codes snippet/GestionBdd.php");
+  $bdd = new GestionBdd();
 
 // require("codes snippet/GestionBdd.php");
 // $bdd = new GestionBdd();
 
 	//NOMBRE D'EQUIPEMENTS
-	$requete="SELECT COUNT(*) FROM `wp_pods_moyen`";
-        $nb_moyens = $bdd->query($requete)->fetchColumn();
+	$nb_moyens = $bdd->nombreEquipement();
 	//Affichage selon le nombre de resultats
 	if ($nb_moyens == 0)
 		$nb_moyens= TXT_AUCUN_EQUIPEMENT;
@@ -40,61 +33,67 @@
 		echo $nb_moyens.TXT_EQUIPEMENT_EQUIPEMENT."<br><br>";
 
 	//ANALYSE PHYSICO-CHIMIQUE
-	$requete="SELECT count(*) FROM `wp_pods_moyen` WHERE `categorie` = :type";
-	$req=$bdd->prepare($requete);
-	$req->execute(array('type'=>"Analyse physico-chimique"));
-	$res = $req->fetchAll();
+	$categorie ="Analyse physico-chimique";
+	$res = $bdd->analyseListeEquipement($categorie);
+	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
-		echo "<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>".TXT_PHYSICO_EQUIPEMENT."</strong></p>";
-	echo do_shortcode('[pods name="moyen" where="categorie=\'Analyse physico-chimique\'" template="Tableau des moyens" limit="1000"]');
+  		?>
+		<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong><?=TXT_PHYSICO_EQUIPEMENT?></strong></p>
+		<?php
+		echo do_shortcode('[pods name="moyen" where="categorie=\'Analyse physico-chimique\'" template="Tableau des moyens" limit="1000"]');
 
 
 	//CARACTERISATION MECANIQUE
-	$requete="SELECT count(*) FROM `wp_pods_moyen` WHERE `categorie` = :type";
-	$req=$bdd->prepare($requete);
-	$req->execute(array('type'=>"Caracterisation mecanique"));
-	$res = $req->fetchAll();
+	$categorie ="Caractérisation mécanique";
+	$res = $bdd->analyseListeEquipement($categorie);
+	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
-		echo "<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>".TXT_CMECANIQUE_EQUIPEMENT."</strong></p>";
-	echo do_shortcode('[pods name="moyen" where="categorie=\'Caractérisation mécanique\'" template="Tableau des moyens" limit="1000"]');
+		?>
+		<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong><?=TXT_CMECANIQUE_EQUIPEMENT?></strong></p>
+		<?php
+		echo do_shortcode('[pods name="moyen" where="categorie=\'Caractérisation mécanique\'" template="Tableau des moyens" limit="1000"]');
 
 
 	//CONTROLE ET MESURE DES PIECES FABRIQUEES
-	$requete="SELECT count(*) FROM `wp_pods_moyen` WHERE `categorie` = :type";
-	$req=$bdd->prepare($requete);
-	$req->execute(array('type'=>"Controle et mesure des pieces fabriquees"));
-	$res = $req->fetchAll();
+	$categorie ="Contrôle et mesure des pièces fabriquées";
+	$res = $bdd->analyseListeEquipement($categorie);
+	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
-		echo "<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>".TXT_CONTROLE_EQUIPEMENT."</strong></p>";
-	echo do_shortcode('[pods name="moyen" where="categorie=\'Contrôle et mesure des pièces fabriquées\'" template="Tableau des moyens" limit="1000"]');
+		?>
+		<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong><?=TXT_CONTROLE_EQUIPEMENT?></strong></p>
+		<?php
+		echo do_shortcode('[pods name="moyen" where="categorie=\'Contrôle et mesure des pièces fabriquées\'" template="Tableau des moyens" limit="1000"]');
 
 
 	//FABRICATION
-	$requete="SELECT count(*) FROM `wp_pods_moyen` WHERE `categorie` = :type";
-	$req=$bdd->prepare($requete);
-	$req->execute(array('type'=>"Fabrication"));
-	$res = $req->fetchAll();
+	$categorie ="Fabrication";
+	$res = $bdd->analyseListeEquipement($categorie);
+	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
-		echo "<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>".TXT_FABRICATION_EQUIPEMENT."</strong></p>";
-	echo do_shortcode('[pods name="moyen" where="categorie=\'Fabrication\'" template="Tableau des moyens" limit="1000"]');
+		?>
+		<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong><?=TXT_FABRICATION_EQUIPEMENT?></strong></p>
+		<?php
+		echo do_shortcode('[pods name="moyen" where="categorie=\'Fabrication\'" template="Tableau des moyens" limit="1000"]');
 
 
 	//SIMULATION NUMERIQUE
-	$requete="SELECT count(*) FROM `wp_pods_moyen` WHERE `categorie` = :type";
-	$req=$bdd->prepare($requete);
-	$req->execute(array('type'=>"Simulation numerique"));
-	$res = $req->fetchAll();
+	$categorie ="Simulation numérique";
+	$res = $bdd->analyseListeEquipement($categorie);
+	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
-		echo "<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>".TXT_SIMUNUMERIQUE_EQUIPEMENT."</strong></p>";
-	echo do_shortcode('[pods name="moyen" where="categorie=\'Simulation numérique\'" template="Tableau des moyens" limit="1000"]');
+		?>
+		<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong><?=TXT_SIMUNUMERIQUE_EQUIPEMENT?></strong></p>
+		<?php
+		echo do_shortcode('[pods name="moyen" where="categorie=\'Simulation numérique\'" template="Tableau des moyens" limit="1000"]');
 
 
 	//TRAITEMENTS THERMIQUES
-	$requete="SELECT count(*) FROM `wp_pods_moyen` WHERE `categorie` = :type";
-	$req=$bdd->prepare($requete);
-	$req->execute(array('type'=>"Traitements thermiques"));
-	$res = $req->fetchAll();
+	$categorie ="Traitements thermiques";
+	$res = $bdd->analyseListeEquipement($categorie);
+	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
-		echo "<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>".TXT_THERMIQUES_EQUIPEMENT."</strong></p>";
-	echo do_shortcode('[pods name="moyen" where="categorie=\'Traitements thermiques\'" template="Tableau des moyens" limit="1000"]');
+		?>
+		<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong><?=TXT_THERMIQUES_EQUIPEMENT?></strong></p>
+		<?php
+		echo do_shortcode('[pods name="moyen" where="categorie=\'Traitements thermiques\'" template="Tableau des moyens" limit="1000"]');
 ?>

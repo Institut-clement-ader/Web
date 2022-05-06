@@ -1,7 +1,14 @@
 <?php
 
-include ('codes snippet/fonctions_snippet.php');
+/**
+  * Améliorations à apporter :
+  * Enlever les echo innutiles
+  * Supprimer la function docTypeConvert car elle est écrite 2 fois (une suffit)
+  * Supprimer le code en commentaire
+  */
 
+
+include ('codes snippet/fonctions_snippet.php');
 //détection de langue courante de la page
 $currentlang = get_bloginfo('language');
 
@@ -258,7 +265,8 @@ function docTypeConvert ($doctype,$invited,$peerReview,$vulgarisation) {
                   if (!empty($docs['classification_s'])) {
                     foreach ($docs['classification_s'] as $class) {
                       if ($class == "NR") {
-                        $refFound = true;<?php
+                        $refFound = true; 
+                        // <?php
 
 include ('codes snippet/fonctions_snippet.php');
 

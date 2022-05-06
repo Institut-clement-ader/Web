@@ -1,4 +1,7 @@
 <?php
+
+
+
 // Vérifier si le formulaire a été soumis
 if(isset($_POST['groupe_cr'])){
     // Vérifie si le fichier a été uploadé sans erreur.
@@ -39,20 +42,19 @@ if(isset($_POST['groupe_cr'])){
 
 ?>
 
-<?php
-echo'<form action="https://ica.cnrs.fr/comptes-rendus/" method="post" enctype="multipart/form-data">
-        <h2>Déposer un document :</h2>
-         <label>Déposé par un membre du : </label><select id="groupe_cr" name="groupe_cr" required/> 
-          <option  value="cs"> CS</option>
-          <option  value="cu"> CU</option>
-          <option  value="codir"> Comité de direction</option>
-        </select><br/><br/>
-        <label for="fileUpload">Fichier:</label>
-        <input type="file" name="fichier" id="fileUpload"><br /><br />
-        <input type="submit" name="submit" value="Upload">
-        <p><strong>Note:</strong> Taille maximale de 5 Mo.</p>
-    </form>'
-?>
+<form action="https://ica.cnrs.fr/comptes-rendus/" method="post" enctype="multipart/form-data">
+  <h2>Déposer un document :</h2>
+    <label>Déposé par un membre du : </label><select id="groupe_cr" name="groupe_cr" required/> 
+    <option  value="cs"> CS</option>
+    <option  value="cu"> CU</option>
+    <option  value="codir"> Comité de direction</option>
+  </select><br/><br/>
+  <label for="fileUpload">Fichier:</label>
+  <input type="file" name="fichier" id="fileUpload"><br /><br />
+  <input type="submit" name="submit" value="Upload">
+  <p><strong>Note:</strong> Taille maximale de 5 Mo.</p>
+</form>
+
 
 
 

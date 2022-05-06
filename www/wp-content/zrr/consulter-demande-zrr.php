@@ -4,6 +4,11 @@
     echo("loggin to access this page");
 	  exit();
   }
+  if($_SERVER['REQUEST_METHOD']== 'POST'){
+    echo 'ok';
+  }else{
+    echo 'non';
+  }
   $user = wp_get_current_user();
   $email = $user->user_email;
 // Si Nicolas ou Admin
@@ -15,6 +20,7 @@
   require("codes snippet/GestionBdd.php");
   $bdd = new GestionBdd();
     $req = $bdd->getDemandesZrr();
+
 ?>
 
   <table>
@@ -34,6 +40,7 @@
           
 					if(isset($req)){
 						while($row = $req->fetch()){
+
               $user = get_user_by( 'email', $row['mail'] );
               $user_id = $user->ID;
               $username = $user->first_name." ".$user->last_name;
@@ -52,12 +59,12 @@
 								<td id="accepterDemande"><form action="http://ica.cnrs.fr/demandes-zrr/" method="POST"><button style="background-color:green" type="hidden" name="accepter" value="<?php echo $row['id']; ?>">accepter</button></form></td>
                 <td id="refuserDemande"><form action="http://ica.cnrs.fr/demandes-zrr/" method="POST"><button style="background-color:red" type="hidden" name="refuser" value="<?php echo $row['id']; ?>">refuser</button></form></td>
                 <td>
-                  <form id="updateNumDossier" method="POST">
-                    <input type="hidden" name="id_zrr" value="'.$row['id'].'">
-                    <input type="hidden" name="last_name" value="'.$row['prenom'].'">
-                    <input type="hidden" name="first_name" value="'.$row['nom'].'">
-                    <input type="text" width="3px" name="num_dossier" id="num_dossier">
-                    <input type="submit" value="Mettre à jour">
+                  <form id="updateNumDossier" method="POST" action="">
+                    <input type="hidden" name="id_zrr" value=" <?= $row['id'] ?>">
+                    <input type="hidden" name="last_name" value="<?=$row['prenom']?>">
+                    <input type="hidden" name="first_name" value="<?=$row['nom']?>">
+                    <input type="text" width="3px" name="num_dossier" id="num_dossier" value="<?= isset($_POST['num_dossier']) ? $_POST['num_dossier'] :'non'; ?>">
+                    <button type="submit"  name="submit" value="Mettre à jour">Mettre à jour </button>
                   </form>
               	</td>
                 <?php } else if($row['necessite_zrr']==0 && $row['num_dossier']!=0){?><td><?php echo strtoupper($row['nom']); ?></td>

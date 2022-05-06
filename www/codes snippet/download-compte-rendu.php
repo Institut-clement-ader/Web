@@ -1,16 +1,21 @@
 <?php
+  /**
+   * Page innéxistante sur la Prod
+   * Il faut la terminer !
+   */
 
 			//Liste les fichiers d'un répertoire
-  echo'<form action="https://ica.cnrs.fr/comptes-rendus/" method="post" enctype="multipart/form-data">
-        <h2>Télécharger un document :</h2>
-        <label>Afficher les comptes-rendus déposé par : </label><select id="cr_groupe" name="cr_groupe" required/> 
-          <option  value="cs"> CS</option>
-          <option  value="cu"> CU</option>
-          <option  value="codir"> Comité de direction</option>
-        </select><br/><br/>
-        <input type="submit" name="submit" value="Afficher"><br/><br/>
-    </form>'		
-?>
+  ?>    
+  <form action="https://ica.cnrs.fr/comptes-rendus/" method="post" enctype="multipart/form-data">
+    <h2>Télécharger un document :</h2>
+    <label>Afficher les comptes-rendus déposé par : </label><select id="cr_groupe" name="cr_groupe" required/> 
+      <option  value="cs"> CS</option>
+      <option  value="cu"> CU</option>
+      <option  value="codir"> Comité de direction</option>
+      </select><br/><br/>
+      <input type="submit" name="submit" value="Afficher"><br/><br/>
+  </form>		
+
 
  <table>
    <col width="9O%">
@@ -28,15 +33,21 @@
   if(isset($_POST['cr_groupe'])){
     $depotDownload = $_POST['cr_groupe'];
     if($depotDownload == 'cs'){
-      echo "<b>Liste des fichiers du répertoire CS :</b><br /><br />\n";
+      ?>
+     <b>Liste des fichiers du répertoire CS :</b><br/><br/>\n
+      <?php
       $folderpath = 'wp-content/uploads/comptes-rendus/cs';
     }
     if($depotDownload == 'cu'){
-      echo "<b>Liste des fichiers du répertoire CU :</b><br /><br />\n";
+      ?>
+      <b>Liste des fichiers du répertoire CU :</b><br/><br/>\n
+      <?php
       $folderpath = 'wp-content/uploads/comptes-rendus/cu';
     }
     if($depotDownload == 'codir'){
-      echo "<b>Liste des fichiers du répertoire CODIR :</b><br />\n";
+      ?>
+      <b>Liste des fichiers du répertoire CODIR :</b><br />\n
+      <?php
       $folderpath = 'wp-content/uploads/comptes-rendus/codir';
     }
 
@@ -51,8 +62,8 @@
                 
   ?>
               <tr>
-                <?php echo '<td>';?><?php echo $file;?><?php echo '</td>';?>
-                <?php echo '<td>';?><?php echo '<a href="'.$url.'" download="'.$file.'">Télécharger</a>';?><?php echo '</td>';?>
+                <td><?php echo $file;?></td>
+                <td><?php echo '<a href="'.$url.'" download="'.$file.'">Télécharger</a>';?></td>
               </tr>
   <?php             
               }
@@ -62,7 +73,6 @@
           }
           else{echo "Le répertoire $folderpath n'existe pas ou ce n'est pas un répertoire.";}
   }
-// }
 ?>
 </table>
 

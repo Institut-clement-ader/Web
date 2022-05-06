@@ -1,4 +1,10 @@
 <?php
+
+  /**
+  * Améliorations à apporter :
+  */
+
+
   // Restreint l'accès aux utilisateurs connectés
   if (!is_user_logged_in()) {
     echo("loggin to access this page");
@@ -40,18 +46,16 @@
 						while($row = $req->fetch()){
               $username = ($row['nom'])." ".($row['prenom']);
               $dateSaisie = ($row['date_saisie']);
-                
-              
               
              
 				?>
               <tbody>
 							<tr>
-                <?php echo '<td>';?><?php echo date('d/m/y', strtotime($dateSaisie));?><?php echo '</td>';?>
-								<?php echo '<td>';?><?php echo ($username); ?><?php echo '</td>';?>
-								<?php echo '<td>';?><?php echo ucfirst($row['sujet']); ?><?php echo '</td>';?>
-                <?php echo '<td>';?><?php echo ucfirst($row['observations']); ?><?php echo '</td>';?>
-                <?php echo '<td>';?><a href="http://ica.cnrs.fr/completer-lobservation/?id=<?php echo ($row['id']);?>">Ajouter une observation</a><?php echo '</td>';?>
+                <td><?php echo date('d/m/y', strtotime($dateSaisie));?></td>
+                <td><?php echo ($username); ?></td>
+								<td><?php echo ucfirst($row['sujet']); ?></td>
+                <td><?php echo ucfirst($row['observations']); ?></td>
+                <td><a href="http://ica.cnrs.fr/completer-lobservation/?id=<?php echo ($row['id']);?>">Ajouter une observation</a></td>
                
 							 </tr>
               </tbody>

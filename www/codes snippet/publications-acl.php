@@ -29,27 +29,23 @@
       //$strNbResultats = $nbResultats;
 
        if ($nbResultats > 0) {
-
-          echo "<table width=\"100%\" class=\" tab_publications tablesorter {sortlist:[[0,1]]}\"><col width ='6%'><col width ='80%'><col width ='9%'>"."<THEAD>"."<tr>"."<th>".TXT_ANNEE_PUBLIACL."</th><th>".TXT_AUTEURDOC_PUBLIACL."</th><th>".TXT_LIENS_PUBLIACL."</th></tr></THEAD><TBODY>";        
+        ?><table width=\"100%\" class=\" tab_publications tablesorter {sortlist:[[0,1]]}\"><col width ='6%'><col width ='80%'><col width ='9%'><thead><tr><th><?=TXT_ANNEE_PUBLIACL?></th><th><?=TXT_AUTEURDOC_PUBLIACL?></th><th><?=TXT_LIENS_PUBLIACL?></th></tr></THEAD><TBODY><?php        
          foreach ($json['response']['docs'] as $docs) {
            
-          echo "<tr>";
+          ?><tr><?php
           
           //affichage de toutes les données relatives à une publication 
           affichagePublication($docs);          
 
         }
-          echo '</td></tr>';
-        echo "</TBODY></table><br>";
+        ?></td></tr>
+        </tbody></table><br><?php
       }
         
 		//différents affichages en fonction du nombre de résultat 
     $urlACL = esc_url(get_permalink(2356)); 
-    echo '<i><a href = '.$urlACL.'>'.TXT_VOIRTOUT_PUBLIACL.'</a></i><br /><br /><br />';
+    ?><i><a href =<?=$urlACL?>><?=TXT_VOIRTOUT_PUBLIACL?></a></i><br /><br /><br /><?php
     $urlRecherche = esc_url(get_permalink(1720)); 
-    echo '<form action="'.$urlRecherche.'" method="POST">
-                    <input type="submit" value="'.TXT_RAVANCEE_PUBLIACL.'" />
-          </form><br />';
-
-
-    ?>
+    ?><form action="<?=$urlRecherche?>" method="POST">
+        <input type="submit" value="<?=TXT_RAVANCEE_PUBLIACL?>" />
+      </form><br />

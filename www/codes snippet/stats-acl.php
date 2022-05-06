@@ -1,4 +1,11 @@
 <?php
+
+  /**
+  * Améliorations à apporter :
+  * Enlever les echo innutiles qui apportent surement des erreurs dans le code
+  */ 
+
+
 //création des tableaux pour garder les valeurs des abscisses de chaque année
 $tabyear = array();
 $tabval = array();
@@ -75,12 +82,13 @@ $rows = substr($rows, 0, -1);
 
 //on récupère la valeur maximale du nombre de publis et on lui ajoute 10 (pour mieux afficher le graphe)
 $maxValue = max($tabval) + 10;
+?>
+<div id="linechart_material"></div>
 
-echo '<div id="linechart_material"></div>';
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<?php
 
-echo '<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-<script type="text/javascript">
+echo'<script type="text/javascript">
 // Load google charts
       google.charts.load(\'current\', {\'packages\':[\'line\']});
       google.charts.setOnLoadCallback(drawChart);

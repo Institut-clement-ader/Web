@@ -1,26 +1,20 @@
 <?php
-//CONNEXION A LA BDD
-$serveur     = "mysql2.lamp.ods";
-$utilisateur = "lab0612sql3";
-$password    = "XY02b21aBLaq";
-$db          = "lab0612sql3db";
 
-try {
-    $bdd = new PDO('mysql:host=' . $serveur . ';dbname=' . $db, $utilisateur, $password);
-}
-catch (PDOException $e) {
-    print "Erreur : " . $e->getMessage();
-    die();
-    
-}
+    /**
+    * Améliorations à apporter :
+     */
 
+
+require("codes snippet/GestionBdd.php");
+$bdd = new GestionBdd();
 
 ?>
  
 <?php
 function liste_pays()
 {
-    echo '<option selected="selected" value=""> </option>
+    ?>
+    <option selected="selected" value=""> </option>
           <option  value="Afghanistan">Afghanistan</option> 
           <option  value="Afrique du Sud">Afrique du Sud</option>
           <option  value="Albanie">Albanie</option> 
@@ -62,7 +56,7 @@ function liste_pays()
           <option  value="Corée du Sud">Corée du Sud</option>
           <option  value="Congo">Congo</option>
           <option  value="Costa Rica">Costa Rica</option>
-          <option  value="Côte d\'Ivoire">Côte d\'Ivoire</option>
+          <option  value="Côte d'Ivoire">Côte d'Ivoire</option>
           <option  value="Croatie">Croatie</option>
           <option  value="Cuba">Cuba</option>
           <option  value="Danemark">Danemark</option>
@@ -75,7 +69,7 @@ function liste_pays()
           <option  value="Érythrée">Érythrée</option>
           <option  value="Espagne">Espagne</option>
           <option  value="Estonie">Estonie</option>
-          <option  value="États-Unis d\'Amérique">États-Unis d\'Amérique</option>
+          <option  value="États-Unis d\'Amérique">États-Unis d'Amérique</option>
           <option  value="Éthyopie">Éthyopie</option>
           <option  value="Fidji">Fidji</option>
           <option  value="Finlande">Finlande</option>
@@ -159,7 +153,7 @@ function liste_pays()
           <option  value="République centrafricaine">République centrafricaine</option>
           <option  value="République démocratique du Congo">République démocratique du Congo</option>
           <option  value="République dominicaine">République dominicaine</option>
-          <option  value="République tchèque>République tchèque</option>
+          <option  value="République tchèque">République tchèque</option>
           <option  value="Russie">Russie</option>
           <option  value="Roumanie">Roumanie</option>
           <option  value="Royaume-Uni">Royaume-Uni</option>
@@ -194,10 +188,11 @@ function liste_pays()
           <option  value="Viet Nam">Viet Nam</option>
           <option  value="Yémen">Yémen</option>
           <option  value="Zambie">Zambie</option>
-          <option  value="Zimbabwe">Zimbabwe</option>';
+          <option  value="Zimbabwe">Zimbabwe</option>
+        <?php
 }
-
-echo '<form id="formulaire-zrr" name="zrr" method="post" action="http://institut-clement-ader.org/formulaire-zrr/">
+?>
+    <form id="formulaire-zrr" name="zrr" method="post" action="http://institut-clement-ader.org/formulaire-zrr/">
  
       Nom (last name)* : <input type="text" name="nom" required/>
       
@@ -224,25 +219,25 @@ echo '<form id="formulaire-zrr" name="zrr" method="post" action="http://institut
     Code postal et ville de naissance (zip code and birthplace)* : <br/><input type="text" name="code_ville_naissance" required/><br/><br/>
   
     <label for="pays_naissance">Pays de naissance (country of birth)* : <br/></label>
-    <select name="pays_naissance" required>';
-?><?php
+    <select name="pays_naissance" required>
+<?php
 liste_pays();
-?><?php
-echo '</select><br/><br/>
+?>
+</select><br/><br/>
         
     <label for="nationalié">Nationalité (nationality)* : <br/></label>
-    <select name="nationalité" required>';
-?><?php
+    <select name="nationalité" required>
+<?php
 liste_pays();
-?><?php
-echo '</select><br/><br/>
+?>
+</select><br/><br/>
         
     <label for="autre_nationalié">Autre nationalité (other nationality)* : <br/></label>
-    <select name="nationalité">';
-?><?php
+    <select name="nationalité">
+<?php
 liste_pays();
-?><?php
-echo '</select><br/><br/>
+?>
+</select><br/><br/>
         
     Adresse E-mail (e-mail)* : <input type="email" name="mail" required/><br/>
     
@@ -251,11 +246,11 @@ echo '</select><br/><br/>
     Code postal et ville (zip code and city)* : <input type="text" name="code_ville_principale" required/><br/>
     
     <label for="pays">Pays (country)* : <br/></label>
-    <select name="pays" required>';
-?><?php
+    <select name="pays" required>
+<?php
 liste_pays();
-?><?php
-echo '</select><br/><br/>
+?>
+</select><br/><br/>
     
     <label for="situation">Situation professionnelle actuelle (current professional situation)* : <br/></label>
     <select name="pays" required> 
@@ -278,10 +273,10 @@ echo '</select><br/><br/>
     
     <label for="pays">Pays (country)* : <br/></label>
     <select name="pays_organisme" required>';
-?><?php
+<?php
 liste_pays();
-?><?php
-echo '</select><br/><br/><br/>
+?>
+</select><br/><br/><br/>
     
     Indiquez et précisez si vous avez fait une autre demande d\'accès simultanément à celle-ci (indicate and precise if you submited another access authorization )* : <input type="text" name="autre_demande" required/><br/>
     
@@ -314,5 +309,4 @@ echo '</select><br/><br/><br/>
     
     
          <input type="submit" name="valider" value="Valider"/>
-     </form>';
-?>
+     </form>

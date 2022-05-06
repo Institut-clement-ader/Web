@@ -1,5 +1,10 @@
 <?php
 
+	/**
+    * Améliorations à apporter :
+    * Ajouter des commentaires
+    */
+?>
 <p>Créer un nouvel utilisateur et l’ajouter à ce site.</p>
 <form method="post" name="createuser" id="createuser" class="validate" novalidate="novalidate">
 <input name="action" type="hidden" value="createuser" />
@@ -96,5 +101,3 @@
 
 <p class="submit"><input type="submit" name="createuser" id="createusersub" class="button button-primary" value="Ajouter un utilisateur"  /></p>
 </form>
-
-?>

@@ -1,4 +1,10 @@
 <?php  
+
+	/**
+    * Améliorations à apporter :
+    */
+
+
   //détection de langue courante de la page
   $currentlang = get_bloginfo('language');
 
@@ -10,22 +16,11 @@
     echo("échec de reconnaissance de la langue");
   }
 
-// CONNEXION A LA BDD
-	$serveur="mysql2.lamp.ods";
-	$utilisateur="lab0612sql3";
-	$password="XY02b21aBLaq";
-	$db="lab0612sql3db";
-	
-	try {
-		$bdd = new PDO('mysql:host='.$serveur.';dbname='.$db, $utilisateur, $password);
-	} catch(PDOException $e) {
-		print "Erreur : ".$e->getMessage();
-		die();
-	}
+	require("codes snippet/GestionBdd.php");
+	$bdd = new GestionBdd();
 
 	//NOMBRE D'OFFRES
-	$requete="SELECT COUNT(*) FROM `wp_pods_offre_emploi` WHERE `date_fin` >= CURDATE()";
-	$nb_offres = $bdd->query($requete)->fetchColumn();
+	$nb_offres = $bdd-> nombreOffresDispo();
 	//Affichage selon le nombre de resultats
 	if ($nb_offres == 0)
 		$nb_offres = TXT_AUCUNE_EMPLOI;
@@ -35,51 +30,55 @@
 		echo $nb_offres.TXT_OFFRE_EMPLOI."<br><br>";
 	
 	//CONTRATS A DUREE DETERMINEE
-	$requete="SELECT count(*) FROM `wp_pods_offre_emploi` WHERE `type_offre` = :type AND `date_fin` >= CURDATE()";
-	$req=$bdd->prepare($requete);
-	$req->execute(array('type'=>"Contrat CDD"));
-	$res = $req->fetchAll();
+	$type_offre ="Contrat CDD";
+	$res = $bdd->analyseListeOffresDispo($type_offre);
 	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
-		echo "<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>".TXT_CDD_EMPLOI."</strong></p>";
-	echo do_shortcode('[pods name="offre_emploi" where="type_offre=\'Contrat CDD\' AND date_fin >= \''.date('Y-m-d').'\'" template="Liste des offres" limit="1000"]');
+		?>
+		<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong><?=TXT_CDD_EMPLOI?></strong></p>
+		<?php
+		echo do_shortcode('[pods name="offre_emploi" where="type_offre=\'Contrat CDD\' AND date_fin >= \''.date('Y-m-d').'\'" template="Liste des offres" limit="1000"]');
 
 
 	//DOCTORATS
-	$requete="SELECT count(*) FROM `wp_pods_offre_emploi` WHERE `type_offre` = :type AND `date_fin` >= CURDATE()";
-	$req=$bdd->prepare($requete);
-	$req->execute(array('type'=>"Doctorat"));
-	$res = $req->fetchAll();
+	$type_offre ="Doctorat";
+	$res = $bdd->analyseListeOffresDispo($type_offre);
 	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
-		echo "<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>".TXT_DOCTORAT_EMPLOI."</strong></p>";
-	echo do_shortcode('[pods name="offre_emploi" where="type_offre=\'Doctorat\' AND date_fin >= \''.date('Y-m-d').'\'" template="Liste des offres" limit="1000"]');
+  		?>
+		<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong><?TXT_DOCTORAT_EMPLOI?></strong></p>
+		<?php
+		echo do_shortcode('[pods name="offre_emploi" where="type_offre=\'Doctorat\' AND date_fin >= \''.date('Y-m-d').'\'" template="Liste des offres" limit="1000"]');
 
 
 	//POST-DOCTORAT
-	$requete="SELECT count(*) FROM `wp_pods_offre_emploi` WHERE `type_offre` = :type AND `date_fin` >= CURDATE()";
-	$req=$bdd->prepare($requete);
-	$req->execute(array('type'=>"Post-doctorat"));
-	$res = $req->fetchAll();
+	$type_offre ="Post-doctorat";
+	$res = $bdd->analyseListeOffresDispo($type_offre);
 	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
-		echo "<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>".TXT_PDOCTORAT_EMPLOI."</strong></p>";
-	echo do_shortcode('[pods name="offre_emploi" where="type_offre=\'Post-doctorat\' AND date_fin >= \''.date('Y-m-d').'\'" template="Liste des offres" limit="1000"]');
+	?>
+	<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong><?TXT_PDOCTORAT_EMPLOI?></strong></p>
+	<?php
+		echo do_shortcode('[pods name="offre_emploi" where="type_offre=\'Post-doctorat\' AND date_fin >= \''.date('Y-m-d').'\'" template="Liste des offres" limit="1000"]');
 
 
 	//POSTES PERMANENTS
-	$requete="SELECT count(*) FROM `wp_pods_offre_emploi` WHERE `type_offre` = :type AND `date_fin` >= CURDATE()";
-	$req=$bdd->prepare($requete);
-	$req->execute(array('type'=>"Poste permanent"));
+	$type_offre ="Poste permanent";
+	$res = $bdd->analyseListeOffresDispo($type_offre);
+	if ($res[0][0] > 0)
+		?>
+		<br><p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong><?=TXT_PERMANENTS_EMPLOI?></strong></p>
+		<?php
+		echo do_shortcode('[pods name="offre_emploi" where="type_offre=\'Poste permanent\' AND date_fin >= \''.date('Y-m-d').'\'" template="Tableau des offres (Gestion)" limit="1000"]');
 
 	//STAGES
-	$requete="SELECT count(*) FROM `wp_pods_offre_emploi` WHERE `type_offre` = :type AND `date_fin` >= CURDATE()";
-	$req=$bdd->prepare($requete);
-	$req->execute(array('type'=>"Stage"));
-	$res = $req->fetchAll();
+	$type_offre ="Stage";
+	$res = $bdd->analyseListeOffresDispo($type_offre);
 	//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
 	if ($res[0][0] > 0)
-		echo "<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>".TXT_STAGES_EMPLOI."</strong></p>";
-	echo do_shortcode('[pods name="offre_emploi" where="type_offre=\'Stage\' AND date_fin >= \''.date('Y-m-d').'\'" template="Liste des offres" limit="1000"]');
+		?>
+		<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong><?=TXT_STAGES_EMPLOI?></strong></p>
+		<?php
+		echo do_shortcode('[pods name="offre_emploi" where="type_offre=\'Stage\' AND date_fin >= \''.date('Y-m-d').'\'" template="Liste des offres" limit="1000"]');
 
 ?>
