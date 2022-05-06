@@ -64,19 +64,19 @@ $bdd = new GestionBdd();
 						<td><?= esc_attr($user->last_name) . ' ' . esc_attr($user->first_name) ?></td>
 						<td><?=esc_attr($user->status)?></td>
 						<td><?=esc_attr($user->tablissement_de_rattachement)?></td>
-						<td><a target="_blank" href="../wp-admin/user-edit.php?user_id='. ($user->ID) .'">Éditer</a></td>
+						<td><a target="_blank" href="../wp-admin/user-edit.php?user_id=<?=($user->ID)?>">Éditer</a></td>
 						<td><?php
 				  		if (esc_attr($user->status) == 'Post-doctorant' || esc_attr($user->status) == 'Doctorant' || esc_attr($user->status) == 'Attaché temporaire d\'enseignement et de recherche') {
 							?>
 							<form id="submitdelmembre" method="POST">
-								<input type="hidden" name="idSuppr" value="'.($user->ID).'">
+								<input type="hidden" name="idSuppr" value="<?=($user->ID)?>">
 								<input type="submit" value="Supprimer" class="del_button">
 							</form>
 							<?php
 				  		} else {
 							?>
 							<form method="POST">
-								<input type="hidden" name="idCach" value="'.($user->ID).'">
+								<input type="hidden" name="idCach" value="<?=($user->ID)?>">
 								<input type="submit" value="Cacher">
 							</form>
 							<?php
@@ -97,7 +97,7 @@ $bdd = new GestionBdd();
 							<td></td>
 							<td>
 								<form method="POST">
-									<input type="hidden" name="idRet" value="'.($user->ID).'">
+									<input type="hidden" name="idRet" value="<?=($user->ID)?>">
 									<input type="submit" value="Rétablir">
 								</form>
 							</td>
