@@ -1,6 +1,6 @@
 <?php
 
-require("codes snippet/GestionBdd.php");
+require("App/GestionBdd.php");
 $bdd = new GestionBdd();
 
 	//RETABLIR UN MEMBRE CACHÉ
