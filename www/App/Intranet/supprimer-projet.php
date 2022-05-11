@@ -7,7 +7,7 @@
 
 
 	//LIAISON A LA BDD
-	require("codes snippet/GestionBdd.php");
+	require("App/GestionBdd.php");
 	$bdd = new GestionBdd();
 
 	//SUPPRESSION D'UN PROJET

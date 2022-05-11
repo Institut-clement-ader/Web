@@ -2,13 +2,6 @@
 
   /**
   * Améliorations à apporter :
-  * La fonction statusToCode est innutile il y a un moyen plus simple de retrouver le status grace au wp_current_user
-  * Il suffit de faire :
-          *$current_user = wp_get_current_user();
-          *$nom_uti= $current_user->display_name;
-          *$status= $current_user->status;
-  * Enlever les echo innutiles en fermant les balises php
-  * Supprimer les élements innutiles ( fonction status)
   */
 
   $current_user = wp_get_current_user();
