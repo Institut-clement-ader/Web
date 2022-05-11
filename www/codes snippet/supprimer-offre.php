@@ -1,25 +1,20 @@
 <?php
+
+	/**
+    * Améliorations à apporter :
+    */
+
+
 	//LIAISON A LA BDD
-	$serveur="mysql2.lamp.ods";
-	$utilisateur="lab0612sql3";
-	$password="XY02b21aBLaq";
-	$db="lab0612sql3db";
-	
-	try{
-		$bdd = new PDO('mysql:host='.$serveur.';dbname='.$db, $utilisateur, $password);
-	} catch(PDOException $e) {
-		print "Erreur : ".$e->getMessage();
-		die();
-	}
+	require("codes snippet/GestionBdd.php");
+	$bdd = new GestionBdd();
 
 	//SUPPRESSION D'UNE OFFRE
 	if (isset($_POST["id_offre"])) {
 		$id = $_POST["id_offre"];
 		if (!empty($id)) {
 			// si l'id d'une offre est defini, on la supprime
-			$requete="DELETE FROM `wp_pods_offre_emploi` WHERE `id` = :id LIMIT 1";
-			$req = $bdd->prepare($requete);
-			$req->execute(array('id'=>$id));
+			$req= $bdd->supprimerOffre($id);
 
 			//si un fichier existe, on le supprime
 			if (isset($_POST["urlfic"])) {
