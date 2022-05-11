@@ -9,9 +9,9 @@
   $currentlang = get_bloginfo('language');
 
   if(strpos($currentlang,'fr')!==false){
-    include('codes snippet/lang-fr.php');
+    include('App/lang-fr.php');
   }elseif(strpos($currentlang,'en')!==false){
-    include('codes snippet/lang-en.php');
+    include('App/lang-en.php');
   }else{
     echo("échec de reconnaissance de la langue");
   }
