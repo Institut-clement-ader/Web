@@ -123,6 +123,7 @@ require_once("App/database.php");
     $req = $this-> bdd->prepare('SELECT COUNT(*) FROM wp_pods_offre_emploi');
     $req->execute();
     $req = $req->fetchColumn();
+    return $req;
     }    
 
     //ANALYSE DES OFFRES DISPONIBLES

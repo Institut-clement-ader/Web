@@ -9,15 +9,15 @@ require("App/GestionBdd.php");
 $bdd = new GestionBdd();
 
 //SUPPRESSION D'UNE OFFRE
-if (isset($_POST["id_offre"])) {
-	$id = $_POST["id_offre"];
+if (isset($_GET["id"])) {
+	$id = $_GET["id"];
 	if (!empty($id)) {
 		// si l'id d'une offre est defini, on la supprime
 		$req= $bdd->supprimerOffre($id);
 
 		//si un fichier existe, on le supprime
-		if (isset($_POST["urlfic"])) {
-			$fichier = $_POST["urlfic"];
+		if (isset($_GET["url"])) {
+			$fichier = $_GET["url"];
 			if  (!empty($fichier)) {
 					//SUPPRESSION DU FICHIER ASSOCIE
 					$fichier = explode('/wp-content', $fichier);
@@ -27,5 +27,6 @@ if (isset($_POST["id_offre"])) {
 			}
 		}
 	}
+	header('Location: http://ica.cnrs.fr/gestion-offres/');
 }
 ?>
