@@ -1,5 +1,5 @@
 <?php
-      include ('App/Public/Publications/fonctions_snippet.php');
+      include ('App/Public/Publications/publication_fonctions.php');
 
       //détection de langue courante de la page
       $currentlang = get_bloginfo('language');
