@@ -29,7 +29,7 @@ if(strpos($currentlang,'fr')!==false){
       </tr></thead><tbody>
 
       <?php
-      $users = get_users('orderby=user_lastname');
+      $users = get_users("orderby=user_lastname");
       foreach ($users as $user) {
         if ($user->display_user == 1) {
             if (strlen($user->display_name) > 0) {
@@ -39,7 +39,9 @@ if(strpos($currentlang,'fr')!==false){
               if ((esc_attr($user->hdr) == 1) && (esc_attr($user->status) != 'pr' && esc_attr($user->status) != 'pri' && esc_attr($user->status) != 'pra' && esc_attr($user->status) != 'Professeur associé' && esc_attr($user->status) != 'Professeur invité' && statusToString(strtolower(esc_attr($user->status))) != 'Professeur (ou équivalent)' && esc_attr($user->status) != 'Professeur')) {
                 echo ' (HDR)';
               }
-              echo'</td><td>';
+              ?>
+              </td><td>
+              <?php
               echo strtoupper(esc_attr($user->groupe_primaire));
               if (strlen(esc_attr($user->groupe_secondaire)) > 0 && (esc_attr($user->groupe_secondaire) != esc_attr($user->groupe_primaire) && esc_attr($user->groupe_secondaire) != 'AXTR')) {
                 echo '/'.strtoupper(esc_attr($user->groupe_secondaire));

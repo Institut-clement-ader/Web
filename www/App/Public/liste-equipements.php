@@ -19,9 +19,6 @@
   require("App/GestionBdd.php");
   $bdd = new GestionBdd();
 
-// require("codes snippet/GestionBdd.php");
-// $bdd = new GestionBdd();
-
 	//NOMBRE D'EQUIPEMENTS
 	$nb_moyens = $bdd->nombreEquipement();
 	//Affichage selon le nombre de resultats
