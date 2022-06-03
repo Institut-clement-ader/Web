@@ -29,7 +29,7 @@
     $mail = $current_user->user_email;
     $user_id = get_current_user_id();
     $date_fin = $_POST['date_fin'];
-    $url = dirname(__DIR__)."/zrr/uploads/".strtolower ( $_POST['nom']).strtolower ($_POST['prenom']).$user_id.".zip";
+    $url = dirname(__DIR__)."/ZRR/uploads/".strtolower ( $_POST['nom']).strtolower ($_POST['prenom']).$user_id.".zip";
     $file = 0;
     if(filesize($_FILES['fichier']['tmp_name']) < 10000000){
       if(!file_exists($url)){
@@ -114,14 +114,14 @@
           <option  value="CNRS"> CNRS</option>
          </select><br/><br/>
     Nom et prénom du tuteur (nécéssaire) : <input type="text" name="nom_prenom_tuteur" required/><br/>
-    Adresse E-mail de l\'arrivant (nécéssaire) : <input type="email" name="mail" required/><br/><br/>
-    Date d\'arrivée (nécessaire) :<input type="date" name="date_arrivee" required/><br/><br/>
+    Adresse E-mail de l'arrivant (nécéssaire) : <input type="email" name="mail" required/><br/><br/>
+    Date d'arrivée (nécessaire) :<input type="date" name="date_arrivee" required/><br/><br/>
     Date estimée de fin de mission (nécessaire) :<input type="date" name="date_fin" required/><br/>
     <br/>
-    Dépôt fichier de  l\'archive zip (moins de <em>7Mo</em>! ) contenant:<br><br>
+    Dépôt fichier de  l'archive zip (moins de <em>7Mo</em>! ) contenant:<br><br>
     -Fichier excel<br> 
     -CV<br>
-    -Carte d\'identité<br>
+    -Carte d'identité<br>
     -Sujet<br><br>
     <input type="file" name="fichier" accept=".zip" required/><br/><br/>
     <input type="submit" name="valider" value="Valider"/>
