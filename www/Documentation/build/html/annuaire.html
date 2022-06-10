@@ -1,77 +1,43 @@
-
 <!DOCTYPE html>
-
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Annuaire &#8212; Documentation ICA Prod 0.0.1</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/translations.js"></script>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Annuaire &mdash; Documentation ICA Prod 0.0.1</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Publications" href="publications.html" />
-    <link rel="prev" title="App" href="app.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="prev" title="App" href="app.html" /> 
+</head>
 
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="annuaire">
-<h1>Annuaire<a class="headerlink" href="#annuaire" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="le-fichier-annuaire">
-<h2>Le fichier Annuaire<a class="headerlink" href="#le-fichier-annuaire" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Le fichier Annuaire fais appel à <em>annuaire_fonction.php</em> que nous verrons après.</p>
-<p>On peut retrouver la traduction de la page avec le code faisant appel au pages lang-en et lang-fr.
-Les variables exemple : <strong>TXT_NOM_ANNUAIRE</strong> permettent la traduction automatique des entete tu tableau.</p>
-<dl class="simple">
-<dt>Le tableau représentant l’annuaire est trié par nom de famille :</dt><dd><p><em>$users = get_users(« orderby=user_lastname »);</em></p>
-</dd>
-</dl>
-<p><strong>statusToString</strong> est une fonction que l’on retrouve dans la page annuaire_fonctions que nous définirons après.</p>
-<p>On vérifie si le statut de l’utilisateur n’est pas professeur et on affichera <em>HDR</em> avec « echo HDR » devant son status si c’est le cas.
-Enfin on effectue une vérification des groupes des utilisateurs pour echo <em>AXTR</em> et on echo l’établissement de rattachement de l’utilisateur.</p>
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ICA Prod
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
-<div class="section" id="les-fonctions-d-annuaire">
-<h2>Les fonctions d’Annuaire<a class="headerlink" href="#les-fonctions-d-annuaire" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Ce fichier ne contient qu’une seule fonction, elle utilise un switch case pour vérifier le status de l’utilisateur.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Ce fichier est utilisé dans le fichier <em>annuaire.php</em> que nous avons vu ci-dessus.</p>
-</div>
-</div>
-</div>
-
-
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">ICA Prod</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
@@ -104,43 +70,84 @@ Enfin on effectue une vérification des groupes des utilisateurs pour echo <em>A
 <li class="toctree-l1"><a class="reference internal" href="fichiersIntranet.html">Fichiers Intranet</a></li>
 </ul>
 
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="app.html" title="Chapitre précédent">App</a></li>
-      <li>Next: <a href="publications.html" title="Chapitre suivant">Publications</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Recherche rapide</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2022, Henrique.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
-      
-      |
-      <a href="_sources/annuaire.rst.txt"
-          rel="nofollow">Page source</a>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ICA Prod</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Annuaire</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/annuaire.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="annuaire">
+<h1>Annuaire<a class="headerlink" href="#annuaire" title="Lien permanent vers ce titre"></a></h1>
+<div class="section" id="le-fichier-annuaire">
+<h2>Le fichier Annuaire<a class="headerlink" href="#le-fichier-annuaire" title="Lien permanent vers ce titre"></a></h2>
+<p>Le fichier Annuaire fais appel à <em>annuaire_fonction.php</em> que nous verrons après.</p>
+<p>On peut retrouver la traduction de la page avec le code faisant appel au pages lang-en et lang-fr.
+Les variables exemple : <strong>TXT_NOM_ANNUAIRE</strong> permettent la traduction automatique des entete tu tableau.</p>
+<dl class="simple">
+<dt>Le tableau représentant l’annuaire est trié par nom de famille :</dt><dd><p><em>$users = get_users(« orderby=user_lastname »);</em></p>
+</dd>
+</dl>
+<p><strong>statusToString</strong> est une fonction que l’on retrouve dans la page annuaire_fonctions que nous définirons après.</p>
+<p>On vérifie si le statut de l’utilisateur n’est pas professeur et on affichera <em>HDR</em> avec « echo HDR » devant son status si c’est le cas.
+Enfin on effectue une vérification des groupes des utilisateurs pour echo <em>AXTR</em> et on echo l’établissement de rattachement de l’utilisateur.</p>
+</div>
+<div class="section" id="les-fonctions-d-annuaire">
+<h2>Les fonctions d’Annuaire<a class="headerlink" href="#les-fonctions-d-annuaire" title="Lien permanent vers ce titre"></a></h2>
+<p>Ce fichier ne contient qu’une seule fonction, elle utilise un switch case pour vérifier le status de l’utilisateur.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ce fichier est utilisé dans le fichier <em>annuaire.php</em> que nous avons vu ci-dessus.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="app.html" class="btn btn-neutral float-left" title="App" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="publications.html" class="btn btn-neutral float-right" title="Publications" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
-    
+  <hr/>
 
-    
-  </body>
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Henrique.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
 </html>

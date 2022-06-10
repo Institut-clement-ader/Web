@@ -1,37 +1,121 @@
-
 <!DOCTYPE html>
-
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Réservations &#8212; Documentation ICA Prod 0.0.1</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/translations.js"></script>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Réservations &mdash; Documentation ICA Prod 0.0.1</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Registre Hygiene" href="registrehygiene.html" />
-    <link rel="prev" title="Offres" href="offre.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="prev" title="Offres" href="offre.html" /> 
+</head>
 
-  </head><body>
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ICA Prod
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Le dossier App</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="app.html">App</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Public</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="annuaire.html">Annuaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theses.html">Theses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fichiersPublic.html">Fichiers Public</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Intranet</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="equipement.html">Equipement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Formulaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offre.html">Offres</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Réservations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#events">Events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#les-fonctions-event">Les fonctions Event</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#month">Month</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#les-fonctions-month">Les fonctions Month</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#nouvelle-reservation">Nouvelle Réservation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#afficher-journee">Afficher Journée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ajouter-reservation">Ajouter Reservation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calendrier">Calendrier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-calendrier">Get Calendrier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-mon-tableau">Get Mon Tableau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-moyen">Get Moyen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-tableau">Get Tableau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-utilisateur">Get Utilisateur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mes-reservations">Mes Reservations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modifier-reservation">Modifier Reservation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supprimer-reservation">Supprimer Reservation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tableau-des-reservations">Tableau des Reservations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#voir-reservation">Voir Reservation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="registrehygiene.html">Registre Hygiene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stats.html">Stats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zrr.html">ZRR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestiontheses.html">Theses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fichiersIntranet.html">Fichiers Intranet</a></li>
+</ul>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ICA Prod</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Réservations</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/reservation.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <div class="section" id="reservations">
-<h1>Réservations<a class="headerlink" href="#reservations" title="Lien permanent vers ce titre">¶</a></h1>
+<h1>Réservations<a class="headerlink" href="#reservations" title="Lien permanent vers ce titre"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Nous allons voir ici la page la plus complexe de tout le site, il est conseillé d’utiliser une recherche navigateur (ctrl+f) pour
@@ -42,12 +126,12 @@ retrouver plus facilement les informations qui vous sont nécéssaires.</p>
 <p>la table réservation la rubrique axe_recherche a été remplacer par groupe suite à des amélioration dans le code</p>
 </div>
 <div class="section" id="events">
-<h2>Events<a class="headerlink" href="#events" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Events<a class="headerlink" href="#events" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier permet de récupérer les événements (réservations) en fonction de différentes options.
 Ce fichier est utilisé dans <em>afficherjournee.php</em> , <em>calendrier.php</em> , <em>getCalendrier.php</em> , <em>getTableau.php</em> , <em>GetMoyen.php</em> , <em>mesReservation.php</em> , <em>supprimerReservation.php</em> , <em>tableauReservation.php</em> et <em>voirReservation.php</em> .
 Ce fichier import <em>GestionBdd.php</em> qui va permettre d’envoyer les requêtes.</p>
 <div class="section" id="les-fonctions-event">
-<h3>Les fonctions Event<a class="headerlink" href="#les-fonctions-event" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>Les fonctions Event<a class="headerlink" href="#les-fonctions-event" title="Lien permanent vers ce titre"></a></h3>
 <p><strong>getEventsBetween</strong> : Récupère les évènements qui sont entre deux dates.</p>
 <p><strong>getEventsBetweenByDay</strong> : Récupère les évènements qui sont entre 2 dates indexé par jour.
 Il appelle la fonction <strong>getEventsBetween</strong> contenu dans <em>Events.php</em> .
@@ -88,7 +172,7 @@ Il appelle la fonction <strong>getUtiReservationParCatégorie</strong> contenu d
 </div>
 </div>
 <div class="section" id="month">
-<h2>Month<a class="headerlink" href="#month" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Month<a class="headerlink" href="#month" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier permet de récupérer le mois, de connaitre son nombre de semaines et de jours.
 Ce fichier est utilisé dans <em>calendrier.php</em> .
 Ce fichier import lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.
@@ -100,7 +184,7 @@ Cette classe à 4 attributs.</p>
 <li><p><em>$year</em> l’année sélectionner.</p></li>
 </ul>
 <div class="section" id="les-fonctions-month">
-<h3>Les fonctions Month<a class="headerlink" href="#les-fonctions-month" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>Les fonctions Month<a class="headerlink" href="#les-fonctions-month" title="Lien permanent vers ce titre"></a></h3>
 <p><strong>Constructeur</strong> : à en paramètre le numéro du mois et l’année pour déterminer le nombre de jour dans le mois.</p>
 <p><strong>getDays</strong> : récupère <em>$days</em>.</p>
 <p><strong>getMonth</strong> : récupère <em>$month</em>.</p>
@@ -114,7 +198,7 @@ Cette classe à 4 attributs.</p>
 </div>
 </div>
 <div class="section" id="nouvelle-reservation">
-<h2>Nouvelle Réservation<a class="headerlink" href="#nouvelle-reservation" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Nouvelle Réservation<a class="headerlink" href="#nouvelle-reservation" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier permet de vérifier les différentes exceptions pour la création ou la modification d’une réservation.
 Ce fichier est utilisé dans <em>ajouterReservation.php</em> et <em>ModifierReservation.php</em> .
 Ce fichier import <em>GestionBdd.php</em> qui va permettre d’envoyer les requêtes.</p>
@@ -167,7 +251,7 @@ Appel la fonction <strong>rechercheMailResponsable</strong> de <em>GestionBdd.ph
 Envoie le mail au différent responsable récupérer via <strong>RechercheMailResponsable</strong>.</p>
 </div>
 <div class="section" id="afficher-journee">
-<h2>Afficher Journée<a class="headerlink" href="#afficher-journee" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Afficher Journée<a class="headerlink" href="#afficher-journee" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier permet d’afficher les réservations de la journée en fonction de la categorie ou du moyen mis dans la session.
 Ce fichier est utilisé dans la page ‘Réservation d’une journée’.
 Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.</p>
@@ -179,7 +263,7 @@ On affiche la requête garder dans un tableau.
 Le lien ‘consulter’ va permettre d’aller sur la page ‘Réservation’.</p>
 </div>
 <div class="section" id="ajouter-reservation">
-<h2>Ajouter Reservation<a class="headerlink" href="#ajouter-reservation" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Ajouter Reservation<a class="headerlink" href="#ajouter-reservation" title="Lien permanent vers ce titre"></a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>le $POST[axe_recherche] a été remplacer par les groupes suite à des améliorations du code</p>
@@ -196,7 +280,7 @@ Pour chaque rubrique du formulaire on vérifie si le $_POST contient le résulta
 S’il n’y a pas d’erreur dans les informations que l’utilisateur à mis alors on envoie le mail au responsable via envoieMailAjout de <em>NouvelleReservation.php</em> et on crée la réservation via creationReservation de <em>NouvelleReservation.php</em> et on envoie un message de succès.</p>
 </div>
 <div class="section" id="calendrier">
-<h2>Calendrier<a class="headerlink" href="#calendrier" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Calendrier<a class="headerlink" href="#calendrier" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier d’afficher les réservations sous forme de calendrier, il permet aussi de filtrer les réservations avec les catégories ou directement le moyen.
 Ce fichier est utilisé dans la page ‘Calendrier des réservations’.</p>
 <p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes, <em>Month.php</em> qui va permettre de voir le mois du calendrier et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.</p>
@@ -214,7 +298,7 @@ Les deux boutons avec des flèches permettent de passer aux mois précédents vi
 On grise les jours qui ne sont pas dans le mois via <strong>withinMonth</strong> de <em>Month.php</em>.</p>
 </div>
 <div class="section" id="get-calendrier">
-<h2>Get Calendrier<a class="headerlink" href="#get-calendrier" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Get Calendrier<a class="headerlink" href="#get-calendrier" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier permet d’actualiser le calendrier en fonction du filtre des menus déroulants.
 Ce fichier est utilisé dans la page ‘Calendrier des réservations’ grâce au Javascript.</p>
 <p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes, <em>Month.php</em> qui va permettre de voir le mois du calendrier et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.</p>
@@ -229,7 +313,7 @@ Si le moyen dans la SESSION est dans la catégorie alors on appelle <strong>getE
 On grise les jours qui ne sont pas dans le mois via <strong>withinMonth</strong> de <em>Month.php</em> .</p>
 </div>
 <div class="section" id="get-mon-tableau">
-<h2>Get Mon Tableau<a class="headerlink" href="#get-mon-tableau" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Get Mon Tableau<a class="headerlink" href="#get-mon-tableau" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier permet d’actualiser le tableau de la page ‘Mes réservations’ en fonction du filtre des menus déroulants.
 Ce fichier est utilisé dans la page ‘Mes réservations’ grâce au Javascript.</p>
 <p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.</p>
@@ -240,7 +324,7 @@ Sinon On affiche la requête dans un tableau.</p>
 <p>Le lien ‘consulter’ va permettre d’aller sur la page ‘Réservation’.</p>
 </div>
 <div class="section" id="get-moyen">
-<h2>Get Moyen<a class="headerlink" href="#get-moyen" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Get Moyen<a class="headerlink" href="#get-moyen" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier permet de changer la liste déroulant des moyens en fonction de la catégorie choisi.
 Ce fichier est utilisé dans la page ‘Calendrier des réservation’ et ‘Tableau des réservation’ grâce au Javascript.</p>
 <p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes.
@@ -248,7 +332,7 @@ On appelle la fonction <strong>getMoyenParCategorie</strong> de <em>Events.php</
 Si le moyen dans la SESSION est égal à un des résultats de la requête alors on le sélectionne dans le menu.</p>
 </div>
 <div class="section" id="get-tableau">
-<h2>Get Tableau<a class="headerlink" href="#get-tableau" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Get Tableau<a class="headerlink" href="#get-tableau" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier permet d’actualiser le tableau de la page ‘Tableau des réservations’ en fonction du filtre des menus déroulants.
 Ce fichier est utilisé dans la page ‘Tableau des réservations’ grâce au Javascript.</p>
 <p>Ce fichier import <strong>Events.php</strong> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.
@@ -310,7 +394,7 @@ S’il y a un utilisateur dans le GET alors :</p>
 Le lien ‘consulter’ va permettre d’aller sur la page ‘Réservation’.</p>
 </div>
 <div class="section" id="get-utilisateur">
-<h2>Get Utilisateur<a class="headerlink" href="#get-utilisateur" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Get Utilisateur<a class="headerlink" href="#get-utilisateur" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier permet de changer la liste déroulant des utilisateurs en fonction des réservations du tableau.
 Ce fichier est utilisé dans la page ‘Tableau des réservation’ grâce au Javascript.</p>
 <p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes.
@@ -340,7 +424,7 @@ On appelle <em>getUtiEventsByMoyen</em> de <em>Events.php</em> avec le moyen dan
 Si l’utilisateur dans la SESSION est égal à un des résultats de la requête alors on le sélectionne dans le menu.</p>
 </div>
 <div class="section" id="mes-reservations">
-<h2>Mes Reservations<a class="headerlink" href="#mes-reservations" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Mes Reservations<a class="headerlink" href="#mes-reservations" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier permet d’afficher les réservations de l’utilisateur qu’il soit encadrant, responsable du moyen réservé ou l’utilisateur qui réserve.
 Ce fichier est utilisé dans la page ‘Mes réservations’.</p>
 <p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.</p>
@@ -353,7 +437,7 @@ Sinon on affiche les résultats dans un tableau.
 Le lien ‘consulter’ permet d’accéder à la page réservations.</p>
 </div>
 <div class="section" id="modifier-reservation">
-<h2>Modifier Reservation<a class="headerlink" href="#modifier-reservation" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Modifier Reservation<a class="headerlink" href="#modifier-reservation" title="Lien permanent vers ce titre"></a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>le $POST[axe_recherche] a été remplacer par les groupes suite à des améliorations du code</p>
@@ -373,7 +457,7 @@ Moyen, raison et encadrant sont des menus déroulants pour aider l’utilisateur
 S’il n’y a pas d’erreur dans les informations que l’utilisateur à mis alors on envoie le mail au responsable via <strong>envoieMailModif</strong> de <em>NouvelleReservation.php</em> et on crée la réservation via <strong>modifierReservation</strong> de <em>NouvelleReservation.php</em> et on envoie un message de succès.</p>
 </div>
 <div class="section" id="supprimer-reservation">
-<h2>Supprimer Reservation<a class="headerlink" href="#supprimer-reservation" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Supprimer Reservation<a class="headerlink" href="#supprimer-reservation" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier permet de supprimer une réservation
 Ce fichier est utilisé dans la page ‘Supprimer une réservation’.</p>
 <p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.
@@ -381,7 +465,7 @@ S’il n’y a pas d’id dans le GET alors on redirige l’utilisateur dans la 
 <p>On appelle <strong>deleteEventById</strong> de <em>Events.php</em> avec l’id dans le GET et on le renvoie dans la page ‘Calendrier des réservations’.</p>
 </div>
 <div class="section" id="tableau-des-reservations">
-<h2>Tableau des Reservations<a class="headerlink" href="#tableau-des-reservations" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Tableau des Reservations<a class="headerlink" href="#tableau-des-reservations" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier permet d’afficher les réservations sous forme de tableau, il permet aussi de filtrer les réservations avec la catégorie, le moyen, les dates, ou l’utilisateur.
 Ce fichier est utilisé dans la page ‘Tableau des réservations’.</p>
 <p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.
@@ -404,7 +488,7 @@ Sinon on affiche les résultats dans un tableau.
 Le lien ‘consulter’ permet d’accéder à la page réservations.</p>
 </div>
 <div class="section" id="voir-reservation">
-<h2>Voir Reservation<a class="headerlink" href="#voir-reservation" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Voir Reservation<a class="headerlink" href="#voir-reservation" title="Lien permanent vers ce titre"></a></h2>
 <p>Ce fichier permet d’afficher une réservation.
 Ce fichier est utilisé dans la page ‘Réservation’.</p>
 <p>Ce fichier import <em>Events.php</em> qui va permettre d’envoyer les requêtes et lang-fr ou lang-en en fonction de la langue sélectionner qui va permettre de changer la langue grâce aux variables TXT.
@@ -418,105 +502,34 @@ Si l’utilisateur courant et l’utilisateur qui a réservé, l’encadrant ou 
 </div>
 
 
+           </div>
           </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="offre.html" class="btn btn-neutral float-left" title="Offres" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="registrehygiene.html" class="btn btn-neutral float-right" title="Registre Hygiene" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Henrique.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">ICA Prod</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Le dossier App</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="app.html">App</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Public</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="annuaire.html">Annuaire</a></li>
-<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="theses.html">Theses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fichiersPublic.html">Fichiers Public</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Intranet</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="equipement.html">Equipement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Formulaire</a></li>
-<li class="toctree-l1"><a class="reference internal" href="offre.html">Offres</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Réservations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#events">Events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#month">Month</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#nouvelle-reservation">Nouvelle Réservation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#afficher-journee">Afficher Journée</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ajouter-reservation">Ajouter Reservation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#calendrier">Calendrier</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#get-calendrier">Get Calendrier</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#get-mon-tableau">Get Mon Tableau</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#get-moyen">Get Moyen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#get-tableau">Get Tableau</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#get-utilisateur">Get Utilisateur</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mes-reservations">Mes Reservations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#modifier-reservation">Modifier Reservation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#supprimer-reservation">Supprimer Reservation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tableau-des-reservations">Tableau des Reservations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#voir-reservation">Voir Reservation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="registrehygiene.html">Registre Hygiene</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stats.html">Stats</a></li>
-<li class="toctree-l1"><a class="reference internal" href="zrr.html">ZRR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gestiontheses.html">Theses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fichiersIntranet.html">Fichiers Intranet</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="offre.html" title="Chapitre précédent">Offres</a></li>
-      <li>Next: <a href="registrehygiene.html" title="Chapitre suivant">Registre Hygiene</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Recherche rapide</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2022, Henrique.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
-      
-      |
-      <a href="_sources/reservation.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>
