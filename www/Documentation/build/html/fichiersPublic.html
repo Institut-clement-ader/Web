@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fichiers Public &#8212; Documentation ICA Prod 0.0.1</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Equipement" href="equipement.html" />
+    <link rel="prev" title="Theses" href="theses.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="fichiers-public">
+<h1>Fichiers Public<a class="headerlink" href="#fichiers-public" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Dans le dossier public nous trouvons deux fichiers : <em>liste-equipements.php</em> ainsi que <em>liste-offres-emploi.php</em> .
+Sachant que la méthode utilisée pour les deux est la même nous allons regrouper les explications en deux parties.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ces deux fichiers sont les seuls de leurs pages dans le dossier Public, nous n’avons donc pas créer de dossier dédié
+pour éviter les dossier avec un unique fichier.</p>
+</div>
+<div class="section" id="composition-de-la-page">
+<h2>Composition de la page<a class="headerlink" href="#composition-de-la-page" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="page-equipements">
+<h3>Page Equipements<a class="headerlink" href="#page-equipements" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Si nous observons les widgets qui composent cette page nous pouvons observer qu’il y a un widget <strong>MetaSlider</strong> qui permet d’afficher un diaporama sur la page.
+Parmis ces widgets nous pouvons retrouver un <strong>Insert Snippet</strong> faisant appel à la page décrite plus bas dans la documentation.
+De plus on peut aussi trouver un bouton menant à la page de réservation des équipements ainsi qu’un widget <strong>SiteOrigin Editeur</strong> ajoutant un titre.</p>
+</div>
+</div>
+<div class="section" id="le-nombre-d-equipement-et-d-offres">
+<h2>Le nombre d’equipement et d’offres<a class="headerlink" href="#le-nombre-d-equipement-et-d-offres" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="nombre-d-equipements">
+<h3>Nombre d’équipements<a class="headerlink" href="#nombre-d-equipements" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Pour calculer le nombre d’équipements on fait appel à la fonction <strong>nombreEquipement</strong>
+Ensuite on retrouve l’affichage selon le nombre d’équipements.</p>
+</div>
+<div class="section" id="nombre-d-offres">
+<h3>Nombre d’offres<a class="headerlink" href="#nombre-d-offres" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Pour calculer le nombre d’offres on fait appel à la fonction <strong>nombreOffresDispo</strong>
+Ensuite on retrouve l’affichage selon le nombre d’offres.
+Le template appelé est : <em>Tableau des offres</em></p>
+</div>
+</div>
+<div class="section" id="les-listes">
+<h2>Les listes<a class="headerlink" href="#les-listes" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour expliquer le fonctionnement des listes nous allons prendre pour exemple la partie Contrat CDD du fichier <em>liste-offres-emploi</em> :</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Exemple de code</span><a class="headerlink" href="#id1" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-PHP notranslate"><div class="highlight"><pre><span></span><span class="x">    $type_offre =&quot;Contrat CDD&quot;;</span>
+<span class="x">    $res = $bdd-&gt;analyseListeOffresDispo($type_offre);</span>
+<span class="x">    if ($res[0][0] &gt; 0)</span>
+<span class="x">            ?&gt;</span>
+<span class="x">            &lt;p style=&#39;font-size: 1.33em; padding-left: 45px; color: #ba2133;&#39;&gt;&lt;strong&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nx">TXT_CDD_EMPLOI</span><span class="cp">?&gt;</span><span class="x">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="x">            </span><span class="cp">&lt;?php</span>
+            <span class="k">echo</span> <span class="nx">do_shortcode</span><span class="p">(</span><span class="s1">&#39;[pods name=&quot;offre_emploi&quot; where=&quot;type_offre=\&#39;Contrat CDD\&#39; AND date_fin &gt;= \&#39;&#39;</span><span class="o">.</span><span class="nb">date</span><span class="p">(</span><span class="s1">&#39;Y-m-d&#39;</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;\&#39;&quot; template=&quot;Liste des offres&quot; limit=&quot;1000&quot;]&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<p>Nous allons décomposer le code ci-dessus pour mieux comprendre son fonctionnement.
+Premièrement on va définir notre parametre avec la variable <strong>$type_offre</strong> .
+Ensuite on va faire appel à la requete <strong>analyseListeOffresDispo</strong> se trouvant dans le fichier <em>GestionBdd.php</em> .
+Cette requete nécéssite un parametre qui est ici défini avec <strong>$type_offre</strong>.
+Enfin la derniere partie de ce code va utiliser une balise <strong>&lt;p&gt;</strong> pour afficher le titre de la partie.
+La dernière ligne du code fait appel au pod que nous retrouverons sur WordPress.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">ICA Prod</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Le dossier App</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="app.html">App</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Public</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="annuaire.html">Annuaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theses.html">Theses</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Fichiers Public</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#composition-de-la-page">Composition de la page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#le-nombre-d-equipement-et-d-offres">Le nombre d’equipement et d’offres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-listes">Les listes</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Intranet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="equipement.html">Equipement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formulaire.html">Formulaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offre.html">Offres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reservation.html">Réservations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registrehygiene.html">Registre Hygiene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stats.html">Stats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zrr.html">ZRR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestiontheses.html">Theses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fichiersIntranet.html">Fichiers Intranet</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="theses.html" title="Chapitre précédent">Theses</a></li>
+      <li>Next: <a href="equipement.html" title="Chapitre suivant">Equipement</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Henrique.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/fichiersPublic.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
