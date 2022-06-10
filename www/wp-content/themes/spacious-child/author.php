@@ -399,7 +399,7 @@ echo '<article>';
         }
       }
   
-      include ('codes snippet/fonctions_snippet.php');
+      include ('App/Public/Publications/publication_fonctions.php');
 
       $url = 'https://api.archives-ouvertes.fr/search/?q=&fq=authIdHal_s:'.$idH.'&wt=json&sort=producedDate_tdate%20desc&rows=10000&&fl=producedDateY_i,docType_s,authFullName_s,title_s,journalTitle_s,page_s,volume_s,uri_s,doiId_s,issue_s,localReference_s,journalPublisher_s,subTitle_s,conferenceTitle_s,city_s,country_s,invitedCommunication_s,peerReviewing_s,popularLevel_s,number_s';
 
