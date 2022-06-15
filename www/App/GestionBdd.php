@@ -351,7 +351,342 @@ require_once("App/database.php");
       $donnees = $req->fetch();
       return $donnees['display_name'];
     }
-    
+      // Récupère les différentes réservations en fonction de deux date et de la catégorie des moyens données
+      public function dateDansUnMois(DateTime $start, DateTime $end, $categorie){
+        $sql= "SELECT * FROM wp_pods_reservation, wp_pods_moyen
+         WHERE categorie='$categorie'
+         AND wp_pods_moyen.nom_moyen=wp_pods_reservation.nom_moyen
+         AND (date_debut BETWEEN '{$start->format('Y-m-d 00:00:00')}' AND '{$end->format('Y-m-d 23:59:59' )}'
+         OR  date_fin BETWEEN '{$start->format('Y-m-d 00:00:00')}' AND '{$end->format('Y-m-d 23:59:59' )}')
+         ORDER BY date_debut DESC";
+        $req = $this->bdd->prepare($sql);
+        $req-> execute();
+        $donnees = $req->fetchAll();
+        return $donnees;
+      }
+      // Récupère les différentes réservations en fonction de la journée et de la catégorie des moyens données
+      public function getParJourEtCategorie(DATETIME $jour, $categorie){
+        $sql= "SELECT * FROM wp_pods_reservation,wp_pods_moyen 
+        WHERE '{$jour->format('Y-m-d')}' BETWEEN  DATE_FORMAT(`date_debut`,  '%Y-%m-%d') 
+        AND  DATE_FORMAT(`date_fin`,  '%Y-%m-%d') 
+        AND categorie='$categorie'
+        AND wp_pods_moyen.nom_moyen=wp_pods_reservation.nom_moyen order by date_debut" ;
+        $req = $this->bdd->prepare($sql);
+        $req-> execute();
+        $donnees = $req->fetchAll();
+        return $donnees;
+      }
+      // Récupère les différentes réservations de la journée et du moyens données
+      public function getParJourEtMoyen(DateTime $jour, $moyen){
+        $sql= "SELECT * FROM wp_pods_reservation 
+        WHERE '{$jour->format('Y-m-d')}' BETWEEN  DATE_FORMAT(`date_debut`,  '%Y-%m-%d') 
+        AND  DATE_FORMAT(`date_fin`,  '%Y-%m-%d') 
+        AND nom_moyen=? order by date_debut" ;
+        $req = $this->bdd->prepare($sql);
+        $req-> execute(array($moyen));
+        $donnees = $req->fetchAll();
+        return $donnees;
+      }
+      // Récupère la réservations qui corresponds à l'id donné
+      public function getReservationById(int $id){
+        $sql= "SELECT * from wp_pods_reservation WHERE id= $id";
+        $req = $this->bdd->prepare($sql);
+        $req-> execute();
+        $donnees = $req->fetch();
+        return $donnees;
+      }
+     // Crée la réservations
+      public function creerReservation($titre_reservation,$nom_utilisateur,$nom_moyen,DATETIME $date_debut,DATETIME $date_fin,$axe_recherche,$encadrant,$description,$raison){
+        $sql="INSERT INTO wp_pods_reservation (titre_reservation,nom_utilisateur,nom_moyen,date_debut,date_fin,axe_recherche,encadrant,description,raison,id_utilisateur)
+        VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $req = $this->bdd->prepare($sql);
+        $req-> execute(array($titre_reservation,$nom_utilisateur,$nom_moyen,$date_debut->format('Y-m-d H:i'),$date_fin->format('Y-m-d H:i'),$axe_recherche,$encadrant,$description,$raison));
+        return true ;
+      }
+      // Vérifie si il existe pas une réservation d'un moyen pendant la période donnée
+      public function verificationChevauchementMemeMoyen($nom_moyen, DATETIME $date_d,DATETIME $date_f){
+        $sql= "SELECT count(*) FROM wp_pods_reservation
+        WHERE nom_moyen= ?
+        AND (  ? BETWEEN date_debut AND date_fin
+          OR ? BETWEEN date_debut AND date_fin 
+          OR date_debut BETWEEN ? AND ?
+          OR date_fin BETWEEN ? AND ?)";
+        $req = $this->bdd->prepare($sql); 
+        $req-> execute(array($nom_moyen,$date_d->format('Y-m-d H:i'),$date_f->format('Y-m-d H:i'),$date_d->format('Y-m-d H:i'),$date_f->format('Y-m-d H:i'),$date_d->format('Y-m-d H:i'),$date_f->format('Y-m-d H:i')));
+        $donnees = $req->fetch();
+        return $donnees ;
+      }
+      // Récupère tous les encadrants possible (elle récupère tous les noms mais peut être modifié)
+      public function getEncadrantPossible(){
+        $sql= "SELECT DISTINCT user.display_name
+        FROM wp_usermeta as meta, wp_users as user
+        WHERE meta.user_id=user.ID
+        AND meta.meta_key= 'status'
+        AND meta.meta_value in ('Chargé de recherche','Directeur de recherche','Enseignant-chercheur','Enseignant-chercheur associé','Ingénieur - Chercheur','Ingénieur de recherche','Maître assistant','Maître assistant associé','Professeur','Professeur associé','Maître de conférences','Maître de conférences associé') 
+        ORDER BY user.display_name";
+        $req = $this->bdd->prepare($sql);
+        $req-> execute();
+        $donnees = $req->fetchAll();
+        return $donnees; 
+      }
+        // Récupère le nom et le prénom des utilisateurs
+        public function getNom($nom){
+          $sql= "SELECT DISTINCT meta.meta_value
+          FROM wp_usermeta as meta, wp_users as user
+          WHERE meta.user_id=user.ID
+          AND user.display_name= '$nom'
+          AND (meta.meta_key= 'first_name'
+          OR meta.meta_key= 'last_name')";
+          $req = $this->bdd->prepare($sql);
+          $req-> execute();
+          $donnees = $req->fetchAll();
+          return $donnees; 
+        }
+
+      // Récupère tous les groupes de l'utilisateur 
+      public function getGroupe(){
+        $sql= "SELECT DISTINCT meta.meta_value
+        FROM wp_usermeta as meta
+        WHERE (meta.meta_key = 'groupe_primaire'
+        OR meta.meta_key = 'groupe_secondaire'        
+        OR meta.meta_key = 'groupe_tertiaire')
+        AND meta.meta_value not in ('ESTA','AXTR') 
+        AND meta.meta_value!='' ";
+        $req = $this->bdd->prepare($sql);
+        $req-> execute();
+        $donnees = $req->fetchAll();
+        return $donnees; 
+      }
+
+
+      // Récupère tous les moyens de la catégorie
+      public function getMoyensCategorie($categorie){
+        $sql= "SELECT nom_moyen from  wp_pods_moyen WHERE lieu='Toulouse' AND categorie='$categorie' AND reservable=1 order by nom_moyen ";
+        $req = $this->bdd->prepare($sql);
+        $req-> execute();
+        $donnees = $req->fetchAll();
+        return $donnees;
+      }
+      // Récupère tous les responsables du moyens
+      public function getResponsableParMoyen($moyen){
+        $sql= "SELECT responsable_1,responsable_2,responsable_3 from  wp_pods_moyen WHERE nom_moyen=? " ;
+        $req = $this->bdd->prepare($sql);
+        $req-> execute(array($moyen));
+        $donnees = $req->fetchAll();
+        return $donnees;
+      }
+      // Supprime une réservation
+      public function deleteReservationById(int $id){
+        $req = $this->bdd->prepare('DELETE FROM wp_pods_reservation WHERE id = ? ');
+        $req->execute(array($id));
+        return true;
+      }
+      //Modifie une réservation 
+      public function updateReservationById($id,$titre_reservation,$nom_utilisateur,$nom_moyen,DATETIME $date_debut,DATETIME $date_fin,$axe_recherche,$encadrant,$description,$raison){
+        $sql=" UPDATE wp_pods_reservation SET titre_reservation=?,nom_utilisateur=?,nom_moyen=?,date_debut=?,date_fin=?,axe_recherche=?,encadrant=?,description=?,raison=? WHERE id = ? ";
+        $req = $this->bdd->prepare($sql);
+        $req-> execute(array($titre_reservation,$nom_utilisateur,$nom_moyen,$date_debut->format('Y-m-d H:i'),$date_fin->format('Y-m-d H:i'),$axe_recherche,$encadrant,$description,$raison,$id));
+        return true ;
+      }
+      // Vérifie si il existe pas une réservation du moyen pendant la période donnée et qu'il n'a pas le même id 
+      public function verificationChevauchementMemeMoyenIdDifferent(int $id, $nom_moyen, DATETIME $date_d,DATETIME $date_f){
+        $sql= "SELECT count(*) FROM wp_pods_reservation
+        WHERE nom_moyen= ?
+        AND id!= ?
+        AND (  ? BETWEEN date_debut AND date_fin
+           OR ? BETWEEN date_debut AND date_fin 
+           OR date_debut BETWEEN ? AND ?
+           OR date_fin BETWEEN ? AND ?)";
+        $req = $this->bdd->prepare($sql); 
+        $req-> execute(array($nom_moyen,$id,$date_d->format('Y-m-d H:i'),$date_f->format('Y-m-d H:i'),$date_d->format('Y-m-d H:i'),$date_f->format('Y-m-d H:i'),$date_d->format('Y-m-d H:i'),$date_f->format('Y-m-d H:i')));
+        $donnees = $req->fetch();
+        return $donnees ;
+        }
+      // Vérifie si il existe pas une réservation de l'utilisateur pendant la période donnée et qu'il n'a pas le même id 
+       public function verificationChevauchementMemeUtilisateurIdDifferent(int $id,$nom_utilisateur, DATETIME $date_d,DATETIME $date_f){
+        $sql= "SELECT count(*) FROM wp_pods_reservation 
+          WHERE nom_utilisateur= ?
+          AND id!=?
+          AND (  ? BETWEEN date_debut AND date_fin
+              OR ? BETWEEN date_debut AND date_fin 
+              OR date_debut BETWEEN ? AND ?
+              OR date_fin BETWEEN ? AND ?)";
+          $req = $this->bdd->prepare($sql); 
+          $req-> execute(array($nom_utilisateur,$id,$date_d->format('Y-m-d H:i'),$date_f->format('Y-m-d H:i'),$date_d->format('Y-m-d H:i'),$date_f->format('Y-m-d H:i'),$date_d->format('Y-m-d H:i'),$date_f->format('Y-m-d H:i')));
+          $donnees = $req->fetch();
+          return $donnees ;
+       }
+      // Récupère les différentes réservations en fonction de deux date et du moyen données
+       public function dateDansUnMoisParMoyen(DateTime $start, DateTime $end, $moyen){
+        $sql= "SELECT * FROM wp_pods_reservation
+         WHERE nom_moyen=?
+         AND (date_debut BETWEEN '{$start->format('Y-m-d 00:00:00')}' AND '{$end->format('Y-m-d 23:59:59' )}'
+         OR  date_fin BETWEEN '{$start->format('Y-m-d 00:00:00')}' AND '{$end->format('Y-m-d 23:59:59' )}')
+         ORDER BY date_debut DESC";
+        $req = $this->bdd->prepare($sql);
+        $req-> execute(array($moyen));
+        $donnees = $req->fetchAll();
+        return $donnees;
+      }
+      // Rècupère toutes les réservations ou le nom donnée est impliqué (responsable, encadrant ou utilisateur qui réserve)
+      public function getReservationByNom($nom,$deb,$fin){
+        $sql= "SELECT * FROM wp_pods_reservation,wp_pods_moyen
+        WHERE wp_pods_reservation.nom_moyen= wp_pods_moyen.nom_moyen
+        AND '$deb' <  date_fin
+        AND '$fin' >  date_debut
+        AND (nom_utilisateur='$nom'  
+        OR encadrant='$nom'
+        OR responsable_1='$nom'
+        OR responsable_2='$nom'
+        OR responsable_3='$nom') 
+        ORDER BY date_debut";
+       $req = $this->bdd->prepare($sql);
+       $req-> execute();
+       $donnees = $req->fetchAll();
+       return $donnees;
+      }
+      // Récupère les réservations qui ont un moyen dans cette catégorie donnée
+      public function getReservationParCatégorie($categorie,$date_debut,$date_fin){
+        $sql="SELECT DISTINCT * FROM wp_pods_reservation, wp_pods_moyen
+          WHERE categorie=?
+          AND wp_pods_moyen.nom_moyen=wp_pods_reservation.nom_moyen
+          AND ? <  date_fin
+          AND ? > date_debut
+          ORDER BY date_debut";
+          $req = $this->bdd->prepare($sql);
+          $req-> execute(array($categorie,$date_debut,$date_fin));
+          $donnees = $req->fetchAll();
+          return $donnees;
+      }
+      // Récupère les réservations qui ont un moyen dans cette catégorie donnée et qui est réservé par l'utilisateur donnée
+      public function getReservationParCatégorieEtUtilisateur($categorie,$uti,$date_debut,$date_fin){
+        $sql="SELECT DISTINCT * FROM wp_pods_reservation, wp_pods_moyen
+          WHERE categorie=?
+          AND nom_utilisateur=?
+          AND wp_pods_moyen.nom_moyen=wp_pods_reservation.nom_moyen
+          AND ? <  date_fin
+          AND ? > date_debut
+          ORDER BY date_debut";
+          $req = $this->bdd->prepare($sql);
+          $req-> execute(array($categorie,$uti,$date_debut,$date_fin));
+          $donnees = $req->fetchAll();
+          return $donnees;
+      }
+      // Récupère les réservations qui ont le moyen donnée
+      public function getReservationParMoyen($moyen,$date_debut,$date_fin){
+        $sql="SELECT DISTINCT * FROM wp_pods_reservation
+          WHERE nom_moyen=?
+          AND ? <  date_fin
+          AND ? > date_debut
+          ORDER BY date_debut";
+          $req = $this->bdd->prepare($sql);
+          $req-> execute(array($moyen,$date_debut,$date_fin));
+          $donnees = $req->fetchAll();
+          return $donnees;
+      }
+      // Récupère les réservations qui ont le moyen donnée et qui est réservé par l'utilisateur donnée
+      public function getReservationParMoyenEtUtilisateur($moyen,$uti,$date_debut,$date_fin){
+        $sql="SELECT DISTINCT * FROM wp_pods_reservation
+          WHERE nom_moyen=?
+          AND nom_utilisateur=?
+          AND ? <  date_fin
+          AND ? > date_debut
+          ORDER BY date_debut";
+          $req = $this->bdd->prepare($sql);
+          $req-> execute(array($moyen,$uti,$date_debut,$date_fin));
+          $donnees = $req->fetchAll();
+          return $donnees;
+      }
+    // Récupère le mail de tous les responsable du moyen donnée 
+    public function rechercheMailRespsonsable($name){
+      $sql= "SELECT user_email FROM wp_users
+      WHERE display_name='$name'";
+      $req = $this->bdd->prepare($sql);
+      $req-> execute();
+      $donnees = $req->fetch();
+      return $donnees;
+      }
+    // Récupère toutes les catégories des moyens
+    public function getCategorie(){
+      $sql= "SELECT DISTINCT categorie FROM wp_pods_moyen WHERE lieu='Toulouse'";
+      $req = $this->bdd->prepare($sql);
+      $req->execute();
+      $donnees = $req->fetchAll();
+      return $donnees;
+    }
+    // Récupère les utilisateurs qui ont réserver des moyens de la catégorie donnée
+    public function getUtiReservationParCatégorie($categorie,$deb,$fin){
+      $sql="SELECT DISTINCT nom_utilisateur FROM wp_pods_reservation, wp_pods_moyen
+        WHERE categorie='$categorie'
+        AND wp_pods_moyen.nom_moyen=wp_pods_reservation.nom_moyen
+        AND '$deb' <  date_fin
+        AND '$fin' >  date_debut";
+        $req = $this->bdd->prepare($sql);
+        $req-> execute();
+        $donnees = $req->fetchAll();
+        return $donnees;
+    }
+    // Récupère les utilisateurs qui ont réserver le moyen donnée
+    public function getUtiReservationParMoyen($moyen,$deb,$fin){
+      $sql="SELECT DISTINCT nom_utilisateur FROM wp_pods_reservation
+        WHERE nom_moyen=?
+        AND '$deb' <  date_fin
+        AND '$fin' >  date_debut";
+        $req = $this->bdd->prepare($sql);
+        $req-> execute(array($moyen));
+        $donnees = $req->fetchAll();
+        return $donnees;
+    }
+    // Récupère les moyen du responsable
+    public function getMoyenByResponsable($nom,$deb,$fin){
+      $sql= "SELECT  DISTINCT wp_pods_reservation.nom_moyen FROM wp_pods_reservation,wp_pods_moyen
+      WHERE wp_pods_reservation.nom_moyen= wp_pods_moyen.nom_moyen
+      AND '$deb' <  date_fin
+      AND '$fin' >  date_debut
+      AND (responsable_1='$nom'
+      OR responsable_2='$nom'
+      OR responsable_3='$nom') 
+      ORDER BY nom_moyen";
+      $req = $this->bdd->prepare($sql);
+      $req-> execute();
+      $donnees = $req->fetchAll();
+      return $donnees;
+    }
+    public function getAllMoyen($deb,$fin){
+      $sql= "SELECT  DISTINCT wp_pods_reservation.nom_moyen FROM wp_pods_reservation,wp_pods_moyen
+      WHERE wp_pods_reservation.nom_moyen= wp_pods_moyen.nom_moyen
+      AND '$deb' <  date_fin
+      AND '$fin' >  date_debut
+      ORDER BY nom_moyen";
+      $req = $this->bdd->prepare($sql);
+      $req-> execute();
+      $donnees = $req->fetchAll();
+      return $donnees;
+    }
+    // Récupère les moyen du responsable
+    public function getReservationByGroupeAndMoyen($groupe,$deb,$fin,$moyen){
+      $sql= "SELECT  * FROM wp_pods_reservation
+      WHERE '$deb' <  date_fin
+      AND '$fin' >  date_debut
+      AND nom_moyen='$moyen'
+      AND axe_recherche='$groupe'";
+      $req = $this->bdd->prepare($sql);
+      $req-> execute();
+      $donnees = $req->fetchAll();
+      return $donnees;
+    }
+    // afficher l'id de la réservation 
+    public function getId($moyen,DATETIME $date_debut, DATETIME $date_fin){
+      $sql= "SELECT id FROM wp_pods_reservation
+      WHERE nom_moyen= ?
+      AND date_debut= ?
+      AND date_fin= ? ";
+      $req = $this->bdd->prepare($sql);
+      $req-> execute(array($moyen,$date_debut->format('Y-m-d H:i'),$date_fin->format('Y-m-d H:i')));
+      $donnees = $req->fetchAll();
+      return $donnees;
+    }
+
   }
 ?>
 

@@ -19,7 +19,7 @@ class Events{
     public function getEventsBetweenByDay (DateTime $start, DateTime $end, $categorie){
         $events = $this->getEventsBetween($start,$end, $categorie);
         $days =[];
-        //Pour chaque événement entre les deux dates, on récupère la date de début, de fin et de tous les dates entre la date de début et de fin 
+        //Pour chaque événement entre les deux dates, on récupère la date de début, de fin et de toutes les dates entre la date de début et de fin 
         foreach($events as $event) {
             $dated = explode(' ', $event['date_debut'])[0];
             $datef = explode(' ', $event['date_fin'])[0];
@@ -65,22 +65,25 @@ class Events{
         }
         return $days;
     }
+    // Affiche le nom et le prénom de l'utilisateur
+    public function afficherNom($nom){
+        $req=$this->bdd->getNom($nom);
+        $results=$req[0][0].' '.$req[1][0];
+        return $results;
+    }
+    // Affiche tous les groupes de l'utilisateur
+    public function afficherLesGroupes(){
+        $req=$this->bdd->getGroupe();
+        return $req;
+    }
     // Cherche un événement en fonction du jour et d'une catégorie donnée 
-    public function getEventByDayAndCategorie(DateTime $date_jour,$categorie){
+    public function getEventByDayAndCategorie(DATETIME $date_jour,$categorie){
         $results = $this->bdd->getParJourEtCategorie($date_jour,$categorie);
         return $results;
     }
     // Cherche un événement en fonction du jour et d'un moyen donnée 
     public function getEventByDayAndMoyen(DateTime $date_jour,$moyen) {
         $results = $this->bdd->getParJourEtMoyen($date_jour,$moyen);
-        return $results;
-    }
-    // Cherche un événement par son id
-    public function getEventById(int $id): array {
-        $results = $this->bdd->getReservationByID($id);
-        if ($results == false) {
-            throw new Exception('Aucun résultat n\'a été trouvé');
-        }
         return $results;
     }
     // Cherche tous les moyens en fonction de la catégorie 
@@ -93,12 +96,14 @@ class Events{
         $results = $this->bdd->getResponsableParMoyen($moyen);
         return $results;
     }
+    // Cherche un événement par son id
+    public function getEventById(int $id){
+        $results = $this->bdd->getReservationByID($id);
+        return $results;
+    }
     // Supprime un événement en fonction de son ID
     public function deleteEventById(int $id)  {
         $results = $this->bdd->deleteReservationByID($id);
-        if ($results == false) {
-            throw new Exception('Aucun résultat n\'a été trouvé');
-        }
         return $results;
     }
     // Cherche tous les événements en fonction de son titre 
@@ -131,12 +136,29 @@ class Events{
         $results=$this->bdd->getCategorie();
         return $results;
     }
+    // Cherche les utilisateurs qui ont réservé le moyen donné
     public function getUtiEventsByMoyen($moyen,$deb,$fin){
         $results= $this->bdd->getUtiReservationParMoyen($moyen,$deb,$fin);
         return $results;
     }
+    //  Cherche les utilisateur qui ont réservé un moyen qui est contenu dans la catégorie donné
     public function getUtiEventsByCategorie($categorie,$deb,$fin){  
         $results= $this->bdd->getUtiReservationParCatégorie($categorie,$deb,$fin);
         return $results;
     }
+    // Affiche le moyen d'un responsable
+    public function afficherMoyenResponsable($nom,$deb,$fin){
+        $results= $this->bdd->getMoyenByResponsable($nom,$deb,$fin);
+        return $results;
+    }
+    // Affiche les réservations des groupes
+    public function afficherReservationGroupeMoyen($groupe,$deb,$fin,$moyen){
+        $results= $this->bdd->getReservationByGroupeAndMoyen($groupe,$deb,$fin,$moyen);
+        return $results;
+    }
+        // Affiche tous les moyens réserver
+        public function afficherToutMoyen($deb,$fin){
+            $results= $this->bdd->getAllMoyen($deb,$fin);
+            return $results;
+        }
 }

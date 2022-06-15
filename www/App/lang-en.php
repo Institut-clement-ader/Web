@@ -119,4 +119,72 @@
 
    //fIN publications-tous-acl.php (anglais)
 
+    //Début Partie réservation (anglais)
+
+    define('TXT_LUNDI', 'Monday');
+    define('TXT_MARDI', 'Tuesday');
+    define('TXT_MERCREDI', 'Wednesday');
+    define('TXT_JEUDI', 'Thursday');
+    define('TXT_VENDREDI', 'Friday');
+    define('TXT_SAMEDI', 'Saturday');
+    define('TXT_DIMANCHE', 'Sunday');
+    define('TXT_JANVIER', 'January');
+    define('TXT_FEVRIER', 'February');
+    define('TXT_MARS', 'March');
+    define('TXT_AVRIL', 'April');
+    define('TXT_MAI', 'May');
+    define('TXT_JUIN', 'June');
+    define('TXT_JUILLET', 'July');
+    define('TXT_AOUT', 'August');
+    define('TXT_SEPTEMBRE', 'September');
+    define('TXT_OCTOBRE', 'October');
+    define('TXT_NOVEMBRE', 'November');
+    define('TXT_DECEMBRE', 'December');
+    define('TXT_TITRE_RESER', 'Title of the reservation');
+    define('TXT_NOM_UTI', 'User\'s name');
+    define('TXT_NOM_MOYEN', 'Name of the means');
+    define('TXT_DATE_DEB', 'Start date of the reservation');
+    define('TXT_HEURE_DEB', 'Start time of the reservation');
+    define('TXT_DATE_FIN', 'End date of the reservation');
+    define('TXT_HEURE_FIN', 'End time of the reservation');
+    define('TXT_CONSULTER', 'consult');
+    define('LIEN_CALENDRIER', '/reservation-calendar');
+    define('LIEN_RESERVATION', '/see-reservation');
+    define('TXT_PAS_RESER', 'There is no reservation');
+    define('TXT_CAT_MOYEN', 'Category of means:');
+    define('TXT_MOYEN', 'means :');
+    define('TXT_ERREUR_MOYEN', 'There is already a reservation at this date with the means.');
+    define('TXT_ERREUR_UTI', 'There is already a reservation for this date with the user.');
+    define('TXT_TITRE', 'Title:');
+    define('TXT_NOM_UTI_ADD', 'User\'s name:');
+    define('TXT_NOM_MOYEN_ADD', 'Name of the means:');
+    define('TXT_DATE_DEB_ADD', 'Start date:');
+    define('TXT_HEURE_DEB_ADD', 'Start time:');
+    define('TXT_DATE_FIN_ADD', 'End date:');
+    define('TXT_HEURE_FIN_ADD', 'End time:');
+    define('TXT_ERREUR_DATE', 'Start Day is older than End Day.');
+    define('TXT_ERREUR_UTI', 'Start time is older than end time in the same day.');
+    define('TXT_RAISON', 'Reason:');
+    define('TXT_ENCADRANT', 'Supervisor (doctoral students):');
+    define('TXT_ENCADRANT_SEUL', 'Supervisor:');
+    define('TXT_AXE', 'group:');
+    define('TXT_DESC', 'Description:');
+    define('TXT_AJOUTER', 'Add');
+    define('TXT_VALIDER', 'Validate');
+    define('TXT_ANNULER', 'Cancel');
+    define('TXT_MODIFIER', 'Edit');
+    define('TXT_SUPPRIMER', 'Delete');
+    define('TXT_REUSSI', 'Reservation registered, you can go back to the calendar.');
+    define('TXT_MAINTENANCE', 'maintenance');
+    define('TXT_ESSAI', 'test');
+    define('TXT_FORMATION', 'training');
+    define('TXT_REUSSI_MODIF', 'Change saved, you can return to the calendar.');
+    define('TXT_CAT_MOYEN', 'Category of means:');
+    define('TXT_MOYEN', 'Means:');
+    define('LIEN_JOURNEE', '/reservation-of-the-day');
+    define('LIEN_CALENDRIER', '/reservation-calendar');
+    define('LIEN_MODIFIER', '/modify-a-reservation');
+    define('LIEN_SUPPRIMER', '/delete-a-reservation');
+    define('TXT_NON_RESA_GROUPE', 'No reservation');
+    //FIN Partie réservation (anglais)
 ?>

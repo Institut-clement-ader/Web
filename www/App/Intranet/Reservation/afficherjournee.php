@@ -20,14 +20,14 @@ Ce fichier utilise Events.php -->
     if(!isset($_GET['date_jour'])){
        header('Location: '.$site.''.LIEN_CALENDRIER.'');
     }
-    $date_jour= new DateTime($_GET['date_jour']);
+    $date_jour = new DATETIME($_GET['date_jour']);
     $categorie=$_SESSION['categorie_moyen_recherche'];
     $event = $events->getEventByDayAndCategorie($date_jour,$categorie);
     $moy= $events->getMoyenParCategorie($categorie);
     // Parcourt chaque moyen de la requête
     foreach($moy as $row){
         // S'il y a un moyen dans la session, que ce moyen n'est pas vide et que le moyen et contenu dans la requête alors on recherche par rapport au moyen sinon par rapport à la catégorie 
-        if($_SESSION['moyen_recherche']==$row['nom_moyen'] ){   
+        if($_SESSION['moyen_recherche']==$row['nom_moyen'] ){ 
             $moyen=$_SESSION['moyen_recherche'];
             $event = $events->getEventByDayAndMoyen($date_jour,$moyen);
         }

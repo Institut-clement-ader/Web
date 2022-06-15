@@ -1,4 +1,4 @@
-<!-- Ce fichier permet de supprimer une réservations
+<!-- Ce fichier permet de supprimer une réservation
 Ce fichier est utilisé dans la page Supprimer une réservation
 Ce fichier utilise Events.php -->
 <?php
