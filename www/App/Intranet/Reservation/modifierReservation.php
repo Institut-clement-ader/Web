@@ -1,5 +1,5 @@
 <!-- Ce fichier est le formulaire de modification d'une réservation ainsi que sa modification dans la bdd et la vérification des exceptions
-Ce fichier est utilisé dans la page Ajouter une réservation 
+Ce fichier est utilisé dans la page Modifier une réservation 
 Ce fichier utilise NouvelleReservation.php -->
 <?php
     require 'App/Intranet/Reservation/src/NouvelleReservation.php';
@@ -22,6 +22,9 @@ Ce fichier utilise NouvelleReservation.php -->
     $event = $valider->GetEventById($_GET['id']);
     $dateheure_debut = $valider->separeDateEtHeure($event['date_debut']);
     $dateheure_fin = $valider->separeDateEtHeure($event['date_fin']);
+    $current_user = wp_get_current_user();
+    $uti=$current_user->display_name;
+    
 ?>
 <div class="container">
     <?php  
@@ -153,7 +156,7 @@ Ce fichier utilise NouvelleReservation.php -->
                         ?>
                         <!-- Les différentes raisons de la réservation, possible d'en ajouter d'autre si nécessaire, et on sélectionne celui dans $raison-->
                         <option value='maintenance' <?= ( $raison== 'maintenance') ? selected : ''; ?> ><?=TXT_MAINTENANCE?></option>
-                        <option value='test'<?= ( $raison== 'test') ? selected : ''; ?> > <?=TXT_ESSAI?> </option>
+                        <option value='essai'<?= ( $raison== 'essai') ? selected : ''; ?> > <?=TXT_ESSAI?> </option>
                         <option value='formation' <?= ( $raison== 'formation') ? selected : ''; ?>> <?=TXT_FORMATION?> </option>
                     </select>
                 </div> 
@@ -181,9 +184,21 @@ Ce fichier utilise NouvelleReservation.php -->
                     </div>
                 </div>
                 <div class="form-simple">
-                    <!-- Axe de recherche de la réservation -->
-                    <label for="axe_recherche"><?=TXT_AXE?></label>
-                    <input id="axe_recherche" required type="text" class="form-control" name="axe_recherche"value= "<?= isset($_POST['axe_recherche']) ? $_POST['axe_recherche'] : $event['axe_recherche']; ?>" >
+                <label for="axe_recherche"><?=TXT_AXE?></label>
+                <select id="axe_recherche" required type="text" class="selectionForm" name="axe_recherche"  >
+                    <option value='' selected='selected'> ----- </option>
+                    <!-- Si $POST contient un groupe alors on le récupère sinon on récupère le groupe de la requête  -->
+                    <?php if(isset($_POST['axe_recherche'])){
+                        $g=$_POST['axe_recherche'];
+                    }else{
+                        $g=$event['axe_recherche'];
+                    } 
+                    $groupe=$valider->afficherLesGroupes(); 
+                    foreach($groupe as $resultat):?>
+                        <option value='<?=$resultat[0]?>' <?= ($g== $resultat[0]) ? selected : ''; ?>> <?= $resultat[0] ?> </option>
+                    <?php endforeach; 
+                        ?>
+                </select>
                 </div>
                 <div class="desc">
                     <div class="form-simple">
@@ -195,7 +210,7 @@ Ce fichier utilise NouvelleReservation.php -->
             </div>
             <div class="boutonModif">
                 <!-- Bouton modifier qui permet de mettre les données du formulaire dans le POST -->
-                <button class="btn-primaryModif" type="submit" name="submit" value="Ajouter"><?=TXT_MODIFIER?></button>
+                <button class="btn-primaryModif" type="submit" name="submit" value="Ajouter"><?=TXT_VALIDER?></button>
                 <!-- Bouton annuler qui supprime les données du formulaire -->
                 <button class="btn-primaryModif" type="reset" name="reset" value="Annuler"><?=TXT_ANNULER?></button>
             </div>
@@ -205,7 +220,7 @@ Ce fichier utilise NouvelleReservation.php -->
 <?php 
 // Si le POST n'est pas vide et qu'il n'y a pas eu d'exceptions alors on envoie les mails et on ajoute la réservation dans la bdd
 if($_SERVER['REQUEST_METHOD']== 'POST' && $error==false):
-    $mail=$valider->envoieMailAjout($_POST);
+    $mail=$valider->envoieMailModif($_POST,$_GET['id']);
     if ($mail==true){
         $req= $valider->modifierReservation($_POST,$_GET['id']);
     }

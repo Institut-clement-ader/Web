@@ -12,14 +12,19 @@ Ce fichier utilise NouvelleReservation.php -->
     }else{
         echo("échec de reconnaissance de la langue");
     }
+
     // Récupère les informations de l'utilisateur courant (son nom et status)
     $current_user = wp_get_current_user();
-    $nom_uti= $current_user->display_name;
     $status= $current_user->status;
     $valider= new NouvelleReservation();
+    $groupe= $current_user->groupe_primaire;
+    $groupe_s= $current_user->groupe_secondaire;
+    $groupe_t= $current_user->groupe_tertiaire;
+    $uti=$current_user->display_name;
+    $nom_uti= $valider->afficherNom($uti);
     //$error va permettre de voir s'il y a une exception s'il est vrai alors on n'ajoute pas la réservation dans la bdd 
-    $error=false;
-?>
+    $error=false;?>
+
 <div class="container">
     <?php 
         // Si POST n'est pas vide alors on récupère les informations dedans et on vérifie le chevauchement
@@ -31,13 +36,6 @@ Ce fichier utilise NouvelleReservation.php -->
                 $error=true;?>
                 <div class="alert">
                     <?=TXT_ERREUR_MOYEN?>
-                </div>
-            <?php endif; 
-             // Si il y a un chevauchement alors on envoye une excpetion
-            if($valider->chevauchementMemeUtilisateur($_POST)[0]>='1'):
-                $error=true;?>
-                <div class="alert">
-                    <?=TXT_ERREUR_UTI?>
                 </div>
             <?php endif; 
         endif;
@@ -70,15 +68,18 @@ Ce fichier utilise NouvelleReservation.php -->
                             // Parcourt toutes les catégories de la requête
                             foreach($res as $req): ?> 
                                 <!-- On ajoute les catégories dans le menu déroulant sous forme de optgroup -->
-                                <optgroup label="<?=$req[0]?>">
-                                    <?php $resu=$valider->getMoyenParCategorie($req[0]); 
-                                    // Parcourt tous les moyens de la requête 
-                                    foreach($resu as $requ):?> 
-                                        <!-- On ajoute les moyens dans le menu déroulant et on sélectionne celui dans $moyen --> 
-                                        <option value="<?= $requ[0]?>" <?= ($moyen== $requ[0]) ? selected : ''; ?> > <?= $requ[0] ?> </option>
-                                    <?php endforeach; ?>    
-                                </optgroup>
-                           <?php endforeach; 
+                                <?php $resu=$valider->getMoyenParCategorie($req[0]); 
+                                if (count($resu)!=0):?>
+                                    <optgroup label="<?=$req[0]?>">
+                                        <?php
+                                        // Parcourt tous les moyens de la requête 
+                                        foreach($resu as $requ):?> 
+                                            <!-- On ajoute les moyens dans le menu déroulant et on sélectionne celui dans $moyen --> 
+                                            <option value="<?= $requ[0]?>" <?= ($moyen== $requ[0]) ? selected : ''; ?> > <?= $requ[0] ?> </option>
+                                        <?php endforeach; ?>    
+                                    </optgroup>
+                                <?php endif;
+                            endforeach; 
                         ?>
                     </select>
                 </div> 
@@ -143,7 +144,7 @@ Ce fichier utilise NouvelleReservation.php -->
                         <!-- Affiche les différentes raisons de la réservation, possible d'en ajouter d'autre si nécessaire, et on sélectionne celui dans $raison-->
                         <option value='' selected='selected'> ----- </option>
                         <option value='maintenance' <?= ($_POST['raison']== 'maintenance') ? selected : ''; ?> > <?=TXT_MAINTENANCE?>  </option>
-                        <option value='test'<?= ($_POST['raison']== 'test') ? selected : ''; ?> > <?=TXT_ESSAI?> </option>
+                        <option value='essai'<?= ($_POST['raison']== 'essai') ? selected : ''; ?> > <?=TXT_ESSAI?> </option>
                         <option value='formation' <?= ($_POST['raison']== 'formation') ? selected : ''; ?>> <?=TXT_FORMATION?> </option>
                     </select>
                 </div> 
@@ -156,18 +157,24 @@ Ce fichier utilise NouvelleReservation.php -->
                         <?php 
                             $res=$valider->afficherLesEncadrants();
                             //Parcourt tous les utilisateurs 
-                            foreach($res as $requ):   ?>
-                                <!-- On ajoute les moyens dans le menu déroulant et on sélectionne celui dans $encadrant --> 
-                                <option value="<?= $requ[0]?>" <?= ($_POST['encadrant']== $requ[0]) ? selected : ''; ?> > <?= $requ[0] ?> </option>
+                            foreach($res as $requ): 
+                                $nom=$valider->afficherNom($requ[0]);?>
+                                <!-- On ajoute les encadrants dans le menu déroulant et on sélectionne celui dans $encadrant --> 
+                                <option value="<?=$nom?>" <?= ($_POST['encadrant']== $nom) ? selected : ''; ?> > <?= $nom ?> </option>
                             <?php endforeach; ?>
                     </select>
                 </div>
             </div>
             <div class="form-simple">
-                <!-- Axe de recherche de la réservation -->
+                <!-- Groupe de la réservation -->
                 <label for="axe_recherche"><?=TXT_AXE?></label>
-                <!-- Si l'axe de recherche est contenue dans $POST alors on l'affiche -->
-                <input id="axe_recherche" required type="text" class="form-control" name="axe_recherche"value= "<?= isset($_POST['axe_recherche']) ? $_POST['axe_recherche'] : ''; ?>" >
+                <select id="axe_recherche" required type="text" class="selectionForm" name="axe_recherche"  >
+                    <option value='' selected='selected'> ----- </option>
+                    <?php $groupe=$valider->afficherLesGroupes(); 
+                    foreach($groupe as $resultat):?>
+                        <option value='<?=$resultat[0]?>' <?= ($_POST['axe_recherche']== $resultat[0]) ? selected : ''; ?>> <?= $resultat[0] ?> </option>
+                    <?php endforeach; ?>
+                </select>
             </div>
             <div class="desc">
                 <div class="form-simple">
@@ -180,7 +187,7 @@ Ce fichier utilise NouvelleReservation.php -->
         </div>
         <div class="bouton">
             <!-- Bouton ajouter qui permet de mettre les données du formulaire dans le POST -->
-            <button class="btn btn-primaryModif" type="submit" name="submit" value="Ajouter"><?=TXT_AJOUTER?></button>
+            <button class="btn btn-primaryModif" type="submit" name="submit" value="Ajouter"><?=TXT_VALIDER?></button>
              <!-- Bouton annuler qui supprime les données du formulaire -->
             <button class="btn btn-primaryModif" type="reset" name="reset" value="Annuler"><?=TXT_ANNULER?></button>
         </div>
@@ -189,10 +196,10 @@ Ce fichier utilise NouvelleReservation.php -->
 <?php 
     // Si le POST n'est pas vide et qu'il n'y a pas eu d'exceptions alors on envoie les mails et on ajoute la réservation dans la bdd
     if($_SERVER['REQUEST_METHOD']== 'POST' && $error==false):
-        $mail=$valider->envoieMailAjout($_POST);
-        if ($mail==true){
-            $req= $valider->creationReservation($_POST);
-        }
+
+        $id= $valider->creationReservation($_POST);
+        $mail=$valider->envoieMailAjout($_POST,$id[0][0]);
+      
         // Si l'ajout a bien était fait alors on envoie le message de succès
         if($req==true): ?>
             <div class="container">

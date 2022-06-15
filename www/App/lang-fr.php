@@ -118,6 +118,75 @@
    define('TXT_RAVANCEE_PUBLITACL', 'Recherche avancée');
 
    //fIN publications-tous-acl.php (français)
+   
+   //Début Partie réservation (français)
 
+   define('TXT_LUNDI', 'Lundi');
+   define('TXT_MARDI', 'Mardi');
+   define('TXT_MERCREDI', 'Mercredi');
+   define('TXT_JEUDI', 'Jeudi');
+   define('TXT_VENDREDI', 'Vendredi');
+   define('TXT_SAMEDI', 'Samedi');
+   define('TXT_DIMANCHE', 'Dimanche');
+   define('TXT_JANVIER', 'Janvier');
+   define('TXT_FEVRIER', 'Février');
+   define('TXT_MARS', 'Mars');
+   define('TXT_AVRIL', 'Avril');
+   define('TXT_MAI', 'Mai');
+   define('TXT_JUIN', 'Juin');
+   define('TXT_JUILLET', 'Juillet');
+   define('TXT_AOUT', 'Aout');
+   define('TXT_SEPTEMBRE', 'Septembre');
+   define('TXT_OCTOBRE', 'Octobre');
+   define('TXT_NOVEMBRE', 'Novembre');
+   define('TXT_DECEMBRE', 'Décembre');
+   define('TXT_TITRE_RESER', 'Titre de la réservation');
+   define('TXT_NOM_UTI', 'Nom de l\'utilisateur');
+   define('TXT_NOM_MOYEN', 'Nom du moyen');
+   define('TXT_DATE_DEB', 'Date de début de la réservation');
+   define('TXT_HEURE_DEB', 'Heure de début de la réservation');
+   define('TXT_DATE_FIN', 'Date de fin de la réservation');
+   define('TXT_HEURE_FIN', 'Heure de fin de la réservation');
+   define('TXT_CONSULTER', 'consulter');
+   define('LIEN_CALENDRIER', '/calendrier-reservations');
+   define('LIEN_RESERVATION', '/voir-une-reservation');
+   define('TXT_PAS_RESER', 'Il n\'y a pas de réservation');
+   define('TXT_CAT_MOYEN', 'Catégorie des moyens :');
+   define('TXT_MOYEN', 'Moyens :');
+   define('TXT_ERREUR_MOYEN', 'Il y a déja une réservation à cette date avec le moyen');
+   define('TXT_ERREUR_UTI', 'Il y a déja une réservation à cette date avec l\'utilisateur.');
+   define('TXT_TITRE', 'Titre :');
+   define('TXT_NOM_UTI_ADD', 'Nom de l\'utilisateur :');
+   define('TXT_NOM_MOYEN_ADD', 'Nom du moyen :');
+   define('TXT_DATE_DEB_ADD', 'Date de début :');
+   define('TXT_HEURE_DEB_ADD', 'Heure de début :');
+   define('TXT_DATE_FIN_ADD', 'Date de fin :');
+   define('TXT_HEURE_FIN_ADD', 'Heure de fin :');
+   define('TXT_ERREUR_DATE', 'Jour de début est plus vieux que Jour de fin.');
+   define('TXT_ERREUR_HEURE', 'Heure de début est plus vieux que Heure de fin dans la meme journée.');
+   define('TXT_RAISON', 'Raison :');
+   define('TXT_ENCADRANT', 'Encadrant (doctorants) :');
+   define('TXT_ENCADRANT_SEUL', 'Encadrant :');
+   define('TXT_AXE', 'Groupe :');
+   define('TXT_DESC', 'Description :');
+   define('TXT_AJOUTER', 'Ajouter');
+   define('TXT_VALIDER', 'Valider');
+   define('TXT_ANNULER', 'Annuler');
+   define('TXT_MODIFIER', 'Modifier');
+   define('TXT_SUPPRIMER', 'Supprimer');
+   define('TXT_REUSSI', 'Réservation enregistrée, vous pouvez retourner sur le calendrier.');
+   define('TXT_MAINTENANCE', 'maintenance');
+   define('TXT_ESSAI', 'essai');
+   define('TXT_FORMATION', 'formation');
+   define('TXT_REUSSI_MODIF', 'Modification enregistrée, vous pouvez retourner sur le calendrier.');
+   define('TXT_CAT_MOYEN', 'Catégorie des moyens :');
+   define('TXT_MOYEN', 'Moyens :');
+   define('LIEN_JOURNEE', '/reservation-de-la-journee');
+   define('LIEN_CALENDRIER', '/calendrier-reservations');
+   define('LIEN_MODIFIER', '/modifier-une-reservation');
+   define('LIEN_SUPPRIMER', '/supprimer-une-reservation');
+   define('TXT_NON_RESA_GROUPE', 'Pas de réservation');
+      
+   //fIN Partie réservation (français)
 
 ?>

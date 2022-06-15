@@ -29,7 +29,7 @@ Ce fichier utilise Events.php -->
         <li><?=TXT_NOM_MOYEN_ADD?> <div class="valeur"><?= $event['nom_moyen'] ?></div> </li></br>
         <li><?=TXT_DATE_DEB_ADD?><div class="valeur"><?= (new DateTime($event['date_debut']))->format('d/m/Y'); ?></div>   </li></br>
         <li><?=TXT_HEURE_DEB_ADD?><div class="valeur"><?= (new DateTime($event['date_debut']))->format('h:m'); ?></div>  </li></br>
-        <li><?=TXT_DATE_FIN_ADD?><<div class="valeur"><?= (new DateTime($event['date_fin']))->format('d/m/Y'); ?></div>  </li></br>
+        <li><?=TXT_DATE_FIN_ADD?><div class="valeur"><?= (new DateTime($event['date_fin']))->format('d/m/Y'); ?></div>  </li></br>
         <li><?=TXT_HEURE_FIN_ADD?><div class="valeur"><?= (new DateTime($event['date_fin']))->format('h:m'); ?></div>  </li></br>
         <li><?=TXT_AXE?><div class="valeur"><?= $event['axe_recherche'] ?></div> </li></br> 
         <li><?=TXT_RAISON?><div class="valeur"><?= $event['raison'] ?></div> </li></br>
@@ -46,9 +46,13 @@ Ce fichier utilise Events.php -->
 <?php  
     $representant= $events->getResponsable($event['nom_moyen']);
     $current_user = wp_get_current_user();
-    $nom_uti_courant= $current_user->display_name;
+    $id = get_current_user_id();
+    $user_info = get_userdata($id);
+    $user_roles = $user_info->roles;
+    $uti=$current_user->display_name;
+    $nom_uti_courant= $events->afficherNom($uti);
     // Si l'utilisateur courant est celui qui à réservé ou le responsable du moyen alors on affiche les 2 boutons
-    if($nom_uti_courant==$event['nom_utilisateur'] || $nom_uti_courant==$representant[0]['responsable_1'] || $nom_uti_courant==$representant[0]['responsable_2'] || $nom_uti_courant==$representant[0]['responsable_3']):?>
+    if($nom_uti_courant==$event['nom_utilisateur'] || $nom_uti_courant==$representant[0]['responsable_1'] || $nom_uti_courant==$representant[0]['responsable_2'] || $nom_uti_courant==$representant[0]['responsable_3'] || $user_roles[0]=='administrator' ):?>
         <div class="container-bouton">
             <div class="bouton" >
                 <!-- Bouton Modifier permet de modifier la réservation, ramène à la page Modifier une réservation -->

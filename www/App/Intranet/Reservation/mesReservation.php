@@ -1,4 +1,4 @@
-<!-- Ce fichier permet d'afficher les réservations de l'utilisateur pas encore terminées qu'il soit encadrant, responsable ou l'utilisateur qui réserve
+<!-- Ce fichier permet d'afficher les réservations de l'utilisateur qu'il soit encadrant, responsable ou l'utilisateur qui réserve
 Ce fichier est utilisé dans la page Mes réservations 
 Ce fichier utilise Events.php -->
 <?php
@@ -17,7 +17,8 @@ Ce fichier utilise Events.php -->
     // Récupération du nom de domaine du site 
     $site=site_url();
     $current_user = wp_get_current_user();
-    $nom_uti= $current_user->display_name;
+    $uti=$current_user->display_name;
+    $nom_uti= $events->afficherNom($uti);
     $deb= date("Y-m-d H:i:s");
     $fin= (new DateTime('3000-01-01'))->format('Y-m-d H:i');
     $event = $events->getEventByName($nom_uti,$deb,$fin);
