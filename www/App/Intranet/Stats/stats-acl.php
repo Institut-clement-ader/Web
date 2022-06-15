@@ -25,7 +25,7 @@ for ($year = 2009; $year <= date('Y'); $year++) {
   array_push($tabyear,$year);
 
   //requête qui renvoie les ACL de l'ICA
-	$url = 'https://api.archives-ouvertes.fr/search/ICA/?q=&fq=docType_s:ART&fq=producedDateY_i:'.$year.'&fq=peerReviewing_t:oui&fq=popularLevel_t:non&wt=json&rows=10000&fl=docid,uri_s,label_s,localReference_s';
+	$url = 'https://api.archives-ouvertes.fr/search/?q=&fq=labStructId_i:110103&fq=producedDateY_i:'.$year.'&wt=json&rows=10&sort=producedDate_tdate%20desc&fl=producedDateY_i,docType_s,authFullName_s,title_s,journalTitle_s,page_s,volume_s,uri_s,doiId_s,issue_s,localReference_s,journalPublisher_s,subTitle_s,conferenceTitle_s,city_s,country_s,invitedCommunication_s,peerReviewing_s,popularLevel_s,number_s';
 
 //utilisation de curl pour récupérer le json
 	$ch = curl_init($url);
