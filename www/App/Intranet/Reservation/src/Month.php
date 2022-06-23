@@ -1,4 +1,4 @@
-<!-- Ce fichier permet de récupérer le mois de connaitre son nombre de semaines et de jour
+<!-- Ce fichier permet de récupérer le mois, de connaitre son nombre de semaines et de jour
 Ce fichier est utilisé dans calendrier.php  -->
 <?php 
 

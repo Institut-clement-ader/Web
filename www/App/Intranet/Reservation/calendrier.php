@@ -42,6 +42,7 @@ Ce fichier utilise Month.php et Events.php-->
         }else{
             $cat=$evenement->afficherLesCategorie();
             $categorie=$cat[0]['categorie'];
+            $_SESSION['categorie_moyen_recherche']=$categorie;
         }
     }
     $events= $evenement->getEventsBetweenByDay($start,$end,$categorie);
@@ -63,12 +64,15 @@ Ce fichier utilise Month.php et Events.php-->
         <div class="categorie"><?=TXT_CAT_MOYEN?></div>
         <select class="selection" name='categorie_moyen_recherche' id="show" >
             <?php 
-                $res=$evenement->afficherLesCategorie();
-                // Parcourt toutes les catégories de la requête  
-                foreach($res as $requ):   ?> 
-                    <!-- On ajoute les catégorie dans le menu déroulant et on sélectionne la catégorie de la SESSION --> 
-                    <option value="<?= $requ[0]?>" <?= ($_SESSION['categorie_moyen_recherche']== $requ[0]) ? selected : ''; ?>> <?= $requ[0] ?> </option>
-                <?php endforeach; 
+                $res=$evenement->afficherLesCategorie();?>
+                <!-- Parcourt toutes les catégories de la requête   -->
+                <?php foreach($res as $requ):  
+                    $resu=$evenement->getMoyenParCategorie($requ[0]); 
+                    if (count($resu)!=0):?>
+                        <!-- On ajoute les catégorie dans le menu déroulant et on sélectionne la catégorie de la SESSION --> 
+                        <option value="<?= $requ[0]?>" <?= ($_SESSION['categorie_moyen_recherche']== $requ[0]) ? selected : ''; ?>> <?= $requ[0] ?> </option>
+                    <?php endif;
+                endforeach; 
             ?>
         </select>
         <!-- Menu déroulant des différents moyens -->

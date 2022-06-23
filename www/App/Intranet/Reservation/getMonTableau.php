@@ -1,4 +1,4 @@
-<!-- Ce fichier permet d'actualiser le tableau de la page MesReservation en fonction du filtre des menus déroulants
+<!-- Ce fichier permet d'actualiser le tableau de la page 'Mes reservation' en fonction du filtre des menus déroulants
 Ce fichier est utilisé dans la page Mes réservations grâce au javaScript
 Ce fichier utilise Events.php-->
 <?php 
@@ -15,7 +15,8 @@ Ce fichier utilise Events.php-->
     session_start();
     $events = new Events();
     $current_user = wp_get_current_user();
-    $nom_uti= $current_user->display_name;
+    $uti=$current_user->display_name;
+    $nom_uti= $events->afficherNom($uti);
     // Récupère la date du GET pour et on met l'heure et les minute en 00:00 si $GET est null alors récupère la date du jour 
     $deb= (new DATETIME($_GET['deb']))->format("Y-m-d H:i");
     // Récupère la date du GET pour et on met l'heure et les minute en 00:00 si $GET est null alors récupère la date du jour 

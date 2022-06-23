@@ -1,4 +1,4 @@
-<!-- Ce fichier permet d'afficher les réservations pas terminées sous forme de tableau, il permet aussi de filtrer les réservations avec les catégories ou directement le moyen 
+<!-- Ce fichier permet d'afficher les réservations sous forme de tableau, il permet aussi de filtrer les réservations avec les catégories ou directement le moyen 
 Ce fichier est utilisé dans la page Tableau des réservations 
 Ce fichier utilise Events.php-->
 <?php 
@@ -55,13 +55,16 @@ Ce fichier utilise Events.php-->
     <!-- menu déroulant des différentes catégories -->
     <div class="categorie"><?=TXT_CAT_MOYEN?></div>
     <select class="selection" name="categorie_moyen_recherche"id='show' >
-        <?php 
-            $requ=$evenement->afficherLesCategorie();
-            // Parcourt toutes les catégories de la requête 
-            for ($i =0; $i < count($requ); $i++):   ?>
-                <!-- On ajoute les catégorie dans le menu déroulant et on sélectionne la catégorie de la SESSION-->   
-                <option class="option" value='<?= $requ[$i][0]?>' <?= ($_SESSION['categorie_moyen_recherche']== $requ[$i][0]) ? selected : ''; ?>> <?= $requ[$i][0] ?> </option>
-            <?php endfor; 
+        <?php  
+            $res=$evenement->afficherLesCategorie();?>
+            <!-- Parcourt toutes les catégories de la requête   -->
+            <?php foreach($res as $requ):  
+                $resu=$evenement->getMoyenParCategorie($requ[0]); 
+                if (count($resu)!=0):?>
+                    <!-- On ajoute les catégorie dans le menu déroulant et on sélectionne la catégorie de la SESSION --> 
+                    <option value="<?= $requ[0]?>" <?= ($_SESSION['categorie_moyen_recherche']== $requ[0]) ? selected : ''; ?>> <?= $requ[0] ?> </option>
+                <?php endif;
+            endforeach; 
         ?>
     </select>
     <!-- Menu déroulant des différents moyens -->

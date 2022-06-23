@@ -39,7 +39,6 @@ Ce fichier utilise Events.php-->
                 $events= $evenement->getEventsByCategorieAndUser($q,$uti,$deb,$fin);
             }else{
                 $_SESSION['nom_utilisateur']=$uti;
-                $events= $evenement->getEventsByCategorie($q,$deb,$fin);
             } 
         }else{
             $uti= $evenement->getUtiEventsByCategorie($q,$deb,$fin);
@@ -66,7 +65,7 @@ Ce fichier utilise Events.php-->
                         $events= $evenement->getEventsByMoyenAndUser($_SESSION['moyen_recherche'],$uti,$deb,$fin);
                     }else{
                         $_SESSION['nom_utilisateur']=$uti;
-                        $events= $evenement->getEventsByMoyen($_SESSION['moyen_recherche'],$deb,$fin);
+        
                     }
                 }else{
                     $uti= $evenement->getUtiEventsByMoyen($_SESSION['moyen_recherche'],$deb,$fin);
@@ -93,7 +92,6 @@ Ce fichier utilise Events.php-->
                 $events= $evenement->getEventsByMoyenAndUser($m,$uti,$deb,$fin);
             }else{
                 $_SESSION['nom_utilisateur']=$uti;
-                $events= $evenement->getEventsByMoyen($m,$deb,$fin);
             }
         }else{
             $uti= $evenement->getUtiEventsByMoyen($m,$deb,$fin);
