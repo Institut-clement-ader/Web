@@ -1,18 +1,18 @@
-/** Todo
-* Enelver les mails statiques
-*/
-
 <?php
+
+/** Todo
+ * Enelver les mails statiques
+ */
 // Restreint l'accès aux administrateurs
 if (!is_user_logged_in()) {
   echo ("loggin to access this page");
   exit();
 }
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  echo 'ok';
-} else {
-  echo 'non';
-}
+// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//   echo 'ok';
+// } else {
+//   echo 'non';
+// }
 $user = wp_get_current_user();
 $email = $user->user_email;
 // Si Nicolas ou Admin
