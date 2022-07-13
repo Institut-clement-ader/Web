@@ -1,4 +1,5 @@
 <?php
+
 /**
  * La configuration de base de votre installation WordPress.
  *
@@ -19,7 +20,7 @@
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 /** Nom de la base de données de WordPress. */
 define('WP_CACHE', true);
-define( 'WPCACHEHOME', '/opt/data/webusers/lab0612/lab0612/ica.cnrs.fr/www/wp-content/plugins/wp-super-cache/' );
+define('WPCACHEHOME', '/opt/data/webusers/lab0612/lab0612/' . site_url() . '/www/wp-content/plugins/wp-super-cache/');
 define('DB_NAME', 'lab0612sql3db');
 /** Utilisateur de la base de données MySQL. */
 define('DB_USER', 'lab0612sql3');
@@ -30,8 +31,8 @@ define('DB_HOST', 'mysql2.lamp.ods');
 /** Jeu de caractères à utiliser par la base de données lors de la création des tables. */
 define('DB_CHARSET', 'utf8mb4');
 /** Type de collation de la base de données.
-  * N’y touchez que si vous savez ce que vous faites.
-  */
+ * N’y touchez que si vous savez ce que vous faites.
+ */
 define('DB_COLLATE', '');
 /**#@+
  * Clés uniques d’authentification et salage.
@@ -80,12 +81,12 @@ define('WP_DEBUG', false);
 define('WP_DEBUG_LOG', false);
 define('WP_DEBUG_DISPLAY', false);
 define('FORCE_SSL_ADMIN', false);
-define('FORCE_SSL_LOGIN',false);
+define('FORCE_SSL_LOGIN', false);
 @ini_set('display_errors', 0);
 //*/
 /* C’est tout, ne touchez pas à ce qui suit ! */
 /** Chemin absolu vers le dossier de WordPress. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+if (!defined('ABSPATH'))
+  define('ABSPATH', dirname(__FILE__) . '/');
 /** Réglage des variables de WordPress et de ses fichiers inclus. */
 require_once(ABSPATH . 'wp-settings.php');

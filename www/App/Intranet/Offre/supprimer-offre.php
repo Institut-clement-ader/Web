@@ -27,6 +27,5 @@ if (isset($_GET["id"])) {
 			}
 		}
 	}
-	header('Location: http://ica.cnrs.fr/gestion-offres/');
+	header('Location: '.site_url().'/gestion-offres/');
 }
-?>

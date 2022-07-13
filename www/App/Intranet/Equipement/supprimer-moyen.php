@@ -29,6 +29,5 @@
 				}
 			}
 		}
-        header('Location: http://ica.cnrs.fr/gestion-equipements/');
+        header('Location: '.site_url().'/gestion-equipements/');
 	}
-?>
