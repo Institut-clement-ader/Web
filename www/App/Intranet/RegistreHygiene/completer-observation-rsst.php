@@ -20,8 +20,8 @@ $req = $bdd->getObservationById($id);
 // AFFICHAGE DE L OBSERVATION
 if (isset($req)) {
   while ($row = $req->fetch()) {
-    $username = ($row['nom']) . " " . ($row['prenom']);
-    $dateSaisie = ($row['date_saisie']);
+    $username = ($row['rs_nom']) . " " . ($row['rs_prenom']);
+    $dateSaisie = ($row['rs_date_saisie']);
 
 ?>
 
@@ -33,11 +33,11 @@ if (isset($req)) {
 
         <tr>
           <th>Statut au sein de l'entreprise</th>
-          <td><?php echo ($row['position']); ?></td>
+          <td><?php echo ($row['rs_position']); ?></td>
         </tr>
         <tr>
           <th>Heure de saisie</th>
-          <td><?php echo ($row['heure_saisie']); ?></td>
+          <td><?php echo ($row['rs_heure_saisie']); ?></td>
         </tr>
       </table>
 
@@ -50,11 +50,11 @@ if (isset($req)) {
         </tr>
         <tr>
           <th>Observations relatives à la prévention des risques professionels et à l'amélioration des conditions de travail</th>
-          <td><?php echo ($row['observations']); ?></td>
+          <td><?php echo ($row['rs_observations']); ?></td>
         </tr>
         <tr>
           <th>Propositions pour améliorer la situation</th>
-          <td><?php echo ($row['propositions']); ?></td>
+          <td><?php echo ($row['rs_propositions']); ?></td>
         </tr>
       </table>
     </tbody>

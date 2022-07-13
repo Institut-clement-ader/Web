@@ -46,9 +46,9 @@ $req = $bdd->getObservations();
 
   if (isset($req)) {
     while ($row = $req->fetch()) {
-      $username = ($row['nom']) . " " . ($row['prenom']);
-      $dateSaisie = ($row['date_saisie']);
-      $dateConsultationChefStructure = ($row['date_consultation_chef_structure']);
+      $username = ($row['rs_nom']) . " " . ($row['rs_prenom']);
+      $dateSaisie = ($row['rs_date_saisie']);
+      $dateConsultationChefStructure = ($row['rs_date_consultation_chef_structure']);
 
 
 
@@ -57,10 +57,10 @@ $req = $bdd->getObservations();
       <tbody>
         <tr>
           <td><?php echo ($username); ?></td>
-          <td><?php echo ucfirst($row['observations']); ?></td>
+          <td><?php echo ucfirst($row['rs_observations']); ?></td>
           <td><?php echo date('d/m/y', strtotime($dateSaisie)); ?></td>
-          <?php if ($row['visa'] == 1) { ?><td><?= date('d/m/y', strtotime($dateConsultationChefStructure)); ?></td> <?php } ?>
-          <?php if ($row['visa'] == 0) { ?><td><?= "Pas encore consulté"; ?></td> <?php } ?>
+          <?php if ($row['rs_visa'] == 1) { ?><td><?= date('d/m/y', strtotime($dateConsultationChefStructure)); ?></td> <?php } ?>
+          <?php if ($row['rs_visa'] == 0) { ?><td><?= "Pas encore consulté"; ?></td> <?php } ?>
           <td><a href="<?= site_url(); ?>/affichage-de-lobservation/?id=<?= ($row['id']); ?>">consulter</a></td>
 
         </tr>

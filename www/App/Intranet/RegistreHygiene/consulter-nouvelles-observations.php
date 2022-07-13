@@ -44,8 +44,8 @@ $req = $bdd->getObservationsNonValide();
 
   if (isset($req)) {
     while ($row = $req->fetch()) {
-      $username = ($row['nom']) . " " . ($row['prenom']);
-      $dateSaisie = ($row['date_saisie']);
+      $username = ($row['rs_nom']) . " " . ($row['rs_prenom']);
+      $dateSaisie = ($row['rs_date_saisie']);
 
 
   ?>
@@ -54,7 +54,7 @@ $req = $bdd->getObservationsNonValide();
           <td><?php echo date('d/m/y', strtotime($dateSaisie)); ?></td>
           <td><?php echo ($username); ?></td>
           <td><?php echo ucfirst($row['sujet']); ?></td>
-          <td><?php echo ucfirst($row['observations']); ?></td>
+          <td><?php echo ucfirst($row['rs_observations']); ?></td>
           <td><a href="<?= site_url(); ?>/completer-lobservation/?id=<?php echo ($row['id']); ?>">Ajouter une observation</a></td>
 
         </tr>
