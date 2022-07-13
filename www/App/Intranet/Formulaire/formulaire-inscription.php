@@ -45,7 +45,7 @@ if (isset($_POST['valider'])) {
     $paswd = wp_generate_password(12, false);
     $error = wp_create_user($_POST['identifiant'], $paswd, $_POST['mail']);
     wp_mail($_POST['mail'], $subject, $message);
-    wp_mail('tmangear@insa-toulouse.fr', '[Inscription ICA] ' . $_POST['nom'] . ' ' . $_POST['prenom'], 'Inscrit par ' . $current_user->first_name . ' ' . $current_user->last_name);
+    wp_mail('paul.oumaziz@insa-toulouse.fr', '[Inscription ICA] ' . $_POST['nom'] . ' ' . $_POST['prenom'], 'Inscrit par ' . $current_user->first_name . ' ' . $current_user->last_name);
     $user = get_user_by('email', $_POST['mail']);
     $id = $user->ID;
     $cocher = 1;
