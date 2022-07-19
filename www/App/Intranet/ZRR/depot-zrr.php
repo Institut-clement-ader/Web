@@ -76,9 +76,9 @@ if ($saveok == 1) {
 ?>
 
 <form id="inscription4" name="zrr" method="post" action="'<?= site_url(); ?>/documents/zrr-site-de-toulouse/depot-dossier-zrr/" enctype="multipart/form-data">
-  Prénom de l\'arrivant (nécéssaire) : <input type="text" name="prenom" required />
-  Nom de l\'arrivant (nécéssaire) : <input type="text" name="nom" required /><br /><br />
-  <label for="statut">Statut de l\'arrivant : </label><select id="statut" name="statut_arrivant" required />
+  Prénom de l'arrivant (nécéssaire) : <input type="text" name="prenom" required />
+  Nom de l'arrivant (nécéssaire) : <input type="text" name="nom" required /><br /><br />
+  <label for="statut">Statut de l'arrivant : </label><select id="statut" name="statut_arrivant" required />
   <option value="Administratif"> Administratif</option>
   <option value="Assistant ingénieur"> Assistant ingénieur</option>
   <option value="Attaché temporaire d\'enseignement et de recherche"> Attaché temporaire d\'enseignement et de recherche</option>
