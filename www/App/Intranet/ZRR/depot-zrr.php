@@ -53,7 +53,6 @@ if (isset($_POST['valider'])) {
       $echec_file = true;
     }
   } else {
-    echo "KO";
     $echec_file = true;
   }
 }
