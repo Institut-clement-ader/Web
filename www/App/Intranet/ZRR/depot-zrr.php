@@ -13,7 +13,6 @@ if (!is_user_logged_in()) {
   exit();
 }
 
-$echec_file = false;
 $valider = false;
 if (isset($_POST['valider'])) {
   //on importe GestionBdd.php
@@ -32,25 +31,30 @@ if (isset($_POST['valider'])) {
   $date_fin = $_POST['date_fin'];
   $url = WP_CONTENT_DIR . "/uploads/zrr/" . strtolower($_POST['nom']) . strtolower($_POST['prenom']) . $user_id . ".zip";
   $new_ask = false;
-  if (filesize($_FILES['fichier']['tmp_name']) < 10000000) {
+  $echec_file = false;
+  $valider = true;
+  $result_move_file = false;
+
+  if (filesize($_FILES['fichier']['tmp_name']) < 2000000) {
     if (!file_exists($url)) {
-      $req = $bdd->ajouterDemande(strtolower($_POST['nom']), strtolower($_POST['prenom']), $mailArrivant, $mail, $url, $date_fin, $tuteur, $date_arrivee, $statut_arrivant, $etablissement_accueil);
       $new_ask = true;
     }
-    move_uploaded_file($_FILES['fichier']['tmp_name'], $url);
-    if ($new_ask == false) {
-      wp_mail('acces_zrr_ica@insa-toulouse.fr', 'Mise à jour de fichier ZRR', $name . ' a mis le fichier ZRR de ' . $_POST['prenom'] . ' ' . $_POST['nom'] . ' à jour', 'Bonjour,', array($url));
-      $req = $bdd->resetDossier($url);
+    $result_move_file = move_uploaded_file($_FILES['fichier']['tmp_name'], $url);
+
+    if ($result_move_file == true) {
+      if ($new_ask == false) {
+        $req = $bdd->resetDossier($url);
+        wp_mail('acces_zrr_ica@insa-toulouse.fr', 'Mise à jour de fichier ZRR', $name . ' a mis le fichier ZRR de ' . $_POST['prenom'] . ' ' . $_POST['nom'] . ' à jour', 'Bonjour,', array($url));
+      } else {
+        $req = $bdd->ajouterDemande(strtolower($_POST['nom']), strtolower($_POST['prenom']), $mailArrivant, $mail, $url, $date_fin, $tuteur, $date_arrivee, $statut_arrivant, $etablissement_accueil);
+        wp_mail('acces_zrr_ica@insa-toulouse.fr', 'Nouvelle demande ZRR', $name . ' a fait une demande ZRR pour ' . $_POST['prenom'] . ' ' . $_POST['nom'] . ' : ' . site_url() . '/demandes-zrr/. La fin de mission est estimée à ' . $_POST['date_fin'], 'Bonjour,', array($url));
+      }
     } else {
-      wp_mail('acces_zrr_ica@insa-toulouse.fr', 'Nouvelle demande ZRR', $name . ' a fait une demande ZRR pour ' . $_POST['prenom'] . ' ' . $_POST['nom'] . ' : ' . site_url() . '/demandes-zrr/. La fin de mission est estimée à ' . $_POST['date_fin'], 'Bonjour,', array($url));
+      $echec_file = true;
     }
   } else {
+    echo "KO";
     $echec_file = true;
-?>
-    <div id="echec">
-      <p style="color:white"> &nbsp; Échec de la soumission de votre dossier. Le document déposé dépasse les 7 Mo.</p><br>
-    </div>
-<?php
   }
 }
 ?>
@@ -61,13 +65,21 @@ if (isset($_POST['valider'])) {
 <?php
 if ($valider == true) {
   if ($echec_file == true) {
+    if ($result_move_file == false) {
 ?>
-    <div id="echec">
-      <p style="color:white"> &nbsp; Échec de la soumission de votre dossier</p><br>
-    </div>
-  <?php
+      <div id="echec">
+        <p style="color:white"> &nbsp; Échec de la soumission de votre dossier ou le document déposé dépasse les 2 Mo</p><br>
+      </div>
+    <?php
+    } else {
+    ?>
+      <div id="echec">
+        <p style="color:white"> &nbsp; Échec de la soumission de votre dossier. le document déposé dépasse les 2 Mo</p><br>
+      </div>
+    <?php
+    }
   } else {
-  ?>
+    ?>
     <div id="confirmation">
       <p style="color:white"> &nbsp; Dossier soummis avec succès!</p><br>
     </div>
@@ -117,7 +129,7 @@ if ($valider == true) {
   Date d'arrivée<abbr class="required" title="required">*</abbr> :<input type="date" name="date_arrivee" required /><br /><br />
   Date estimée de fin de mission<abbr class="required" title="required">*</abbr> :<input type="date" name="date_fin" required /><br />
   <br />
-  Dépôt fichier de l'archive zip (moins de <em>7Mo</em>! ) contenant:<br><br>
+  Dépôt fichier de l'archive zip (moins de <em>2Mo</em>! ) contenant:<br><br>
   -Fichier excel<br>
   -CV<br>
   -Carte d'identité<br>
