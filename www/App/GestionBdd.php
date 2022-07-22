@@ -55,7 +55,7 @@ class GestionBdd
 
   public function getDemandesZrr()
   {
-    $req = $this->bdd->prepare('SELECT * FROM wp_temp_zrr order by date_arrivee DESC');
+    $req = $this->bdd->prepare('SELECT * FROM wp_temp_zrr order by necessite_zrr ASC, nom ASC');
     $req->execute();
     return $req;
   }
