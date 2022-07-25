@@ -442,9 +442,10 @@ class GestionBdd
   // Crée la réservations
   public function creerReservation($titre_reservation, $nom_utilisateur, $nom_moyen, DATETIME $date_debut, DATETIME $date_fin, $axe_recherche, $encadrant, $description, $raison)
   {
-    $sql = "INSERT INTO wp_pods_reservation (titre_reservation,nom_utilisateur,nom_moyen,date_debut,date_fin,axe_recherche,encadrant,description,raison,id_utilisateur)
-        VALUES (?,?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO wp_pods_reservation (titre_reservation,nom_utilisateur,nom_moyen,date_debut,date_fin,axe_recherche,encadrant,description,raison)
+        VALUES (?,?,?,?,?,?,?,?,?)";
     $req = $this->bdd->prepare($sql);
+    echo
     $req->execute(array($titre_reservation, $nom_utilisateur, $nom_moyen, $date_debut->format('Y-m-d H:i'), $date_fin->format('Y-m-d H:i'), $axe_recherche, $encadrant, $description, $raison));
     return true;
   }
@@ -499,7 +500,7 @@ class GestionBdd
         WHERE (meta.meta_key = 'groupe_primaire'
         OR meta.meta_key = 'groupe_secondaire'        
         OR meta.meta_key = 'groupe_tertiaire')
-        AND meta.meta_value not in ('ESTA','AXTR') 
+        AND meta.meta_value not in ('AXTR') 
         AND meta.meta_value!='' ";
     $req = $this->bdd->prepare($sql);
     $req->execute();
