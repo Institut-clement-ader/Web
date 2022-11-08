@@ -35,7 +35,7 @@ if (isset($_POST['valider'])) {
   $valider = true;
   $result_move_file = false;
 
-  if (filesize($_FILES['fichier']['tmp_name']) < 2000000) {
+  if (filesize($_FILES['fichier']['tmp_name']) < 2097152) {
     if (!file_exists($url)) {
       $new_ask = true;
     }
