@@ -132,12 +132,14 @@ class NouvelleReservation{
         $req= $this->bdd->verificationChevauchementMemeUtilisateurIdDifferent($id,$data['nom_utilisateur'],$date_debut,$date_fin);
         return $req;
     }
+
+    function 
     // Envoie un mail au responsable pour chaque ajout
     public function envoieMailAjout(array $data,$id){
         $site=site_url();
         $user = $data['nom_utilisateur'];
         // Récupère le nom du moyen avec les ' sans \
-        $moyen=  $moyen= str_replace("\'", "'", $data['nom_moyen']); 
+        $moyen=  $moyen= str_replace("\'", "'", $data['nom_moyen']);  
         $date_debut= (new DATETIME ($data['date_debut']))->format('d/m/Y');
         $date_fin=(new DATETIME ($data['date_fin']))->format('d/m/Y');
         $heure_debut=$data['heure_debut'];
