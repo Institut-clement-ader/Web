@@ -5,12 +5,12 @@
  */
 ?>
 <h6>Calcul des clés de répartition de chaque groupe selon les établissements :</h6>
-<form class='form-stats' action='<?= site_url(); ?>/stats-membres/budgets/' method='POST'>
+<form class='form-stats' action='<?= site_url(); ?>/budgets/' method='POST'>
 	<button type='submit' class='spanExcel'><i class='fa fa-table'></i>&nbsp;&nbsp;&nbsp;Télécharger au format Excel</button>
 </form>&nbsp;
 
 <h6>Évolution du nombre de membres permanents de l'ICA, en fonction de leur statut et de leur établissement d'origine, avec la liste des membres :</h6>
-<form class='form-stats' action='<?= site_url(); ?>/stats-membres/evolution/' method='POST'>
+<form class='form-stats' action='<?= site_url(); ?>/evolution/' method='POST'>
 	<label for='groupe'>Groupe : </label>
 	<select id='groupe' name='groupe'>
 		<option value='0'>Professeurs et équivalent</option>
@@ -25,7 +25,7 @@
 </form>&nbsp;
 
 <h6>Répartition des membres permanents de l'Institut Clément Ader :</h6>
-<form class='form-stats' action='<?= site_url(); ?>/stats-membres/repartition/' method='POST'>
+<form class='form-stats' action='<?= site_url(); ?>/repartition/' method='POST'>
 	<label for='debut3'>En </label><input id='debut3' min='1980' max='<?= date('Y') ?>' value='<?= date('Y') ?>' name='debut3' required='' type='number' /><br /><br />
 	<button type='submit' class='spanExcel'><i class='fa fa-table'></i>&nbsp;&nbsp;&nbsp;Télécharger au format Excel</button>
 </form>
