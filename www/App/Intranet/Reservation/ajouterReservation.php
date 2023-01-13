@@ -201,7 +201,7 @@ $error = false; ?>
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $error == false) :
 
     $id = $valider->creationReservation($_POST);
-    $mail = $valider->envoieMailAjout($_POST, $id[0][0]);
+    $mail = $valider->envoieMailAjout($_POST, $id[0][0], $current_user);
 
     // Si l'ajout a bien était fait alors on envoie le message de succès
     if ($req == true) : ?>
