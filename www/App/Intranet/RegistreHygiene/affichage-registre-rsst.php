@@ -22,7 +22,7 @@ $req = $bdd->getObservations();
 
 ?>
 
-<form class='form-stats' action='<?= site_url(); ?>/consulter-le-registre/registre/' method='POST'>
+<form class='form-stats' action='<?= site_url(); ?>/consulter-le-registre/excel/' method='POST'>
   <button type='submit' class='spanExcel'><i class='fa fa-table'></i>&nbsp;&nbsp;&nbsp;Télécharger le registre au format Excel</button>
 </form>&nbsp;
 
