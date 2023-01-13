@@ -7,7 +7,7 @@
 
 
 // On cherche le fichier avec les identifiants de la BD
-require_once("App/database.php");
+// require_once("App/database.php");
 
 class GestionBdd
 {
@@ -16,7 +16,7 @@ class GestionBdd
   public function __construct()
   {
     try {
-      $this->bdd = new PDO('mysql:host=' . DB_SERVER . ';dbname=' . DB_NAME . ';charset=utf8', DB_USERNAME, DB_PASSWORD, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+      $this->bdd = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASSWORD, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     } catch (Exception $e) {
       die('Erreur : ' . $e->getMessage());
     }
