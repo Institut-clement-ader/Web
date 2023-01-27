@@ -108,7 +108,7 @@ class GestionBdd
   //ANALYSE DES EQUIPEMENTS
   public function analyseListeEquipement($categorie)
   {
-    $req = $this->bdd->prepare('SELECT count(1) FROM wp_pods_moyen WHERE categorie = ?');
+    $req = $this->bdd->prepare('SELECT count(*) FROM wp_pods_moyen WHERE categorie = ?');
     $req->execute(array($categorie));
     $req = $req->fetchAll();
     return $req;
@@ -117,7 +117,7 @@ class GestionBdd
   //CALCULE LE NOMBRE D'EQUIPEMENTS
   public function nombreEquipement()
   {
-    $req = $this->bdd->prepare('SELECT count(1) FROM wp_pods_moyen');
+    $req = $this->bdd->prepare('SELECT COUNT(*) FROM wp_pods_moyen');
     $req->execute();
     $req = $req->fetchColumn();
     return $req;
@@ -127,7 +127,7 @@ class GestionBdd
   //ANALYSE DES OFFRES
   public function analyseListeOffres($type_offre)
   {
-    $req = $this->bdd->prepare('SELECT count(1) FROM wp_pods_offre_emploi WHERE type_offre = ?');
+    $req = $this->bdd->prepare('SELECT count(*) FROM wp_pods_offre_emploi WHERE type_offre = ?');
     $req->execute(array($type_offre));
     $req = $req->fetchAll();
     return $req;
@@ -136,7 +136,7 @@ class GestionBdd
   //CALCULE LE NOMBRE D'OFFRES
   public function nombreOffres()
   {
-    $req = $this->bdd->prepare('SELECT COUNT(1) FROM wp_pods_offre_emploi');
+    $req = $this->bdd->prepare('SELECT COUNT(*) FROM wp_pods_offre_emploi');
     $req->execute();
     $req = $req->fetchColumn();
     return $req;
@@ -145,7 +145,7 @@ class GestionBdd
   //ANALYSE DES OFFRES DISPONIBLES
   public function analyseListeOffresDispo($type_offre)
   {
-    $req = $this->bdd->prepare('SELECT count(1) FROM wp_pods_offre_emploi WHERE type_offre = ? AND date_fin >= CURDATE()');
+    $req = $this->bdd->prepare('SELECT count(*) FROM wp_pods_offre_emploi WHERE type_offre = ? AND date_fin >= CURDATE()');
     $req->execute(array($type_offre));
     $req = $req->fetchAll();
     return $req;
@@ -154,7 +154,7 @@ class GestionBdd
   //CALCULE LE NOMBRE D'OFFRES DISPONIBLES
   public function nombreOffresDispo()
   {
-    $req = $this->bdd->prepare('SELECT COUNT(1) FROM `wp_pods_offre_emploi` WHERE `date_fin` >= CURDATE()');
+    $req = $this->bdd->prepare('SELECT COUNT(*) FROM `wp_pods_offre_emploi` WHERE `date_fin` >= CURDATE()');
     $req->execute();
     $req = $req->fetchColumn();
   }
@@ -163,7 +163,7 @@ class GestionBdd
   //On selectionne le nombre de theses dont le doctorant est toujours present, dont la date de soutenance est non definie ou superieure a la date courante et dont la date de debut est inferieure a la date courante
   public function nbTheses()
   {
-    $req = $this->bdd->prepare('SELECT COUNT(1) FROM wp_pods_these WHERE (id IN (SELECT item_id FROM wp_podsrel WHERE pod_id = 862 AND field_id=1380)) AND (date_soutenance IS NULL OR date_soutenance >= CURDATE()) AND (date_debut <= CURDATE())');
+    $req = $this->bdd->prepare('SELECT COUNT(*) FROM wp_pods_these WHERE (id IN (SELECT item_id FROM wp_podsrel WHERE pod_id = 862 AND field_id=1380)) AND (date_soutenance IS NULL OR date_soutenance >= CURDATE()) AND (date_debut <= CURDATE())');
     $req->execute();
     $req = $req->fetchColumn();
     return $req;
@@ -172,7 +172,7 @@ class GestionBdd
   //On selectionne le nombre de theses dont la soutenance est definie et inferieure a la date courante
   public function nbThesesSoutenues()
   {
-    $req = $this->bdd->prepare('SELECT COUNT(1) FROM wp_pods_these WHERE NOT(date_soutenance <=> NULL) AND date_soutenance <= CURDATE()');
+    $req = $this->bdd->prepare('SELECT COUNT(*) FROM wp_pods_these WHERE NOT(date_soutenance <=> NULL) AND date_soutenance <= CURDATE()');
     $req->execute();
     $req = $req->fetchColumn();
     return $req;
@@ -459,7 +459,7 @@ class GestionBdd
   // Vérifie si il existe pas une réservation d'un moyen pendant la période donnée
   public function verificationChevauchementMemeMoyen($nom_moyen, DATETIME $date_d, DATETIME $date_f)
   {
-    $sql = "SELECT count(1) FROM wp_pods_reservation
+    $sql = "SELECT count(*) FROM wp_pods_reservation
         WHERE nom_moyen= ?
         AND (  ? BETWEEN date_debut AND date_fin
           OR ? BETWEEN date_debut AND date_fin 
@@ -552,7 +552,7 @@ class GestionBdd
   // Vérifie si il existe pas une réservation du moyen pendant la période donnée et qu'il n'a pas le même id 
   public function verificationChevauchementMemeMoyenIdDifferent(int $id, $nom_moyen, DATETIME $date_d, DATETIME $date_f)
   {
-    $sql = "SELECT count(1) FROM wp_pods_reservation
+    $sql = "SELECT count(*) FROM wp_pods_reservation
         WHERE nom_moyen= ?
         AND id!= ?
         AND (  ? BETWEEN date_debut AND date_fin
@@ -567,7 +567,7 @@ class GestionBdd
   // Vérifie si il existe pas une réservation de l'utilisateur pendant la période donnée et qu'il n'a pas le même id 
   public function verificationChevauchementMemeUtilisateurIdDifferent(int $id, $nom_utilisateur, DATETIME $date_d, DATETIME $date_f)
   {
-    $sql = "SELECT count(1) FROM wp_pods_reservation 
+    $sql = "SELECT count(*) FROM wp_pods_reservation 
           WHERE nom_utilisateur= ?
           AND id!=?
           AND (  ? BETWEEN date_debut AND date_fin
