@@ -299,11 +299,18 @@ class GestionBdd
   }
 
   //REQUETE DEPOT ZRR
-  public function resetDossier($url)
+  public function resetDossier($id)
   {
-    $req = $this->bdd->prepare('UPDATE wp_temp_zrr SET necessite_zrr = 0, num_dossier = 0 WHERE path = ?');
-    $req->execute(array($url));
+    $req = $this->bdd->prepare('UPDATE wp_temp_zrr SET necessite_zrr = 0, num_dossier = 0 WHERE id = ?');
+    $req->execute(array($id));
     return true;
+  }
+  public function DossierZrr($id)
+  {
+    $req = $this->bdd->prepare('SELECT * FROM wp_temp_zrr WHERE id = ?');
+    $req->execute(array($id));
+    $donnees = $req->fetch();
+    return $donnees;
   }
 
 

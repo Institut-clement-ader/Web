@@ -34,6 +34,7 @@ $req = $bdd->getDemandesByEmail($email);
       <th>Numéro de dossier</th>
       <th>Accepter</th>
       <th>Refuser</th>
+      <th>Modifier</th>
     </tr>
   </thead>
   <?php
@@ -43,6 +44,7 @@ $req = $bdd->getDemandesByEmail($email);
       $user = get_user_by('email', $row['mail']);
       $user_id = $user->ID;
       $username = $user->first_name . " " . $user->last_name;
+      $id_ask = $row['id'];
   ?>
       <tbody>
         <tr>
@@ -52,20 +54,26 @@ $req = $bdd->getDemandesByEmail($email);
           <td>acceptée</td>
           <td><?php echo $row['num_dossier']; ?></td>
           <td id="accepterDemande">
-            <form action="<?= site_url(); ?>/mes-demandes-zrr/" method="POST"><button style="background-color:green" type="hidden" name="accepter" value="';?><?php echo $row['id']; ?>">inscrire</button></form>
+            <form action="<?= site_url(); ?>/mes-demandes-zrr/" method="POST"><button style="background-color:green" type="hidden" name="accepter" value="';?><?php echo $id_ask; ?>">inscrire</button></form>
           </td>
           <td id="refuserDemande">
-            <form action="<?= site_url(); ?>/mes-demandes-zrr/" method="POST"><button style="background-color:red" type="hidden" name="refuser" value="';?><?php echo $row['id']; ?>">refuser</button></form>
+            <form action="<?= site_url(); ?>/mes-demandes-zrr/" method="POST"><button style="background-color:red" type="hidden" name="refuser" value="';?><?php echo $id_ask; ?>">refuser</button></form>
+          </td>
+          <td id="updateDemande">
+            <form action="<?= site_url(); ?>/mes-demandes-zrr/" method="POST"><button style="background-color:grey" type="hidden" name="modifier" value="<?php echo $id_ask; ?>">modifier</button></form>
           </td> <?php } ?>
         <?php if ($row['necessite_zrr'] == 0) { ?><td><?php echo strtoupper($row['nom']); ?></td>
           <td><?php echo ucfirst($row['prenom']); ?></td>
           <td>en attente</td>
           <td><?php echo $row['num_dossier']; ?></td>
           <td id="accepterDemande">
-            <form action="<?= site_url(); ?>/mes-demandes-zrr/" method="POST"><button disabled style="background-color:grey" type="hidden" name="accepter" value="';?><?php echo $row['id']; ?>">inscrire</button></form>
+            <form action="<?= site_url(); ?>/mes-demandes-zrr/" method="POST"><button disabled style="background-color:grey" type="hidden" name="accepter" value="';?><?php echo $id_ask; ?>">inscrire</button></form>
           </td>
           <td id="refuserDemande">
-            <form action="<?= site_url(); ?>/mes-demandes-zrr/" method="POST"><button disabled style="background-color:grey" type="hidden" name="refuser" value="';?><?php echo $row['id']; ?>">refuser</button></form>
+            <form action="<?= site_url(); ?>/mes-demandes-zrr/" method="POST"><button disabled style="background-color:grey" type="hidden" name="refuser" value="';?><?php echo $id_ask; ?>">refuser</button></form>
+          </td>
+          <td id="updateDemande">
+            <form action="<?= site_url(); ?>/mes-demandes-zrr/" method="POST"><button style="background-color:grey" type="hidden" name="modifier" value="<?php echo $id_ask; ?>">modifier</button></form>
           </td> <?php } ?>
         </tr>
       </tbody>
@@ -83,7 +91,10 @@ $req = $bdd->getDemandesByEmail($email);
     $url = $bdd->getUrl($_POST['refuser']);
     $bdd->refuserDemande($_POST['refuser']);
     unlink($url);
-    header('Location: ' . site_url() . './mes-demandes-zrr/');
+    header('Location: ' . site_url() . '/mes-demandes-zrr/');
+  }
+  if (isset($_POST['modifier'])) {
+    header('Location: ' . site_url() . '/documents/zrr-site-de-toulouse/depot-dossier-zrr?id=' . $_POST['modifier']);
   }
 
 

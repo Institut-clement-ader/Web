@@ -6,7 +6,8 @@
  * Ajouter des commentaires sur tout le code
  */
 
-
+require("App/GestionBdd.php");
+$bdd = new GestionBdd();
 // Restreint l'accès aux utilisateurs connectés
 if (!is_user_logged_in()) {
   echo ("loggin to access this page");
@@ -16,8 +17,7 @@ if (!is_user_logged_in()) {
 $valider = false;
 if (isset($_POST['valider'])) {
   //on importe GestionBdd.php
-  require("App/GestionBdd.php");
-  $bdd = new GestionBdd();
+
 
   $current_user = wp_get_current_user();
   $mailArrivant = $_POST['mail'];
@@ -35,6 +35,7 @@ if (isset($_POST['valider'])) {
   $valider = true;
   $result_move_file = false;
 
+
   if (filesize($_FILES['fichier']['tmp_name']) < 2097152) {
     if (!file_exists($url)) {
       $new_ask = true;
@@ -43,7 +44,7 @@ if (isset($_POST['valider'])) {
 
     if ($result_move_file == true) {
       if ($new_ask == false) {
-        $req = $bdd->resetDossier($url);
+        $req = $bdd->resetDossier($id_ask);
         wp_mail('acces_zrr_ica@insa-toulouse.fr', 'Mise à jour de fichier ZRR', $name . ' a mis le fichier ZRR de ' . $_POST['prenom'] . ' ' . $_POST['nom'] . ' à jour', 'Bonjour,', array($url));
       } else {
         $req = $bdd->ajouterDemande(strtolower($_POST['nom']), strtolower($_POST['prenom']), $mailArrivant, $mail, $url, $date_fin, $tuteur, $date_arrivee, $statut_arrivant, $etablissement_accueil);
@@ -56,6 +57,22 @@ if (isset($_POST['valider'])) {
     $echec_file = true;
   }
 }
+?>
+
+<?php
+$id_ask = $_GET["id"];
+$lastNameAsk = "";
+$firstNameAsk = "";
+$mailAsk = "";
+
+
+$Dossier = $bdd->DossierZrr($id_ask);
+// if (isset($Dossier)) {
+$lastNameAsk = $Dossier['nom'];
+$firstNameAsk = $Dossier['prenom'];
+$mailAsk = $Dossier['mail_arrivant'];
+$nametuteur = $Dossier['nom_prenom_tuteur'];
+// }
 ?>
 
 <h2>Site de Toulouse - Dépôt du dossier ZRR :</h2>
@@ -88,9 +105,9 @@ if ($valider == true) {
 ?>
 
 <form id="inscription4" name="zrr" method="post" action="<?= site_url(); ?>/documents/zrr-site-de-toulouse/depot-dossier-zrr/" enctype="multipart/form-data">
-  Prénom de l'arrivant<abbr class="required" title="required">*</abbr> : <input type="text" name="prenom" required />
-  Nom de l'arrivant<abbr class="required" title="required">*</abbr> : <input type="text" name="nom" required /><br /><br />
-  <label for="statut">Statut de l'arrivant : </label><select id="statut" name="statut_arrivant" required />
+  Prénom de l'arrivant<abbr class="required" title="required">*</abbr> : <input type="text" name="prenom" value="<?= $firstNameAsk ?>" required />
+  Nom de l'arrivant<abbr class=" required" title="required">*</abbr> : <input type="text" name="nom" value="<?= $lastNameAsk ?>" required /><br /><br />
+  <label for=" statut">Statut de l'arrivant : </label><select id="statut" name="statut_arrivant" required />
   <option value="Administratif"> Administratif</option>
   <option value="Assistant ingénieur"> Assistant ingénieur</option>
   <option value="Attaché temporaire d\'enseignement et de recherche"> Attaché temporaire d'enseignement et de recherche</option>
@@ -123,8 +140,8 @@ if ($valider == true) {
   <option value="IMT Mines Albi"> IMT Mines ALbi</option>
   <option value="CNRS"> CNRS</option>
   </select><br /><br />
-  Nom et prénom du tuteur<abbr class="required" title="required">*</abbr> : <input type="text" name="nom_prenom_tuteur" required /><br />
-  Adresse E-mail de l'arrivant<abbr class="required" title="required">*</abbr> : <input type="email" name="mail" required /><br /><br />
+  Nom et prénom du tuteur<abbr class="required" title="required">*</abbr> : <input type="text" name="nom_prenom_tuteur" value="<?= $nametuteur ?>" required /><br />
+  Adresse E-mail de l'arrivant<abbr class="required" title="required">*</abbr> : <input type="email" name="mail" value="<?= $mailAsk ?>" required /><br /><br />
   Date d'arrivée<abbr class="required" title="required">*</abbr> :<input type="date" name="date_arrivee" required /><br /><br />
   Date estimée de fin de mission<abbr class="required" title="required">*</abbr> :<input type="date" name="date_fin" required /><br />
   <br />
