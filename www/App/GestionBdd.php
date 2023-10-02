@@ -519,7 +519,7 @@ class GestionBdd
   // Récupère tous les moyens de la catégorie
   public function getMoyensCategorie($categorie)
   {
-    $sql = "SELECT nom_moyen from  wp_pods_moyen WHERE lieu='Toulouse' AND categorie='$categorie' AND reservable=1 order by nom_moyen ";
+    $sql = "SELECT nom_moyen from  wp_pods_moyen WHERE categorie='$categorie' AND reservable=1 order by nom_moyen ";
     $req = $this->bdd->prepare($sql);
     $req->execute();
     $donnees = $req->fetchAll();
@@ -679,7 +679,7 @@ class GestionBdd
   // Récupère toutes les catégories des moyens
   public function getCategorie()
   {
-    $sql = "SELECT DISTINCT categorie FROM wp_pods_moyen WHERE lieu='Toulouse'";
+    $sql = "SELECT DISTINCT categorie FROM wp_pods_moyen";
     $req = $this->bdd->prepare($sql);
     $req->execute();
     $donnees = $req->fetchAll();
