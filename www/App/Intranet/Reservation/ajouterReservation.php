@@ -40,6 +40,13 @@ $error = false; ?>
     <?php endif;
     endif;
     ?>
+
+    <div class="row">
+        <div class="form-simple">
+            <label for="titre_reservation"><?= TXT_ASK_RESERVATION ?></label>
+        </div>
+    </div>
+
     <!-- Début du formulaire -->
     <form action="" method="post" class="form">
         <div class="row">

@@ -226,6 +226,7 @@ class NouvelleReservation
     {
         $user = $data['nom_utilisateur'];
         // Récupère le nom du moyen avec les ' sans \
+        $site = site_url();
         $moyen =  $moyen = str_replace("\'", "'", $data['nom_moyen']);
         $date_debut = (new DATETIME($data['date_debut']))->format('d/m/Y');
         $date_fin = (new DATETIME($data['date_fin']))->format('d/m/Y');
@@ -244,7 +245,7 @@ class NouvelleReservation
             moyen: ' . $moyen . ' 
             du ' . $date_debut . ' à ' . $heure_debut . ' 
             au ' . $date_fin . ' à ' . $heure_fin . '
-            vous pouvez accéder a ce lien pour avoir plus de détail: ' . $site . '/voir-une-reservation/?id=' . $id . '', 'Bonjour,');
+            vous pouvez accéder a ce lien pour avoir plus de détails: ' . $site . '/voir-une-reservation/?id=' . $id . '', 'Bonjour,');
         }
         // Vérifie s'il existe un deuxième responsable alors on lui envoie un mail
         if (isset($responsable[0]['responsable_2'])) {
@@ -257,7 +258,7 @@ class NouvelleReservation
             moyen: ' . $moyen . ' 
             du ' . $date_debut . ' à ' . $heure_debut . ' 
             au ' . $date_fin . ' à ' . $heure_fin . '
-            vous pouvez accéder a ce lien pour avoir plus de détail: ' . $site . '/voir-une-reservation/?id=' . $id . '', 'Bonjour,');
+            vous pouvez accéder a ce lien pour avoir plus de détails: ' . $site . '/voir-une-reservation/?id=' . $id . '', 'Bonjour,');
         }
         // Vérifie s'il existe un troisième responsable alors on lui envoie un mail
         if (isset($responsable[0]['responsable_3'])) {
@@ -271,7 +272,7 @@ class NouvelleReservation
             du ' . $date_debut . ' à ' . $heure_debut . ' 
             au ' . $date_fin . ' à ' . $heure_fin . '
 
-            vous pouvez accéder a ce lien pour avoir plus de détail: ' . $site . '/voir-une-reservation/?id=' . $id . '', 'Bonjour,');
+            vous pouvez accéder a ce lien pour avoir plus de détails: ' . $site . '/voir-une-reservation/?id=' . $id . '', 'Bonjour,');
         }
         return true;
     }

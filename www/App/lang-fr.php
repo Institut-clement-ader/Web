@@ -186,6 +186,7 @@ define('TXT_MOYEN', 'Moyens :');
 define('LIEN_JOURNEE', '/reservation-de-la-journee');
 define('LIEN_MODIFIER', '/modifier-une-reservation');
 define('LIEN_SUPPRIMER', '/supprimer-une-reservation');
+define('TXT_ASK_RESERVATION', 'Avez-vous contacté le ou les responsables du moyens ?');
 define('TXT_NON_RESA_GROUPE', 'Pas de réservation');
       
    //fIN Partie réservation (français)
