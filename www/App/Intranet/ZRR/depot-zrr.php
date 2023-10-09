@@ -4,6 +4,8 @@
  * Améliorations à apporter :
  * Supprimer le code en commentaire
  * Ajouter des commentaires sur tout le code
+ * 
+ * optimiser les listes et utilisedr la bases de données
  */
 
 require("App/GestionBdd.php");
@@ -13,6 +15,17 @@ if (!is_user_logged_in()) {
   echo ("loggin to access this page");
   exit();
 }
+
+function debug_to_console($data)
+{
+  $output = $data;
+  if (is_array($output))
+    $output = implode(',', $output);
+
+  echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+}
+
+$id_ask = $_GET["id"];
 
 $valider = false;
 if (isset($_POST['valider'])) {
@@ -25,6 +38,7 @@ if (isset($_POST['valider'])) {
   $date_arrivee = $_POST['date_arrivee'];
   $statut_arrivant = $_POST['statut_arrivant'];
   $etablissement_accueil = $_POST['etablissement_accueil'];
+  $id_ask = $_POST['id_ask'];
   $name = $current_user->first_name . " " . $current_user->last_name;
   $mail = $current_user->user_email;
   $user_id = get_current_user_id();
@@ -60,11 +74,10 @@ if (isset($_POST['valider'])) {
 ?>
 
 <?php
-$id_ask = $_GET["id"];
+
 $lastNameAsk = "";
 $firstNameAsk = "";
 $mailAsk = "";
-
 
 $Dossier = $bdd->DossierZrr($id_ask);
 // if (isset($Dossier)) {
@@ -97,7 +110,7 @@ if ($valider == true) {
   } else {
     ?>
     <div id="confirmation">
-      <p style="color:white"> &nbsp; Dossier soummis avec succès!</p><br>
+      <p style="color:white"> &nbsp; Dossier <? $id_ask; ?> soummis avec succès!</p><br>
     </div>
 <?php
   }
@@ -105,6 +118,7 @@ if ($valider == true) {
 ?>
 
 <form id="inscription4" name="zrr" method="post" action="<?= site_url(); ?>/documents/zrr-site-de-toulouse/depot-dossier-zrr/" enctype="multipart/form-data">
+  <input type="hidden" name="id_ask" value=<?= $id_ask ?> />
   Prénom de l'arrivant<abbr class="required" title="required">*</abbr> : <input type="text" name="prenom" value="<?= $firstNameAsk ?>" required />
   Nom de l'arrivant<abbr class=" required" title="required">*</abbr> : <input type="text" name="nom" value="<?= $lastNameAsk ?>" required /><br /><br />
   <label for=" statut">Statut de l'arrivant : </label><select id="statut" name="statut_arrivant" required />

@@ -1,5 +1,11 @@
 <!-- Ce fichier permet de vérifier les différentes exceptions pour la création d'une réservation
-Ce fichier est utilisé dans ajouterReservation.php et modifierReservation.php -->
+Ce fichier est utilisé dans ajouterReservation.php et modifierReservation.php 
+
+TODO
+Ajouter mail suppression de reservation
+Optimiser l'envoie de mail au(x) responsable(s)
+
+-->
 
 <?php
 // Importe GestionBdd
