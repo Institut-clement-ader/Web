@@ -188,5 +188,7 @@ define('LIEN_MODIFIER', '/modifier-une-reservation');
 define('LIEN_SUPPRIMER', '/supprimer-une-reservation');
 define('TXT_ASK_RESERVATION', 'Avez-vous contacté le ou les responsables du moyens ?');
 define('TXT_NON_RESA_GROUPE', 'Pas de réservation');
+define('TXT_YES', 'Oui');
+define('TXT_NO', 'Non');
       
    //fIN Partie réservation (français)

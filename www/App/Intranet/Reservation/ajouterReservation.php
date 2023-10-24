@@ -41,12 +41,6 @@ $error = false; ?>
     endif;
     ?>
 
-    <div class="row">
-        <div class="form-simple">
-            <label for="titre_reservation"><?= TXT_ASK_RESERVATION ?></label>
-        </div>
-    </div>
-
     <!-- Début du formulaire -->
     <form action="" method="post" class="form">
         <div class="row">
@@ -92,6 +86,13 @@ $error = false; ?>
                 </div>
             </div>
             <div class="ligne2">
+                <div class="form">
+                    <label for="ask_reservation"><?= TXT_ASK_RESERVATION ?></label>
+                    <input type="radio" name="ask_reservation" value="1"> <?= TXT_YES ?>
+                    <input type="radio" name="ask_reservation" value="0" checked> <?= TXT_NO ?>
+                </div>
+            </div>
+            <div class="ligne3">
                 <div class="form-group">
                     <!-- Date de début de la réservation-->
                     <label for="date_debut"><?= TXT_DATE_DEB_ADD ?></label>
@@ -105,7 +106,7 @@ $error = false; ?>
                     <input id="heure_debut" required type="time" class="form-time" name="heure_debut" value="<?= isset($_POST['heure_debut']) ? $_POST['heure_debut'] : ''; ?>">
                 </div>
             </div>
-            <div class="ligne3">
+            <div class="ligne4">
                 <div class="form-group">
                     <!-- Date de fin de la réservation-->
                     <label for="date_fin"><?= TXT_DATE_FIN_ADD ?></label>
@@ -143,7 +144,7 @@ $error = false; ?>
                     ?>
                 </div>
             </div>
-            <div class="ligne4">
+            <div class="ligne5">
                 <div class="form-group">
                     <!-- Raison de la réservation-->
                     <label for="raison"><?= TXT_RAISON ?></label>

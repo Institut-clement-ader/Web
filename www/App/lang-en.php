@@ -189,4 +189,6 @@ define('LIEN_MODIFIER', '/modify-a-reservation');
 define('LIEN_SUPPRIMER', '/delete-a-reservation');
 define('TXT_ASK_RESERVATION', 'Have you contacted the person(s) responsible for the instrument?');
 define('TXT_NON_RESA_GROUPE', 'No reservation');
+define('TXT_YES', 'Yes');
+define('TXT_NO', 'No');
     //FIN Partie réservation (anglais)
