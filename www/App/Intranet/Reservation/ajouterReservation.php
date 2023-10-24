@@ -88,8 +88,8 @@ $error = false; ?>
             <div class="ligne2">
                 <div class="form">
                     <label for="ask_reservation"><?= TXT_ASK_RESERVATION ?></label>
-                    <input type="radio" name="ask_reservation" value="1"> <?= TXT_YES ?>
-                    <input type="radio" name="ask_reservation" value="0" checked> <?= TXT_NO ?>
+                    <input type="radio" required name="ask_reservation" value="1"> <?= TXT_YES ?>
+                    <input type="radio" required name="ask_reservation" value="0"> <?= TXT_NO ?>
                 </div>
             </div>
             <div class="ligne3">

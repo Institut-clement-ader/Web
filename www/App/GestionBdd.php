@@ -3,6 +3,7 @@
 /**
  * Améliorations à apporter :
  * Commenter toutes les function pour comprendre leur utilité très facilement
+ * Remplacer les liste par des tables
  */
 
 

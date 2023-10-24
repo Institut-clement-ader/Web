@@ -165,12 +165,19 @@ class Reservation
         $user_login = $current_user->user_login;
         // Récupère le nom du moyen avec les ' sans \
         $moyen =  $moyen = str_replace("\'", "'", $data['nom_moyen']);
+        $contact = $data['ask_reservation'];
         $date_debut = (new DATETIME($data['date_debut']))->format('d/m/Y');
         $date_fin = (new DATETIME($data['date_fin']))->format('d/m/Y');
         $heure_debut = $data['heure_debut'];
         $heure_fin = $data['heure_fin'];
         $groupe = $data['axe_recherche'];
         $description = $data['description'];
+
+        if ($contact == 1) {
+            $contact = "Le responsable a été contacté.";
+        } else {
+            $contact = "Le responsable n'a pas été contacté.";
+        }
 
         wp_mail(
             $mail,
@@ -188,6 +195,8 @@ class Reservation
 
     Titre : ' . $titre . '
     Description : ' . $description . '
+
+    ' . $contact . ' 
 
     Vous pouvez accéder à ce lien pour avoir plus de détails : ' . $site . '/voir-une-reservation/?id=' . $id . '',
             'Bonjour,',
