@@ -10,7 +10,7 @@ Optimiser l'envoie de mail au(x) responsable(s)
 <?php
 // Importe GestionBdd
 require("App/GestionBdd.php");
-class NouvelleReservation
+class Reservation
 {
     private $bdd;
     // Constructeur 

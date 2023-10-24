@@ -1,8 +1,8 @@
 <!-- Ce fichier est le formulaire de modification d'une réservation ainsi que sa modification dans la bdd et la vérification des exceptions
 Ce fichier est utilisé dans la page Modifier une réservation 
-Ce fichier utilise NouvelleReservation.php -->
+Ce fichier utilise Reservation.php -->
 <?php
-require 'App/Intranet/Reservation/src/NouvelleReservation.php';
+require 'App/Intranet/Reservation/src/Reservation.php';
 //détection de langue courante de la page
 $currentlang = get_bloginfo('language');
 if (strpos($currentlang, 'fr') !== false) {
@@ -12,7 +12,7 @@ if (strpos($currentlang, 'fr') !== false) {
 } else {
     echo ("échec de reconnaissance de la langue");
 }
-$valider = new NouvelleReservation();
+$valider = new Reservation();
 //$error va permettre de voir s'il y a une exception s'il est vrai alors on n'ajoute pas la réservation dans la bdd 
 $error = false;
 // Envoie un message d'erreur si $_GET['id'] est vide

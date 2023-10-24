@@ -1,8 +1,8 @@
 <!-- Ce fichier est le formulaire de la création d'une réservation ainsi que son ajoute dans la bdd et la vérification des exceptions
 Ce fichier est utilisé dans la page Ajouter une réservation 
-Ce fichier utilise NouvelleReservation.php -->
+Ce fichier utilise Reservation.php -->
 <?php
-require 'App/Intranet/Reservation/src/NouvelleReservation.php';
+require 'App/Intranet/Reservation/src/Reservation.php';
 //détection de langue courante de la page
 $currentlang = get_bloginfo('language');
 if (strpos($currentlang, 'fr') !== false) {
@@ -16,7 +16,7 @@ if (strpos($currentlang, 'fr') !== false) {
 // Récupère les informations de l'utilisateur courant (son nom et status)
 $current_user = wp_get_current_user();
 $status = $current_user->status;
-$valider = new NouvelleReservation();
+$valider = new Reservation();
 $groupe = $current_user->groupe_primaire;
 $groupe_s = $current_user->groupe_secondaire;
 $groupe_t = $current_user->groupe_tertiaire;
