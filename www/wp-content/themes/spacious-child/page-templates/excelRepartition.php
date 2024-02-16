@@ -19,29 +19,24 @@ if (isset($_POST['debut3'])) {
   $nomColonnes = array($annee);
 
   //Importer les librairies PHPExcel
-	include(dirname(__FILE__).'/Excel/fonctionsExcel.php');
-	require_once(dirname(__FILE__).'/Excel/Classes/PHPExcel.php');
+  include(dirname(__FILE__) . '/Excel/fonctionsExcel.php');
+  require_once(dirname(__FILE__) . '/Excel/Classes/PHPExcel.php');
 
-  
+
   // --------------------------
   // --- CONNEXION A LA BDD ---
   // --------------------------
-  
-  //donnees de connexion
-	$serveur="mysql2.lamp.ods";
-	$utilisateur="lab0612sql3";
-	$password="XY02b21aBLaq";
-	$db="lab0612sql3db";
 
   //connexion
-  try{
-    $bdd = new PDO('mysql:host='.$serveur.';dbname='.$db, $utilisateur, $password);
-  } catch(PDOException $e){
-    print "Erreur : ".$e->getMessage();
+  try {
+    $bdd =
+      new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASSWORD, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+  } catch (PDOException $e) {
+    print "Erreur : " . $e->getMessage();
     die();
   }
-  
-  
+
+
   // ------------------------------------
   // --- RÉCUPÉRER LES ÉTABLISSEMENTS ---
   // ------------------------------------
@@ -56,13 +51,13 @@ if (isset($_POST['debut3'])) {
                          ORDER BY m.meta_value;');
   $req->execute();
   $etablissements = $req->fetchAll();
-  
+
   //Création d'un tableau clé/valeurs avec le nom des établissements
   foreach ($etablissements as $etablissement) {
     //On regroupe l'UPS, l'IUT GMP et l'IUT de Tarbes sous le même intitulé 'UPS'
     if ($etablissement['tutelle'] === 'UPS' || $etablissement['tutelle'] === 'IUT GMP' || $etablissement['tutelle'] === 'IUT de Tarbes') {
       $tutelle = 'UPS';
-    //On regroupe l'IUT de Figeac et l'UT-2 sous le même intitulé 'UT-2 Jean Jaurès' -- en tenant compte des accents
+      //On regroupe l'IUT de Figeac et l'UT-2 sous le même intitulé 'UT-2 Jean Jaurès' -- en tenant compte des accents
     } elseif ($etablissement['tutelle'] === 'IUT de Figeac' || html_entity_decode($etablissement['tutelle']) === 'UT-2 Jean Jaurès') {
       $tutelle = 'UT-2 Jean Jaurès';
     } else {
@@ -72,19 +67,19 @@ if (isset($_POST['debut3'])) {
     $tableau[$tutelle] = array(0);
   }
   ksort($tableau); //Trier le tableau selon les clés (établissements)
-  
+
   // ---------------------------
   // --- COMPTER LES MEMBRES ---
   // ---------------------------
-  
+
   //Récupère les utilisateurs WordPress
   $users = get_users();
   //Pour chaque membre
-  foreach($users as $user) {
+  foreach ($users as $user) {
     //On regroupe l'UPS, l'IUT GMP et l'IUT de Tarbes sous le même intitulé 'UPS'
     if ($user->tablissement_de_rattachement === 'UPS' || $user->tablissement_de_rattachement === 'IUT GMP' || $user->tablissement_de_rattachement === 'IUT de Tarbes') {
       $tutelle = 'UPS';
-    //On regroupe l'IUT de Figeac et l'UT-2 sous le même intitulé 'UT-2 Jean Jaurès' -- en tenant compte des accents
+      //On regroupe l'IUT de Figeac et l'UT-2 sous le même intitulé 'UT-2 Jean Jaurès' -- en tenant compte des accents
     } elseif ($user->tablissement_de_rattachement === 'IUT de Figeac' || html_entity_decode($user->tablissement_de_rattachement) === 'UT-2 Jean Jaurès') {
       $tutelle = 'UT-2 Jean Jaurès';
     } else {
@@ -99,8 +94,7 @@ if (isset($_POST['debut3'])) {
       $tableau[$tutelle][0]++;
     }
   }
-  
+
   // --- CRÉATION DU DIAGRAMME CIRCULAIRE
-	createDonutChart(array_keys($tableau), $nomColonnes, array_values($tableau));
+  createDonutChart(array_keys($tableau), $nomColonnes, array_values($tableau));
 }
-?>
