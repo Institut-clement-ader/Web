@@ -30,6 +30,11 @@
 	<button type='submit' class='spanExcel'><i class='fa fa-table'></i>&nbsp;&nbsp;&nbsp;Télécharger au format Excel</button>
 </form>
 
+<h6>Extration des utilisateurs de l'Institut Clément Ader :</h6>
+<form class='form-stats' action='<?= site_url(); ?>/extract-users/' method='POST'>
+	<button type='submit' class='spanExcel'><i class='fa fa-table'></i>&nbsp;&nbsp;&nbsp;Télécharger au format Excel</button>
+</form>
+
 <!-- Les scripts d'export dans le fichier excel se trouvent dans les modèles d'attribut des pages vers
 lesquelles sont liés les formulaires. Ils se trouvent dans wp-content/themes/spacious-child/page-templates/Excel
 -->
