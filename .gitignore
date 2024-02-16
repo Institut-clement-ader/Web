@@ -6,6 +6,8 @@
 .vscode/extensions.json
 .project
 
+test.php
+
 # Wordpress - ignore core, configuration, examples, uploads and logs.
 # https://github.com/github/gitignore/blob/main/WordPress.gitignore
 
@@ -13,35 +15,36 @@
 #
 # Note: if you want to stage/commit WP core files
 # you can delete this whole section/until Configuration.
-/wp-admin/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
+www/wp-admin/
+www/wp-content/index.php
+www/wp-content/languages
+www/wp-content/plugins/index.php
+www/wp-content/themes/index.php
+www/wp-includes/
+www/index.php
+www/license.txt
+www/readme.html
 # /wp-*.php
-/xmlrpc.php
+www/xmlrpc.php
 
 # Configuration
-wp-config.php
+www/wp-config.php
+www/App/database.php
 
 # Example themes
-/wp-content/themes/twenty*/
+#/wp-content/themes/twenty*/
 
 # Example plugin
 # /wp-content/plugins/hello.php
 
 # Uploads
-/wp-content/uploads/
+www/wp-content/uploads/
 
 # Log files
 *.log
 
 # htaccess
-/.htaccess
+www/.htaccess
 
 # All plugins
 #
