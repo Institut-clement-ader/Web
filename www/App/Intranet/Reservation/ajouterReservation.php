@@ -85,13 +85,13 @@ $error = false; ?>
                     </select>
                 </div>
             </div>
-            <div class="ligne2">
-                <div class="form">
-                    <label for="ask_reservation"><?= TXT_ASK_RESERVATION ?></label>
-                    <input type="radio" required name="ask_reservation" value="1"> <?= TXT_YES ?>
-                    <input type="radio" required name="ask_reservation" value="0"> <?= TXT_NO ?>
-                </div>
+
+            <div class="form">
+                <label for="ask_reservation"> <?= TXT_ASK_RESERVATION ?></label>
+                <input type="radio" required name="ask_reservation" value="1" id="yes"> <label for="yes"><?= TXT_YES ?></label>
+                <input type="radio" required name="ask_reservation" value="0" id="no"> <label for="no"><?= TXT_NO ?></label>
             </div>
+
             <div class="ligne3">
                 <div class="form-group">
                     <!-- Date de début de la réservation-->

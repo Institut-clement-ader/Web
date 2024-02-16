@@ -448,13 +448,12 @@ class GestionBdd
     return $donnees;
   }
   // Crée la réservations
-  public function creerReservation($titre_reservation, $nom_utilisateur, $nom_moyen, DATETIME $date_debut, DATETIME $date_fin, $axe_recherche, $encadrant, $description, $raison)
+  public function creerReservation($titre_reservation, $nom_utilisateur, $nom_moyen, DATETIME $date_debut, DATETIME $date_fin, $axe_recherche, $encadrant, $description, $raison, $contact_resp)
   {
-    $sql = "INSERT INTO wp_pods_reservation (titre_reservation,nom_utilisateur,nom_moyen,date_debut,date_fin,axe_recherche,encadrant,description,raison)
-        VALUES (?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO wp_pods_reservation (titre_reservation,nom_utilisateur,nom_moyen,date_debut,date_fin,axe_recherche,encadrant,description,raison, contact_resp)
+        VALUES (?,?,?,?,?,?,?,?,?,?)";
     $req = $this->bdd->prepare($sql);
-    echo
-    $req->execute(array($titre_reservation, $nom_utilisateur, $nom_moyen, $date_debut->format('Y-m-d H:i'), $date_fin->format('Y-m-d H:i'), $axe_recherche, $encadrant, $description, $raison));
+    $req->execute(array($titre_reservation, $nom_utilisateur, $nom_moyen, $date_debut->format('Y-m-d H:i'), $date_fin->format('Y-m-d H:i'), $axe_recherche, $encadrant, $description, $raison, $contact_resp));
     return true;
   }
   // Vérifie si il existe pas une réservation d'un moyen pendant la période donnée
@@ -527,11 +526,15 @@ class GestionBdd
     return $donnees;
   }
   // Récupère tous les responsables du moyens
-  public function getResponsableParMoyen($moyen)
+  public function getResponsablesParMoyen($moyen)
   {
-    $sql = "SELECT responsable_1,responsable_2,responsable_3 from  wp_pods_moyen WHERE nom_moyen=? ";
+    $sql = "SELECT responsable_1 from  wp_pods_moyen WHERE nom_moyen=?
+            UNION
+            SELECT responsable_2 from  wp_pods_moyen WHERE nom_moyen=?
+            UNION
+            SELECT responsable_3 from  wp_pods_moyen WHERE nom_moyen=? ";
     $req = $this->bdd->prepare($sql);
-    $req->execute(array($moyen));
+    $req->execute(array($moyen, $moyen, $moyen));
     $donnees = $req->fetchAll();
     return $donnees;
   }
@@ -677,6 +680,21 @@ class GestionBdd
     $donnees = $req->fetch();
     return $donnees;
   }
+  // Récupère le mail de tous les responsable du moyen donnée 
+  public function rechercheMailRespsonsablesMoyens($moyen)
+  {
+    $sql = "SELECT user_email from wp_users where id in (
+            SELECT id_resp1 from  wp_pods_moyen WHERE nom_moyen='$moyen'
+            UNION
+            SELECT id_resp2 from  wp_pods_moyen WHERE nom_moyen='$moyen'
+            UNION
+            SELECT id_resp3 from  wp_pods_moyen WHERE nom_moyen='$moyen')";
+    $req = $this->bdd->prepare($sql);
+    $req->execute(array($moyen, $moyen, $moyen));
+    $donnees = $req->fetchAll();
+    return $donnees;
+  }
+
   // Récupère toutes les catégories des moyens
   public function getCategorie()
   {
@@ -761,6 +779,16 @@ class GestionBdd
       AND date_fin= ? ";
     $req = $this->bdd->prepare($sql);
     $req->execute(array($moyen, $date_debut->format('Y-m-d H:i'), $date_fin->format('Y-m-d H:i')));
+    $donnees = $req->fetchAll();
+    return $donnees;
+  }
+
+  public function getList($categorie)
+  {
+    $sql = "SELECT * FROM wp_ica_list
+      WHERE categorie= ?";
+    $req = $this->bdd->prepare($sql);
+    $req->execute(array($categorie));
     $donnees = $req->fetchAll();
     return $donnees;
   }

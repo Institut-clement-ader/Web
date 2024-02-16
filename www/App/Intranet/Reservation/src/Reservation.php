@@ -49,7 +49,8 @@ class Reservation
         $raison = $data['raison'];
         $date_debut = $this->fusionDateEtHeure($data['date_debut'], $data['heure_debut']);
         $date_fin = $this->fusionDateEtHeure($data['date_fin'], $data['heure_fin']);
-        $req = $this->bdd->creerReservation($titre_reservation, $nom_utilisateur, $nom_moyen, $date_debut, $date_fin, $axe_recherche, $encadrant, $description, $raison);
+        $contact_resp = $data['ask_reservation'];
+        $req = $this->bdd->creerReservation($titre_reservation, $nom_utilisateur, $nom_moyen, $date_debut, $date_fin, $axe_recherche, $encadrant, $description, $raison, $contact_resp);
         $results = $this->bdd->getId($nom_moyen, $date_debut, $date_fin);
         return $results;
         return $req;
@@ -111,6 +112,12 @@ class Reservation
         $results = $this->bdd->getReservationByID($id);
         return $results;
     }
+
+    public function getList($categorie)
+    {
+        $results = $this->bdd->getList($categorie);
+        return $results;
+    }
     // Modife la réservation dans la bdd
     public function modifierReservation($data, $id)
     {
@@ -126,6 +133,13 @@ class Reservation
         $date_fin = $this->fusionDateEtHeure($data['date_fin'], $data['heure_fin']);
         $req = $this->bdd->updateReservationById($id, $titre_reservation, $nom_utilisateur, $moyen, $date_debut, $date_fin, $axe_recherche, $encadrant, $description, $raison);
         return $req;
+    }
+
+    // Supprime un événement en fonction de son ID
+    public function deleteReservation(int $id)
+    {
+        $results = $this->bdd->deleteReservationByID($id);
+        return $results;
     }
 
     // Vérifie si le moyen de la réservation n'est pas déjà réservé pendant l'intervalle des dates (mais ne prends pas en compte la réservation qui est modifiée)
@@ -207,22 +221,12 @@ class Reservation
     public function envoieMailAjout(array $data, $id, $current_user)
     {
         $moyen =  $moyen = str_replace("\'", "'", $data['nom_moyen']);
-        $responsable = $this->bdd->getResponsableParMoyen($moyen);
-
-        // Vérifie s'il existe un responsable alors on lui envoie un mail
-        if (isset($responsable[0]["responsable_1"])) {
-            $resultat = $this->bdd->rechercheMailRespsonsable($responsable[0]["responsable_1"]);
-            $this->mailBody($data, $id, $resultat["user_email"], $current_user);
-        }
-        // Vérifie s'il existe un deuxième responsable alors on lui envoie un mail
-        if (isset($responsable[0]['responsable_2'])) {
-            $resultat = $this->bdd->rechercheMailRespsonsable($responsable[0]["responsable_2"]);
-            $this->mailBody($data, $id, $resultat["user_email"], $current_user);
-        }
-        // Vérifie s'il existe un troisième responsable alors on lui envoie un mail
-        if (isset($responsable[0]['responsable_3'])) {
-            $resultat = $this->bdd->rechercheMailRespsonsable($responsable[0]["responsable_3"]);
-            $this->mailBody($data, $id, $resultat["user_email"], $current_user);
+        $mails = $this->bdd->rechercheMailRespsonsablesMoyens($moyen);
+        foreach ($mails as  $mail) {
+            // Vérifie s'il existe au moins un responsable alors on lui envoie un mail
+            if (isset($mail)) {
+                $this->mailBody($data, $id, $mail, $current_user);
+            }
         }
         return true;
     }
@@ -232,6 +236,8 @@ class Reservation
         $results = $this->bdd->getCategorie();
         return $results;
     }
+
+
     // affiche l'id de la réservation
     public function afficherIdReservation($data)
     {
@@ -248,11 +254,11 @@ class Reservation
         $heure_debut = $data['heure_debut'];
         $heure_fin = $data['heure_fin'];
         $groupe = $data['axe_recherche'];
-        $responsable = $this->bdd->getResponsableParMoyen($moyen);
-        // Vérifie s'il existe un responsable alors on lui envoie un mail
-        if (isset($responsable[0]["responsable_1"])) {
-            $resultat = $this->bdd->rechercheMailRespsonsable($responsable[0]["responsable_1"]);
-            wp_mail($resultat["user_email"], 'Modification d\'une réservation ', 'Bonjour,
+        $mails = $this->bdd->rechercheMailRespsonsablesMoyens($moyen);
+        foreach ($mails as  $mail) {
+            // Vérifie s'il existe au moins un responsable alors on lui envoie un mail
+            if (isset($mail)) {
+                wp_mail($mail, 'Modification d\'une réservation ', 'Bonjour,
         
             Une réservation vient d\'être modifié:
             nom: ' . $user . '
@@ -261,33 +267,40 @@ class Reservation
             du ' . $date_debut . ' à ' . $heure_debut . ' 
             au ' . $date_fin . ' à ' . $heure_fin . '
             vous pouvez accéder a ce lien pour avoir plus de détails: ' . $site . '/voir-une-reservation/?id=' . $id . '', 'Bonjour,');
+            }
         }
-        // Vérifie s'il existe un deuxième responsable alors on lui envoie un mail
-        if (isset($responsable[0]['responsable_2'])) {
-            $resultat = $this->bdd->rechercheMailRespsonsable($responsable[0]["responsable_2"]);
-            wp_mail($resultat["user_email"], 'Modification d\'une réservation ', 'Bonjour,
-        
-            Une réservation vient d\'être modifié :
-            nom: ' . $user . '
-            groupe: ' . $groupe . '
-            moyen: ' . $moyen . ' 
-            du ' . $date_debut . ' à ' . $heure_debut . ' 
-            au ' . $date_fin . ' à ' . $heure_fin . '
-            vous pouvez accéder a ce lien pour avoir plus de détails: ' . $site . '/voir-une-reservation/?id=' . $id . '', 'Bonjour,');
-        }
-        // Vérifie s'il existe un troisième responsable alors on lui envoie un mail
-        if (isset($responsable[0]['responsable_3'])) {
-            $resultat = $this->bdd->rechercheMailRespsonsable($responsable[0]["responsable_3"]);
-            wp_mail($resultat["user_email"], 'Modification d\'une réservation ', 'Bonjour,
-        
-            Une réservation vient d\'être modifié :
-            nom: ' . $user . '
-            groupe: ' . $groupe . '
-            moyen: ' . $moyen . ' 
-            du ' . $date_debut . ' à ' . $heure_debut . ' 
-            au ' . $date_fin . ' à ' . $heure_fin . '
 
-            vous pouvez accéder a ce lien pour avoir plus de détails: ' . $site . '/voir-une-reservation/?id=' . $id . '', 'Bonjour,');
+        return true;
+    }
+    // Envoie un mail au responsable pour chaque modification
+    public function  envoieMailSup(array $data, $reservation)
+    {
+        $user = $reservation['nom_utilisateur'];
+        // Récupère le nom du moyen avec les ' sans \
+        $moyen =  $moyen = str_replace("\'", "'", $reservation['nom_moyen']);
+        $date_debut = (new DATETIME($reservation['date_debut']))->format('d/m/Y');
+        $date_fin = (new DATETIME($reservation['date_fin']))->format('d/m/Y');
+        $heure_debut = $reservation['heure_debut'];
+        $heure_fin = $reservation['heure_fin'];
+        $groupe = $reservation['axe_recherche'];
+        $raison_sup = $data['raison_sup'];
+        $description_sup = $data['description_sup'];
+        $mails = $this->bdd->rechercheMailRespsonsablesMoyens($moyen);
+        foreach ($mails as  $mail) {
+            // Vérifie s'il existe au moins un responsable alors on lui envoie un mail
+            if (isset($mail)) {
+                wp_mail($mail, 'Suppression d\'une réservation ', 'Bonjour,
+        
+            Une réservation vient d\'être supprimée:
+            nom: ' . $user . '
+            groupe: ' . $groupe . '
+            moyen: ' . $moyen . ' 
+            du ' . $date_debut . ' à ' . $heure_debut . ' 
+            au ' . $date_fin . ' à ' . $heure_fin . '
+            
+            Pour le motif  : ' . $raison_sup . '
+            description : ' . $description_sup);
+            }
         }
         return true;
     }

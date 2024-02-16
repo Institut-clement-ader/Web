@@ -81,6 +81,7 @@ define('TXT_SIMUNUMERIQUE_EQUIPEMENT', 'Simulation numérique');
 define('TXT_THERMIQUES_EQUIPEMENT', 'Traitements thermiques');
 define('TXT_ESSAIS', 'Essais');
 define('TXT_INSTRUMENTATION', 'Instrumentation');
+define('TXT_AUTRES', 'Autres');
 
 //Fin liste-equipements.php (français)
 
@@ -150,6 +151,7 @@ define('TXT_HEURE_DEB', 'Heure de début de la réservation');
 define('TXT_DATE_FIN', 'Date de fin de la réservation');
 define('TXT_HEURE_FIN', 'Heure de fin de la réservation');
 define('TXT_CONSULTER', 'consulter');
+define('TXT_CONTACT', 'Prise de contact');
 define('LIEN_CALENDRIER', '/reservations_moyens');
 define('LIEN_RESERVATION', '/voir-une-reservation');
 define('TXT_PAS_RESER', 'Il n\'y a pas de réservation');
@@ -181,6 +183,7 @@ define('TXT_MAINTENANCE', 'maintenance');
 define('TXT_ESSAI', 'essai');
 define('TXT_FORMATION', 'formation');
 define('TXT_REUSSI_MODIF', 'Modification enregistrée, vous pouvez retourner sur le calendrier.');
+define('TXT_REUSSI_SUP', 'Réservation supprimée');
 define('TXT_CAT_MOYEN', 'Catégorie des moyens :');
 define('TXT_MOYEN', 'Moyens :');
 define('LIEN_JOURNEE', '/reservation-de-la-journee');
@@ -190,5 +193,10 @@ define('TXT_ASK_RESERVATION', 'Avez-vous contacté le ou les responsables du moy
 define('TXT_NON_RESA_GROUPE', 'Pas de réservation');
 define('TXT_YES', 'Oui');
 define('TXT_NO', 'Non');
+define('TXT_RAISON_DEL_RESERVATION', 'Raison de la suppression');
+define('TXT_RAISON_DEL_CONTACT', 'Pas de prise contact');
+define('TXT_RAISON_DEL_ERREUR', 'Erreur de saisie');
+define('TXT_RAISON_DEL_PAS_FAITE', 'Pas effectuée');
+define('TXT_LOGIN', 'login');
       
    //fIN Partie réservation (français)
