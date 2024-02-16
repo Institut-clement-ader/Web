@@ -62,3 +62,14 @@ if ($res[0][0] > 0)
 <p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>Instrumentation</strong></p>
 <?php
 echo do_shortcode('[pods name="moyen" where="categorie=\'Instrumentation\'" template="Tableau des moyens (gestion)" limit="1000"]');
+
+//Autres
+$categorie = "Autres";
+$res = $bdd->analyseListeEquipement($categorie);
+//Affichage du titre puis de la liste d'offres (en utilisant un template Pods)
+if ($res[0][0] > 0)
+?>
+<br>
+<p style='font-size: 1.33em; padding-left: 45px; color: #ba2133;'><strong>Autres</strong></p>
+<?php
+echo do_shortcode('[pods name="moyen" where="categorie=\'Autres\'" template="Tableau des moyens (gestion)" limit="1000"]');
