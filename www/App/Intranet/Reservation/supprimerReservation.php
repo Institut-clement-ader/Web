@@ -104,7 +104,7 @@ $event = $obj_reservation->GetEventById($_GET['id']);
                         <!-- Description de la réservation (pas obligatoire) -->
                         <label for="description"><?= TXT_DESC ?></label>
                         <!-- Si la description est contenue dans $POST alors on l'affiche -->
-                        <input id="description" type="text" name="description_sup" class="form-control" value="<?= isset($_POST['description']) ? $_POST['description'] : ''; ?>"> </input>
+                        <input id="description" required type="text" name="description_sup" class="form-control" value="<?= isset($_POST['description']) ? $_POST['description'] : ''; ?>"> </input>
                     </div>
                 </div>
             </div>

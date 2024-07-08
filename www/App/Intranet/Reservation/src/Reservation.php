@@ -258,7 +258,7 @@ class Reservation
         foreach ($mails as  $mail) {
             // Vérifie s'il existe au moins un responsable alors on lui envoie un mail
             if (isset($mail)) {
-                wp_mail($mail, 'Modification d\'une réservation ', 'Bonjour,
+                wp_mail($mail, 'Modification d\'une réservation : ' . $moyen, 'Bonjour,
         
             Une réservation vient d\'être modifié:
             nom: ' . $user . '
@@ -289,7 +289,7 @@ class Reservation
         foreach ($mails as  $mail) {
             // Vérifie s'il existe au moins un responsable alors on lui envoie un mail
             if (isset($mail)) {
-                wp_mail($mail, 'Suppression d\'une réservation ', 'Bonjour,
+                wp_mail($mail, 'Suppression d\'une réservation : ' . $moyen, 'Bonjour,
         
             Une réservation vient d\'être supprimée:
             nom: ' . $user . '
