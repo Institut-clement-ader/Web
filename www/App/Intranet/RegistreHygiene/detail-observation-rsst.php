@@ -25,7 +25,7 @@ if (isset($_GET['id'])) {
     while ($row = $req->fetch()) {
       $username = ($row['rs_nom']) . " " . ($row['rs_prenom']);
       $dateSaisie = ($row['rs_date_saisie']);
-      $dateConsultationChefStructure = ($row['rs_date_consultation_chef_structure']);
+      $dateConsultationChefStructure = ($row['rs_date_consultation_chef_de_la_structure']);
 ?>
       <h6><?php echo 'Observation saisie le ' . date('d/m/y', strtotime($dateSaisie)) . ' par ' . $username . ' : '; ?></h6>
 

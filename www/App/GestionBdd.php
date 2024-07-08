@@ -332,7 +332,7 @@ class GestionBdd
 
   public function completerObservation($date_consultation_chef_structure, $nom_chef_structure, $observations_du_responsable, $visa, $id)
   {
-    $req = $this->bdd->prepare('UPDATE wp_pods_observation_rsst SET rs_date_consultation_chef_structure = ?, rs_nom_chef_structure = ?, rs_observations_du_responsable = ?, rs_visa = ? WHERE id = ? ');
+    $req = $this->bdd->prepare('UPDATE wp_pods_observation_rsst SET rs_date_consultation_chef_de_la_structure = ?, rs_nom_chef_structure = ?, rs_observations_du_responsable = ?, rs_visa = ? WHERE id = ? ');
     $req->execute(array($date_consultation_chef_structure, $nom_chef_structure, $observations_du_responsable, $visa, $id));
     return true;
   }
