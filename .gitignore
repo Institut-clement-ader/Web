@@ -15,21 +15,30 @@ test.php
 #
 # Note: if you want to stage/commit WP core files
 # you can delete this whole section/until Configuration.
-www/wp-admin/
+www/wp-admin/*
 www/wp-content/index.php
 www/wp-content/languages
 www/wp-content/plugins/index.php
 www/wp-content/themes/index.php
-www/wp-includes/
+www/wp-includes/*
 www/index.php
 www/license.txt
 www/readme.html
-# /wp-*.php
+www/wp-*.php
 www/xmlrpc.php
 
 # Configuration
 www/wp-config.php
 www/App/database.php
+
+# confidential
+www/imagesPerso/*
+www/projects/*
+www/fichiers/*
+
+#Archive
+www/Archive/*
+www/reservation/*
 
 # Example themes
 #/wp-content/themes/twenty*/
@@ -38,13 +47,24 @@ www/App/database.php
 # /wp-content/plugins/hello.php
 
 # Uploads
-www/wp-content/uploads/
+www/wp-content/uploads/*
+
+# backups
+www/wp-content/backups-dup-lite/*
+www/wp-content/ai1wm-backups/*
 
 # Log files
 *.log
 
 # htaccess
 www/.htaccess
+
+#cache
+www/wp-content/cache/*
+www/wp-content/advanced-cache.php
+
+#Test
+www/App/Intranet/Test/*
 
 # All plugins
 #
@@ -57,3 +77,8 @@ www/.htaccess
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
+
+www/wp-content/index.php
+www/wordfence-waf.php
+www/index.php
+www/readme.html
