@@ -40,6 +40,9 @@ www/fichiers/*
 www/Archive/*
 www/reservation/*
 
+# plugins
+www/wp-content/plugins/*
+
 # Example themes
 #/wp-content/themes/twenty*/
 
@@ -52,9 +55,13 @@ www/wp-content/uploads/*
 # backups
 www/wp-content/backups-dup-lite/*
 www/wp-content/ai1wm-backups/*
+www/wp-content/updraft/*
+
 
 # Log files
 *.log
+www/wp-content/debug.log
+www/wp-content/wflogs/*
 
 # htaccess
 www/.htaccess
@@ -77,8 +84,21 @@ www/App/Intranet/Test/*
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
+www/wp-content/themes/twentyfifteen/
+www/wp-content/themes/twentytwelve/
+www/wp-content/themes/twentytwenty/
+www/wp-content/themes/twentytwentyone/
+www/wp-content/themes/twentysixteen/
+www/wp-content/themes/twentyseventeen/
+www/wp-content/themes/twentyeighteen/
+www/wp-content/themes/twentynineteen/
+www/wp-content/themes/twentytwenty-two/
+
 
 www/wp-content/index.php
 www/wordfence-waf.php
 www/index.php
 www/readme.html
+
+#ZRR
+www/App/Intranet/ZRR/uploads/*
